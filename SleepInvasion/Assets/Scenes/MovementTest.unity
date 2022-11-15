@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 833bf4942deec8247aba418d606ed1fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 100
+  mouseSensitivity: 10
   playerBody: {fileID: 117994140}
 --- !u!81 &81692671
 AudioListener:
@@ -290,7 +290,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 117994139}
   movementSpeed: 12
-  gravity: -19.62
   groundCheck: {fileID: 884279053}
   groundDistance: 0.2
   groundMask:
