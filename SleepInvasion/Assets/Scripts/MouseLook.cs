@@ -5,25 +5,26 @@ using UnityEngine;
 
 public class MouseLook : MonoBehaviour
 {
-    public float mouseSensitivity = 100f;
-    public Transform playerBody;
+    [SerializeField] private float mouseSensitivity = 10f;
+    [SerializeField] private Transform playerBody;
     private float _xRotation = 0;
+    private GameController _gameController;
     
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        _gameController = GameController.Instance;
+        _gameController.HideCursor();
     } 
     
-    void Update()
+    void FixedUpdate()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.fixedDeltaTime;
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.fixedDeltaTime;
 
         _xRotation -= mouseY;
         _xRotation = Math.Clamp(_xRotation, -90f, 90f);
         
-        playerBody.Rotate(Vector3.up * mouseX);
+        playerBody.Rotate(mouseX * Vector3.up);
         transform.localRotation = Quaternion.Euler(_xRotation, 0f, 0f);
     }
 }
