@@ -22,6 +22,8 @@ public class GameController : MonoBehaviour
         }
         Time.timeScale = 1;
         _gameManager = GameManager.Instance;
+
+        UIController = GetComponent<UIController>();
     }
 
     public void HideCursor()
