@@ -1,10 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    [HideInInspector] public bool KeysDisabled;
+    [NonSerialized] public UIController UIController;
+    
+    [HideInInspector] public bool keysDisabled;
     
     private GameManager _gameManager;
     
@@ -19,6 +22,8 @@ public class GameController : MonoBehaviour
         }
         Time.timeScale = 1;
         _gameManager = GameManager.Instance;
+
+        UIController = GetComponent<UIController>();
     }
 
     public void HideCursor()
@@ -35,11 +40,11 @@ public class GameController : MonoBehaviour
 
     public void DisableAllKeys()
     {
-        KeysDisabled = true;
+        keysDisabled = true;
     }
     
     public void EnableAllKeys()
     {
-        KeysDisabled = false;
+        keysDisabled = false;
     }
 }
