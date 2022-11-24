@@ -92,6 +92,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8946510488291693861}
+  - component: {fileID: 4985684390429373713}
+  - component: {fileID: 2564889103782981326}
   m_Layer: 6
   m_Name: Shader
   m_TagString: InteractableItem
@@ -115,3 +117,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4985684390429373713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8602916869040410527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bb8c4fe1ad27054da9ff5586cf73b9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemInfo:
+    Id: 0
+    Name: Shader
+    ItemScriptableObject: {fileID: 11400000, guid: fe2b0b84da8f66d4f9f1d08623e05775, type: 2}
+    PlaceInInventory: 1
+--- !u!114 &2564889103782981326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8602916869040410527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d60b650e0e8a7b546a7b5c33d93d484d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
