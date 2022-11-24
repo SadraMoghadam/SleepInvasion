@@ -6,6 +6,7 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     [NonSerialized] public UIController UIController;
+    [NonSerialized] public InventoryController InventoryController;
     
     [HideInInspector] public bool keysDisabled;
     
@@ -24,6 +25,7 @@ public class GameController : MonoBehaviour
         _gameManager = GameManager.Instance;
 
         UIController = GetComponent<UIController>();
+        InventoryController = GetComponent<InventoryController>();
     }
 
     public void HideCursor()

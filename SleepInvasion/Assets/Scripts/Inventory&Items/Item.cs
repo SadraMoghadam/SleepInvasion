@@ -5,17 +5,14 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    public int id;
-    public string name;
-    public InteractableItemSO itemScriptableObject;
-    public bool placeInInventory = true;
+    [SerializeField] public ItemInfo itemInfo;
 
 
     private void Awake()
     {
         if (name.Equals(""))
         {
-            name = itemScriptableObject.name;
+            name = itemInfo.ItemScriptableObject.name;
         }
     }
 }

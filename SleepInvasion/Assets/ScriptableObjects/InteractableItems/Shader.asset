@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Shader
   m_EditorClassIdentifier: 
   name: Shader
-  prefab: {fileID: 0}
+  prefab: {fileID: 8602916869040410527, guid: 3540c705caac8d2429578f0acfcb3919, type: 3}
   type: 0
   effect: 0
   sprite: {fileID: 0}
