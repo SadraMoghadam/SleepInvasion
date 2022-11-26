@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Shader
   m_EditorClassIdentifier: 
   name: Shader
-  prefab: {fileID: 8602916869040410527, guid: 3540c705caac8d2429578f0acfcb3919, type: 3}
+  prefab: {fileID: 6851167215361837294, guid: 3540c705caac8d2429578f0acfcb3919, type: 3}
   type: 0
   effect: 0
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: c5830aabcfbd3f44ca15523d19523d6b, type: 3}
   description: This is a shader
-  count: 1
+  finalCount: 1
