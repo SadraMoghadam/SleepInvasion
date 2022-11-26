@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+    public PlayerController PlayerController;
     [NonSerialized] public UIController UIController;
     [NonSerialized] public InventoryController InventoryController;
     
@@ -24,6 +25,7 @@ public class GameController : MonoBehaviour
         Time.timeScale = 1;
         _gameManager = GameManager.Instance;
 
+        // PlayerController = GetComponent<PlayerController>();
         UIController = GetComponent<UIController>();
         InventoryController = GetComponent<InventoryController>();
     }
@@ -49,4 +51,6 @@ public class GameController : MonoBehaviour
     {
         keysDisabled = false;
     }
+    
+    
 }

@@ -1,15 +1,49 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class InventoryController : MonoBehaviour
 {
+    [SerializeField] private GameObject interactableItemsContainer;
     private GameManager _gameManager;
 
     private void Start()
     {
         _gameManager = GameManager.Instance;
+        DestroyAllPickedItems();        
+    }
+
+    private void DestroyAllPickedItems()
+    {
+        List<Item> interactableItems = GetAllInteractableItemObjects();
+        List<ItemInfo> inventoryItems = GetAllInventoryData();
+        List<ItemInfo> destroyedItems = GetAllDestroyedItemsData();
+        for (int i = 0; i < interactableItems.Count; i++)
+        {
+            foreach (var item in inventoryItems)
+            {
+                if (item.Id == interactableItems[i].itemInfo.Id)
+                {
+                    Destroy(interactableItems[i].gameObject);
+                }
+            }
+
+            foreach (var item in destroyedItems)
+            {
+                if (item.Id == interactableItems[i].itemInfo.Id)
+                {
+                    Destroy(interactableItems[i].gameObject);
+                }
+            }
+        }
+    }
+
+    public List<Item> GetAllInteractableItemObjects()
+    {
+        List<Item> interactableItemsContainerChildren = interactableItemsContainer.GetComponentsInChildren<Item>().ToList();
+        return interactableItemsContainerChildren;
     }
 
     public void SetupInventory()
@@ -20,14 +54,13 @@ public class InventoryController : MonoBehaviour
     
     public List<ItemInfo> GetAllInventoryData()
     {
-        string itemsString = "";
         if (PlayerPrefs.HasKey(PlayerPrefsKeys.InventoryItems.ToString()))
         {
-            itemsString = PlayerPrefsManager.GetString(PlayerPrefsKeys.InventoryItems, "");
+            string itemsString = PlayerPrefsManager.GetString(PlayerPrefsKeys.InventoryItems, "");
             ItemsInfo interactableItemsInfo = JsonUtility.FromJson<ItemsInfo>(itemsString);
             return interactableItemsInfo.Items;
         }
-        return null;
+        return new List<ItemInfo>();
     }
     
     public ItemInfo GetInventoryDataByID(int id)
@@ -51,11 +84,20 @@ public class InventoryController : MonoBehaviour
         List<ItemInfo> inventoryItems = new List<ItemInfo>();
         if (PlayerPrefs.HasKey(PlayerPrefsKeys.InventoryItems.ToString()))
             inventoryItems = GetAllInventoryData();
+        for (int i = 0; i < inventoryItems.Count; i++)
+        {
+            if (inventoryItems[i].Id == item.Id)
+            {
+                return;
+            }
+        }
         string itemsString = "";
-        ItemInfo newItem = new ItemInfo();
-        newItem.Id = item.Id;
-        newItem.ItemScriptableObject = item.ItemScriptableObject;
-        newItem.Name = item.Name;
+        ItemInfo newItem = new ItemInfo
+        {
+            Id = item.Id,
+            ItemScriptableObject = item.ItemScriptableObject,
+            Name = item.Name
+        };
         inventoryItems.Add(newItem);
         ItemsInfo interactableItemsInfo = new ItemsInfo
         {
@@ -88,14 +130,13 @@ public class InventoryController : MonoBehaviour
     
     public List<ItemInfo> GetAllDestroyedItemsData()
     {
-        string itemsString = "";
         if (PlayerPrefs.HasKey(PlayerPrefsKeys.DestroyedItems.ToString()))
         {
-            itemsString = PlayerPrefsManager.GetString(PlayerPrefsKeys.DestroyedItems, "");
+            string itemsString = PlayerPrefsManager.GetString(PlayerPrefsKeys.DestroyedItems, "");
             ItemsInfo interactableItemsInfo = JsonUtility.FromJson<ItemsInfo>(itemsString);
             return interactableItemsInfo.Items;
         }
-        return null;
+        return new List<ItemInfo>();
     }
     
     public void AddDestroyedItemData(ItemInfo item)

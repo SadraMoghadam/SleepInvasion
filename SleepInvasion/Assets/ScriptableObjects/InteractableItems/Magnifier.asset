@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Magnifier
   m_EditorClassIdentifier: 
   name: Magnifier
-  prefab: {fileID: 0}
+  prefab: {fileID: 5588550333764750982, guid: 1e530e0b9afab3a449267a60653467b9, type: 3}
   type: 1
   effect: 0
   sprite: {fileID: 0}
