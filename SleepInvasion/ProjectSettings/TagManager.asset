@@ -15,7 +15,11 @@ TagManager:
   - InteractableLayer
   - PostProcessing
   - Ground
+<<<<<<< Updated upstream
   - NoPostProcessing
+=======
+  - Magnifiable
+>>>>>>> Stashed changes
   - 
   - 
   - 
