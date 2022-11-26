@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -7,6 +8,8 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    // [NonSerialized] public PlayerPrefsManager PlayerPrefsManager;
+    
     public static GameManager Instance => _instance;
     private static GameManager _instance;
     
@@ -27,6 +30,8 @@ public class GameManager : MonoBehaviour
                 Destroy(gameManagers[i].gameObject);
             }
         }
+
+        // PlayerPrefsManager = GetComponent<PlayerPrefsManager>();
         
         DontDestroyOnLoad(this.gameObject);
     }
@@ -34,7 +39,7 @@ public class GameManager : MonoBehaviour
     public async void LoadScene(string sceneName)
     {
         var scene = SceneManager.LoadSceneAsync(sceneName);
-        SceneManager.LoadScene("Loading");
+        SceneManager.LoadScene($"Loading");
         scene.allowSceneActivation = false;
         await Task.Delay(200);
         var slider = FindObjectOfType<Slider>();
