@@ -4,6 +4,7 @@ using UnityEngine;
 
 public enum InteractableItemType
 {
+    None,
     Shader,
     Magnifier,
     Cylinder,
@@ -19,8 +20,6 @@ public enum InteractableItemType
 [CreateAssetMenu(fileName = "InteractableItem", menuName = "Items/InteractableItem")]
 public class InteractableItemSO : ScriptableObject
 {
-    
-    
     public string name;
     public GameObject prefab;
     public InteractableItemType type;
@@ -28,4 +27,5 @@ public class InteractableItemSO : ScriptableObject
     public Sprite sprite;
     public string description;
     public int finalCount = 1;
+    public bool usable = true;
 }

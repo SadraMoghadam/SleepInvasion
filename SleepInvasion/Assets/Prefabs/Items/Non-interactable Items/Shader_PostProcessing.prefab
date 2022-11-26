@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1617847806469342761}
+  - component: {fileID: 1217034955359473927}
   m_Layer: 7
   m_Name: Shader_PostProcessing
   m_TagString: InteractableItem
@@ -33,6 +34,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1217034955359473927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2105451167586737299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c65a6ed5c046d4c4684e4c568351545e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6968717129937003594
 GameObject:
   m_ObjectHideFlags: 0

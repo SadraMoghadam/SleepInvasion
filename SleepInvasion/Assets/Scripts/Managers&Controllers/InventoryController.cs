@@ -7,6 +7,7 @@ using UnityEngine;
 public class InventoryController : MonoBehaviour
 {
     public InventoryPanel inventoryPanel;
+    public InspectPanel inspectPanel;
     [SerializeField] private GameObject interactableItemsContainer;
     private GameManager _gameManager;
     private GameController _gameController;
@@ -42,7 +43,7 @@ public class InventoryController : MonoBehaviour
             }
         }
     }
-
+    
     public List<Item> GetAllInteractableItemObjects()
     {
         List<Item> interactableItemsContainerChildren = interactableItemsContainer.GetComponentsInChildren<Item>().ToList();
@@ -51,17 +52,34 @@ public class InventoryController : MonoBehaviour
 
     public void SetupInventoryPanel()
     {
+        inspectPanel.Close();
         GetAllInventoryData();
         inventoryPanel.gameObject.SetActive(true);
         inventoryPanel.Setup();
-        _gameController.OpenUI();
+        _gameController.ShowCursor();
         _gameController.DisableAllKeys();
     }
 
     public void CloseInventoryPanel()
     {
         inventoryPanel.Close();
-        _gameController.CloseUI();
+        _gameController.HideCursor();
+        _gameController.EnableAllKeys();
+    }
+    
+    public void SetupInspectPanel(InteractableItemSO scriptableObject)
+    {
+        inventoryPanel.Close();
+        inspectPanel.gameObject.SetActive(true);
+        inspectPanel.Setup(scriptableObject);
+        _gameController.ShowCursor();
+        _gameController.DisableAllKeys();
+    }
+
+    public void CloseInspectPanel()
+    {
+        inspectPanel.Close();
+        _gameController.HideCursor();
         _gameController.EnableAllKeys();
     }
     
@@ -209,6 +227,5 @@ public class InventoryController : MonoBehaviour
             itemsString = JsonUtility.ToJson(interactableItemsInfo);
             PlayerPrefsManager.SetString(PlayerPrefsKeys.DestroyedItems, itemsString);
         }
-        return;
     }
 }
