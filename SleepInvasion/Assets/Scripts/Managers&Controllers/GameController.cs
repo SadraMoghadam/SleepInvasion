@@ -54,13 +54,13 @@ public class GameController : MonoBehaviour
 
     public void OpenUI()
     {
-        Time.timeScale = 0;
+        // Time.timeScale = 0;
         ShowCursor();
     }
     
     public void CloseUI()
     {
-        Time.timeScale = 1;
+        // Time.timeScale = 1;
         HideCursor();
     }
     

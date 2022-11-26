@@ -22,8 +22,8 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if(_gameController.keysDisabled)
-            return;
+        // if(_gameController.keysDisabled)
+        //     return;
         CheckPlayerInput();
     }
 

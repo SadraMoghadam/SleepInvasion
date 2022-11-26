@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,9 +14,22 @@ public class PlayerMovement : MonoBehaviour
     private float gravity = -9.81f;
     private Vector3 _velocity;
     private bool _isGrounded;
-    
+
+    private GameController _gameController;
+
+    private void Start()
+    {
+        _gameController = GameController.Instance;
+    }
+
+
     void Update()
     {
+        if (_gameController.keysDisabled)
+        {
+            return;
+        }
+        
         // check if the player is on the ground to reset fall speed
         _isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         if (_isGrounded && _velocity.y < 0)

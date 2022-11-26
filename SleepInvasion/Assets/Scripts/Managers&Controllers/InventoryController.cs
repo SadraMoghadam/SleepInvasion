@@ -55,12 +55,14 @@ public class InventoryController : MonoBehaviour
         inventoryPanel.gameObject.SetActive(true);
         inventoryPanel.Setup();
         _gameController.OpenUI();
+        _gameController.DisableAllKeys();
     }
 
     public void CloseInventoryPanel()
     {
         inventoryPanel.Close();
         _gameController.CloseUI();
+        _gameController.EnableAllKeys();
     }
     
     public List<ItemInfo> GetAllInventoryData()
@@ -136,6 +138,10 @@ public class InventoryController : MonoBehaviour
     public int GetCountOfInventoryItem(InteractableItemType type)
     {
         List<ItemInfo> inventoryItems = GetAllInventoryData();
+        if (inventoryItems.Count == 0)
+        {
+            return 0;
+        }
         int count = 0;
         for (int i = 0; i < inventoryItems.Count; i++)
         {
