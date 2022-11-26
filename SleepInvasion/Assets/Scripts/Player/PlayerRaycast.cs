@@ -10,7 +10,7 @@ public class PlayerRaycast : MonoBehaviour
 {
     private enum InteractableObjects
     {
-        Box
+        InteractableItem
     }
     
     [SerializeField] private float keyDownCooldown = .1f;
@@ -56,9 +56,14 @@ public class PlayerRaycast : MonoBehaviour
             {
                 try
                 {
-                    if (hit.collider.CompareTag(InteractableObjects.Box.ToString()))
+                    if (hit.collider.CompareTag(InteractableObjects.InteractableItem.ToString()))
                     {
-                        Debug.Log("Interacted with the BOX");
+                        Item item = hit.collider.gameObject.GetComponent<Item>();
+                        if (item == null)
+                        {
+                            item = hit.collider.gameObject.GetComponentInChildren<Item>();
+                        }
+                        _gameController.PlayerController.ItemPick.PickUp(item);
                     }
                 }
                 catch (Exception e)

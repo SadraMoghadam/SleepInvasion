@@ -7,12 +7,19 @@ public enum PlayerPrefsKeys
 {
     PlayerTransform,
     Level,
+    InventoryItems,
+    DestroyedItems
 }
 
-public class SavedData
+public struct SavedData
 {
     public Transform PlayerTransform;
     public int Level;
+}
+
+public struct ItemsInfo
+{
+    public List<ItemInfo> Items;
 }
 
 public class PlayerPrefsManager : MonoBehaviour
