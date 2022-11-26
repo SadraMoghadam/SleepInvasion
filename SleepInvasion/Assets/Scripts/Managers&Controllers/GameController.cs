@@ -51,6 +51,17 @@ public class GameController : MonoBehaviour
     {
         keysDisabled = false;
     }
+
+    public void OpenUI()
+    {
+        // Time.timeScale = 0;
+        ShowCursor();
+    }
     
+    public void CloseUI()
+    {
+        // Time.timeScale = 1;
+        HideCursor();
+    }
     
 }

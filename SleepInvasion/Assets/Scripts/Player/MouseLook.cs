@@ -18,6 +18,10 @@ public class MouseLook : MonoBehaviour
     
     void FixedUpdate()
     {
+        if (_gameController.keysDisabled)
+        {
+            return;
+        }
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.fixedDeltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.fixedDeltaTime;
 

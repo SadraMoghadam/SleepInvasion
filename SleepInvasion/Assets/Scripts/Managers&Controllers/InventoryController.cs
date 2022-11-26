@@ -6,12 +6,15 @@ using UnityEngine;
 
 public class InventoryController : MonoBehaviour
 {
+    public InventoryPanel inventoryPanel;
     [SerializeField] private GameObject interactableItemsContainer;
     private GameManager _gameManager;
+    private GameController _gameController;
 
     private void Start()
     {
         _gameManager = GameManager.Instance;
+        _gameController = GameController.Instance;
         DestroyAllPickedItems();        
     }
 
@@ -46,10 +49,20 @@ public class InventoryController : MonoBehaviour
         return interactableItemsContainerChildren;
     }
 
-    public void SetupInventory()
+    public void SetupInventoryPanel()
     {
         GetAllInventoryData();
-        // Setup the inventory panel
+        inventoryPanel.gameObject.SetActive(true);
+        inventoryPanel.Setup();
+        _gameController.OpenUI();
+        _gameController.DisableAllKeys();
+    }
+
+    public void CloseInventoryPanel()
+    {
+        inventoryPanel.Close();
+        _gameController.CloseUI();
+        _gameController.EnableAllKeys();
     }
     
     public List<ItemInfo> GetAllInventoryData()
@@ -79,6 +92,7 @@ public class InventoryController : MonoBehaviour
 
     public void AddInventoryData(ItemInfo item)
     {
+        string itemsString = "";
         if(!item.PlaceInInventory)
             return;
         List<ItemInfo> inventoryItems = new List<ItemInfo>();
@@ -90,12 +104,26 @@ public class InventoryController : MonoBehaviour
             {
                 return;
             }
+
+            // if (inventoryItems[i].ItemScriptableObject.type == item.ItemScriptableObject.type)
+            // {
+            //     inventoryItems[i].Count++;
+            //     ItemsInfo interactableItemsInfoTemp = new ItemsInfo
+            //     {
+            //         Items = inventoryItems
+            //     };
+            //     itemsString = JsonUtility.ToJson(interactableItemsInfoTemp);
+            //     PlayerPrefsManager.SetString(PlayerPrefsKeys.InventoryItems, itemsString);
+            //     return;
+            // }
         }
-        string itemsString = "";
+        
+        // int itemPreCount = _gameController.InventoryController.GetCountOfInventoryItem(item.ItemScriptableObject.type);
         ItemInfo newItem = new ItemInfo
         {
             Id = item.Id,
             ItemScriptableObject = item.ItemScriptableObject,
+            Count = item.Count,
             Name = item.Name
         };
         inventoryItems.Add(newItem);
@@ -105,6 +133,25 @@ public class InventoryController : MonoBehaviour
         };
         itemsString = JsonUtility.ToJson(interactableItemsInfo);
         PlayerPrefsManager.SetString(PlayerPrefsKeys.InventoryItems, itemsString);
+    }
+
+    public int GetCountOfInventoryItem(InteractableItemType type)
+    {
+        List<ItemInfo> inventoryItems = GetAllInventoryData();
+        if (inventoryItems.Count == 0)
+        {
+            return 0;
+        }
+        int count = 0;
+        for (int i = 0; i < inventoryItems.Count; i++)
+        {
+            if (inventoryItems[i].ItemScriptableObject.type == type)
+            {
+                count += inventoryItems[i].Count;
+            }
+        }
+
+        return count;
     }
 
     public void DeleteInventoryData(int id)
