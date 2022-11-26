@@ -65,6 +65,7 @@ GameObject:
   - component: {fileID: 873797292945887198}
   - component: {fileID: 722630097578586096}
   - component: {fileID: 3482340783130163606}
+  - component: {fileID: 6885727665521040981}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -175,6 +176,26 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!95 &6885727665521040981
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4626377550146097135}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0d1b12287dffd4142aa902b45d5f7d30, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5008844730491291665
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,8 +231,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -41.998566, y: 37.000122}
-  m_SizeDelta: {x: 100, y: 99.3249}
+  m_AnchoredPosition: {x: -30.5, y: 23.013}
+  m_SizeDelta: {x: 48.7765, y: 46.026}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4042624375984606113
 CanvasRenderer:
@@ -243,15 +264,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: 1
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 971aa7a0de0217d4db9bd2a9f277acdb, type: 2}
+  m_sharedMaterial: {fileID: 4595898221087674247, guid: 971aa7a0de0217d4db9bd2a9f277acdb, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0.7803922, g: 0.54509807, b: 0.34509805, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -268,7 +289,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 88.9
+  m_fontSize: 89.85
   m_fontSizeBase: 22
   m_fontWeight: 400
   m_enableAutoSizing: 1

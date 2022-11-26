@@ -40,6 +40,13 @@ public class PlayerController : MonoBehaviour
                 _gameController.InventoryController.CloseInventoryPanel();
             }
         }
+        else if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (_gameController.InventoryController.inventoryPanel.gameObject.activeSelf)
+            {
+                _gameController.InventoryController.CloseInventoryPanel();
+            }
+        }
     }
 
 }

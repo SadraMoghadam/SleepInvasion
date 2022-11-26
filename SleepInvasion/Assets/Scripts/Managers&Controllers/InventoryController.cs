@@ -54,11 +54,13 @@ public class InventoryController : MonoBehaviour
         GetAllInventoryData();
         inventoryPanel.gameObject.SetActive(true);
         inventoryPanel.Setup();
+        _gameController.OpenUI();
     }
 
     public void CloseInventoryPanel()
     {
         inventoryPanel.Close();
+        _gameController.CloseUI();
     }
     
     public List<ItemInfo> GetAllInventoryData()

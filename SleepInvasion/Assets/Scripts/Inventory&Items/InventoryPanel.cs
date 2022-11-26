@@ -50,7 +50,15 @@ public class InventoryPanel : MonoBehaviour
             _itemsUI[i].gameObject.SetActive(true);
             _itemsUI[i].image.sprite = inventoryItems[i].ItemScriptableObject.sprite;
             int itemCount = _gameController.InventoryController.GetCountOfInventoryItem(inventoryItems[i].ItemScriptableObject.type);
-            _itemsUI[i].count.text = itemCount.ToString();
+            if (itemCount <= 1)
+            {
+                _itemsUI[i].count.text = "";    
+            }
+            else
+            {
+                _itemsUI[i].count.text = itemCount.ToString();
+            }
+            
             inventoryItemsCopy.RemoveAll(
                 r => r.ItemScriptableObject.type == inventoryItems[i].ItemScriptableObject.type);
             loopCounter++;
