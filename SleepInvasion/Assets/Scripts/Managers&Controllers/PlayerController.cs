@@ -29,24 +29,68 @@ public class PlayerController : MonoBehaviour
 
     private void CheckPlayerInput()
     {
+        if(_gameController.playerControllerKeysDisabled)
+            return;
         if (Input.GetKeyDown(KeyCode.I))
         {
             if(!_gameController.InventoryController.inventoryPanel.gameObject.activeSelf)
             {
-                _gameController.InventoryController.SetupInventoryPanel();
+                if (_gameController.ItemsController.TypeUsing != InteractableItemType.None)
+                {
+                    StartCoroutine(AbandonToInventory());
+                }
+                else
+                {
+                    _gameController.InventoryController.SetupInventoryPanel();   
+                }
             }
             else
             {
-                _gameController.InventoryController.CloseInventoryPanel();
+                CloseAllPanels();
             }
         }
         else if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (_gameController.InventoryController.inventoryPanel.gameObject.activeSelf)
-            {
-                _gameController.InventoryController.CloseInventoryPanel();
-            }
+            CloseAllPanels();
         }
+        else if (Input.GetKeyDown(KeyCode.R))
+        {
+            _gameController.ItemsController.AbandonUsingItem();
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            CloseAllPanels();
+            _gameController.ItemsController.UseInventoryItem(InteractableItemType.Shader);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            //Magnifier
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            //Diary Of Princess
+        }
+    }
+
+    private void CloseAllPanels()
+    {
+        if (_gameController.InventoryController.inventoryPanel.gameObject.activeSelf)
+        {
+            _gameController.InventoryController.CloseInventoryPanel();
+        }
+        if (_gameController.InventoryController.inspectPanel.gameObject.activeSelf)
+        {
+            _gameController.InventoryController.CloseInspectPanel();
+        }
+    }
+
+    private IEnumerator AbandonToInventory()
+    {
+        _gameController.ItemsController.AbandonUsingItem();
+        _gameController.DisablePlayerControllerKeys();
+        yield return new WaitForSeconds(_gameController.ItemsController.TimeToAbandon);
+        _gameController.EnablePlayerControllerKeys();
+        _gameController.InventoryController.SetupInventoryPanel();   
     }
 
 }

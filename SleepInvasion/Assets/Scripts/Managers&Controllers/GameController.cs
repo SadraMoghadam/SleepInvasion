@@ -8,8 +8,10 @@ public class GameController : MonoBehaviour
     public PlayerController PlayerController;
     [NonSerialized] public UIController UIController;
     [NonSerialized] public InventoryController InventoryController;
+    [NonSerialized] public ItemsController ItemsController;
     
     [HideInInspector] public bool keysDisabled;
+    [HideInInspector] public bool playerControllerKeysDisabled;
     
     private GameManager _gameManager;
     
@@ -28,6 +30,7 @@ public class GameController : MonoBehaviour
         // PlayerController = GetComponent<PlayerController>();
         UIController = GetComponent<UIController>();
         InventoryController = GetComponent<InventoryController>();
+        ItemsController = GetComponent<ItemsController>();
     }
 
     public void HideCursor()
@@ -50,6 +53,16 @@ public class GameController : MonoBehaviour
     public void EnableAllKeys()
     {
         keysDisabled = false;
+    }
+    
+    public void DisablePlayerControllerKeys()
+    {
+        playerControllerKeysDisabled = true;
+    }
+    
+    public void EnablePlayerControllerKeys()
+    {
+        playerControllerKeysDisabled = false;
     }
 
     public void OpenUI()
