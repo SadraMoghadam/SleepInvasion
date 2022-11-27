@@ -1353,6 +1353,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 3549162260970368492, guid: 32aff84b9392d1c419ef412758c1bd16, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3549162260970368493, guid: 32aff84b9392d1c419ef412758c1bd16, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
