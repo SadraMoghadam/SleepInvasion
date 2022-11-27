@@ -11,6 +11,7 @@ public enum InteractableItemType
     Diary,
     Candle,
     Sundial,
+    Watch,
     Lock,
     Chest,
     Cup,

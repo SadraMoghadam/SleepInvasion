@@ -241,7 +241,7 @@ MonoBehaviour:
   rayLength: 3.5
   layerMaskInteract:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 128
   cameraTransform: {fileID: 2119518492735826526}
 --- !u!114 &2119518492613409750
 MonoBehaviour:

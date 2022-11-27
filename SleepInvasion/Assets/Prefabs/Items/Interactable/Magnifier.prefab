@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4979581969322231296}
   - component: {fileID: 1554727281372798988}
   - component: {fileID: 5370570806860361462}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Tube002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 53322601182030512}
   - component: {fileID: 7395342350487887153}
   - component: {fileID: 8795764892280128223}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Line001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: -6474999279507128798}
   - component: {fileID: -3142475079200006842}
   - component: {fileID: -4720301379074193767}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Magnifier
   m_TagString: InteractableItem
   m_Icon: {fileID: 0}
@@ -220,6 +220,7 @@ MonoBehaviour:
     Id: 1
     Name: Magnifier
     ItemScriptableObject: {fileID: 11400000, guid: 95011e0c69fcbc04f88d4249af2a96fa, type: 2}
+    Count: 1
     PlaceInInventory: 1
 --- !u!54 &-3142475079200006842
 Rigidbody:
@@ -261,7 +262,7 @@ GameObject:
   - component: {fileID: 3216300754829734497}
   - component: {fileID: 8712669626281596975}
   - component: {fileID: 1254790205036154513}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Tube001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -344,7 +345,7 @@ GameObject:
   - component: {fileID: 2963743237836449931}
   - component: {fileID: 7076090107761498910}
   - component: {fileID: 3337593626066842798}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Sphere001
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -15,3 +15,7 @@ MonoBehaviour:
   interactableItems:
   - {fileID: 11400000, guid: 95011e0c69fcbc04f88d4249af2a96fa, type: 2}
   - {fileID: 11400000, guid: fe2b0b84da8f66d4f9f1d08623e05775, type: 2}
+  - {fileID: 11400000, guid: d6ad73d79cfb6cd47aa038556bcf9e5c, type: 2}
+  - {fileID: 11400000, guid: 7620a2c2131b92045b9399dab92a3559, type: 2}
+  - {fileID: 11400000, guid: 231ce6e9400e3e54b988c1348159336f, type: 2}
+  - {fileID: 11400000, guid: a2c2a71785f763745a9c5b45e32b5f1f, type: 2}
