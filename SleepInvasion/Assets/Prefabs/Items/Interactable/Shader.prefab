@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6642766391785857804}
   - component: {fileID: 8428758878986869318}
   - component: {fileID: 5034265359227403986}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 703231421746361024}
   - component: {fileID: 703231421746361026}
   - component: {fileID: 703231421746361025}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Shader
   m_TagString: InteractableItem
   m_Icon: {fileID: 0}
@@ -134,6 +134,7 @@ MonoBehaviour:
     Id: 0
     Name: Shader
     ItemScriptableObject: {fileID: 11400000, guid: fe2b0b84da8f66d4f9f1d08623e05775, type: 2}
+    Count: 1
     PlaceInInventory: 1
 --- !u!54 &703231421746361026
 Rigidbody:

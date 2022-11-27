@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dbcd935a9b90f641b2588b56e87055c, type: 3}
+  m_Name: Watch
+  m_EditorClassIdentifier: 
+  name: Watch
+  prefab: {fileID: 3814008514866598519, guid: dbb48629c237ca142a992e61cba14352, type: 3}
+  type: 7
+  effect: 0
+  sprite: {fileID: 21300000, guid: 1ff1803b43813ca4f91765e5ab17878f, type: 3}
+  description: This is a watch
+  finalCount: 1
+  usable: 0

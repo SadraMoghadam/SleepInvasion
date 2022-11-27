@@ -22,6 +22,7 @@ public class InspectPanel : MonoBehaviour
     public void Setup(InteractableItemSO scriptableObject)
     {
         useButton.interactable = scriptableObject.usable;
+        useButton.gameObject.SetActive(scriptableObject.usable);
         useButton.onClick.RemoveAllListeners();
         useButton.onClick.AddListener(() => _gameController.ItemsController.UseInventoryItem(scriptableObject.type));
         description.text = scriptableObject.description;
