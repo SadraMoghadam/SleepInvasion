@@ -43,7 +43,11 @@ public class PlayerRaycast : MonoBehaviour
             return;
         RaycastHit hit;
         if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, rayLength, layerMaskInteract))
-        { 
+        {
+            if (hit.collider.gameObject.GetComponent<Item>() == null)
+            {
+                return;
+            }
             _leftMouseClickImage.gameObject.SetActive(true);
             _keyDownTimer += Time.deltaTime;
             if (_keyDownTimer < keyDownCooldown)
