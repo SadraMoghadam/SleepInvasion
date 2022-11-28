@@ -6,7 +6,8 @@ using UnityEngine;
 public class ItemsController : MonoBehaviour
 {
     [NonSerialized] public float TimeToAbandon = 2; 
-    [SerializeField] private Shader shader;  
+    [SerializeField] private Shader shader;
+    public Diary diary;  
     
     private GameController _gameController;
     private InteractableItemType _typeUsing;
@@ -30,6 +31,11 @@ public class ItemsController : MonoBehaviour
                 shader.gameObject.SetActive(true);
                 shader.Use();
                 break;
+            case InteractableItemType.Diary:
+                _typeUsing = InteractableItemType.Diary;
+                diary.gameObject.SetActive(true);
+                diary.Use();
+                break;
         }
     }
     
@@ -42,6 +48,10 @@ public class ItemsController : MonoBehaviour
             case InteractableItemType.Shader:
                 _typeUsing = InteractableItemType.None;
                 shader.Abandon();
+                break;
+            case InteractableItemType.Diary:
+                _typeUsing = InteractableItemType.None;
+                diary.Abandon();
                 break;
         }
     }
