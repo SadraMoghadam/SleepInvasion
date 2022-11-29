@@ -83,6 +83,14 @@ public class PlayerController : MonoBehaviour
                 _gameController.ItemsController.diary.PreviousPage();
             }
         }
+
+        if (_gameController.IsInMayaStoneView)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                _gameController.MayaStone.ChangeView(false);
+            }
+        }
         
 
         

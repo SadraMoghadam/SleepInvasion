@@ -11,10 +11,7 @@ public class PlayerRaycast : MonoBehaviour
     private enum InteractableObjects
     {
         InteractableItem,
-        MayaStoneRing1,
-        MayaStoneRing2,
-        MayaStoneRing3,
-        MayaStoneRing4
+        MayaStone,
     }
     
     [SerializeField] private float keyDownCooldown = .1f;
@@ -43,8 +40,11 @@ public class PlayerRaycast : MonoBehaviour
 
     private void Update()
     {
-        if(_gameController.keysDisabled)
+        if (_gameController.keysDisabled)
+        {
+            _leftMouseClickImage.gameObject.SetActive(false);
             return;
+        }
         RaycastHit hit;
         if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, rayLength, layerMaskInteract))
         {
@@ -72,6 +72,15 @@ public class PlayerRaycast : MonoBehaviour
                             item = hit.collider.gameObject.GetComponentInChildren<Item>();
                         }
                         _gameController.PlayerController.ItemPick.PickUp(item);
+                    }
+                    else if (hit.collider.CompareTag(InteractableObjects.MayaStone.ToString()))
+                    {
+                        MayaStone stone = hit.collider.gameObject.GetComponent<MayaStone>();
+                        if (stone == null)
+                        {
+                            stone = hit.collider.transform.parent.GetComponent<MayaStone>();
+                        }
+                        stone.ChangeView(true);
                     }
                     // else
                     // {

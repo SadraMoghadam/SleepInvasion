@@ -197,6 +197,7 @@ Transform:
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 1
   m_Children:
+  - {fileID: 2265599304013168318}
   - {fileID: 392869842152776732}
   - {fileID: 3563415290485209434}
   - {fileID: 3344970878284259919}
@@ -222,6 +223,8 @@ MonoBehaviour:
   secondRingTransform: {fileID: 6384028325277148893}
   thirdRingTransform: {fileID: 7803330517755696554}
   fourthRingTransform: {fileID: 4005118576790131361}
+  stoneCamera: {fileID: 2764343369038865460}
+  hitCollider: {fileID: 3095099150317837730}
 --- !u!95 &2683854511898897077
 Animator:
   serializedVersion: 4
@@ -253,7 +256,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 2, y: 1, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1057876450877885320
 GameObject:
@@ -266,7 +269,8 @@ GameObject:
   - component: {fileID: 7803330517755696554}
   - component: {fileID: 4283454986906165453}
   - component: {fileID: 5499259478662297921}
-  m_Layer: 7
+  - component: {fileID: 1428165965034386511}
+  m_Layer: 0
   m_Name: Object_13
   m_TagString: MayaStoneRing3
   m_Icon: {fileID: 0}
@@ -338,6 +342,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1428165965034386511
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057876450877885320}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8137710410374900632, guid: 315d36f49ca8b4241854c0ad523d604a, type: 3}
 --- !u!1 &1952022436489416463
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,9 +448,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 392869842152776732}
-  m_Layer: 0
+  - component: {fileID: 3095099150317837730}
+  m_Layer: 7
   m_Name: Default
-  m_TagString: Untagged
+  m_TagString: MayaStone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -460,8 +479,96 @@ Transform:
   - {fileID: 1327402334108266445}
   - {fileID: 1742638884333810189}
   m_Father: {fileID: 200069830266320995}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3095099150317837730
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955643648441772201}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.18, y: 0.18, z: 0.02}
+  m_Center: {x: 0, y: 0, z: 0.01}
+--- !u!1 &2031596171479238987
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2265599304013168318}
+  - component: {fileID: 2764343369038865460}
+  m_Layer: 0
+  m_Name: Camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2265599304013168318
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2031596171479238987}
+  m_LocalRotation: {x: -0.5, y: 0.5, z: -0.5, w: -0.5}
+  m_LocalPosition: {x: 0, y: 0.199, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 200069830266320995}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 90, y: 270, z: 0}
+--- !u!20 &2764343369038865460
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2031596171479238987}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
 --- !u!1 &2435437294825598272
 GameObject:
   m_ObjectHideFlags: 0
@@ -637,9 +744,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2205885041507178647}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Layer 04
-  m_TagString: MayaStoneRing3
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -658,7 +765,7 @@ Transform:
   m_Children:
   - {fileID: 7803330517755696554}
   m_Father: {fileID: 200069830266320995}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3325028593249570091
 GameObject:
@@ -671,7 +778,8 @@ GameObject:
   - component: {fileID: 6384028325277148893}
   - component: {fileID: 4642183380634878902}
   - component: {fileID: 9037325381816669374}
-  m_Layer: 7
+  - component: {fileID: 44450772743150876}
+  m_Layer: 0
   m_Name: Object_11
   m_TagString: MayaStoneRing2
   m_Icon: {fileID: 0}
@@ -743,6 +851,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &44450772743150876
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3325028593249570091}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5809736609246510721, guid: 315d36f49ca8b4241854c0ad523d604a, type: 3}
 --- !u!1 &3371489028804348082
 GameObject:
   m_ObjectHideFlags: 0
@@ -1001,9 +1123,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7742672866390119381}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Layer 05
-  m_TagString: MayaStoneRing4
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1022,7 +1144,7 @@ Transform:
   m_Children:
   - {fileID: 4005118576790131361}
   m_Father: {fileID: 200069830266320995}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5050732203382967733
 GameObject:
@@ -1033,9 +1155,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2077515822615933208}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Layer 03
-  m_TagString: MayaStoneRing2
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1054,7 +1176,7 @@ Transform:
   m_Children:
   - {fileID: 6384028325277148893}
   m_Father: {fileID: 200069830266320995}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5528688918416599615
 GameObject:
@@ -1065,7 +1187,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3344970878284259919}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Layer 02
   m_TagString: MayaStoneRing1
   m_Icon: {fileID: 0}
@@ -1086,7 +1208,7 @@ Transform:
   m_Children:
   - {fileID: 4875539139701923033}
   m_Father: {fileID: 200069830266320995}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6156850469211540445
 GameObject:
@@ -1265,7 +1387,8 @@ GameObject:
   - component: {fileID: 4005118576790131361}
   - component: {fileID: 7542924907256463378}
   - component: {fileID: 819731423986663662}
-  m_Layer: 7
+  - component: {fileID: 973538034957102910}
+  m_Layer: 0
   m_Name: Object_5
   m_TagString: MayaStoneRing4
   m_Icon: {fileID: 0}
@@ -1337,6 +1460,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &973538034957102910
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6766276184501510607}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5084446622711145129, guid: 315d36f49ca8b4241854c0ad523d604a, type: 3}
 --- !u!1 &7041404450511967857
 GameObject:
   m_ObjectHideFlags: 0
@@ -1514,7 +1651,8 @@ GameObject:
   - component: {fileID: 4875539139701923033}
   - component: {fileID: 3838079810936010296}
   - component: {fileID: 6855332845653860177}
-  m_Layer: 7
+  - component: {fileID: 7715708686582041}
+  m_Layer: 0
   m_Name: Object_17
   m_TagString: MayaStoneRing1
   m_Icon: {fileID: 0}
@@ -1586,6 +1724,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7715708686582041
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8066067999710376534}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5246314849399521741, guid: 315d36f49ca8b4241854c0ad523d604a, type: 3}
 --- !u!1 &8509318223987204067
 GameObject:
   m_ObjectHideFlags: 0
@@ -1617,5 +1769,5 @@ Transform:
   - {fileID: 5801613751147852347}
   - {fileID: 5220289557436482751}
   m_Father: {fileID: 200069830266320995}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

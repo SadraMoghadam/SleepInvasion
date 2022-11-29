@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MayaStone : MonoBehaviour
@@ -10,7 +12,12 @@ public class MayaStone : MonoBehaviour
     [SerializeField] private Transform thirdRingTransform;
     [SerializeField] private Transform fourthRingTransform;
 
+    [SerializeField] private Camera stoneCamera;
+
+    [SerializeField] private Collider hitCollider;
+
     private Animator _animator;
+    private GameController _gameController;
     
     private readonly int[] _ringsIconNumber = {7, 6, 5, 4};
 
@@ -19,14 +26,40 @@ public class MayaStone : MonoBehaviour
     private float[] _thirdRingDegrees;
     private float[] _fourthRingDegrees;
 
+    private float ringRotationTime = 1;
+
     private void Start()
     {
+        stoneCamera.gameObject.SetActive(false);
         _animator = GetComponent<Animator>();
-        SetupOverallDegrees(_firstRingDegrees, 0);
-        SetupOverallDegrees(_secondRingDegrees, 1);
-        SetupOverallDegrees(_thirdRingDegrees, 2);
-        SetupOverallDegrees(_fourthRingDegrees, 3);
+        _gameController = GameController.Instance;
+        SetupOverallDegrees(out _firstRingDegrees, 0);
+        SetupOverallDegrees(out _secondRingDegrees, 1);
+        SetupOverallDegrees(out _thirdRingDegrees, 2);
+        SetupOverallDegrees(out _fourthRingDegrees, 3);
         SetupRingDegrees();
+        
+    }
+
+    private void Update()
+    {
+        if(!stoneCamera.gameObject.activeSelf)
+            return;
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            RaycastHit hit;
+            if (!Physics.Raycast(stoneCamera.ScreenPointToRay(Input.mousePosition), out hit))
+                return;
+
+            Renderer rend = hit.transform.GetComponent<Renderer>();
+            if (rend.gameObject.tag == "Untagged")
+                return;
+            Debug.Log(rend.gameObject.tag);
+            int index = Int32.Parse(Regex.Match(rend.gameObject.tag.ToString(), @"\d+").Value);
+            OnRingClick(index - 1);
+        }
+
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -34,7 +67,7 @@ public class MayaStone : MonoBehaviour
         SetupAnimation();
     }
 
-    private void SetupOverallDegrees(float[] ringDegrees, int index)
+    private void SetupOverallDegrees(out float[] ringDegrees, int index)
     {
         ringDegrees = new float[_ringsIconNumber[index]];
         ringDegrees[0] = 0;
@@ -44,6 +77,14 @@ public class MayaStone : MonoBehaviour
         }
     }
 
+    private void RingsColliderActivation(bool active)
+    {
+        firstRingTransform.GetComponent<MeshCollider>().enabled = active; 
+        secondRingTransform.GetComponent<MeshCollider>().enabled = active;
+        thirdRingTransform.GetComponent<MeshCollider>().enabled = active; 
+        fourthRingTransform.GetComponent<MeshCollider>().enabled = active;
+    }
+
     private void SetupRingDegrees()
     {
         float[] initialDegrees = { 0, 0, 0, 0 };
@@ -51,6 +92,8 @@ public class MayaStone : MonoBehaviour
         secondRingTransform.localRotation = new Quaternion(0, 0, initialDegrees[1], secondRingTransform.localRotation.w);
         thirdRingTransform.localRotation = new Quaternion(0, 0, initialDegrees[2], thirdRingTransform.localRotation.w);
         fourthRingTransform.localRotation = new Quaternion(0, 0, initialDegrees[3], fourthRingTransform.localRotation.w);
+        
+        RingsColliderActivation(false);
     }
 
     private void SetupAnimation()
@@ -58,44 +101,89 @@ public class MayaStone : MonoBehaviour
         _animator.Play($"MayaStone");
     }
 
+    public void ChangeView(bool stoneView)
+    {
+        stoneCamera.gameObject.SetActive(stoneView);
+        hitCollider.gameObject.SetActive(!stoneView);
+        RingsColliderActivation(stoneView);
+        _gameController.IsInMayaStoneView = stoneView;
+        if (stoneView)
+        {
+            _gameController.ShowCursor();
+            _gameController.DisableAllKeys();
+            _gameController.DisablePlayerControllerKeys();   
+        }
+        else
+        {
+            _gameController.HideCursor();
+            _gameController.EnableAllKeys();
+            _gameController.EnablePlayerControllerKeys();
+        }
+    }
+
     public void OnRingClick(int index)
     {
         int ind = 0;
+        Vector3 temp = Vector3.zero;
         switch (index)
         {
             case 0:
-                ind = Array.IndexOf(_firstRingDegrees, firstRingTransform.localRotation.z);
-                if (ind == _ringsIconNumber[index])
+                ind = Array.IndexOf(_firstRingDegrees, Mathf.Round(firstRingTransform.localRotation.eulerAngles.z));
+                if (ind == _ringsIconNumber[index] - 1)
                 {
                     ind = -1;
                 }
-                firstRingTransform.localRotation = new Quaternion(0, 0, _firstRingDegrees[ind + 1], firstRingTransform.localRotation.w);
+                temp = firstRingTransform.localRotation.eulerAngles;
+                temp.z = _firstRingDegrees[ind + 1];
+                // firstRingTransform.eulerAngles = Vector3.Lerp(firstRingTransform.rotation.eulerAngles, temp, Time.deltaTime);
+                // firstRingTransform.localRotation = Quaternion.Euler(temp);
+                StartCoroutine(SmoothRingRotation(firstRingTransform, Quaternion.Euler(temp), ringRotationTime));
                 break;
             case 1:
-                ind = Array.IndexOf(_secondRingDegrees, secondRingTransform.localRotation.z);
-                if (ind == _ringsIconNumber[index])
+                ind = Array.IndexOf(_secondRingDegrees, Mathf.Round(secondRingTransform.localRotation.eulerAngles.z));
+                if (ind == _ringsIconNumber[index] - 1)
                 {
                     ind = -1;
                 }
-                secondRingTransform.localRotation = new Quaternion(0, 0, _secondRingDegrees[ind + 1], secondRingTransform.localRotation.w);
+                temp = secondRingTransform.localRotation.eulerAngles;
+                temp.z = _secondRingDegrees[ind + 1];
+                StartCoroutine(SmoothRingRotation(secondRingTransform, Quaternion.Euler(temp), ringRotationTime));
                 break;
             case 2:
-                ind = Array.IndexOf(_thirdRingDegrees, thirdRingTransform.localRotation.z);
-                if (ind == _ringsIconNumber[index])
+                ind = Array.IndexOf(_thirdRingDegrees, Mathf.Round(thirdRingTransform.localRotation.eulerAngles.z));
+                if (ind == _ringsIconNumber[index] - 1)
                 {
                     ind = -1;
                 }
-                thirdRingTransform.localRotation = new Quaternion(0, 0, _thirdRingDegrees[ind + 1], thirdRingTransform.localRotation.w);
+                temp = thirdRingTransform.localRotation.eulerAngles;
+                temp.z = _thirdRingDegrees[ind + 1];
+                StartCoroutine(SmoothRingRotation(thirdRingTransform, Quaternion.Euler(temp), ringRotationTime));
                 break;
             case 3:
-                ind = Array.IndexOf(_fourthRingDegrees, fourthRingTransform.localRotation.z);
-                if (ind == _ringsIconNumber[index])
+                ind = Array.IndexOf(_fourthRingDegrees, Mathf.Round(fourthRingTransform.localRotation.eulerAngles.z));
+                if (ind == _ringsIconNumber[index] - 1)
                 {
                     ind = -1;
                 }
-                fourthRingTransform.localRotation = new Quaternion(0, 0, _fourthRingDegrees[ind + 1], fourthRingTransform.localRotation.w);
+                temp = fourthRingTransform.localRotation.eulerAngles;
+                temp.z = _fourthRingDegrees[ind + 1];
+                StartCoroutine(SmoothRingRotation(fourthRingTransform, Quaternion.Euler(temp), ringRotationTime));
                 break;
         }
+    }
+
+    IEnumerator SmoothRingRotation(Transform startTransform, Quaternion endRot, float waitTime)
+    {
+        float elapsedTime = 0;
+        while (elapsedTime < waitTime)
+        {
+            startTransform.localRotation = Quaternion.Lerp(startTransform.localRotation, endRot, (elapsedTime / waitTime));
+            elapsedTime += Time.deltaTime;
+ 
+            // Yield here
+            yield return null;
+        }
+        yield return null;
     }
     
 }

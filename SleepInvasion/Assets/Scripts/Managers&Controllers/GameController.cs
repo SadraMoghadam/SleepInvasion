@@ -6,12 +6,15 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     public PlayerController PlayerController;
+    public MayaStone MayaStone;
     [NonSerialized] public UIController UIController;
     [NonSerialized] public InventoryController InventoryController;
     [NonSerialized] public ItemsController ItemsController;
+    [NonSerialized] public bool IsInMayaStoneView = false;
     
     [HideInInspector] public bool keysDisabled;
     [HideInInspector] public bool playerControllerKeysDisabled;
+
     
     private GameManager _gameManager;
     
@@ -31,6 +34,7 @@ public class GameController : MonoBehaviour
         UIController = GetComponent<UIController>();
         InventoryController = GetComponent<InventoryController>();
         ItemsController = GetComponent<ItemsController>();
+        IsInMayaStoneView = false;
     }
 
     public void HideCursor()
