@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -25,6 +26,10 @@ public class MayaStone : MonoBehaviour
     private float[] _secondRingDegrees;
     private float[] _thirdRingDegrees;
     private float[] _fourthRingDegrees;
+
+
+    private int[] _trueIndexCombination = { 4, 0, 2, 3 };
+    private int[] _initialDegreesIndex = { 0, 0, 0, 0 };
 
     private float ringRotationTime = 1;
 
@@ -87,11 +92,14 @@ public class MayaStone : MonoBehaviour
 
     private void SetupRingDegrees()
     {
-        float[] initialDegrees = { 0, 0, 0, 0 };
-        firstRingTransform.localRotation = new Quaternion(0, 0, initialDegrees[0], firstRingTransform.localRotation.w);
-        secondRingTransform.localRotation = new Quaternion(0, 0, initialDegrees[1], secondRingTransform.localRotation.w);
-        thirdRingTransform.localRotation = new Quaternion(0, 0, initialDegrees[2], thirdRingTransform.localRotation.w);
-        fourthRingTransform.localRotation = new Quaternion(0, 0, initialDegrees[3], fourthRingTransform.localRotation.w);
+        var tempDeg = PlayerPrefsManager.GetIntList(PlayerPrefsKeys.MayaStoneRingsIndex).ToArray();
+        if (tempDeg.Length != 0)
+            _initialDegreesIndex = tempDeg;
+
+        firstRingTransform.localRotation = Quaternion.Euler(new Vector3(0, 0, _firstRingDegrees[_initialDegreesIndex[0]])); 
+        secondRingTransform.localRotation = Quaternion.Euler(new Vector3(0, 0, _secondRingDegrees[_initialDegreesIndex[1]]));
+        thirdRingTransform.localRotation = Quaternion.Euler(new Vector3(0, 0, _thirdRingDegrees[_initialDegreesIndex[2]])); 
+        fourthRingTransform.localRotation = Quaternion.Euler(new Vector3(0, 0, _fourthRingDegrees[_initialDegreesIndex[3]])); 
         
         RingsColliderActivation(false);
     }
@@ -135,6 +143,7 @@ public class MayaStone : MonoBehaviour
                 }
                 temp = firstRingTransform.localRotation.eulerAngles;
                 temp.z = _firstRingDegrees[ind + 1];
+                _initialDegreesIndex[0] = ind + 1;
                 // firstRingTransform.eulerAngles = Vector3.Lerp(firstRingTransform.rotation.eulerAngles, temp, Time.deltaTime);
                 // firstRingTransform.localRotation = Quaternion.Euler(temp);
                 StartCoroutine(SmoothRingRotation(firstRingTransform, Quaternion.Euler(temp), ringRotationTime));
@@ -147,6 +156,7 @@ public class MayaStone : MonoBehaviour
                 }
                 temp = secondRingTransform.localRotation.eulerAngles;
                 temp.z = _secondRingDegrees[ind + 1];
+                _initialDegreesIndex[1] = ind + 1;
                 StartCoroutine(SmoothRingRotation(secondRingTransform, Quaternion.Euler(temp), ringRotationTime));
                 break;
             case 2:
@@ -157,6 +167,7 @@ public class MayaStone : MonoBehaviour
                 }
                 temp = thirdRingTransform.localRotation.eulerAngles;
                 temp.z = _thirdRingDegrees[ind + 1];
+                _initialDegreesIndex[2] = ind + 1;
                 StartCoroutine(SmoothRingRotation(thirdRingTransform, Quaternion.Euler(temp), ringRotationTime));
                 break;
             case 3:
@@ -167,9 +178,12 @@ public class MayaStone : MonoBehaviour
                 }
                 temp = fourthRingTransform.localRotation.eulerAngles;
                 temp.z = _fourthRingDegrees[ind + 1];
+                _initialDegreesIndex[3] = ind + 1;
                 StartCoroutine(SmoothRingRotation(fourthRingTransform, Quaternion.Euler(temp), ringRotationTime));
                 break;
         }
+        
+        PlayerPrefsManager.SetIntList(PlayerPrefsKeys.MayaStoneRingsIndex, _initialDegreesIndex.ToList());
     }
 
     IEnumerator SmoothRingRotation(Transform startTransform, Quaternion endRot, float waitTime)
