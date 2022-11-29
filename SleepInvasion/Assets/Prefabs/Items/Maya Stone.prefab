@@ -175,6 +175,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 200069830266320995}
+  - component: {fileID: 1202765921068481146}
+  - component: {fileID: 2683854511898897077}
+  - component: {fileID: 4377602240548396722}
   m_Layer: 0
   m_Name: Maya Stone
   m_TagString: Untagged
@@ -191,7 +194,7 @@ Transform:
   m_GameObject: {fileID: 688235866392077017}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.3081818, y: -0.00000023841858, z: -0.75859904}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 392869842152776732}
@@ -203,6 +206,55 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1202765921068481146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 688235866392077017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38c8f4d5fb9cde744acaca76829923cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstRingTransform: {fileID: 4875539139701923033}
+  secondRingTransform: {fileID: 6384028325277148893}
+  thirdRingTransform: {fileID: 7803330517755696554}
+  fourthRingTransform: {fileID: 4005118576790131361}
+--- !u!95 &2683854511898897077
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 688235866392077017}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4c4c3cbdaab628c428cbc77bb112742d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &4377602240548396722
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 688235866392077017}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1057876450877885320
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,9 +266,9 @@ GameObject:
   - component: {fileID: 7803330517755696554}
   - component: {fileID: 4283454986906165453}
   - component: {fileID: 5499259478662297921}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Object_13
-  m_TagString: Untagged
+  m_TagString: MayaStoneRing3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -264,7 +316,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5209386559919585115, guid: 315d36f49ca8b4241854c0ad523d604a, type: 3}
+  - {fileID: 2100000, guid: b5f2a4cd7a4e1e743960dc1277b5d99b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -585,9 +637,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2205885041507178647}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Layer 04
-  m_TagString: Untagged
+  m_TagString: MayaStoneRing3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -619,9 +671,9 @@ GameObject:
   - component: {fileID: 6384028325277148893}
   - component: {fileID: 4642183380634878902}
   - component: {fileID: 9037325381816669374}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Object_11
-  m_TagString: Untagged
+  m_TagString: MayaStoneRing2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -669,7 +721,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5209386559919585115, guid: 315d36f49ca8b4241854c0ad523d604a, type: 3}
+  - {fileID: 2100000, guid: e4c785357f9439148aa5e195da1d2211, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -949,9 +1001,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7742672866390119381}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Layer 05
-  m_TagString: Untagged
+  m_TagString: MayaStoneRing4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -981,9 +1033,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2077515822615933208}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Layer 03
-  m_TagString: Untagged
+  m_TagString: MayaStoneRing2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1013,9 +1065,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3344970878284259919}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Layer 02
-  m_TagString: Untagged
+  m_TagString: MayaStoneRing1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1213,9 +1265,9 @@ GameObject:
   - component: {fileID: 4005118576790131361}
   - component: {fileID: 7542924907256463378}
   - component: {fileID: 819731423986663662}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Object_5
-  m_TagString: Untagged
+  m_TagString: MayaStoneRing4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1263,7 +1315,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5209386559919585115, guid: 315d36f49ca8b4241854c0ad523d604a, type: 3}
+  - {fileID: 2100000, guid: 9290a453de4997a459abb1d10a567d27, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1462,9 +1514,9 @@ GameObject:
   - component: {fileID: 4875539139701923033}
   - component: {fileID: 3838079810936010296}
   - component: {fileID: 6855332845653860177}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Object_17
-  m_TagString: Untagged
+  m_TagString: MayaStoneRing1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1512,7 +1564,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5209386559919585115, guid: 315d36f49ca8b4241854c0ad523d604a, type: 3}
+  - {fileID: 2100000, guid: 31e2694beddebe041b3bc826cfc9bb41, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

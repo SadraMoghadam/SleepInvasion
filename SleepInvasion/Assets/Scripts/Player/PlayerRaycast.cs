@@ -10,7 +10,11 @@ public class PlayerRaycast : MonoBehaviour
 {
     private enum InteractableObjects
     {
-        InteractableItem
+        InteractableItem,
+        MayaStoneRing1,
+        MayaStoneRing2,
+        MayaStoneRing3,
+        MayaStoneRing4
     }
     
     [SerializeField] private float keyDownCooldown = .1f;
@@ -44,10 +48,10 @@ public class PlayerRaycast : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, rayLength, layerMaskInteract))
         {
-            if (hit.collider.gameObject.GetComponent<Item>() == null)
-            {
-                return;
-            }
+            // if (hit.collider.gameObject.GetComponent<Item>() == null)
+            // {
+            //     return;
+            // }
             _leftMouseClickImage.gameObject.SetActive(true);
             _keyDownTimer += Time.deltaTime;
             if (_keyDownTimer < keyDownCooldown)
@@ -69,6 +73,30 @@ public class PlayerRaycast : MonoBehaviour
                         }
                         _gameController.PlayerController.ItemPick.PickUp(item);
                     }
+                    // else
+                    // {
+                    //     MayaStone stone = hit.collider.transform.parent.parent.GetComponent<MayaStone>();
+                    //     if (stone == null)
+                    //     {
+                    //         stone = hit.collider.transform.parent.parent.GetComponentInChildren<MayaStone>();
+                    //     }
+                    //     if (hit.collider.CompareTag(InteractableObjects.MayaStoneRing1.ToString()))
+                    //     {
+                    //         stone.OnRingClick(0);
+                    //     }   
+                    //     else if (hit.collider.CompareTag(InteractableObjects.MayaStoneRing2.ToString()))
+                    //     {
+                    //         stone.OnRingClick(1);
+                    //     }
+                    //     else if (hit.collider.CompareTag(InteractableObjects.MayaStoneRing3.ToString()))
+                    //     {
+                    //         stone.OnRingClick(2);
+                    //     }
+                    //     else if (hit.collider.CompareTag(InteractableObjects.MayaStoneRing4.ToString()))
+                    //     {
+                    //         stone.OnRingClick(3);
+                    //     }
+                    // }
                 }
                 catch (Exception e)
                 {
