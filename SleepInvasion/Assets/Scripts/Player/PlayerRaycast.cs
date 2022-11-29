@@ -10,7 +10,8 @@ public class PlayerRaycast : MonoBehaviour
 {
     private enum InteractableObjects
     {
-        InteractableItem
+        InteractableItem,
+        Door
     }
     
     [SerializeField] private float keyDownCooldown = .1f;
@@ -44,10 +45,10 @@ public class PlayerRaycast : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, rayLength, layerMaskInteract))
         {
-            if (hit.collider.gameObject.GetComponent<Item>() == null)
-            {
-                return;
-            }
+            // if (hit.collider.gameObject.GetComponent<Item>() == null)
+            // {
+            //     return;
+            // }
             _leftMouseClickImage.gameObject.SetActive(true);
             _keyDownTimer += Time.deltaTime;
             if (_keyDownTimer < keyDownCooldown)
@@ -68,6 +69,9 @@ public class PlayerRaycast : MonoBehaviour
                             item = hit.collider.gameObject.GetComponentInChildren<Item>();
                         }
                         _gameController.PlayerController.ItemPick.PickUp(item);
+                    } else if (hit.collider.CompareTag(InteractableObjects.Door.ToString()))
+                    {
+                        hit.collider.gameObject.GetComponent<DoorController>().Use();
                     }
                 }
                 catch (Exception e)
