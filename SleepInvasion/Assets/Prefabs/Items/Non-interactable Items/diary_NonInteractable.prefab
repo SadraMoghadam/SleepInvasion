@@ -601,7 +601,7 @@ GameObject:
   - component: {fileID: 6576966064051463641}
   m_Layer: 7
   m_Name: diary_NonInteractable
-  m_TagString: InteractableItem
+  m_TagString: UseableItems
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -11,6 +11,7 @@ public class GameController : MonoBehaviour
     [NonSerialized] public InventoryController InventoryController;
     [NonSerialized] public ItemsController ItemsController;
     [NonSerialized] public bool IsInMayaStoneView = false;
+    [NonSerialized] public bool IsInInspectView = false;
     
     [HideInInspector] public bool keysDisabled;
     [HideInInspector] public bool playerControllerKeysDisabled;
@@ -35,6 +36,7 @@ public class GameController : MonoBehaviour
         InventoryController = GetComponent<InventoryController>();
         ItemsController = GetComponent<ItemsController>();
         IsInMayaStoneView = false;
+        IsInInspectView = false;
     }
 
     public void HideCursor()

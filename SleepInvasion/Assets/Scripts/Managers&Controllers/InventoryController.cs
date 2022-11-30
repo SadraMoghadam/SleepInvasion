@@ -53,7 +53,8 @@ public class InventoryController : MonoBehaviour
 
     public void SetupInventoryPanel()
     {
-        inspectPanel.Close();
+        if(_gameController.IsInInspectView)
+            inspectPanel.Close();
         GetAllInventoryData();
         inventoryPanel.gameObject.SetActive(true);
         inventoryPanel.Setup();

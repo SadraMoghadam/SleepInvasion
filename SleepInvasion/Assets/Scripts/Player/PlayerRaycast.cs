@@ -40,7 +40,7 @@ public class PlayerRaycast : MonoBehaviour
 
     private void Update()
     {
-        if (_gameController.keysDisabled)
+        if (_gameController.keysDisabled || _gameController.IsInInspectView)
         {
             _leftMouseClickImage.gameObject.SetActive(false);
             return;
@@ -48,10 +48,11 @@ public class PlayerRaycast : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, rayLength, layerMaskInteract))
         {
-            // if (hit.collider.gameObject.GetComponent<Item>() == null)
-            // {
-            //     return;
-            // }
+            if (hit.collider.gameObject.CompareTag("UsableItem"))
+            {
+                _leftMouseClickImage.gameObject.SetActive(false);
+                return;
+            }
             _leftMouseClickImage.gameObject.SetActive(true);
             _keyDownTimer += Time.deltaTime;
             if (_keyDownTimer < keyDownCooldown)
@@ -70,6 +71,10 @@ public class PlayerRaycast : MonoBehaviour
                         if (item == null)
                         {
                             item = hit.collider.gameObject.GetComponentInChildren<Item>();
+                        }
+                        else
+                        {
+                            
                         }
                         _gameController.PlayerController.ItemPick.PickUp(item);
                     }

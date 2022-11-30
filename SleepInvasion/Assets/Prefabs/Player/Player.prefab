@@ -188,7 +188,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 1.6
-  m_Radius: 0.4
+  m_Radius: 0.1
   m_SlopeLimit: 45
   m_StepOffset: 0.7
   m_SkinWidth: 0.08
@@ -381,7 +381,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2119518492735826525}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.8, z: 0}
+  m_LocalPosition: {x: 0, y: 0.8, z: 0.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -524,6 +524,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2119518492735826526}
     m_Modifications:
+    - target: {fileID: 570269140986130470, guid: 01921b0901880ba48a6bec480bf4096d, type: 3}
+      propertyPath: m_TagString
+      value: UsableItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 2266319968395020086, guid: 01921b0901880ba48a6bec480bf4096d, type: 3}
+      propertyPath: m_TagString
+      value: UsableItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 3343019120110783315, guid: 01921b0901880ba48a6bec480bf4096d, type: 3}
+      propertyPath: m_TagString
+      value: UsableItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 4451209460586685640, guid: 01921b0901880ba48a6bec480bf4096d, type: 3}
+      propertyPath: m_TagString
+      value: UsableItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 4623834397241501092, guid: 01921b0901880ba48a6bec480bf4096d, type: 3}
+      propertyPath: m_TagString
+      value: UsableItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 6478736477694491373, guid: 01921b0901880ba48a6bec480bf4096d, type: 3}
+      propertyPath: m_TagString
+      value: UsableItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775914122221117704, guid: 01921b0901880ba48a6bec480bf4096d, type: 3}
+      propertyPath: m_TagString
+      value: UsableItem
+      objectReference: {fileID: 0}
     - target: {fileID: 7224631392968037753, guid: 01921b0901880ba48a6bec480bf4096d, type: 3}
       propertyPath: m_Name
       value: diary_NonInteractable
@@ -534,7 +562,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7224631392968037753, guid: 01921b0901880ba48a6bec480bf4096d, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: UsableItem
       objectReference: {fileID: 0}
     - target: {fileID: 8000885900308287427, guid: 01921b0901880ba48a6bec480bf4096d, type: 3}
       propertyPath: m_RootOrder
@@ -668,7 +696,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2105451167586737299, guid: 7ed6f5d740bb8ec4181b89686c33a82d, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: UsableItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 6968717129937003594, guid: 7ed6f5d740bb8ec4181b89686c33a82d, type: 3}
+      propertyPath: m_TagString
+      value: UsableItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 8803869617568078987, guid: 7ed6f5d740bb8ec4181b89686c33a82d, type: 3}
+      propertyPath: m_TagString
+      value: UsableItem
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ed6f5d740bb8ec4181b89686c33a82d, type: 3}
