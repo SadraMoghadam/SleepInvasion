@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Candle
   m_EditorClassIdentifier: 
   name: Candle
-  prefab: {fileID: 0}
+  prefab: {fileID: 919132149155446097, guid: 566fa23487e117a4a94e7d4ddad1e5a5, type: 3}
   type: 5
   effect: 0
   sprite: {fileID: 21300000, guid: c81be9c873b77ca4183ea0ebf1791146, type: 3}
   description: This is a candle
-  finalCount: 6
-  usable: 1
+  finalCount: 1
+  usable: 0
