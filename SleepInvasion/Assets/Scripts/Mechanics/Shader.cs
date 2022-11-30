@@ -25,7 +25,7 @@ public class Shader : MonoBehaviour, IItemUsage
         StartCoroutine(DisableShader());
     }
 
-    public IEnumerator DisableShader()
+    private IEnumerator DisableShader()
     {
         yield return new WaitForSeconds(3f);
         gameObject.SetActive(false);

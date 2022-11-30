@@ -6,7 +6,8 @@ using UnityEngine;
 public class ItemsController : MonoBehaviour
 {
     [NonSerialized] public float TimeToAbandon = 2; 
-    [SerializeField] private Shader shader;  
+    [SerializeField] private Shader shader;
+    [SerializeField] private Magnifier magnifier;
     
     private GameController _gameController;
     private InteractableItemType _typeUsing;
@@ -14,10 +15,14 @@ public class ItemsController : MonoBehaviour
     [field: NonSerialized]
     public InteractableItemType TypeUsing => _typeUsing;
 
+    [NonSerialized] public bool UsingMagnifier;
+    
+
     private void Awake()
     {
         _gameController = GameController.Instance;
         // _typeUsing = InteractableItemType.None;
+        UsingMagnifier = false;
     }
 
     public void UseInventoryItem(InteractableItemType type)
@@ -29,6 +34,12 @@ public class ItemsController : MonoBehaviour
                 _typeUsing = InteractableItemType.Shader;
                 shader.gameObject.SetActive(true);
                 shader.Use();
+                break;
+            case InteractableItemType.Magnifier:
+                _typeUsing = InteractableItemType.Magnifier;
+                UsingMagnifier = true;
+                magnifier.gameObject.SetActive(true);
+                magnifier.Use();
                 break;
         }
     }
@@ -42,6 +53,12 @@ public class ItemsController : MonoBehaviour
             case InteractableItemType.Shader:
                 _typeUsing = InteractableItemType.None;
                 shader.Abandon();
+                break;
+            case InteractableItemType.Magnifier:
+                _typeUsing = InteractableItemType.None;
+                UsingMagnifier = false;
+                magnifier.Abandon();
+                //magnifier.gameObject.SetActive(false);
                 break;
         }
     }
