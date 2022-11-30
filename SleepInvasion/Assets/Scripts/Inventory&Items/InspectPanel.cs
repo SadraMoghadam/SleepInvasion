@@ -14,13 +14,14 @@ public class InspectPanel : MonoBehaviour
     private GameController _gameController;
 
 
-    private void Start()
+    private void Awake()
     {
         _gameController = GameController.Instance;
     }
 
     public void Setup(InteractableItemSO scriptableObject)
     {
+        _gameController.IsInInspectView = true;
         useButton.interactable = scriptableObject.usable;
         useButton.gameObject.SetActive(scriptableObject.usable);
         useButton.onClick.RemoveAllListeners();
@@ -47,6 +48,7 @@ public class InspectPanel : MonoBehaviour
             }
         }
 
+        _gameController.IsInInspectView = false;
         itemGameObject.SetActive(false);
         gameObject.SetActive(false);
     }

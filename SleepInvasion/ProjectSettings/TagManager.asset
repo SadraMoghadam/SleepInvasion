@@ -6,11 +6,18 @@ TagManager:
   tags:
   - InteractableItem
   - Door
+  - MayaStoneRing1
+  - MayaStoneRing2
+  - MayaStoneRing3
+  - MayaStoneRing4
+  - MayaStone
+  - UsableItem
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
   - 
+  - PostProcessing
   - Water
   - UI
   - NoPostProcessing

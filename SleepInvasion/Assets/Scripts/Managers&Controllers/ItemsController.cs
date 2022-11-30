@@ -8,6 +8,7 @@ public class ItemsController : MonoBehaviour
     [NonSerialized] public float TimeToAbandon = 2; 
     [SerializeField] private Shader shader;
     [SerializeField] private Magnifier magnifier;
+    public Diary diary;  
     
     private GameController _gameController;
     private InteractableItemType _typeUsing;
@@ -40,6 +41,10 @@ public class ItemsController : MonoBehaviour
                 UsingMagnifier = true;
                 magnifier.gameObject.SetActive(true);
                 magnifier.Use();
+            case InteractableItemType.Diary:
+                _typeUsing = InteractableItemType.Diary;
+                diary.gameObject.SetActive(true);
+                diary.Use();
                 break;
         }
     }
@@ -59,6 +64,9 @@ public class ItemsController : MonoBehaviour
                 UsingMagnifier = false;
                 magnifier.Abandon();
                 //magnifier.gameObject.SetActive(false);
+            case InteractableItemType.Diary:
+                _typeUsing = InteractableItemType.None;
+                diary.Abandon();
                 break;
         }
     }

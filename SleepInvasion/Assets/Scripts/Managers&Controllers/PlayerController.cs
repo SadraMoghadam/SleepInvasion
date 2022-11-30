@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
     {
         if(_gameController.playerControllerKeysDisabled)
             return;
+        
         if (Input.GetKeyDown(KeyCode.I))
         {
             if(!_gameController.InventoryController.inventoryPanel.gameObject.activeSelf)
@@ -68,8 +69,31 @@ public class PlayerController : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            //Diary Of Princess
+            CloseAllPanels();
+            _gameController.ItemsController.UseInventoryItem(InteractableItemType.Diary);
+        }    
+        if (_gameController.ItemsController.TypeUsing == InteractableItemType.Diary)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                _gameController.ItemsController.diary.NextPage();
+            }
+            else if (Input.GetKeyDown(KeyCode.Q))
+            {
+                _gameController.ItemsController.diary.PreviousPage();
+            }
         }
+
+        if (_gameController.IsInMayaStoneView)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                _gameController.MayaStone.ChangeView(false);
+            }
+        }
+        
+
+        
     }
 
     private void CloseAllPanels()

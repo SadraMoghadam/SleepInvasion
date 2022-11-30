@@ -8,7 +8,8 @@ public enum PlayerPrefsKeys
     PlayerTransform,
     Level,
     InventoryItems,
-    DestroyedItems
+    DestroyedItems,
+    MayaStoneRingsIndex
 }
 
 public struct SavedData
@@ -20,6 +21,11 @@ public struct SavedData
 public struct ItemsInfo
 {
     public List<ItemInfo> Items;
+}
+
+public struct IntList
+{
+    public List<int> intList;
 }
 
 public class PlayerPrefsManager : MonoBehaviour
@@ -169,5 +175,27 @@ public class PlayerPrefsManager : MonoBehaviour
         value.transform.eulerAngles = GetVector3(eulerAngles);
         // SetVector3(scale, value.localScale);
     }
-    
+
+    public static void SetIntList(PlayerPrefsKeys key, List<int> array)
+    {
+        List<int> intList = new List<int>();
+        string itemsString = "";
+        IntList list = new IntList
+        {
+            intList = array
+        };
+        itemsString = JsonUtility.ToJson(list);
+        SetString(key, itemsString);
+    }
+
+    public static List<int> GetIntList(PlayerPrefsKeys key)
+    {
+        if (PlayerPrefs.HasKey(key.ToString()))
+        {
+            string itemsString = GetString(key, "");
+            IntList intList = JsonUtility.FromJson<IntList>(itemsString);
+            return intList.intList;
+        }
+        return new List<int>();
+    }
 }

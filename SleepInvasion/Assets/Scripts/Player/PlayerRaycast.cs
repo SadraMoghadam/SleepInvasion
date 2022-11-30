@@ -12,6 +12,7 @@ public class PlayerRaycast : MonoBehaviour
     {
         InteractableItem,
         Door
+        MayaStone,
     }
     
     [SerializeField] private float keyDownCooldown = .1f;
@@ -41,7 +42,11 @@ public class PlayerRaycast : MonoBehaviour
     private void Update()
     {
         if(_gameController.keysDisabled)
+        if (_gameController.keysDisabled || _gameController.IsInInspectView)
+        {
+            _leftMouseClickImage.gameObject.SetActive(false);
             return;
+        }
         RaycastHit hit;
         if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, rayLength, layerMaskInteract))
         {
@@ -49,6 +54,11 @@ public class PlayerRaycast : MonoBehaviour
             // {
             //     return;
             // }
+            if (hit.collider.gameObject.CompareTag("UsableItem"))
+            {
+                _leftMouseClickImage.gameObject.SetActive(false);
+                return;
+            }
             _leftMouseClickImage.gameObject.SetActive(true);
             _keyDownTimer += Time.deltaTime;
             if (_keyDownTimer < keyDownCooldown)
@@ -68,11 +78,48 @@ public class PlayerRaycast : MonoBehaviour
                         {
                             item = hit.collider.gameObject.GetComponentInChildren<Item>();
                         }
+                        else
+                        {
+                            
+                        }
                         _gameController.PlayerController.ItemPick.PickUp(item);
                     } else if (hit.collider.CompareTag(InteractableObjects.Door.ToString()))
                     {
                         hit.collider.gameObject.GetComponent<DoorController>().Use();
                     }
+                    else if (hit.collider.CompareTag(InteractableObjects.MayaStone.ToString()))
+                    {
+                        MayaStone stone = hit.collider.gameObject.GetComponent<MayaStone>();
+                        if (stone == null)
+                        {
+                            stone = hit.collider.transform.parent.GetComponent<MayaStone>();
+                        }
+                        stone.ChangeView(true);
+                    }
+                    // else
+                    // {
+                    //     MayaStone stone = hit.collider.transform.parent.parent.GetComponent<MayaStone>();
+                    //     if (stone == null)
+                    //     {
+                    //         stone = hit.collider.transform.parent.parent.GetComponentInChildren<MayaStone>();
+                    //     }
+                    //     if (hit.collider.CompareTag(InteractableObjects.MayaStoneRing1.ToString()))
+                    //     {
+                    //         stone.OnRingClick(0);
+                    //     }   
+                    //     else if (hit.collider.CompareTag(InteractableObjects.MayaStoneRing2.ToString()))
+                    //     {
+                    //         stone.OnRingClick(1);
+                    //     }
+                    //     else if (hit.collider.CompareTag(InteractableObjects.MayaStoneRing3.ToString()))
+                    //     {
+                    //         stone.OnRingClick(2);
+                    //     }
+                    //     else if (hit.collider.CompareTag(InteractableObjects.MayaStoneRing4.ToString()))
+                    //     {
+                    //         stone.OnRingClick(3);
+                    //     }
+                    // }
                 }
                 catch (Exception e)
                 {
