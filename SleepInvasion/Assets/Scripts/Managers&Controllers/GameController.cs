@@ -7,11 +7,14 @@ public class GameController : MonoBehaviour
 {
     public PlayerController PlayerController;
     public MayaStone MayaStone;
+    public Lock Lock;
     [NonSerialized] public UIController UIController;
     [NonSerialized] public InventoryController InventoryController;
     [NonSerialized] public ItemsController ItemsController;
+    [NonSerialized] public PlayerInteraction PlayerInteraction;
     [NonSerialized] public bool IsInMayaStoneView = false;
     [NonSerialized] public bool IsInInspectView = false;
+    [NonSerialized] public bool IsInLockView = false;
     
     [HideInInspector] public bool keysDisabled;
     [HideInInspector] public bool playerControllerKeysDisabled;
@@ -35,6 +38,7 @@ public class GameController : MonoBehaviour
         UIController = GetComponent<UIController>();
         InventoryController = GetComponent<InventoryController>();
         ItemsController = GetComponent<ItemsController>();
+        PlayerInteraction = GetComponent<PlayerInteraction>();
         IsInMayaStoneView = false;
         IsInInspectView = false;
     }

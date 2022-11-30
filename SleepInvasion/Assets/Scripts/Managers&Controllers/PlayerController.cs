@@ -92,6 +92,13 @@ public class PlayerController : MonoBehaviour
             }
         }
         
+        else if (_gameController.IsInLockView)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                _gameController.Lock.ToggleView();
+            }
+        }
 
         
     }

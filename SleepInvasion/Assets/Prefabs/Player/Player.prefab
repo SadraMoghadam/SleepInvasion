@@ -798,6 +798,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Magnifier_Equipped
       objectReference: {fileID: 0}
+    - target: {fileID: 3363317694918557744, guid: 2c79f37c40fa9d449831d0868cba7536, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c79f37c40fa9d449831d0868cba7536, type: 3}
 --- !u!4 &2119518491104728708 stripped

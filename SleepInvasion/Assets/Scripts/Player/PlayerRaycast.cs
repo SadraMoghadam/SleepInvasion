@@ -13,6 +13,8 @@ public class PlayerRaycast : MonoBehaviour
         InteractableItem,
         Door,
         MayaStone,
+        Lock,
+        Candle
     }
     
     [SerializeField] private float keyDownCooldown = .1f;
@@ -41,7 +43,6 @@ public class PlayerRaycast : MonoBehaviour
 
     private void Update()
     {
-        if(_gameController.keysDisabled)
         if (_gameController.keysDisabled || _gameController.IsInInspectView)
         {
             _leftMouseClickImage.gameObject.SetActive(false);
@@ -78,12 +79,12 @@ public class PlayerRaycast : MonoBehaviour
                         {
                             item = hit.collider.gameObject.GetComponentInChildren<Item>();
                         }
-                        else
+                        if (item != null)
                         {
-                            
+                            _gameController.PlayerController.ItemPick.PickUp(item);   
                         }
-                        _gameController.PlayerController.ItemPick.PickUp(item);
-                    } else if (hit.collider.CompareTag(InteractableObjects.Door.ToString()))
+                    } 
+                    else if (hit.collider.CompareTag(InteractableObjects.Door.ToString()))
                     {
                         hit.collider.gameObject.GetComponent<DoorController>().Use();
                     }
@@ -95,6 +96,31 @@ public class PlayerRaycast : MonoBehaviour
                             stone = hit.collider.transform.parent.GetComponent<MayaStone>();
                         }
                         stone.ChangeView(true);
+                    }
+                    else if (hit.collider.CompareTag(InteractableObjects.Lock.ToString()))
+                    {
+                        Lock lockZoom = hit.collider.gameObject.GetComponent<Lock>();
+                        if (lockZoom == null)
+                        {
+                            lockZoom = hit.collider.transform.parent.GetComponent<Lock>();
+                        }
+                        if (lockZoom.lockControl.isOpened == false)
+                        {
+                            lockZoom.ToggleView();
+                        }
+                        if (lockZoom.lockControl.isOpened == true)
+                        {
+                            lockZoom.UseLockProcess();
+                        }
+                    }
+                    else if(hit.collider.CompareTag(InteractableObjects.Candle.ToString()))
+                    {
+                        LightSwitch lightSwitch = hit.collider.gameObject.GetComponent<LightSwitch>();
+                        if (lightSwitch == null)
+                        {
+                            lightSwitch = hit.collider.transform.parent.GetComponent<LightSwitch>();
+                        }
+                        lightSwitch.Interact();
                     }
                     // else
                     // {

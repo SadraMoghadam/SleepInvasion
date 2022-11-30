@@ -3,44 +3,44 @@ using UnityEngine;
 
 public class PlayerInteraction: MonoBehaviour {
 
-    public float interactionDistance;
+    // public float interactionDistance;
 
-    public TMPro.TextMeshProUGUI interactionText;
-    public GameObject interactionHoldGO; // the ui parent to disable when not interacting
+    // public TMPro.TextMeshProUGUI interactionText;
+    // public GameObject interactionHoldGO; 
     public UnityEngine.UI.Image interactionHoldProgress; // the progress bar for hold interaction type
 
-    Camera cam;
-
-    void Start() {
-        cam = Camera.main;
-    }
+    // Camera cam;
+    //
+    // void Start() {
+    //     cam = Camera.main;
+    // }
 
     // Update is called once per frame
-    void Update() {
-        Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2f, Screen.height / 2f, 0f));
-        RaycastHit hit;
-
-        bool successfulHit = false;
-
-        if (Physics.Raycast(ray, out hit, interactionDistance)) {
-            Interactable interactable = hit.collider.GetComponent < Interactable > ();
-
-            if (interactable != null) {
-                HandleInteraction(interactable);
-                interactionText.text = interactable.GetDescription();
-                successfulHit = true;
-
-                interactionHoldGO.SetActive(true);
-                //(interactable.interactionType == Interactable.InteractionType.Hold || interactable.interactionType == Interactable.InteractionType.Click);
-            }
-        }
-
-        // if we miss, hide the UI
-        if (!successfulHit) {
-            interactionText.text = "";
-            interactionHoldGO.SetActive(false);
-        }
-    }
+    // void Update() {
+    //     Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2f, Screen.height / 2f, 0f));
+    //     RaycastHit hit;
+    //
+    //     bool successfulHit = false;
+    //
+    //     if (Physics.Raycast(ray, out hit, interactionDistance)) {
+    //         Interactable interactable = hit.collider.GetComponent < Interactable > ();
+    //
+    //         if (interactable != null) {
+    //             HandleInteraction(interactable);
+    //             interactionText.text = interactable.GetDescription();
+    //             successfulHit = true;
+    //
+    //             interactionHoldGO.SetActive(true);
+    //             //(interactable.interactionType == Interactable.InteractionType.Hold || interactable.interactionType == Interactable.InteractionType.Click);
+    //         }
+    //     }
+    //
+    //     // if we miss, hide the UI
+    //     if (!successfulHit) {
+    //         interactionText.text = "";
+    //         interactionHoldGO.SetActive(false);
+    //     }
+    // }
 
     void HandleInteraction(Interactable interactable) {
         KeyCode key = KeyCode.E;

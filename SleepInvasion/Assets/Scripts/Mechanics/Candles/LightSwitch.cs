@@ -1,7 +1,8 @@
 // LIGHT SCRIPT
 using UnityEngine;
 
-public class LightSwitch: Interactable {
+public class LightSwitch: Interactable 
+{
 
     [SerializeField] private Light m_Light; // im using m_Light name since 'light' is already a variable used by unity
     [SerializeField] private GameObject obj;

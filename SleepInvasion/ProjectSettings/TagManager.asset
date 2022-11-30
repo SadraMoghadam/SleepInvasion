@@ -12,17 +12,18 @@ TagManager:
   - MayaStoneRing4
   - MayaStone
   - UsableItem
-  - UseableItems
+  - Lock
+  - Candle
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - PostProcessing
   - Water
-  - UI
   - UI
   - NoPostProcessing
   - InteractableLayer
+  - 
   - 
   - 
   - 
