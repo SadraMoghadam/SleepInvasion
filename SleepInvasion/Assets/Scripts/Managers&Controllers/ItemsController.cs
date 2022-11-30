@@ -41,6 +41,7 @@ public class ItemsController : MonoBehaviour
                 UsingMagnifier = true;
                 magnifier.gameObject.SetActive(true);
                 magnifier.Use();
+                break;
             case InteractableItemType.Diary:
                 _typeUsing = InteractableItemType.Diary;
                 diary.gameObject.SetActive(true);
@@ -64,6 +65,7 @@ public class ItemsController : MonoBehaviour
                 UsingMagnifier = false;
                 magnifier.Abandon();
                 //magnifier.gameObject.SetActive(false);
+                break;
             case InteractableItemType.Diary:
                 _typeUsing = InteractableItemType.None;
                 diary.Abandon();

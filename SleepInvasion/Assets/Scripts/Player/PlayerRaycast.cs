@@ -11,7 +11,7 @@ public class PlayerRaycast : MonoBehaviour
     private enum InteractableObjects
     {
         InteractableItem,
-        Door
+        Door,
         MayaStone,
     }
     
