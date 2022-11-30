@@ -9,6 +9,7 @@ public class InventoryController : MonoBehaviour
     public InventoryPanel inventoryPanel;
     public InspectPanel inspectPanel;
     [SerializeField] private GameObject interactableItemsContainer;
+    [SerializeField] private InteractableItemsSO interactableItemsSo;
     private GameManager _gameManager;
     private GameController _gameController;
 
@@ -89,6 +90,17 @@ public class InventoryController : MonoBehaviour
         {
             string itemsString = PlayerPrefsManager.GetString(PlayerPrefsKeys.InventoryItems, "");
             ItemsInfo interactableItemsInfo = JsonUtility.FromJson<ItemsInfo>(itemsString);
+            for (int i = 0; i < interactableItemsInfo.Items.Count; i++)
+            {
+                for (int j = 0; j < interactableItemsSo.interactableItems.Count; j++)
+                {
+                    if (interactableItemsInfo.Items[i].Name
+                        .Contains(interactableItemsSo.interactableItems[j].type.ToString()))
+                    {
+                        interactableItemsInfo.Items[i].ItemScriptableObject = interactableItemsSo.interactableItems[j];
+                    }
+                } 
+            }
             return interactableItemsInfo.Items;
         }
         return new List<ItemInfo>();
