@@ -42,20 +42,45 @@ public class PlayerPrefsManager : MonoBehaviour
         PlayerPrefs.DeleteAll();
     }
 
-    public static void SaveGame(Transform transform, int level = -1)
+    public static void SaveGame(int level = -100)
     {
-        SetTransform(PlayerPrefsKeys.PlayerTransform, transform);
-        if (level >= 0)
+        Vector3 playerPosition = GameController.Instance.GetPlayerTransform().position;
+        PlayerPrefs.SetFloat("PlayerPositionX", playerPosition.x);
+        PlayerPrefs.SetFloat("PlayerPositionY", playerPosition.y);
+        PlayerPrefs.SetFloat("PlayerPositionZ", playerPosition.z);
+        if(level != -100)
             SetInt(PlayerPrefsKeys.Level, level);
     }
-
+    
     public static SavedData LoadGame()
     {
         SavedData savedData = new SavedData();
-        GetTransform(PlayerPrefsKeys.PlayerTransform, savedData.PlayerTransform);
+        Vector3 playerPosition = GameController.Instance.GetPlayerTransform().position;
         savedData.Level = 0;
+        savedData.PlayerTransform = GameController.Instance.GetPlayerTransform();  
+        
+        float x = PlayerPrefs.GetFloat("PlayerPositionX", playerPosition.x);
+        float y = PlayerPrefs.GetFloat("PlayerPositionY", playerPosition.y);
+        float z = PlayerPrefs.GetFloat("PlayerPositionZ", playerPosition.z);
+        savedData.PlayerTransform.position = new Vector3(x, y, z);
         return savedData;
     }
+    
+    // public static void SaveGame(Transform transform, int level = -1)
+    // {
+    //     SetTransform(PlayerPrefsKeys.PlayerTransform, transform);
+    //     if (level >= 0)
+    //         SetInt(PlayerPrefsKeys.Level, level);
+    // }
+    //
+    // public static SavedData LoadGame()
+    // {
+    //     SavedData savedData = new SavedData();
+    //     savedData.PlayerTransform = new RectTransform();
+    //     GetTransform(PlayerPrefsKeys.PlayerTransform, savedData.PlayerTransform);
+    //     savedData.Level = 0;
+    //     return savedData;
+    // }
 
     public static void SetBool(PlayerPrefsKeys key, bool value)
     {

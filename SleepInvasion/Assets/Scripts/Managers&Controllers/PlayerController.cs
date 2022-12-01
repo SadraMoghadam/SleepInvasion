@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -52,7 +53,19 @@ public class PlayerController : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Escape))
         {
-            CloseAllPanels();
+            if(_gameController.InventoryController.inventoryPanel.gameObject.activeSelf || _gameController.InventoryController.inspectPanel.gameObject.activeSelf)
+                CloseAllPanels();
+            else
+            {
+                if(_gameController.UIController.pausePanel.gameObject.activeSelf)
+                {
+                    _gameController.UIController.HidePausePanel();
+                }
+                else
+                {
+                    _gameController.UIController.ShowPausePanel();
+                }
+            }
         }
         else if (Input.GetKeyDown(KeyCode.R))
         {

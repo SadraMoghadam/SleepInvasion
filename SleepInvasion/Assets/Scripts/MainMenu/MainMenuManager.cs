@@ -13,9 +13,9 @@ public class MainMenuManager : MonoBehaviour
     private void OnEnable()
     {
         _gameManager = GameManager.Instance;
-        if (!PlayerPrefs.HasKey(PlayerPrefsKeys.PlayerTransform.ToString()))
+        if (!PlayerPrefs.HasKey(PlayerPrefsKeys.InventoryItems.ToString()))
         {
-            resumeButton.gameObject.SetActive(false);
+            resumeButton.interactable = false;
         }
         resumeButton.onClick.AddListener(OnResumeClick);
         newGameButton.onClick.AddListener(OnNewGameClick);

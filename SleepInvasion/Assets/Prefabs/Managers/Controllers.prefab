@@ -68,6 +68,7 @@ MonoBehaviour:
   leftMouseClickImage: {fileID: 0}
   keyDownSprite: {fileID: 21300000, guid: b5c754fdf461893499f94be308e2a86a, type: 3}
   keyUpSprite: {fileID: 21300000, guid: 10b9b7616db9c1a47a39ab53bfc42b94, type: 3}
+  pausePanel: {fileID: 0}
 --- !u!114 &6917092360357706116
 MonoBehaviour:
   m_ObjectHideFlags: 0

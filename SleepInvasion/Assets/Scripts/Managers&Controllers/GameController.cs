@@ -15,6 +15,7 @@ public class GameController : MonoBehaviour
     [NonSerialized] public bool IsInMayaStoneView = false;
     [NonSerialized] public bool IsInInspectView = false;
     [NonSerialized] public bool IsInLockView = false;
+    [NonSerialized] public Transform PlayerTransform;
     
     [HideInInspector] public bool keysDisabled;
     [HideInInspector] public bool playerControllerKeysDisabled;
@@ -41,8 +42,17 @@ public class GameController : MonoBehaviour
         PlayerInteraction = GetComponent<PlayerInteraction>();
         IsInMayaStoneView = false;
         IsInInspectView = false;
+        SavedData savedData = PlayerPrefsManager.LoadGame();
+        PlayerController.transform.position = savedData.PlayerTransform.position;
+        PlayerController.transform.rotation = savedData.PlayerTransform.rotation;
     }
-
+    
+    public Transform GetPlayerTransform()
+    {
+        PlayerTransform = PlayerController.transform;
+        return PlayerTransform;
+    }
+    
     public void HideCursor()
     {
         Cursor.visible = false;
@@ -86,5 +96,6 @@ public class GameController : MonoBehaviour
         // Time.timeScale = 1;
         HideCursor();
     }
+    
     
 }
