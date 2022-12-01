@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
         var slider = FindObjectOfType<Slider>();
         do
         {
-            await Task.Delay(100);
+            await Task.Delay(500);
             slider.value = scene.progress;
         } while (scene.progress < 0.9f);
 
