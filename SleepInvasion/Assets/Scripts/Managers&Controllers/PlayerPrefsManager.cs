@@ -5,6 +5,7 @@ using UnityEngine;
 
 public enum PlayerPrefsKeys
 {
+    GameStarted,
     PlayerTransform,
     Level,
     InventoryItems,
@@ -93,6 +94,10 @@ public class PlayerPrefsManager : MonoBehaviour
         if (PlayerPrefs.HasKey(key.ToString()))
         {
             value = PlayerPrefs.GetInt(key.ToString());
+        }
+        else
+        {
+            PlayerPrefs.SetInt(key.ToString(), 0);
         }
 
         return value == 1 ? true : false;
