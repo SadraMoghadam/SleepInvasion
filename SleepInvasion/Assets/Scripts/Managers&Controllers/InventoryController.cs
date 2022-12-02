@@ -185,6 +185,23 @@ public class InventoryController : MonoBehaviour
         return count;
     }
 
+    public bool IsItemInInventory(InteractableItemType itemType)
+    {
+        List<ItemInfo> inventoryItems = GetAllInventoryData();
+
+        return inventoryItems.Any(item => item.ItemScriptableObject.type == itemType);
+    }
+
+    public void DeleteInventoryData(InteractableItemType itemType)
+    {
+        List<ItemInfo> inventoryItems = GetAllInventoryData();
+        foreach (var item in inventoryItems.Where(item => item.ItemScriptableObject.type == itemType))
+        {
+            DeleteInventoryData(item.Id);
+            break;
+        }
+    }
+
     public void DeleteInventoryData(int id)
     {
         List<ItemInfo> inventoryItems = new List<ItemInfo>();
