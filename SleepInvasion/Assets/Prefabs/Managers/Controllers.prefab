@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6917092360357706119}
   - component: {fileID: 6917092360357706118}
   - component: {fileID: 1542037969}
+  - component: {fileID: 8428356718263712460}
   m_Layer: 0
   m_Name: Controllers
   m_TagString: Untagged
@@ -52,6 +53,7 @@ MonoBehaviour:
   PlayerController: {fileID: 0}
   MayaStone: {fileID: 0}
   Lock: {fileID: 0}
+  DataReaders: {fileID: 0}
   keysDisabled: 0
   playerControllerKeysDisabled: 0
 --- !u!114 &6917092360357706117
@@ -127,3 +129,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 0.5
+--- !u!114 &8428356718263712460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6917092360357706112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6474ad8f7f20164dbab42ef82c67d19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hintPanel: {fileID: 0}
+  duration: 1
+  hintShowDuration: 3
