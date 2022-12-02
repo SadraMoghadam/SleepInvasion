@@ -12,8 +12,9 @@ public class MainMenuManager : MonoBehaviour
     private GameManager _gameManager;
     private void OnEnable()
     {
+        Time.timeScale = 1;
         _gameManager = GameManager.Instance;
-        if (!PlayerPrefs.HasKey(PlayerPrefsKeys.InventoryItems.ToString()))
+        if (!PlayerPrefs.HasKey("PlayerPositionX"))
         {
             resumeButton.interactable = false;
         }

@@ -46,4 +46,14 @@ public class Lock : MonoBehaviour {
             _gameController.ShowCursor(); //show cursor when using lock
         }
     }
+
+    public void OnUnlock()
+    {
+        FirstPersonCamera.enabled = true;
+        OverheadCamera.gameObject.SetActive(false);
+        OverheadCamera.enabled = false;
+        GetComponent<Collider>().enabled = true;
+        _gameController.IsInLockView = false;
+        _gameController.HideCursor();
+    }
 }   

@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &136505414
 Transform:
   m_ObjectHideFlags: 0
@@ -190,7 +190,7 @@ CharacterController:
   m_Height: 1.6
   m_Radius: 0.1
   m_SlopeLimit: 45
-  m_StepOffset: 0.7
+  m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
@@ -635,6 +635,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2119518492735826526}
     m_Modifications:
+    - target: {fileID: 1217034955359473927, guid: 7ed6f5d740bb8ec4181b89686c33a82d, type: 3}
+      propertyPath: noPostCam
+      value: 
+      objectReference: {fileID: 136505416}
     - target: {fileID: 1617847806469342761, guid: 7ed6f5d740bb8ec4181b89686c33a82d, type: 3}
       propertyPath: m_RootOrder
       value: 1

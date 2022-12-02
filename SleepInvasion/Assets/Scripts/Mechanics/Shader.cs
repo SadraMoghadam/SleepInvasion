@@ -5,12 +5,14 @@ using UnityEngine;
 
 public class Shader : MonoBehaviour, IItemUsage 
 {
+    [SerializeField] private Camera noPostCam; 
     private Animator _animator;
     private static readonly int Use1 = Animator.StringToHash("Use");
 
     private void OnEnable()
     {
         _animator = GetComponent<Animator>();
+        noPostCam.gameObject.SetActive(true);
     }
 
     public void Use()
@@ -29,6 +31,7 @@ public class Shader : MonoBehaviour, IItemUsage
     {
         yield return new WaitForSeconds(3f);
         gameObject.SetActive(false);
+        noPostCam.gameObject.SetActive(false);
     }
     
 }

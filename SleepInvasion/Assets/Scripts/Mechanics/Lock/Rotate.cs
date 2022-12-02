@@ -29,10 +29,10 @@ public class Rotate : MonoBehaviour
     {
         coroutineAllowed = false;
 
-        for (int i = 0; i <= 11; i++)
+        for (int i = 0; i <= 2; i++)
         {
-            transform.Rotate(0f, 3f, 0f);
-            yield return new WaitForSeconds(0f);
+            transform.Rotate(0f, 12f, 0f);
+            yield return null;
         }
 
         coroutineAllowed = true;
