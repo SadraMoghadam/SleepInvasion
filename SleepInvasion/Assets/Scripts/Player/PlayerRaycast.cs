@@ -86,7 +86,12 @@ public class PlayerRaycast : MonoBehaviour
                     } 
                     else if (hit.collider.CompareTag(InteractableObjects.Door.ToString()))
                     {
-                        hit.collider.gameObject.GetComponent<DoorController>().Use();
+                        DoorController door = hit.collider.gameObject.GetComponent<DoorController>();
+                        if (door == null)
+                        {
+                            door = hit.collider.transform.parent.GetComponent<DoorController>();
+                        }
+                        door.Use();
                     }
                     else if (hit.collider.CompareTag(InteractableObjects.MayaStone.ToString()))
                     {
@@ -146,6 +151,7 @@ public class PlayerRaycast : MonoBehaviour
                     //         stone.OnRingClick(3);
                     //     }
                     // }
+                    
                 }
                 catch (Exception e)
                 {
@@ -153,6 +159,42 @@ public class PlayerRaycast : MonoBehaviour
                     throw;
                 }
                 _keyDownTimer = 0;
+            }
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                try
+                {
+                    ItemPlace itemPlace = hit.collider.gameObject.GetComponent<ItemPlace>();
+                    if (itemPlace == null)
+                    {
+                        itemPlace = hit.collider.transform.parent.GetComponent<ItemPlace>();
+                    }
+                    if (itemPlace == null)
+                    {
+                        return;
+                    }
+
+                    if (!itemPlace.Empty)
+                    {
+                        // TODO hint: there already is an item placed here
+                        return;
+                    }
+                    InteractableItemSO item = itemPlace.item.itemInfo.ItemScriptableObject;
+                    if (!_gameController.InventoryController.IsItemInInventory(item.type))
+                    {
+                        // TODO hint: the required object is not in the inventory
+                        return;
+                    }
+                    Instantiate(item.prefab, itemPlace.placementPosition.position, itemPlace.placementPosition.rotation);
+                    itemPlace.Empty = false;
+                    _gameController.InventoryController.DeleteInventoryData(item.type);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    throw;
+                }
             }
         }
         else
