@@ -1,9 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Diary : MonoBehaviour, IItemUsage
 {
+    [SerializeField] private int numberOfPages = 6;
+    [SerializeField] private GameObject leftPage;
+    [SerializeField] private GameObject rightPage;
+    [SerializeField] private TMP_Text leftText;
+    [SerializeField] private TMP_Text leftNum;
+    [SerializeField] private TMP_Text rightText;
+    [SerializeField] private TMP_Text rightNum;
+    private int _currentLeftPage = 1;
     private Animator _animator;
     private static readonly int Open = Animator.StringToHash("Open");
     private static readonly int Close = Animator.StringToHash("Close");
@@ -14,6 +23,7 @@ public class Diary : MonoBehaviour, IItemUsage
 
     private void OnEnable()
     {
+        _currentLeftPage = PlayerPrefsManager.GetInt(PlayerPrefsKeys.LastDiaryPage, 1);
         _animator = GetComponent<Animator>();
         _isChangingPage = false;
     }
@@ -26,12 +36,12 @@ public class Diary : MonoBehaviour, IItemUsage
 
     public void NextPage()
     {
-        StartCoroutine(NextPageProcess());
+        NextPageProcess();
     }
     
     public void PreviousPage()
     { 
-        StartCoroutine(PreviousPageProcess());
+        PreviousPageProcess();
     }
 
     public void Abandon()
@@ -46,22 +56,48 @@ public class Diary : MonoBehaviour, IItemUsage
         gameObject.SetActive(false);
     }
     
-    public IEnumerator NextPageProcess()
+    public void NextPageProcess()
     {
+        if (_currentLeftPage + 2 > numberOfPages)
+        {
+            return;
+        }
+        HidePagesContent();
         _animator.SetTrigger(Next);
+        _currentLeftPage += 2;
+        PlayerPrefsManager.SetInt(PlayerPrefsKeys.LastDiaryPage, _currentLeftPage);
         // _animator.Play("NextPage");
         // _animator.SetBool(Next, true);
-        yield return null;
         // _animator.SetBool(Next, false);
     }
     
-    public IEnumerator PreviousPageProcess()
+    public void PreviousPageProcess()
     {
+        if (_currentLeftPage == 1)
+        {
+            return;
+        }
         _animator.SetTrigger(Previous);
+        _currentLeftPage -= 2;
+        PlayerPrefsManager.SetInt(PlayerPrefsKeys.LastDiaryPage, _currentLeftPage);
         // _animator.Play("PreviousPage");
         // _animator.SetBool(Previous, true);
-        yield return null;
         // yield return new WaitForSeconds(1f);
         // _animator.SetBool(Previous, false);
     }
+    
+    public void DisplayPagesContent()
+    {
+        leftPage.SetActive(true);
+        rightPage.SetActive(true);
+        leftNum.text = _currentLeftPage.ToString() + "/" + numberOfPages.ToString();
+        rightNum.text = (_currentLeftPage + 1).ToString() + "/" + numberOfPages.ToString();
+    }
+
+    public void HidePagesContent()
+    {
+        leftPage.SetActive(false);
+        rightPage.SetActive(false);
+    }
+    
 }

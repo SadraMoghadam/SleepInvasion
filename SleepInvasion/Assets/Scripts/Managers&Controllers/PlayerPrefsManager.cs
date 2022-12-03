@@ -10,7 +10,8 @@ public enum PlayerPrefsKeys
     Level,
     InventoryItems,
     DestroyedItems,
-    MayaStoneRingsIndex
+    MayaStoneRingsIndex,
+    LastDiaryPage
 }
 
 public struct SavedData
