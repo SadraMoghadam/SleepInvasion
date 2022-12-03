@@ -20,7 +20,7 @@ public class Diary : MonoBehaviour, IItemUsage
 
     public void Use()
     {
-        // _animator.SetBool(Open, true);
+        _animator.SetTrigger(Open);
         gameObject.SetActive(true);
     }
 
@@ -48,17 +48,20 @@ public class Diary : MonoBehaviour, IItemUsage
     
     public IEnumerator NextPageProcess()
     {
+        _animator.SetTrigger(Next);
         // _animator.Play("NextPage");
-        _animator.SetBool(Next, true);
-        yield return new WaitForSeconds(1f);
-        _animator.SetBool(Next, false);
+        // _animator.SetBool(Next, true);
+        yield return null;
+        // _animator.SetBool(Next, false);
     }
     
     public IEnumerator PreviousPageProcess()
     {
+        _animator.SetTrigger(Previous);
         // _animator.Play("PreviousPage");
-        _animator.SetBool(Previous, true);
-        yield return new WaitForSeconds(1f);
-        _animator.SetBool(Previous, false);
+        // _animator.SetBool(Previous, true);
+        yield return null;
+        // yield return new WaitForSeconds(1f);
+        // _animator.SetBool(Previous, false);
     }
 }
