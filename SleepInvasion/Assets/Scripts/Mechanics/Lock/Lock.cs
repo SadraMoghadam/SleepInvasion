@@ -8,7 +8,7 @@ using UnityEngine;
 public class Lock : MonoBehaviour {
     public LockControl lockControl;
     [SerializeField] private Camera FirstPersonCamera;
-    [SerializeField] private Camera OverheadCamera;  
+    [SerializeField] private Camera OverheadCamera; 
     private GameController _gameController;
 
     void Awake(){
@@ -19,6 +19,11 @@ public class Lock : MonoBehaviour {
         FirstPersonCamera.enabled = true;
         OverheadCamera.enabled = false;
         _gameController = GameController.Instance;
+        
+        if (PlayerPrefsManager.GetBool(PlayerPrefsKeys.ChestUnlocked, false))
+        {
+            GetComponent<Collider>().enabled = false;
+        }
     }
 
     public void UseLockProcess()
@@ -52,8 +57,9 @@ public class Lock : MonoBehaviour {
         FirstPersonCamera.enabled = true;
         OverheadCamera.gameObject.SetActive(false);
         OverheadCamera.enabled = false;
-        GetComponent<Collider>().enabled = true;
+        GetComponent<Collider>().enabled = false;
         _gameController.IsInLockView = false;
         _gameController.HideCursor();
+        PlayerPrefsManager.SetBool(PlayerPrefsKeys.ChestUnlocked, true);
     }
 }   

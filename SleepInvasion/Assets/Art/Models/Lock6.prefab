@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5770405651331924790}
   - component: {fileID: 6732423143620044895}
   - component: {fileID: 6198893209175234444}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Shackle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 1987482879655901910}
   - component: {fileID: 2628338179942239898}
   - component: {fileID: 1228413803145798373}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WheelOne
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 7664865492840726141}
   - component: {fileID: 7404222998738819591}
   - component: {fileID: 2288781167705534347}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WheelTwo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -331,7 +331,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5349817292347185701}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Look
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -364,9 +364,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4796542638766029204}
   - component: {fileID: 881381873}
-  m_Layer: 0
+  - component: {fileID: 881381876}
+  - component: {fileID: 4993558826992185146}
+  m_Layer: 7
   m_Name: Lock6
-  m_TagString: Untagged
+  m_TagString: Lock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -415,6 +417,34 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &881381876
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3492098079754266364}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.28, y: 5.61, z: 2.43}
+  m_Center: {x: 0, y: 0.7978384, z: 0.07994777}
+--- !u!114 &4993558826992185146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3492098079754266364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53b9b622b4385334ba84711ea02c8ad3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockControl: {fileID: 6198893209175234444}
+  FirstPersonCamera: {fileID: 0}
+  OverheadCamera: {fileID: 3490894737258148296}
 --- !u!1 &3645894302480020614
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,15 +455,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1982845000652854242}
   - component: {fileID: 3490894737258148296}
-  - component: {fileID: 2479633807585896419}
-  - component: {fileID: 6040927882432710500}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Camera_Lock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1982845000652854242
 Transform:
   m_ObjectHideFlags: 0
@@ -492,29 +520,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &2479633807585896419
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3645894302480020614}
-  m_Enabled: 0
---- !u!114 &6040927882432710500
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3645894302480020614}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53b9b622b4385334ba84711ea02c8ad3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Shackle: {fileID: 1375653409767724431}
-  FirstPersonCamera: {fileID: 0}
-  OverheadCamera: {fileID: 3490894737258148296}
 --- !u!1 &6412516915135292775
 GameObject:
   m_ObjectHideFlags: 0
@@ -528,7 +533,7 @@ GameObject:
   - component: {fileID: 8454322280306401034}
   - component: {fileID: 6198893209678096840}
   - component: {fileID: 6198893209678096843}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WheelThree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -640,7 +645,7 @@ GameObject:
   - component: {fileID: 8371181120264252589}
   - component: {fileID: 6198893209646129142}
   - component: {fileID: 6198893209646129129}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WheelFive
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -752,7 +757,7 @@ GameObject:
   - component: {fileID: 6666099141515280164}
   - component: {fileID: 6198893208393063856}
   - component: {fileID: 6198893208393063859}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WheelFour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -862,7 +867,7 @@ GameObject:
   - component: {fileID: 2146178207466636244}
   - component: {fileID: 596154926385940270}
   - component: {fileID: 1328457104724210427}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LockBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -950,7 +955,7 @@ GameObject:
   - component: {fileID: 626052639792278043}
   - component: {fileID: 6198893209436971945}
   - component: {fileID: 6198893209436971944}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WheelSix
   m_TagString: Untagged
   m_Icon: {fileID: 0}

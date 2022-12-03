@@ -17,6 +17,10 @@ public class OpenChest : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        if (PlayerPrefsManager.GetBool(PlayerPrefsKeys.ChestUnlocked, false))
+        {
+            animator.Play("ChestOpened");
+        }
     }
 
     // Update is called once per frame

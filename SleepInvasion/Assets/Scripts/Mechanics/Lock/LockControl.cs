@@ -19,6 +19,11 @@ public class LockControl : MonoBehaviour
         correctCombination = new int[] {1,0,0,0,0,3};
         isOpened = false;
         Rotate.Rotated += CheckResults;
+        if (PlayerPrefsManager.GetBool(PlayerPrefsKeys.ChestUnlocked, false))
+        {
+            myAnimator.Play("Unlocked");
+            
+        }
     }
 
     private void CheckResults(string wheelName, int number)

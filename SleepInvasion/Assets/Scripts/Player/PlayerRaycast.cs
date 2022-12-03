@@ -55,7 +55,7 @@ public class PlayerRaycast : MonoBehaviour
             // {
             //     return;
             // }
-            if (hit.collider.gameObject.CompareTag("UsableItem"))
+            if (hit.collider.gameObject.CompareTag("UsableItem") || hit.collider.gameObject.CompareTag("Chest"))
             {
                 _leftMouseClickImage.gameObject.SetActive(false);
                 return;
