@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6917092360357706118}
   - component: {fileID: 1542037969}
   - component: {fileID: 8428356718263712460}
+  - component: {fileID: 558863278}
   m_Layer: 0
   m_Name: Controllers
   m_TagString: Untagged
@@ -145,3 +146,16 @@ MonoBehaviour:
   hintPanel: {fileID: 0}
   duration: 1
   hintShowDuration: 3
+--- !u!114 &558863278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6917092360357706112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b56accab56edc0f4d8931e9c30b4a2d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelsDataContainer: {fileID: 0}

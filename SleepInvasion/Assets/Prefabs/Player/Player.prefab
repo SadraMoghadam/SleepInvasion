@@ -190,7 +190,7 @@ CharacterController:
   m_Height: 1.6
   m_Radius: 0.1
   m_SlopeLimit: 45
-  m_StepOffset: 0.3
+  m_StepOffset: 0.5
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
@@ -219,12 +219,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 2119518492613409771}
-  movementSpeed: 12
+  movementSpeed: 6
   groundCheck: {fileID: 2119518492500229702}
-  groundDistance: 0.2
+  groundDistance: 2.06
   groundMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0
 --- !u!114 &2119518492613409749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -366,6 +366,7 @@ GameObject:
   - component: {fileID: 2119518492735826520}
   - component: {fileID: 2119518492735826527}
   - component: {fileID: 964170222}
+  - component: {fileID: 1185775261}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -518,6 +519,19 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!65 &1185775261
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119518492735826525}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1460370115909182150
 PrefabInstance:
   m_ObjectHideFlags: 0

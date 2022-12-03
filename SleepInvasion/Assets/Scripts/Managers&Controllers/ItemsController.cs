@@ -10,6 +10,7 @@ public class ItemsController : MonoBehaviour
     [SerializeField] private Magnifier magnifier;
     public Diary diary;  
     [SerializeField] private GameObject lasersParentGO;
+    public LayerMask inspectLayer;
     
     private GameController _gameController;
     private InteractableItemType _typeUsing;

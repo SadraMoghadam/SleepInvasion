@@ -7,18 +7,23 @@ using UnityEngine.EventSystems;
 public class Inspect : MonoBehaviour
 {
     [SerializeField] private float rotationSpeed = 20;
+    [SerializeField] private LayerMask layer;
 
-    
-    private void Update()
+    private void Start()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            RaycastHit hit;
-            if (!Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
-                return;
-            Debug.Log(hit.collider.gameObject.tag +  "////////" + hit.collider.gameObject.name);
-        }
+        layer = GameController.Instance.ItemsController.inspectLayer;
     }
+
+    // private void Update()
+    // {
+    //     if (Input.GetKeyDown(KeyCode.Mouse0))
+    //     {
+    //         RaycastHit hit;
+    //         if (!Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, layer))
+    //             return;
+    //         Debug.Log(hit.collider.gameObject.tag +  "////////" + hit.collider.gameObject.name);
+    //     }
+    // }
     
     private void OnMouseDrag()
     {
