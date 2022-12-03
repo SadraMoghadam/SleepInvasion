@@ -20,7 +20,7 @@ public class Diary : MonoBehaviour, IItemUsage
 
     public void Use()
     {
-        _animator.SetBool(Open, true);
+        // _animator.SetBool(Open, true);
         gameObject.SetActive(true);
     }
 
@@ -36,7 +36,7 @@ public class Diary : MonoBehaviour, IItemUsage
 
     public void Abandon()
     {
-        _animator.SetBool(Close, false);
+        _animator.SetBool(Close, true);
         StartCoroutine(DisableDiary());
     }
 
@@ -48,6 +48,7 @@ public class Diary : MonoBehaviour, IItemUsage
     
     public IEnumerator NextPageProcess()
     {
+        // _animator.Play("NextPage");
         _animator.SetBool(Next, true);
         yield return new WaitForSeconds(1f);
         _animator.SetBool(Next, false);
@@ -55,6 +56,7 @@ public class Diary : MonoBehaviour, IItemUsage
     
     public IEnumerator PreviousPageProcess()
     {
+        // _animator.Play("PreviousPage");
         _animator.SetBool(Previous, true);
         yield return new WaitForSeconds(1f);
         _animator.SetBool(Previous, false);

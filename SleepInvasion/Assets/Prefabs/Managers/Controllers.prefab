@@ -103,6 +103,7 @@ MonoBehaviour:
   shader: {fileID: 0}
   magnifier: {fileID: 0}
   diary: {fileID: 0}
+  lasersParentGO: {fileID: 0}
 --- !u!114 &6917092360357706118
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Diary
   m_EditorClassIdentifier: 
   name: Diary
-  prefab: {fileID: 7224631392968037753, guid: 73bfb1147d4f1194985e62930888a2a9, type: 3}
+  prefab: {fileID: 8310917694994749462, guid: 5fe03636622b0674cbb0a4ef9b0b71c4, type: 3}
   type: 4
   effect: 0
   sprite: {fileID: 21300000, guid: af85f656fad9e83408dddc9e6dc7b1a4, type: 3}
