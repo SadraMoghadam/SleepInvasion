@@ -17,6 +17,7 @@ public class GameController : MonoBehaviour
     [NonSerialized] public PlayerInteraction PlayerInteraction;
     [NonSerialized] public HintController HintController;
     [NonSerialized] public HintDataReader HintDataReader;
+    [NonSerialized] public LevelsController LevelsController;
     [NonSerialized] public bool IsInMayaStoneView = false;
     [NonSerialized] public bool IsInInspectView = false;
     [NonSerialized] public bool IsInLockView = false;
@@ -47,6 +48,7 @@ public class GameController : MonoBehaviour
         PlayerInteraction = GetComponent<PlayerInteraction>();
         HintController = GetComponent<HintController>();
         HintDataReader = DataReaders.GetComponent<HintDataReader>();
+        LevelsController = GetComponent<LevelsController>();
         
         IsInMayaStoneView = false;
         IsInInspectView = false;

@@ -1,0 +1,66 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
+
+public class LevelsController : MonoBehaviour
+{
+    public LevelsDataContainer levelsDataContainer;
+    private GameObject _levelsContainer;
+    private List<GameObject> _levelsGO;
+    private List<Level> _levels;
+    private GameManager _gameManager;
+    private Level _currentLevel;
+
+    private void Awake()
+    {
+        _gameManager = GameManager.Instance;
+        _levelsGO = new List<GameObject>();
+        _levelsContainer = levelsDataContainer.gameObject;
+        GetLevels();
+        _currentLevel = GetCurrentLevel();
+        SetLevelActive(_currentLevel.LevelNum);
+    }
+
+    private void Start()
+    {
+        _currentLevel.Setup();
+    }
+
+    private void Update()
+    {
+        _currentLevel.Process();
+    }
+
+    private void GetLevels()
+    {
+        _levels = _levelsContainer.GetComponentsInChildren<Level>().ToList();
+        for (int i = 0; i < _levels.Count; i++)
+        {
+            _levelsGO.Add(_levels[i].Self);
+        }
+    }
+    
+    public void SetLevelActive(int level)
+    {
+        for (int i = 0; i < _levels.Count; i++)
+        {
+            if (i == level)
+            {
+                _levelsGO[i].SetActive(true);
+            }
+            else
+            {
+                _levelsGO[i].SetActive(false);
+            }
+        }
+    }
+
+    public Level GetCurrentLevel()
+    {
+        int currentLevel = PlayerPrefsManager.GetInt(PlayerPrefsKeys.Level, -1) + 1;
+        return _levels[currentLevel];
+    }
+    
+}
