@@ -26,13 +26,13 @@ public class MainMenuManager : MonoBehaviour
 
     private void OnResumeClick()
     {
-        _gameManager.LoadScene("Game");
+        _gameManager.LoadScene("MainGame");
     }
     
     private void OnNewGameClick()
     {
         PlayerPrefsManager.DeletePlayerPrefs();
-        _gameManager.LoadScene("Game");
+        _gameManager.LoadScene("MainGame");
     }
     
     private void OnQuitClick()

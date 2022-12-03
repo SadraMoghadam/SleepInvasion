@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
         // if(_gameController.keysDisabled)
         //     return;
         CheckPlayerInput();
+        CheckRespawn();
     }
 
     private void CheckPlayerInput()
@@ -135,6 +136,16 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(_gameController.ItemsController.TimeToAbandon);
         _gameController.EnablePlayerControllerKeys();
         _gameController.InventoryController.SetupInventoryPanel();   
+    }
+
+    private void CheckRespawn()
+    {
+        if (transform.position.y < -20)
+        {
+            SavedData savedData = PlayerPrefsManager.LoadGame();
+            transform.position = savedData.PlayerTransform.position;
+            transform.rotation = savedData.PlayerTransform.rotation;
+        }
     }
 
 }

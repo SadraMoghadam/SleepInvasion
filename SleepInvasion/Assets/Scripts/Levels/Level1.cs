@@ -26,6 +26,7 @@ public class Level1 : Level
         _level1Data = _gameController.LevelsController.levelsDataContainer.level1Data;
         _gameController.PlayerController.transform.position = _level1Data.spawnTransform.position;
         _gameController.PlayerController.transform.rotation = _level1Data.spawnTransform.rotation;
+        PlayerPrefsManager.SaveGame();
     }
 
     public override void Process()
