@@ -1,0 +1,12 @@
+id,Hint,Condition,Name
+0,Welcome to our game. Hope you enjoy the mechanics.,Begin of the game,
+1,Press left mouse to pick up/ interact with items.,Raycast hits object,
+2,The password must be somewhere.,Interact with the lock,
+3,Press right mouse to zoom in and 'E' to use magnifier.,Pull up magnifier in inventory,
+4,You don't have any item that can be placed here.,Placing items Problem #1,
+5,An item is already here.,Placing items Problem #2,
+6,The door doesn't move at all. (another way to say 'the door is locked',Interact with a locked door,
+7,It's too small to fit here maybe I can somehow enlarge the needle?,Put small needle on sundial,
+8,The figure seems twisted don't know if I can restore them.,See the figure of cylinder puzzle.,
+9,,,
+10,,,
