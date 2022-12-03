@@ -9,6 +9,7 @@ public class ItemsController : MonoBehaviour
     [SerializeField] private Shader shader;
     [SerializeField] private Magnifier magnifier;
     public Diary diary;  
+    [SerializeField] private GameObject lasersParentGO;
     
     private GameController _gameController;
     private InteractableItemType _typeUsing;
@@ -24,6 +25,8 @@ public class ItemsController : MonoBehaviour
         _gameController = GameController.Instance;
         // _typeUsing = InteractableItemType.None;
         UsingMagnifier = false;
+        lasersParentGO.SetActive(false);
+        
     }
 
     public void UseInventoryItem(InteractableItemType type)
@@ -72,4 +75,11 @@ public class ItemsController : MonoBehaviour
                 break;
         }
     }
+
+    public void ChangeLaserVisibility()
+    {
+        
+        lasersParentGO.SetActive(!lasersParentGO.activeSelf);
+    }
+    
 }
