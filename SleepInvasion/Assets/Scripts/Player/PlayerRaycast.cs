@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Mechanics;
 using UnityEngine;
 using UnityEngine.UIElements;
 using Image = UnityEngine.UI.Image;
@@ -81,15 +82,20 @@ public class PlayerRaycast : MonoBehaviour
                         }
                         if (item != null)
                         {
-                            _gameController.PlayerController.ItemPick.PickUp(item);   
+                            _gameController.PlayerController.ItemPick.PickUp(item);
+                            var itemPlace = hit.collider.GetComponentInParent<ItemPlace>();
+                            if (itemPlace != null)
+                            {
+                                itemPlace.SetEmpty();
+                            }
                         }
                     } 
                     else if (hit.collider.CompareTag(InteractableObjects.Door.ToString()))
                     {
-                        DoorController door = hit.collider.gameObject.GetComponent<DoorController>();
+                        IDoorController door = hit.collider.gameObject.GetComponent<IDoorController>();
                         if (door == null)
                         {
-                            door = hit.collider.transform.parent.GetComponent<DoorController>();
+                            door = hit.collider.transform.parent.GetComponent<IDoorController>();
                         }
                         door.Use();
                     }
@@ -170,25 +176,13 @@ public class PlayerRaycast : MonoBehaviour
                     {
                         itemPlace = hit.collider.transform.parent.GetComponent<ItemPlace>();
                     }
+
                     if (itemPlace == null)
                     {
                         return;
                     }
 
-                    if (!itemPlace.Empty)
-                    {
-                        // TODO hint: there already is an item placed here
-                        return;
-                    }
-                    InteractableItemSO item = itemPlace.item.itemInfo.ItemScriptableObject;
-                    if (!_gameController.InventoryController.IsItemInInventory(item.type))
-                    {
-                        // TODO hint: the required object is not in the inventory
-                        return;
-                    }
-                    Instantiate(item.prefab, itemPlace.placementPosition.position, itemPlace.placementPosition.rotation);
-                    itemPlace.Empty = false;
-                    _gameController.InventoryController.DeleteInventoryData(item.type);
+                    itemPlace.PlaceItem();
                 }
                 catch (Exception e)
                 {

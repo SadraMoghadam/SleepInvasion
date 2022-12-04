@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Needle
   m_EditorClassIdentifier: 
   name: Needle
-  prefab: {fileID: 3091443739784463378, guid: 9e153f8f48145ad4c86a7971fa7531b1, type: 3}
+  prefab: {fileID: 7886979408523428197, guid: 9e153f8f48145ad4c86a7971fa7531b1, type: 3}
   type: 11
   effect: 0
   sprite: {fileID: 21300000, guid: a3181a870a8b20f4eadaee2a698b189a, type: 3}
