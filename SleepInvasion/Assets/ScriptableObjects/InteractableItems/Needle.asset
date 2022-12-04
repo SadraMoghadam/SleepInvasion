@@ -17,6 +17,6 @@ MonoBehaviour:
   type: 11
   effect: 0
   sprite: {fileID: 21300000, guid: a3181a870a8b20f4eadaee2a698b189a, type: 3}
-  description: This is a needle
+  description: 'A long stick, can I put it somewhere? '
   finalCount: 1
   usable: 1
