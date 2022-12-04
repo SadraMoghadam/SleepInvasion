@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4889838339543590421}
   - component: {fileID: 4249626261296916624}
   - component: {fileID: 3485590972217447059}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: round lock 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 265636589839190321}
   - component: {fileID: 2872160964341282388}
   - component: {fileID: 8870469639308932134}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: lock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -192,7 +192,7 @@ GameObject:
   - component: {fileID: 4163061198409347787}
   - component: {fileID: 2086008067426508611}
   - component: {fileID: 2155216832160536824}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: top
   m_TagString: Chest
   m_Icon: {fileID: 0}
@@ -275,7 +275,7 @@ GameObject:
   - component: {fileID: 5498210284413346398}
   - component: {fileID: 845451271366424922}
   - component: {fileID: 1509531016218709881}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -356,7 +356,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4710500518227074816}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: srafovi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -391,7 +391,7 @@ GameObject:
   - component: {fileID: 4270976567875052314}
   - component: {fileID: 7286996805326046234}
   - component: {fileID: 2263537426217469039}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ornament front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -475,7 +475,7 @@ GameObject:
   - component: {fileID: 7053244439327249187}
   - component: {fileID: 108298775724296483}
   - component: {fileID: 7445150663181559392}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -571,7 +571,7 @@ GameObject:
   - component: {fileID: 3888340210638339997}
   - component: {fileID: 4701458290903615290}
   - component: {fileID: 7963540349194331307}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -652,7 +652,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1665029188917792259}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -688,7 +688,7 @@ GameObject:
   - component: {fileID: 6144845362951595871}
   - component: {fileID: 8866509361252972764}
   - component: {fileID: 7673599773787918843}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ornament top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -771,7 +771,7 @@ GameObject:
   - component: {fileID: 2651714542124622832}
   - component: {fileID: 2725025461594864331}
   - component: {fileID: 3539706235242963964}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: round lock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -852,7 +852,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9055613752595924075}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: chest
   m_TagString: Chest
   m_Icon: {fileID: 0}
@@ -890,7 +890,7 @@ GameObject:
   - component: {fileID: 8801926788396814732}
   - component: {fileID: 8801926788396814733}
   - component: {fileID: 3328010633467395826}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Top
   m_TagString: Chest
   m_Icon: {fileID: 0}

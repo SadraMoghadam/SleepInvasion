@@ -55,7 +55,7 @@ public class PlayerRaycast : MonoBehaviour
             // {
             //     return;
             // }
-            if (hit.collider.gameObject.CompareTag("UsableItem") || hit.collider.gameObject.CompareTag("Chest"))
+            if (hit.collider.gameObject.CompareTag("UsableItem") || hit.collider.gameObject.CompareTag("Chest") || _gameController.IsInLockView)
             {
                 _leftMouseClickImage.gameObject.SetActive(false);
                 return;

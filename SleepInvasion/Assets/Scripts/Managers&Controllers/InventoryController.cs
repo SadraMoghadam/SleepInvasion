@@ -166,7 +166,8 @@ public class InventoryController : MonoBehaviour
         };
         itemsString = JsonUtility.ToJson(interactableItemsInfo);
         PlayerPrefsManager.SetString(PlayerPrefsKeys.InventoryItems, itemsString);
-        itemsEasyAccess.AddAccess(newItem.ItemScriptableObject.type);
+        if(item.Count == 1)
+            itemsEasyAccess.AddAccess(newItem.ItemScriptableObject.type);
     }
 
     public int GetCountOfInventoryItem(InteractableItemType type)
