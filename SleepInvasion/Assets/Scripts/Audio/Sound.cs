@@ -19,7 +19,9 @@ public enum SoundName
     LaserLight,
     PauseMenu,
     Inventory,
-    Respawn
+    Respawn,
+    Magnifier,
+    CandleBlow
     // Click
 }
 

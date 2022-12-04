@@ -42,6 +42,7 @@ public class Magnifier : MonoBehaviour, IItemUsage
 
     public void Use()
     {
+        GameManager.Instance.AudioManager.play(SoundName.Magnifier);
         _animator.SetBool(Use1, true);
     }
 
