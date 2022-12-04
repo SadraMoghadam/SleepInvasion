@@ -21,7 +21,6 @@ public class GameController : MonoBehaviour
     [NonSerialized] public bool IsInMayaStoneView = false;
     [NonSerialized] public bool IsInInspectView = false;
     [NonSerialized] public bool IsInLockView = false;
-    [NonSerialized] public bool IsInDiaryView = false;
     [NonSerialized] public Transform PlayerTransform;
     
     [HideInInspector] public bool keysDisabled;

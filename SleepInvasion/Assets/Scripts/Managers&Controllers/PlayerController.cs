@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
                 {
                     _gameController.UIController.HidePausePanel();
                 }
-                else if(!(_gameController.IsInInspectView || _gameController.IsInMayaStoneView || _gameController.IsInLockView || _gameController.IsInDiaryView))
+                else if(!(_gameController.IsInInspectView || _gameController.IsInMayaStoneView || _gameController.IsInLockView))
                 {
                     _gameController.UIController.ShowPausePanel();
                 }
@@ -72,17 +72,16 @@ public class PlayerController : MonoBehaviour
         {
             _gameController.ItemsController.AbandonUsingItem();
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha1) && _gameController.InventoryController.IsItemInInventory(InteractableItemType.Shader))
+        else if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             CloseAllPanels();
             _gameController.ItemsController.UseInventoryItem(InteractableItemType.Shader);
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2) && _gameController.InventoryController.IsItemInInventory(InteractableItemType.Magnifier))
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            CloseAllPanels();
-            _gameController.ItemsController.UseInventoryItem(InteractableItemType.Magnifier);
+            //Magnifier
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha3) && _gameController.InventoryController.IsItemInInventory(InteractableItemType.Diary))
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             CloseAllPanels();
             _gameController.ItemsController.UseInventoryItem(InteractableItemType.Diary);
@@ -106,6 +105,7 @@ public class PlayerController : MonoBehaviour
                 _gameController.MayaStone.ChangeView(false);
             }
         }
+        
         else if (_gameController.IsInLockView)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
@@ -113,13 +113,6 @@ public class PlayerController : MonoBehaviour
                 _gameController.Lock.ToggleView();
             }
         }
-        // else if (_gameController.IsInDiaryView)
-        // {
-        //     if (Input.GetKeyDown(KeyCode.Escape))
-        //     {
-        //         _gameController.ItemsController.diary.Abandon();
-        //     }
-        // }
 
         
     }

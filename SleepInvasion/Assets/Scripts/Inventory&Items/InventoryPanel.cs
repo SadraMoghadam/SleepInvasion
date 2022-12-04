@@ -14,7 +14,6 @@ public class InventoryPanel : MonoBehaviour
     private void OnEnable()
     {
         _gameController = GameController.Instance;
-        GameManager.Instance.AudioManager.play(SoundName.Inventory);
     }
 
     public void Setup()
