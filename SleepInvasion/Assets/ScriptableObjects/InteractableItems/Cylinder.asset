@@ -16,7 +16,7 @@ MonoBehaviour:
   prefab: {fileID: 702039519031001375, guid: 308b542f458d12d4682ef1d6b20becef, type: 3}
   type: 3
   effect: 0
-  sprite: {fileID: 21300000, guid: a3181a870a8b20f4eadaee2a698b189a, type: 3}
+  sprite: {fileID: 21300000, guid: 22a0651a80773f04aa0e1cd2cddbe87f, type: 3}
   description: 'A shiny silver statue that reflects everything. '
   finalCount: 1
   usable: 0
