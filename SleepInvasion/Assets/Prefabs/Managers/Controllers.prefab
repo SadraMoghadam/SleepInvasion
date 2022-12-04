@@ -87,7 +87,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryPanel: {fileID: 0}
   inspectPanel: {fileID: 0}
-  itemsEasyAccess: {fileID: 0}
   interactableItemsContainer: {fileID: 0}
   interactableItemsSo: {fileID: 11400000, guid: ce15022476cf283449c09c68d149da2d, type: 2}
 --- !u!114 &6917092360357706119
@@ -106,9 +105,6 @@ MonoBehaviour:
   magnifier: {fileID: 0}
   diary: {fileID: 0}
   lasersParentGO: {fileID: 0}
-  inspectLayer:
-    serializedVersion: 2
-    m_Bits: 128
 --- !u!114 &6917092360357706118
 MonoBehaviour:
   m_ObjectHideFlags: 0

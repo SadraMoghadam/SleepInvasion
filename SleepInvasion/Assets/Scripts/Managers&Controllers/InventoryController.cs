@@ -8,7 +8,6 @@ public class InventoryController : MonoBehaviour
 {
     public InventoryPanel inventoryPanel;
     public InspectPanel inspectPanel;
-    public ItemsEasyAccess itemsEasyAccess;
     [SerializeField] private GameObject interactableItemsContainer;
     [SerializeField] private InteractableItemsSO interactableItemsSo;
     private GameManager _gameManager;
@@ -81,8 +80,7 @@ public class InventoryController : MonoBehaviour
 
     public void CloseInspectPanel()
     {
-        if(_gameController.IsInInspectView)
-            inspectPanel.Close();
+        inspectPanel.Close();
         _gameController.HideCursor();
         _gameController.EnableAllKeys();
     }
@@ -166,7 +164,6 @@ public class InventoryController : MonoBehaviour
         };
         itemsString = JsonUtility.ToJson(interactableItemsInfo);
         PlayerPrefsManager.SetString(PlayerPrefsKeys.InventoryItems, itemsString);
-        itemsEasyAccess.AddAccess(newItem.ItemScriptableObject.type);
     }
 
     public int GetCountOfInventoryItem(InteractableItemType type)

@@ -36,24 +36,6 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
-    // private void Update()
-    // {
-    //     if (Input.GetKeyDown(KeyCode.Mouse0))
-    //     {
-    //         if (GameController.Instance != null)
-    //         {
-    //             if (!GameController.Instance.UIController.leftMouseClickImage.gameObject.activeSelf)
-    //             {
-    //                 AudioManager.play(SoundName.Inventory);       
-    //             }
-    //         }
-    //         else
-    //         {
-    //             AudioManager.play(SoundName.Click);
-    //         }
-    //     }
-    // }
-
     public async void LoadScene(string sceneName)
     {
         var scene = SceneManager.LoadSceneAsync(sceneName);
