@@ -52,6 +52,7 @@ public class ItemsController : MonoBehaviour
                 diary.Use();
                 break;
         }
+        _gameController.UIController.HideGUI();
     }
     
     public void AbandonUsingItem()
@@ -75,6 +76,7 @@ public class ItemsController : MonoBehaviour
                 diary.Abandon();
                 break;
         }
+        _gameController.UIController.ShowGUI();
     }
 
     public void ChangeLaserVisibility()

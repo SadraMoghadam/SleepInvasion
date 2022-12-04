@@ -19,7 +19,8 @@ public class PausePanel : MonoBehaviour
     {
         _gameManager = GameManager.Instance;
         _gameController = GameController.Instance;
-        _uiController = _gameController.UIController;   
+        _uiController = _gameController.UIController;
+        _gameManager.AudioManager.play(SoundName.PauseMenu);
         resumeButton.onClick.AddListener(OnResumeClick);
         settingsButton.interactable = false;
         settingsButton.onClick.AddListener(OnSettingsClicked);
@@ -46,7 +47,7 @@ public class PausePanel : MonoBehaviour
     
     private void OnCheckpointClick()
     {
-        _gameManager.LoadScene("Game");
+        _gameManager.LoadScene("MainGame");
     }
     
     private void OnQuitClick()

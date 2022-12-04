@@ -6,7 +6,20 @@ public enum SoundName
 {
     Game,
     MainMenu,
-    PickUpItem
+    PickUpItem,
+    Hint,
+    BookClose,
+    BookOpen,
+    PreviousPage,
+    NextPage,
+    CloseDoor,
+    OpenDoor,
+    Unlock,
+    Shader,
+    LaserLight,
+    PauseMenu,
+    Inventory,
+    // Click
 }
 
 [System.Serializable]

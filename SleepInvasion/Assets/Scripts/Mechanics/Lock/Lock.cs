@@ -54,6 +54,7 @@ public class Lock : MonoBehaviour {
 
     public void OnUnlock()
     {
+        GameManager.Instance.AudioManager.play(SoundName.Unlock);
         FirstPersonCamera.enabled = true;
         OverheadCamera.gameObject.SetActive(false);
         OverheadCamera.enabled = false;

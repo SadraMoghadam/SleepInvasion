@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -14,12 +15,15 @@ public class Diary : MonoBehaviour, IItemUsage
     [SerializeField] private TMP_Text rightNum;
     private int _currentLeftPage = 1;
     private Animator _animator;
+    private GameManager _gameManager;
+    
     private static readonly int Open = Animator.StringToHash("Open");
     private static readonly int Close = Animator.StringToHash("Close");
 
     private bool _isChangingPage;
     private static readonly int Next = Animator.StringToHash("Next");
     private static readonly int Previous = Animator.StringToHash("Previous");
+
 
     private void OnEnable()
     {
@@ -30,6 +34,8 @@ public class Diary : MonoBehaviour, IItemUsage
 
     public void Use()
     {
+        GameManager.Instance.AudioManager.play(SoundName.BookOpen);
+        GameController.Instance.IsInDiaryView = true;
         _animator.SetTrigger(Open);
         gameObject.SetActive(true);
     }
@@ -46,6 +52,7 @@ public class Diary : MonoBehaviour, IItemUsage
 
     public void Abandon()
     {
+        GameManager.Instance.AudioManager.play(SoundName.BookClose);
         _animator.SetBool(Close, true);
         StartCoroutine(DisableDiary());
     }
@@ -54,6 +61,7 @@ public class Diary : MonoBehaviour, IItemUsage
     {
         yield return new WaitForSeconds(3f);
         gameObject.SetActive(false);
+        GameController.Instance.IsInDiaryView = false;
     }
     
     public void NextPageProcess()
@@ -62,6 +70,7 @@ public class Diary : MonoBehaviour, IItemUsage
         {
             return;
         }
+        GameManager.Instance.AudioManager.play(SoundName.NextPage);
         HidePagesContent();
         _animator.SetTrigger(Next);
         _currentLeftPage += 2;
@@ -77,6 +86,7 @@ public class Diary : MonoBehaviour, IItemUsage
         {
             return;
         }
+        GameManager.Instance.AudioManager.play(SoundName.PreviousPage);
         _animator.SetTrigger(Previous);
         _currentLeftPage -= 2;
         PlayerPrefsManager.SetInt(PlayerPrefsKeys.LastDiaryPage, _currentLeftPage);
