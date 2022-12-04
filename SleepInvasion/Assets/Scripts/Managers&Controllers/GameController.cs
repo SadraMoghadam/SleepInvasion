@@ -66,6 +66,7 @@ public class GameController : MonoBehaviour
             HintController.ShowHint(0, 5);
             PlayerPrefsManager.SetBool(PlayerPrefsKeys.GameStarted, true);
         }
+        _gameManager.AudioManager.play(SoundName.Game);
     }
 
     public Transform GetPlayerTransform()

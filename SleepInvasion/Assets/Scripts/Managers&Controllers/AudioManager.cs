@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
@@ -29,7 +31,7 @@ public class AudioManager : MonoBehaviour
         // throw new NotImplementedException();
     }
 
-    public void play(string name)
+    public void play(SoundName name)
     {
         Sound sound = Array.Find(sounds, sound => sound.name == name);
         if (sound == null)

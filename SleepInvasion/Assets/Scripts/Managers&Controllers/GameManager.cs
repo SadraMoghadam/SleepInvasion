@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    // [NonSerialized] public PlayerPrefsManager PlayerPrefsManager;
+    [NonSerialized] public AudioManager AudioManager;
     
     public static GameManager Instance => _instance;
     private static GameManager _instance;
@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        // PlayerPrefsManager = GetComponent<PlayerPrefsManager>();
+        AudioManager = GetComponent<AudioManager>();
         
         DontDestroyOnLoad(this.gameObject);
     }

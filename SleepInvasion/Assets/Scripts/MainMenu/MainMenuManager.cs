@@ -21,6 +21,7 @@ public class MainMenuManager : MonoBehaviour
         resumeButton.onClick.AddListener(OnResumeClick);
         newGameButton.onClick.AddListener(OnNewGameClick);
         quitButton.onClick.AddListener(OnQuitClick);
+        _gameManager.AudioManager.play(SoundName.MainMenu);
     }
 
 
