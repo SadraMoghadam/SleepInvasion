@@ -1,5 +1,5 @@
 id,Hint,Condition,Name
-0,Welcome to our game. Hope you enjoy the mechanics.,Begin of the game,
+0,Welcome to our game prototype. Try to solve the puzzles and open the GATES. Hope you enjoy.,Begin of the game,
 1,Press left mouse to pick up/ interact with items.,Raycast hits object,
 2,The password must be somewhere.,Interact with the lock,
 3,Press right mouse to zoom in and 'E' to use magnifier.,Pull up magnifier in inventory,

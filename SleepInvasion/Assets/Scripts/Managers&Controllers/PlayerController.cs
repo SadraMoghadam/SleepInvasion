@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
                 {
                     _gameController.UIController.HidePausePanel();
                 }
-                else if(!(_gameController.IsInInspectView || _gameController.IsInMayaStoneView || _gameController.IsInLockView))
+                else if(!(_gameController.IsInInspectView || _gameController.IsInMayaStoneView || _gameController.IsInLockView || _gameController.IsInDiaryView))
                 {
                     _gameController.UIController.ShowPausePanel();
                 }
@@ -72,20 +72,28 @@ public class PlayerController : MonoBehaviour
         {
             _gameController.ItemsController.AbandonUsingItem();
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha1))
+        else if (_gameController.ItemsController.TypeUsing == InteractableItemType.None)
         {
-            CloseAllPanels();
-            _gameController.ItemsController.UseInventoryItem(InteractableItemType.Shader);
+            if (Input.GetKeyDown(KeyCode.Alpha1) && _gameController.InventoryController.IsItemInInventory(InteractableItemType.Shader))
+            {
+                CloseAllPanels();
+                _gameController.ItemsController.UseInventoryItem(InteractableItemType.Shader);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha2) && _gameController.InventoryController.IsItemInInventory(InteractableItemType.Magnifier))
+            {
+                if (_gameController.ItemsController.TypeUsing != InteractableItemType.None)
+                    _gameController.ItemsController.AbandonUsingItem();
+                CloseAllPanels();
+                _gameController.ItemsController.UseInventoryItem(InteractableItemType.Magnifier);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha3) && _gameController.InventoryController.IsItemInInventory(InteractableItemType.Diary))
+            {
+                if (_gameController.ItemsController.TypeUsing != InteractableItemType.None)
+                    _gameController.ItemsController.AbandonUsingItem();
+                CloseAllPanels();
+                _gameController.ItemsController.UseInventoryItem(InteractableItemType.Diary);
+            }       
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            //Magnifier
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            CloseAllPanels();
-            _gameController.ItemsController.UseInventoryItem(InteractableItemType.Diary);
-        }    
         if (_gameController.ItemsController.TypeUsing == InteractableItemType.Diary)
         {
             if (Input.GetKeyDown(KeyCode.E))
@@ -105,7 +113,6 @@ public class PlayerController : MonoBehaviour
                 _gameController.MayaStone.ChangeView(false);
             }
         }
-        
         else if (_gameController.IsInLockView)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
@@ -113,6 +120,13 @@ public class PlayerController : MonoBehaviour
                 _gameController.Lock.ToggleView();
             }
         }
+        // else if (_gameController.IsInDiaryView)
+        // {
+        //     if (Input.GetKeyDown(KeyCode.Escape))
+        //     {
+        //         _gameController.ItemsController.diary.Abandon();
+        //     }
+        // }
 
         
     }
@@ -140,11 +154,12 @@ public class PlayerController : MonoBehaviour
 
     private void CheckRespawn()
     {
-        if (transform.position.y < -20)
+        if (transform.position.y < -10)
         {
             SavedData savedData = PlayerPrefsManager.LoadGame();
             transform.position = savedData.PlayerTransform.position;
             transform.rotation = savedData.PlayerTransform.rotation;
+            _gameManager.AudioManager.play(SoundName.Respawn);
         }
     }
 

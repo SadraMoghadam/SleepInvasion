@@ -25,6 +25,7 @@ public class Shader : MonoBehaviour, IItemUsage
 
     public void Use()
     {
+        GameManager.Instance.AudioManager.play(SoundName.Shader);
         _animator.SetBool(Use1, true);
         gameObject.SetActive(true);
     }

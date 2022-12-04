@@ -7,6 +7,7 @@ using Image = UnityEngine.UI.Image;
 
 public class UIController : MonoBehaviour
 {
+    [SerializeField] private Canvas canvas;
     public Image leftMouseClickImage;
     public Sprite keyDownSprite;
     public Sprite keyUpSprite;
@@ -19,6 +20,7 @@ public class UIController : MonoBehaviour
     private void Awake()
     {
         _gameController = GameController.Instance;
+        ShowGUI();
     }
 
     public void ShowPausePanel()
@@ -35,6 +37,16 @@ public class UIController : MonoBehaviour
         _gameController.HideCursor();
         IsInPauseMenu = false;
         Time.timeScale = 1;
+    }
+
+    public void ShowGUI()
+    {
+        canvas.gameObject.SetActive(true);
+    }
+
+    public void HideGUI()
+    {
+        canvas.gameObject.SetActive(false);
     }
 
     

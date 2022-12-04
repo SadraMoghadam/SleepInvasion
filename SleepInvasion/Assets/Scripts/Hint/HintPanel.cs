@@ -13,16 +13,19 @@ public class HintPanel : MonoBehaviour
     private bool _isShowing;
 
     private GameController _gameController;
+    private GameManager _gameManager;
 
     private void Awake()
     {
         _isShowing = false;
         _gameController = GameController.Instance;
+        _gameManager = GameManager.Instance;
         _hint = this.gameObject;
     }
 
     public void Show(string hintString, float hintShowDuration = 0)
     {
+        _gameManager.AudioManager.play(SoundName.Hint);
         if (_isShowing)
         {
             StopAllCoroutines();
