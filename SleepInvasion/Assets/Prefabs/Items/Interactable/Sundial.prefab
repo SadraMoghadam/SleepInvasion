@@ -138,6 +138,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7820269556034383931}
+  - component: {fileID: 1328065561357990387}
   m_Layer: 7
   m_Name: Sundial
   m_TagString: InteractableItem
@@ -162,3 +163,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1328065561357990387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7479631355803560577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 247e601127d7ce84ab8be8404f275865, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 7306073548831408612, guid: 9e153f8f48145ad4c86a7971fa7531b1, type: 3}
+  placementPosition: {fileID: 1671139595795608509}
