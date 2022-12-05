@@ -1031,6 +1031,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2119518492735826526}
     m_Modifications:
+    - target: {fileID: 1581853308946793586, guid: 2c79f37c40fa9d449831d0868cba7536, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bb774ed39b381664e85714186e114713, type: 2}
+    - target: {fileID: 2696269782378342491, guid: 2c79f37c40fa9d449831d0868cba7536, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bb774ed39b381664e85714186e114713, type: 2}
     - target: {fileID: 3363317694918557741, guid: 2c79f37c40fa9d449831d0868cba7536, type: 3}
       propertyPath: playerCamera
       value: 
@@ -1087,6 +1095,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9118350733310724156, guid: 2c79f37c40fa9d449831d0868cba7536, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bb774ed39b381664e85714186e114713, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c79f37c40fa9d449831d0868cba7536, type: 3}
 --- !u!4 &2119518491104728708 stripped

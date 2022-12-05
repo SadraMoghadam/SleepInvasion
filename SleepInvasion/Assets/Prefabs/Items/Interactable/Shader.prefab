@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 703231421746361024}
   - component: {fileID: 703231421746361026}
   - component: {fileID: 703231421746361025}
+  - component: {fileID: 5533339236806678773}
   m_Layer: 7
   m_Name: Shader
   m_TagString: InteractableItem
@@ -165,3 +166,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 6, y: 2.54, z: 6}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5533339236806678773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6851167215361837294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56533fb213d8d054ba4729ebb461d380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coefficient: 5

@@ -99,6 +99,15 @@ public class Level1 : Level
             SaveCompletedProcess(5);
         }
     }
+    
+    private void FifthProcess()
+    {
+        if (_level1Data.shaderGO.CompareTag("InteractableItem"))
+        {
+            _gameController.HintController.ShowHint(6, 2);
+            SaveCompletedProcess(5);
+        }
+    }
 
     private void SaveCompletedProcess(int processNumber)
     {

@@ -19,7 +19,7 @@ public class Magnifier : MonoBehaviour, IItemUsage
     private float _zoomedOutFOV;
     private float _keyDownTimer;
 
-    private HashSet<RaycastHit> _toMagnify;
+    private HashSet<Item> _toMagnify;
     private HashSet<int> _magnifiedObjects;
 
     private Animator _animator;
@@ -31,7 +31,7 @@ public class Magnifier : MonoBehaviour, IItemUsage
         _gameController = GameController.Instance;
         _zoomedOutFOV = playerCamera.fieldOfView;
         _magnifiedObjects = new HashSet<int>();
-        _toMagnify = new HashSet<RaycastHit>();
+        _toMagnify = new HashSet<Item>();
         _animator = GetComponent<Animator>();
     }
 
@@ -81,7 +81,13 @@ public class Magnifier : MonoBehaviour, IItemUsage
                     Magnifiable magnifiable = hit.collider.gameObject.GetComponent<Magnifiable>();
                     if (magnifiable != null)
                     {
-                        _toMagnify.Add(hit);
+                        if (hit.collider.gameObject.GetComponent<Item>().itemInfo.Name == "Shader")
+                        {
+                            hit.collider.gameObject.tag = "InteractableItem";
+                        }
+                        _toMagnify.Add(hit.collider.gameObject.GetComponent<Item>());
+                        hit.transform.localScale *= hit.collider.gameObject.GetComponent<Magnifiable>().coefficient;
+                        _magnifiedObjects.Add(hit.colliderInstanceID);
                     }
                 }
             }
@@ -92,16 +98,16 @@ public class Magnifier : MonoBehaviour, IItemUsage
             _animator.SetBool(Use2, false);
         }
     
-        if (Input.GetKeyUp(KeyCode.Mouse1))
-        {
-            foreach (var hit in _toMagnify.ToList())
-            {
-                _toMagnify.Remove(hit);
-                // TODO remove double getcomponent
-                hit.transform.localScale *= hit.collider.gameObject.GetComponent<Magnifiable>().coefficient;
-                // TODO make this work better with saving system
-                _magnifiedObjects.Add(hit.colliderInstanceID);
-            }
-        }
+        // if (Input.GetKeyUp(KeyCode.Mouse1))
+        // {
+        //     foreach (var hit in _toMagnify.ToList())
+        //     {
+        //         _toMagnify.Remove(hit);
+        //         // TODO remove double getcomponent
+        //         hit.transform.localScale *= hit.GetComponent<Collider>().gameObject.GetComponent<Magnifiable>().coefficient;
+        //         // TODO make this work better with saving system
+        //         _magnifiedObjects.Add(hit.colliderInstanceID);
+        //     }
+        // }
     }
 }

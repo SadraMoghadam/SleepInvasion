@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3363317694918557742}
   m_Layer: 7
   m_Name: Magnifier_Equipped
-  m_TagString: InteractableItem
+  m_TagString: UseableItems
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
