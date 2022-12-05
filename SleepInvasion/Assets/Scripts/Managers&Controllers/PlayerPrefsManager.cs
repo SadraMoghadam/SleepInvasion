@@ -22,7 +22,8 @@ public enum PlayerPrefsKeys
     FirstMagnifier,
     FirstShader,
     FirstDiary,
-    MayaStoneUnlocked
+    MayaStoneUnlocked,
+    DoorLocked
 }
 
 public struct SavedData

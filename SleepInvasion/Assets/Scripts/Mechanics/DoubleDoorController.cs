@@ -21,6 +21,10 @@ public class DoubleDoorController : MonoBehaviour, IDoorController
 
     public void Use()
     {
+        if (PlayerPrefsManager.GetBool(PlayerPrefsKeys.DoorLocked, true))
+        {
+            return;
+        }
         bool currentState = _doorAnimator.GetBool(IsDoorOpen);
         _doorAnimator.SetBool(IsDoorOpen, !currentState);
         _otherDoorAnimator.SetBool(IsDoorOpen, !currentState);

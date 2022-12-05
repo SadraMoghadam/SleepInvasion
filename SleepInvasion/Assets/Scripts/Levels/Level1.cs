@@ -53,6 +53,9 @@ public class Level1 : Level
             case 5:
                 FifthProcess();
                 break;
+            case 6:
+                SixthProcess();
+                break;
             
             default:
                 break;
@@ -115,8 +118,8 @@ public class Level1 : Level
     {
         if (PlayerPrefsManager.GetBool(PlayerPrefsKeys.MayaStoneUnlocked, false))
         {
-            // _gameController.HintController.ShowHint(6, 2);
-            // Open the door
+            _gameController.HintController.ShowHint(19, 2);
+            PlayerPrefsManager.SetBool(PlayerPrefsKeys.DoorLocked, false);
             SaveCompletedProcess(7);
         }
     }
