@@ -6,7 +6,7 @@ using UnityEngine;
 public class HintController : MonoBehaviour
 {
     [SerializeField] private HintPanel hintPanel;
-    public float duration = 1;
+    public float duration = 1f;
     public float hintShowDuration = 3;
     // private GameController _gameController;
 

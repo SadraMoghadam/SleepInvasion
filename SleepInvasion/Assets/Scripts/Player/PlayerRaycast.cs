@@ -29,6 +29,7 @@ public class PlayerRaycast : MonoBehaviour
     private GameController _gameController;
     private GameManager _gameManager;
     private UIController _uiController;
+    private bool _firstRaycast;
     
 
     private void Start()
@@ -40,6 +41,7 @@ public class PlayerRaycast : MonoBehaviour
         _leftMouseClickImage = _uiController.leftMouseClickImage;
         _keyDownSprite = _uiController.keyDownSprite;
         _keyUpSprite = _uiController.keyUpSprite;
+        _firstRaycast = PlayerPrefsManager.GetBool(PlayerPrefsKeys.FirstRaycast, true);
     }
 
     private void Update()
@@ -52,6 +54,12 @@ public class PlayerRaycast : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, rayLength, layerMaskInteract))
         {
+            if (_firstRaycast)
+            {
+                _firstRaycast = false;
+                PlayerPrefsManager.SetBool(PlayerPrefsKeys.FirstRaycast, false);
+                _gameController.HintController.ShowHint(3, 2);
+            }
             // if (hit.collider.gameObject.GetComponent<Item>() == null)
             // {
             //     return;

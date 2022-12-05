@@ -64,7 +64,6 @@ public class GameController : MonoBehaviour
         bool isGameStarted = PlayerPrefsManager.GetBool(PlayerPrefsKeys.GameStarted, false);
         if (!isGameStarted)
         {
-            HintController.ShowHint(0, 5);
             PlayerPrefsManager.SetBool(PlayerPrefsKeys.GameStarted, true);
         }
         _gameManager.AudioManager.play(SoundName.Game);
@@ -122,6 +121,7 @@ public class GameController : MonoBehaviour
     
     public IEnumerator FadeInAndOut(GameObject objectToFade, bool fadeIn, float duration, float finalOpacity = 1)
     {
+        StopAllCoroutines();
         float counter = 0f;
 
         //Set Values depending on if fadeIn or fadeOut

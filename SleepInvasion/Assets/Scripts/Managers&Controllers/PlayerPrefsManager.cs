@@ -12,7 +12,10 @@ public enum PlayerPrefsKeys
     DestroyedItems,
     MayaStoneRingsIndex,
     LastDiaryPage,
-    ChestUnlocked
+    ChestUnlocked,
+    Level1Process,
+    FirstRaycast,
+    FirstLockView
 }
 
 public struct SavedData

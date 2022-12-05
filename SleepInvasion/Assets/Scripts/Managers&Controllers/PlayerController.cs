@@ -74,7 +74,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (_gameController.ItemsController.TypeUsing == InteractableItemType.None)
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1) && _gameController.InventoryController.IsItemInInventory(InteractableItemType.Shader))
+            if (Input.GetKeyDown(KeyCode.Alpha3) && _gameController.InventoryController.IsItemInInventory(InteractableItemType.Shader))
             {
                 CloseAllPanels();
                 _gameController.ItemsController.UseInventoryItem(InteractableItemType.Shader);
@@ -86,7 +86,7 @@ public class PlayerController : MonoBehaviour
                 CloseAllPanels();
                 _gameController.ItemsController.UseInventoryItem(InteractableItemType.Magnifier);
             }
-            else if (Input.GetKeyDown(KeyCode.Alpha3) && _gameController.InventoryController.IsItemInInventory(InteractableItemType.Diary))
+            else if (Input.GetKeyDown(KeyCode.Alpha1) && _gameController.InventoryController.IsItemInInventory(InteractableItemType.Diary))
             {
                 if (_gameController.ItemsController.TypeUsing != InteractableItemType.None)
                     _gameController.ItemsController.AbandonUsingItem();

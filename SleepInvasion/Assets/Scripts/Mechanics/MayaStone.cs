@@ -20,7 +20,7 @@ public class MayaStone : MonoBehaviour
     private Animator _animator;
     private GameController _gameController;
     
-    private readonly int[] _ringsIconNumber = {7, 6, 5, 4};
+    private readonly int[] _ringsIconNumber = {8, 8, 8, 4};
 
     private float[] _firstRingDegrees;
     private float[] _secondRingDegrees;
