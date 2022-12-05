@@ -42,6 +42,11 @@ public class Magnifier : MonoBehaviour, IItemUsage
 
     public void Use()
     {
+        if(PlayerPrefsManager.GetBool(PlayerPrefsKeys.FirstMagnifier, true))
+        {
+            GameController.Instance.HintController.ShowHint(8, 2);
+            PlayerPrefsManager.SetBool(PlayerPrefsKeys.FirstMagnifier, false);
+        }
         GameManager.Instance.AudioManager.play(SoundName.Magnifier);
         _animator.SetBool(Use1, true);
     }
@@ -76,7 +81,7 @@ public class Magnifier : MonoBehaviour, IItemUsage
             var cameraTransform = playerCamera.transform;
             if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out var hit, rayLength, layerMaskInteract))
             {
-                if (Input.GetKeyDown(KeyCode.E) && !_magnifiedObjects.Contains(hit.colliderInstanceID))
+                if (Input.GetKeyDown(KeyCode.M) && !_magnifiedObjects.Contains(hit.colliderInstanceID))
                 {
                     Magnifiable magnifiable = hit.collider.gameObject.GetComponent<Magnifiable>();
                     if (magnifiable != null)

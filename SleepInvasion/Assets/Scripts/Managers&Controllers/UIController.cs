@@ -7,7 +7,8 @@ using Image = UnityEngine.UI.Image;
 
 public class UIController : MonoBehaviour
 {
-    [SerializeField] private Canvas canvas;
+    // [SerializeField] private Canvas canvas;
+    [SerializeField] private List<GameObject> hidingObjects;
     public Image leftMouseClickImage;
     public Sprite keyDownSprite;
     public Sprite keyUpSprite;
@@ -41,12 +42,18 @@ public class UIController : MonoBehaviour
 
     public void ShowGUI()
     {
-        canvas.gameObject.SetActive(true);
+        for (int i = 0; i < hidingObjects.Count; i++)
+        {
+            hidingObjects[i].gameObject.SetActive(true);   
+        }
     }
 
     public void HideGUI()
     {
-        canvas.gameObject.SetActive(false);
+        for (int i = 0; i < hidingObjects.Count; i++)
+        {
+            hidingObjects[i].gameObject.SetActive(false);   
+        }
     }
 
     

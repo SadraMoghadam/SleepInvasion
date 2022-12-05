@@ -54,6 +54,11 @@ public class InventoryController : MonoBehaviour
 
     public void SetupInventoryPanel()
     {
+        if(PlayerPrefsManager.GetBool(PlayerPrefsKeys.FirstInventory, true))
+        {
+            _gameController.HintController.ShowHint(16, 2);
+            PlayerPrefsManager.SetBool(PlayerPrefsKeys.FirstInventory, false);
+        }
         if(_gameController.IsInInspectView)
             inspectPanel.Close();
         GetAllInventoryData();

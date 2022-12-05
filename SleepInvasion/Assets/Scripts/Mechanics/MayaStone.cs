@@ -28,16 +28,22 @@ public class MayaStone : MonoBehaviour
     private float[] _fourthRingDegrees;
 
 
-    private int[] _trueIndexCombination = { 4, 0, 2, 3 };
+    private int[] _trueIndexCombination = { 7, 6, 0, 0 };
     private int[] _initialDegreesIndex = { 0, 0, 0, 0 };
 
     private float ringRotationTime = 1;
 
     private void Start()
     {
+        
         stoneCamera.gameObject.SetActive(false);
         _animator = GetComponent<Animator>();
         _gameController = GameController.Instance;
+        if(PlayerPrefsManager.GetBool(PlayerPrefsKeys.FirsMayaStone, true))
+        {
+            _gameController.HintController.ShowHint(15, 2);
+            PlayerPrefsManager.SetBool(PlayerPrefsKeys.FirsMayaStone, false);
+        }
         SetupOverallDegrees(out _firstRingDegrees, 0);
         SetupOverallDegrees(out _secondRingDegrees, 1);
         SetupOverallDegrees(out _thirdRingDegrees, 2);
@@ -62,6 +68,12 @@ public class MayaStone : MonoBehaviour
             Debug.Log(rend.gameObject.tag);
             int index = Int32.Parse(Regex.Match(rend.gameObject.tag.ToString(), @"\d+").Value);
             OnRingClick(index - 1);
+            if (_trueIndexCombination[0] == _initialDegreesIndex[0] &&
+                _trueIndexCombination[1] == _initialDegreesIndex[1])
+            {
+                PlayerPrefsManager.SetBool(PlayerPrefsKeys.MayaStoneUnlocked, true);
+                ChangeView(false);
+            }
         }
 
         

@@ -50,9 +50,11 @@ public class Level1 : Level
             case 4:
                 FourthProcess();
                 break;
+            case 5:
+                FifthProcess();
+                break;
             
             default:
-                firstProcess();
                 break;
         }
         
@@ -105,7 +107,17 @@ public class Level1 : Level
         if (_level1Data.shaderGO.CompareTag("InteractableItem"))
         {
             _gameController.HintController.ShowHint(6, 2);
-            SaveCompletedProcess(5);
+            SaveCompletedProcess(6);
+        }
+    }
+    
+    private void SixthProcess()
+    {
+        if (PlayerPrefsManager.GetBool(PlayerPrefsKeys.MayaStoneUnlocked, false))
+        {
+            // _gameController.HintController.ShowHint(6, 2);
+            // Open the door
+            SaveCompletedProcess(7);
         }
     }
 

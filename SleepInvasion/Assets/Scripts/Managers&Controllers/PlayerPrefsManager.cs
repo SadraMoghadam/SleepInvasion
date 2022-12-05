@@ -15,7 +15,14 @@ public enum PlayerPrefsKeys
     ChestUnlocked,
     Level1Process,
     FirstRaycast,
-    FirstLockView
+    FirstLockView,
+    FirstInventory,
+    FirstInspect,
+    FirsMayaStone,
+    FirstMagnifier,
+    FirstShader,
+    FirstDiary,
+    MayaStoneUnlocked
 }
 
 public struct SavedData
