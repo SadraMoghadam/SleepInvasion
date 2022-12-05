@@ -5,13 +5,17 @@ using UnityEngine;
 
 public class MouseLook : MonoBehaviour
 {
-    [SerializeField] private float mouseSensitivity = 10f;
+    [SerializeField] private float mouseSensitivity;
     [SerializeField] private Transform playerBody;
+    
     private float _xRotation = 0;
     private GameController _gameController;
     
+    private const float BaseMouseSensitivity = 100f;
+
     void Start()
     {
+        mouseSensitivity = BaseMouseSensitivity;
         _gameController = GameController.Instance;
         _gameController.HideCursor();
     } 
@@ -30,5 +34,10 @@ public class MouseLook : MonoBehaviour
         
         playerBody.Rotate(mouseX * Vector3.up);
         transform.localRotation = Quaternion.Euler(_xRotation, 0f, 0f);
+    }
+
+    public void ChangeMouseSensitivity(float coefficient)
+    {
+        mouseSensitivity = BaseMouseSensitivity * coefficient;
     }
 }
