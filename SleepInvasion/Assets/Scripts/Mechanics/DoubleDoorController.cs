@@ -17,6 +17,8 @@ public class DoubleDoorController : MonoBehaviour, IDoorController
         _otherDoorAnimator = otherDoor.GetComponent<Animator>();
         _doorAnimator.SetBool(IsDoorOpen, startOpen);
         _otherDoorAnimator.SetBool(IsDoorOpen, startOpen);
+        if(!PlayerPrefs.HasKey(PlayerPrefsKeys.DoorLocked.ToString()))
+            PlayerPrefsManager.SetBool(PlayerPrefsKeys.DoorLocked, true);
     }
 
     public void Use()
@@ -32,12 +34,22 @@ public class DoubleDoorController : MonoBehaviour, IDoorController
 
     public void Close()
     {
+        if (PlayerPrefsManager.GetBool(PlayerPrefsKeys.DoorLocked, true))
+        {
+            return;
+        }
+        GameManager.Instance.AudioManager.play(SoundName.CloseDoor);
         _doorAnimator.SetBool(IsDoorOpen, false);
         _otherDoorAnimator.SetBool(IsDoorOpen, false);
     }
     
     public void Open()
     {
+        if (PlayerPrefsManager.GetBool(PlayerPrefsKeys.DoorLocked, true))
+        {
+            return;
+        }
+        GameManager.Instance.AudioManager.play(SoundName.OpenDoor);
         _doorAnimator.SetBool(IsDoorOpen, true);
         _otherDoorAnimator.SetBool(IsDoorOpen, true);
     }

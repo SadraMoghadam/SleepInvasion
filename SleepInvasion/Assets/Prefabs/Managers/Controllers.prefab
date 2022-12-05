@@ -77,6 +77,7 @@ MonoBehaviour:
   keyDownSprite: {fileID: 21300000, guid: 8681319ed761e094f87936a0fa83b5e7, type: 3}
   keyUpSprite: {fileID: 21300000, guid: d2650d21fe76fd94191cf7d5e2320eba, type: 3}
   pausePanel: {fileID: 0}
+  rIcon: {fileID: 0}
 --- !u!114 &6917092360357706116
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -13,6 +13,9 @@ public class UIController : MonoBehaviour
     public Sprite keyDownSprite;
     public Sprite keyUpSprite;
     public PausePanel pausePanel;
+    public GameObject rIcon;
+    public GameObject eIcon;
+    public GameObject qIcon;
 
     [NonSerialized] public bool IsInPauseMenu;
 

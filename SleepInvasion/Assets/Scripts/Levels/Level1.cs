@@ -56,6 +56,9 @@ public class Level1 : Level
             case 6:
                 SixthProcess();
                 break;
+            case 7:
+                LastProcess();
+                break;
             
             default:
                 break;
@@ -69,7 +72,7 @@ public class Level1 : Level
         _gameController.DisableAllKeys();
         if (_timer > _level1Data.startHintTimer)
         {
-            _gameController.HintController.ShowHint(1, 2);
+            _gameController.HintController.ShowHint(1, 3);
             _gameController.EnableAllKeys();
             _timer = 0;
             SaveCompletedProcess(2);
@@ -81,7 +84,7 @@ public class Level1 : Level
     {
         if (_gameController.InventoryController.IsItemInInventory(InteractableItemType.Diary))
         {
-            _gameController.HintController.ShowHint(2, 2);
+            _gameController.HintController.ShowHint(2, 5);
             SaveCompletedProcess(3);
         }
     }
@@ -90,7 +93,7 @@ public class Level1 : Level
     {
         if (_gameController.IsInLockView && PlayerPrefsManager.GetBool(PlayerPrefsKeys.FirstLockView, true))
         {
-            _gameController.HintController.ShowHint(4, 2);
+            _gameController.HintController.ShowHint(4, 3);
             PlayerPrefsManager.SetBool(PlayerPrefsKeys.FirstLockView, false);
             SaveCompletedProcess(4);
         }
@@ -100,7 +103,7 @@ public class Level1 : Level
     {
         if (_gameController.InventoryController.IsItemInInventory(InteractableItemType.Magnifier))
         {
-            _gameController.HintController.ShowHint(5, 2);
+            _gameController.HintController.ShowHint(5, 3);
             SaveCompletedProcess(5);
         }
     }
@@ -109,7 +112,7 @@ public class Level1 : Level
     {
         if (_level1Data.shaderGO.CompareTag("InteractableItem"))
         {
-            _gameController.HintController.ShowHint(6, 2);
+            _gameController.HintController.ShowHint(6, 3);
             SaveCompletedProcess(6);
         }
     }
@@ -118,9 +121,18 @@ public class Level1 : Level
     {
         if (PlayerPrefsManager.GetBool(PlayerPrefsKeys.MayaStoneUnlocked, false))
         {
-            _gameController.HintController.ShowHint(19, 2);
+            _gameController.HintController.ShowHint(19, 3);
             PlayerPrefsManager.SetBool(PlayerPrefsKeys.DoorLocked, false);
             SaveCompletedProcess(7);
+        }
+    }
+
+    private void LastProcess()
+    {
+        if (_level1Data.doubleDoorController.IsOpen())
+        {
+            _gameController.HintController.ShowHint(20, 6);
+            SaveCompletedProcess(8);
         }
     }
 

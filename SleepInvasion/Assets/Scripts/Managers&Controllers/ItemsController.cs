@@ -49,9 +49,12 @@ public class ItemsController : MonoBehaviour
             case InteractableItemType.Diary:
                 _typeUsing = InteractableItemType.Diary;
                 diary.gameObject.SetActive(true);
+                _gameController.UIController.eIcon.SetActive(true);
+                _gameController.UIController.qIcon.SetActive(true);
                 diary.Use();
                 break;
         }
+        _gameController.UIController.rIcon.SetActive(true);
         _gameController.UIController.HideGUI();
     }
     
@@ -73,9 +76,12 @@ public class ItemsController : MonoBehaviour
                 break;
             case InteractableItemType.Diary:
                 _typeUsing = InteractableItemType.None;
+                _gameController.UIController.eIcon.SetActive(false);
+                _gameController.UIController.qIcon.SetActive(false);
                 diary.Abandon();
                 break;
         }
+        _gameController.UIController.rIcon.SetActive(false);
         _gameController.UIController.ShowGUI();
     }
 

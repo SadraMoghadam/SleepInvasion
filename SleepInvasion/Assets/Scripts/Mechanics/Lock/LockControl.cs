@@ -16,7 +16,7 @@ public class LockControl : MonoBehaviour
     private void Start()
     {
         result = new int[]{0,0,0,0,0,0};
-        correctCombination = new int[] {1, 1, 5, 1, 9, 8};
+        correctCombination = new int[] {8, 9, 1, 5, 1, 1};
         isOpened = false;
         Rotate.Rotated += CheckResults;
         if (PlayerPrefsManager.GetBool(PlayerPrefsKeys.ChestUnlocked, false))

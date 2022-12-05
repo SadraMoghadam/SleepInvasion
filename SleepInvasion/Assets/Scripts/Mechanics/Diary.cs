@@ -46,7 +46,7 @@ public class Diary : MonoBehaviour, IItemUsage
     {
         if(PlayerPrefsManager.GetBool(PlayerPrefsKeys.FirstDiary, true))
         {
-            GameController.Instance.HintController.ShowHint(14, 2);
+            GameController.Instance.HintController.ShowHint(14, 3);
             PlayerPrefsManager.SetBool(PlayerPrefsKeys.FirstDiary, false);
         }
         GameManager.Instance.AudioManager.play(SoundName.BookOpen);

@@ -41,7 +41,7 @@ public class MayaStone : MonoBehaviour
         _gameController = GameController.Instance;
         if(PlayerPrefsManager.GetBool(PlayerPrefsKeys.FirsMayaStone, true))
         {
-            _gameController.HintController.ShowHint(15, 2);
+            _gameController.HintController.ShowHint(15, 3);
             PlayerPrefsManager.SetBool(PlayerPrefsKeys.FirsMayaStone, false);
         }
         SetupOverallDegrees(out _firstRingDegrees, 0);

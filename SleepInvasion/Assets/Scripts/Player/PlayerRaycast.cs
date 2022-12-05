@@ -58,7 +58,7 @@ public class PlayerRaycast : MonoBehaviour
             {
                 _firstRaycast = false;
                 PlayerPrefsManager.SetBool(PlayerPrefsKeys.FirstRaycast, false);
-                _gameController.HintController.ShowHint(3, 2);
+                _gameController.HintController.ShowHint(3, 3);
             }
             // if (hit.collider.gameObject.GetComponent<Item>() == null)
             // {
