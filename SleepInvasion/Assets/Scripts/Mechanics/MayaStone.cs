@@ -127,6 +127,7 @@ public class MayaStone : MonoBehaviour
         hitCollider.gameObject.SetActive(!stoneView);
         RingsColliderActivation(stoneView);
         _gameController.IsInMayaStoneView = stoneView;
+        _gameController.UIController.escIcon.SetActive(stoneView);
         if (stoneView)
         {
             _gameController.ShowCursor();

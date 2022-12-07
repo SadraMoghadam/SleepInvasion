@@ -79,12 +79,12 @@ public class SendToGoogle : MonoBehaviour {
         // https://docs.google.com/forms/d/e/1FAIpQLSdyQkpRLzqRzADYlLhlGJHwhbKZvKJILo6vGmMfSePJQqlZxA/viewform?usp=pp_url&entry.631493581=Simple+Game&entry.1313960569=Very%0AGood!
 
         string URL =
-            "https://docs.google.com/forms/d/e/1FAIpQLSdyQkpRLzqRzADYlLhlGJHwhbKZvKJILo6vGmMfSePJQqlZxA/formResponse";
+            "https://docs.google.com/forms/d/e/1FAIpQLSeFwyAYVYJfyQE5NovsRw7VlhvCxZksuT1Gf-m_MGqPjy43-w/formResponse";
         
         WWWForm form = new WWWForm();
 
-        form.AddField("entry.631493581", videogame_name);
-        form.AddField("entry.1313960569", feedback);
+        form.AddField("entry.1179497332", videogame_name);
+        form.AddField("entry.40349665", feedback);
 
         UnityWebRequest www = UnityWebRequest.Post(URL, form);
 

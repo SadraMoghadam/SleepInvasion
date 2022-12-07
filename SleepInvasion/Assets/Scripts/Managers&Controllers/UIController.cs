@@ -13,10 +13,12 @@ public class UIController : MonoBehaviour
     public Sprite keyDownSprite;
     public Sprite keyUpSprite;
     public PausePanel pausePanel;
+    public GameObject controlsPanel;
     public GameObject rIcon;
     public GameObject eIcon;
     public GameObject qIcon;
     public GameObject escIcon;
+    public GameObject mIcon;
 
     [NonSerialized] public bool IsInPauseMenu;
 
@@ -30,6 +32,7 @@ public class UIController : MonoBehaviour
 
     public void ShowPausePanel()
     {
+        controlsPanel.SetActive(false);
         escIcon.SetActive(true);
         pausePanel.gameObject.SetActive(true);
         _gameController.ShowCursor();
@@ -39,6 +42,7 @@ public class UIController : MonoBehaviour
     
     public void HidePausePanel()
     {
+        controlsPanel.SetActive(false);
         escIcon.SetActive(false);
         pausePanel.gameObject.SetActive(false);
         _gameController.HideCursor();

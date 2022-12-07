@@ -81,6 +81,15 @@ public class Magnifier : MonoBehaviour, IItemUsage
             var cameraTransform = playerCamera.transform;
             if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out var hit, rayLength, layerMaskInteract))
             {
+                if (hit.collider.gameObject.GetComponent<Magnifiable>() != null)
+                {
+                    if (!_gameController.UIController.mIcon.activeSelf)
+                        _gameController.UIController.mIcon.SetActive(true);
+                }
+                else
+                {
+                    _gameController.UIController.mIcon.SetActive(false);
+                }
                 if (Input.GetKeyDown(KeyCode.M) && !_magnifiedObjects.Contains(hit.colliderInstanceID))
                 {
                     Magnifiable magnifiable = hit.collider.gameObject.GetComponent<Magnifiable>();
@@ -96,9 +105,14 @@ public class Magnifier : MonoBehaviour, IItemUsage
                     }
                 }
             }
+            else
+            {
+                _gameController.UIController.mIcon.SetActive(false);
+            }
         }
         else
         {
+            _gameController.UIController.mIcon.SetActive(false);
             playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, _zoomedOutFOV, Time.deltaTime * speed);
             _animator.SetBool(Use2, false);
         }

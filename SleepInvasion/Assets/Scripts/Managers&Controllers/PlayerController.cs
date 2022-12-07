@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
         if(_gameController.playerControllerKeysDisabled)
             return;
         
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.I) && !_gameController.IsInDiaryView && !_gameController.IsInLockView && !_gameController.IsInMayaStoneView)
         {
             if(!_gameController.InventoryController.inventoryPanel.gameObject.activeSelf)
             {
@@ -68,7 +68,7 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
-        else if (Input.GetKeyDown(KeyCode.R))
+        else if (Input.GetKeyDown(KeyCode.R) && !_gameController.IsInInspectView && !_gameController.IsInLockView && !_gameController.IsInMayaStoneView)
         {
             _gameController.ItemsController.AbandonUsingItem();
         }
