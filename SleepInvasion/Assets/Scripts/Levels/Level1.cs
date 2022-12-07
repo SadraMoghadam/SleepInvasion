@@ -82,6 +82,7 @@ public class Level1 : Level
     
     private void secondProcess()
     {
+        SixthProcess();
         if (_gameController.InventoryController.IsItemInInventory(InteractableItemType.Diary))
         {
             _gameController.HintController.ShowHint(2, 5);
@@ -91,6 +92,7 @@ public class Level1 : Level
 
     private void ThirdProcess()
     {
+        SixthProcess();
         if (_gameController.IsInLockView && PlayerPrefsManager.GetBool(PlayerPrefsKeys.FirstLockView, true))
         {
             _gameController.HintController.ShowHint(4, 3);
@@ -101,6 +103,7 @@ public class Level1 : Level
     
     private void FourthProcess()
     {
+        SixthProcess();
         if (_gameController.InventoryController.IsItemInInventory(InteractableItemType.Magnifier))
         {
             _gameController.HintController.ShowHint(5, 3);
@@ -110,6 +113,7 @@ public class Level1 : Level
     
     private void FifthProcess()
     {
+        SixthProcess();
         if (_level1Data.shaderGO.CompareTag("InteractableItem"))
         {
             _gameController.HintController.ShowHint(6, 3);

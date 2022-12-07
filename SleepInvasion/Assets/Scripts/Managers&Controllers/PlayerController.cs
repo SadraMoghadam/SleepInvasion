@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
         {
             _gameController.ItemsController.AbandonUsingItem();
         }
-        else if (_gameController.ItemsController.TypeUsing == InteractableItemType.None)
+        else if (_gameController.ItemsController.TypeUsing == InteractableItemType.None && !_gameController.IsInDiaryView && !_gameController.IsInInspectView && !_gameController.IsInLockView && !_gameController.IsInMayaStoneView)
         {
             if (Input.GetKeyDown(KeyCode.Alpha3) && _gameController.InventoryController.IsItemInInventory(InteractableItemType.Shader))
             {

@@ -42,12 +42,14 @@ public class Lock : MonoBehaviour {
         {
             GetComponent<Collider>().enabled = true;
             _gameController.IsInLockView = false;
+            _gameController.UIController.escIcon.SetActive(false);
             _gameController.HideCursor();
         }
         if (OverheadCamera.enabled)
         {
             GetComponent<Collider>().enabled = false;
             _gameController.IsInLockView = true;
+            _gameController.UIController.escIcon.SetActive(true);
             _gameController.ShowCursor(); //show cursor when using lock
         }
     }

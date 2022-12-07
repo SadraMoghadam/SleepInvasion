@@ -21,6 +21,7 @@ public class InspectPanel : MonoBehaviour
 
     public void Setup(InteractableItemSO scriptableObject)
     {
+        _gameController.UIController.escIcon.SetActive(true);
         _gameController.IsInInspectView = true;
         if(PlayerPrefsManager.GetBool(PlayerPrefsKeys.FirstInspect, true))
         {
@@ -42,6 +43,7 @@ public class InspectPanel : MonoBehaviour
     
     public void Close()
     {
+        _gameController.UIController.escIcon.SetActive(false);
         if (itemGameObject.transform.childCount > 0)
         {
             var children = itemGameObject.GetComponentsInChildren<Inspect>();

@@ -454,7 +454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.3019608}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.1764706}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -631,7 +631,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.3019608}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.1764706}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -974,6 +974,22 @@ PrefabInstance:
     - target: {fileID: 426233531008289387, guid: 7f63c3934a994e745860998d6ff341cc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3942186100240482879, guid: 7f63c3934a994e745860998d6ff341cc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 7252506198866034806, guid: 7f63c3934a994e745860998d6ff341cc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.6999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 7537925625985023032, guid: 7f63c3934a994e745860998d6ff341cc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 8666388439238799197, guid: 7f63c3934a994e745860998d6ff341cc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 8869581161973382605, guid: 7f63c3934a994e745860998d6ff341cc, type: 3}
       propertyPath: m_Name
@@ -2553,9 +2569,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6144850595457504307, guid: 23afeab32097b9c43b136a81ff6c885e, type: 3}
+      propertyPath: m_Size.z
+      value: 0.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144850595457504307, guid: 23afeab32097b9c43b136a81ff6c885e, type: 3}
+      propertyPath: m_Center.z
+      value: -0.36
+      objectReference: {fileID: 0}
     - target: {fileID: 6474326250783787544, guid: 23afeab32097b9c43b136a81ff6c885e, type: 3}
       propertyPath: m_Name
       value: door
+      objectReference: {fileID: 0}
+    - target: {fileID: 8422161025136924742, guid: 23afeab32097b9c43b136a81ff6c885e, type: 3}
+      propertyPath: m_Size.x
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 8422161025136924742, guid: 23afeab32097b9c43b136a81ff6c885e, type: 3}
+      propertyPath: m_Center.x
+      value: 0.015
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23afeab32097b9c43b136a81ff6c885e, type: 3}
@@ -2817,6 +2849,10 @@ PrefabInstance:
     - target: {fileID: 6851167215361837294, guid: 3540c705caac8d2429578f0acfcb3919, type: 3}
       propertyPath: m_Name
       value: Shader
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851167215361837294, guid: 3540c705caac8d2429578f0acfcb3919, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 703231421746361026, guid: 3540c705caac8d2429578f0acfcb3919, type: 3}

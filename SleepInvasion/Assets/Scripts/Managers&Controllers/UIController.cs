@@ -16,6 +16,7 @@ public class UIController : MonoBehaviour
     public GameObject rIcon;
     public GameObject eIcon;
     public GameObject qIcon;
+    public GameObject escIcon;
 
     [NonSerialized] public bool IsInPauseMenu;
 
@@ -29,6 +30,7 @@ public class UIController : MonoBehaviour
 
     public void ShowPausePanel()
     {
+        escIcon.SetActive(true);
         pausePanel.gameObject.SetActive(true);
         _gameController.ShowCursor();
         IsInPauseMenu = true;
@@ -37,6 +39,7 @@ public class UIController : MonoBehaviour
     
     public void HidePausePanel()
     {
+        escIcon.SetActive(false);
         pausePanel.gameObject.SetActive(false);
         _gameController.HideCursor();
         IsInPauseMenu = false;
