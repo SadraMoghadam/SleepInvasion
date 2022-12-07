@@ -104,4 +104,63 @@ public class SendToGoogle : MonoBehaviour {
         // at the end go back to the main menu
         MainMenuManager.Instance.CloseFeedback();
     }
+    
+    
+    
+    public static IEnumerator PostTimer(float timer, float lockTimer, float magnifierTimer, float shaderTimer)
+    {
+        string URL =
+            "https://docs.google.com/forms/d/e/1FAIpQLSeFwyAYVYJfyQE5NovsRw7VlhvCxZksuT1Gf-m_MGqPjy43-w/formResponse";
+        
+        WWWForm form = new WWWForm();
+
+        string timerStr = "Time Play = " + (timer / 60.0).ToString("#.##") + " // Lock Time Play = " +
+                          (lockTimer / 60.0).ToString("#.##") + " // Magnifier Time Play = " +
+                          (magnifierTimer / 60.0).ToString("#.##") + " // Shader Time Play = " + (shaderTimer / 60.0).ToString("#.##"); 
+        
+        form.AddField("entry.1560066554", timerStr);
+
+        UnityWebRequest www = UnityWebRequest.Post(URL, form);
+
+        yield return www.SendWebRequest();
+
+        print(www.error);
+        
+        if (www.isNetworkError)
+        {
+            Debug.Log(www.error);
+        }
+        else
+        {
+            Debug.Log("Form upload complete!");
+        }
+        
+    }
+    
+    public static IEnumerator PostStarted()
+    {
+        string URL =
+            "https://docs.google.com/forms/d/e/1FAIpQLSeFwyAYVYJfyQE5NovsRw7VlhvCxZksuT1Gf-m_MGqPjy43-w/formResponse";
+        
+        WWWForm form = new WWWForm(); 
+        
+        form.AddField("entry.1587231683", "Started");
+
+        UnityWebRequest www = UnityWebRequest.Post(URL, form);
+
+        yield return www.SendWebRequest();
+
+        print(www.error);
+        
+        if (www.isNetworkError)
+        {
+            Debug.Log(www.error);
+        }
+        else
+        {
+            Debug.Log("Form upload complete!");
+        }
+        
+    }
+    
 }

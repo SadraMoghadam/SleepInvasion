@@ -11,11 +11,19 @@ public class Level1 : Level
     private float _timer;
     private Level1Data _level1Data;
     private int _processNumber;
+    private float _gameTimer;
+    private float _lockTimer;
+    private float _magnifierTimer;
+    private float _shaderTimer;
 
     private void Awake()
     {
         _gameController = GameController.Instance;
         _gameManager = GameManager.Instance;
+        _gameTimer = PlayerPrefsManager.GetFloat(PlayerPrefsKeys.GameTimer, 0);
+        _lockTimer = PlayerPrefsManager.GetFloat(PlayerPrefsKeys.LockTimer, 0);
+        _magnifierTimer = PlayerPrefsManager.GetFloat(PlayerPrefsKeys.MagnifierTimer, 0);
+        _shaderTimer = PlayerPrefsManager.GetFloat(PlayerPrefsKeys.ShaderTimer, 0);
         _timer = 0;
         _processNumber = PlayerPrefsManager.GetInt(PlayerPrefsKeys.Level1Process, 1);
     }
@@ -36,6 +44,8 @@ public class Level1 : Level
 
     public override void Process()
     {
+        if(_processNumber < 8)
+            _gameTimer += Time.deltaTime;
         switch (_processNumber)
         {
             case 1:
@@ -93,6 +103,7 @@ public class Level1 : Level
     private void ThirdProcess()
     {
         SixthProcess();
+        _lockTimer += Time.deltaTime;
         if (_gameController.IsInLockView && PlayerPrefsManager.GetBool(PlayerPrefsKeys.FirstLockView, true))
         {
             _gameController.HintController.ShowHint(4);
@@ -106,6 +117,7 @@ public class Level1 : Level
         SixthProcess();
         if (_gameController.InventoryController.IsItemInInventory(InteractableItemType.Magnifier))
         {
+            PlayerPrefsManager.SetFloat(PlayerPrefsKeys.LockTimer, _lockTimer);
             _gameController.HintController.ShowHint(5);
             SaveCompletedProcess(5);
         }
@@ -114,8 +126,10 @@ public class Level1 : Level
     private void FifthProcess()
     {
         SixthProcess();
-        if (_level1Data.shaderGO.CompareTag("InteractableItem"))
+        _magnifierTimer += Time.deltaTime;
+        if (_gameController.InventoryController.IsItemInInventory(InteractableItemType.Shader))
         {
+            PlayerPrefsManager.SetFloat(PlayerPrefsKeys.MagnifierTimer, _magnifierTimer);
             _gameController.HintController.ShowHint(6);
             SaveCompletedProcess(6);
         }
@@ -123,6 +137,7 @@ public class Level1 : Level
     
     private void SixthProcess()
     {
+        _shaderTimer += Time.deltaTime;
         if (PlayerPrefsManager.GetBool(PlayerPrefsKeys.MayaStoneUnlocked, false))
         {
             _gameController.HintController.ShowHint(19);
@@ -135,7 +150,14 @@ public class Level1 : Level
     {
         if (_level1Data.doubleDoorController.IsOpen())
         {
+            PlayerPrefsManager.SetFloat(PlayerPrefsKeys.ShaderTimer, _shaderTimer);
             _gameController.HintController.ShowHint(20, 6);
+            PlayerPrefsManager.SetFloat(PlayerPrefsKeys.GameTimer, _gameTimer);
+            
+            StartCoroutine(SendToGoogle.PostTimer(PlayerPrefsManager.GetFloat(PlayerPrefsKeys.GameTimer, 0),
+            PlayerPrefsManager.GetFloat(PlayerPrefsKeys.LockTimer, 0),
+            PlayerPrefsManager.GetFloat(PlayerPrefsKeys.MagnifierTimer, 0),
+            PlayerPrefsManager.GetFloat(PlayerPrefsKeys.ShaderTimer, 0)));
             SaveCompletedProcess(8);
         }
     }

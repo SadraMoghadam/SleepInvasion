@@ -23,7 +23,13 @@ public enum PlayerPrefsKeys
     FirstShader,
     FirstDiary,
     MayaStoneUnlocked,
-    DoorLocked
+    DoorLocked,
+    // Analytics
+    GameTimer,
+    LockTimer,
+    MagnifierTimer,
+    ShaderTimer
+    
 }
 
 public struct SavedData
