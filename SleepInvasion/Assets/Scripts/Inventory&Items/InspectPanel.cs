@@ -25,7 +25,7 @@ public class InspectPanel : MonoBehaviour
         _gameController.IsInInspectView = true;
         if(PlayerPrefsManager.GetBool(PlayerPrefsKeys.FirstInspect, true))
         {
-            _gameController.HintController.ShowHint(17, 3);
+            _gameController.HintController.ShowHint(17);
             PlayerPrefsManager.SetBool(PlayerPrefsKeys.FirstInspect, false);
         }
         useButton.interactable = scriptableObject.usable;

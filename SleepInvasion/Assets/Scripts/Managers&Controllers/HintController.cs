@@ -15,7 +15,7 @@ public class HintController : MonoBehaviour
     //     _gameController = GameController.Instance;
     // }
     
-    public void ShowHint(int id, float hintShowDuration = 0)
+    public void ShowHint(int id, float hintShowDuration = 4)
     {
         hintPanel.gameObject.SetActive(true);
         string hint = GameController.Instance.HintDataReader.GetHintData(id).Hint;

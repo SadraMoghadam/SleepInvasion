@@ -33,15 +33,17 @@ public class MayaStone : MonoBehaviour
 
     private float ringRotationTime = 1;
 
+    private bool _clickable;
+
     private void Start()
     {
-        
+        _clickable = true;
         stoneCamera.gameObject.SetActive(false);
         _animator = GetComponent<Animator>();
         _gameController = GameController.Instance;
         if(PlayerPrefsManager.GetBool(PlayerPrefsKeys.FirsMayaStone, true))
         {
-            _gameController.HintController.ShowHint(15, 3);
+            _gameController.HintController.ShowHint(15);
             PlayerPrefsManager.SetBool(PlayerPrefsKeys.FirsMayaStone, false);
         }
         SetupOverallDegrees(out _firstRingDegrees, 0);
@@ -67,7 +69,8 @@ public class MayaStone : MonoBehaviour
                 return;
             Debug.Log(rend.gameObject.tag);
             int index = Int32.Parse(Regex.Match(rend.gameObject.tag.ToString(), @"\d+").Value);
-            OnRingClick(index - 1);
+            if(_clickable)
+                OnRingClick(index - 1);
             if (_trueIndexCombination[0] == _initialDegreesIndex[0] &&
                 _trueIndexCombination[1] == _initialDegreesIndex[1])
             {
@@ -202,6 +205,7 @@ public class MayaStone : MonoBehaviour
     IEnumerator SmoothRingRotation(Transform startTransform, Quaternion endRot, float waitTime)
     {
         float elapsedTime = 0;
+        _clickable = false;
         while (elapsedTime < waitTime)
         {
             startTransform.localRotation = Quaternion.Lerp(startTransform.localRotation, endRot, (elapsedTime / waitTime));
@@ -210,6 +214,7 @@ public class MayaStone : MonoBehaviour
             // Yield here
             yield return null;
         }
+        _clickable = true;
         yield return null;
     }
     

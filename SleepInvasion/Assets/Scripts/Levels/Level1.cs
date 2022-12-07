@@ -72,7 +72,7 @@ public class Level1 : Level
         _gameController.DisableAllKeys();
         if (_timer > _level1Data.startHintTimer)
         {
-            _gameController.HintController.ShowHint(1, 3);
+            _gameController.HintController.ShowHint(1);
             _gameController.EnableAllKeys();
             _timer = 0;
             SaveCompletedProcess(2);
@@ -95,7 +95,7 @@ public class Level1 : Level
         SixthProcess();
         if (_gameController.IsInLockView && PlayerPrefsManager.GetBool(PlayerPrefsKeys.FirstLockView, true))
         {
-            _gameController.HintController.ShowHint(4, 3);
+            _gameController.HintController.ShowHint(4);
             PlayerPrefsManager.SetBool(PlayerPrefsKeys.FirstLockView, false);
             SaveCompletedProcess(4);
         }
@@ -106,7 +106,7 @@ public class Level1 : Level
         SixthProcess();
         if (_gameController.InventoryController.IsItemInInventory(InteractableItemType.Magnifier))
         {
-            _gameController.HintController.ShowHint(5, 3);
+            _gameController.HintController.ShowHint(5);
             SaveCompletedProcess(5);
         }
     }
@@ -116,7 +116,7 @@ public class Level1 : Level
         SixthProcess();
         if (_level1Data.shaderGO.CompareTag("InteractableItem"))
         {
-            _gameController.HintController.ShowHint(6, 3);
+            _gameController.HintController.ShowHint(6);
             SaveCompletedProcess(6);
         }
     }
@@ -125,7 +125,7 @@ public class Level1 : Level
     {
         if (PlayerPrefsManager.GetBool(PlayerPrefsKeys.MayaStoneUnlocked, false))
         {
-            _gameController.HintController.ShowHint(19, 3);
+            _gameController.HintController.ShowHint(19);
             PlayerPrefsManager.SetBool(PlayerPrefsKeys.DoorLocked, false);
             SaveCompletedProcess(7);
         }
