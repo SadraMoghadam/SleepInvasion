@@ -15,6 +15,7 @@ public class InventoryPanel : MonoBehaviour
     {
         _gameController = GameController.Instance;
         GameManager.Instance.AudioManager.play(SoundName.Inventory);
+        _gameController.ShowCursor();
     }
 
     public void Setup()
@@ -62,5 +63,6 @@ public class InventoryPanel : MonoBehaviour
     public void Close()
     {
         gameObject.SetActive(false);
+        _gameController.HideCursor();
     }
 }

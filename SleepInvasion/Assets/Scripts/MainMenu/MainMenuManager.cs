@@ -40,6 +40,8 @@ public class MainMenuManager : MonoBehaviour
         quitButton.onClick.AddListener(OnQuitClick);
         feedBackButton.onClick.AddListener(OnFeedbackClick);
         _gameManager.AudioManager.play(SoundName.MainMenu);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
 
