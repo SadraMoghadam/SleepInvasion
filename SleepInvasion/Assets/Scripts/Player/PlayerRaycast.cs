@@ -141,30 +141,6 @@ public class PlayerRaycast : MonoBehaviour
                         }
                         lightSwitch.Interact();
                     }
-                    // else
-                    // {
-                    //     MayaStone stone = hit.collider.transform.parent.parent.GetComponent<MayaStone>();
-                    //     if (stone == null)
-                    //     {
-                    //         stone = hit.collider.transform.parent.parent.GetComponentInChildren<MayaStone>();
-                    //     }
-                    //     if (hit.collider.CompareTag(InteractableObjects.MayaStoneRing1.ToString()))
-                    //     {
-                    //         stone.OnRingClick(0);
-                    //     }   
-                    //     else if (hit.collider.CompareTag(InteractableObjects.MayaStoneRing2.ToString()))
-                    //     {
-                    //         stone.OnRingClick(1);
-                    //     }
-                    //     else if (hit.collider.CompareTag(InteractableObjects.MayaStoneRing3.ToString()))
-                    //     {
-                    //         stone.OnRingClick(2);
-                    //     }
-                    //     else if (hit.collider.CompareTag(InteractableObjects.MayaStoneRing4.ToString()))
-                    //     {
-                    //         stone.OnRingClick(3);
-                    //     }
-                    // }
                     
                 }
                 catch (Exception e)

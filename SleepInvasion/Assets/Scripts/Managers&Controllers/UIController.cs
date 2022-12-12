@@ -36,6 +36,7 @@ public class UIController : MonoBehaviour
         escIcon.SetActive(true);
         pausePanel.gameObject.SetActive(true);
         _gameController.ShowCursor();
+        _gameController.DisableLook();
         IsInPauseMenu = true;
         Time.timeScale = 0;
     }
@@ -46,6 +47,7 @@ public class UIController : MonoBehaviour
         escIcon.SetActive(false);
         pausePanel.gameObject.SetActive(false);
         _gameController.HideCursor();
+        _gameController.EnableLook();
         IsInPauseMenu = false;
         Time.timeScale = 1;
     }

@@ -80,10 +80,12 @@ public class Level1 : Level
     {
         _timer += Time.deltaTime;
         _gameController.DisableAllKeys();
+        _gameController.DisableLook();
         if (_timer > _level1Data.startHintTimer)
         {
             _gameController.HintController.ShowHint(1);
             _gameController.EnableAllKeys();
+            _gameController.EnableLook();
             _timer = 0;
             SaveCompletedProcess(2);
         }

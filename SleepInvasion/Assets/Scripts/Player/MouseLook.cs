@@ -16,9 +16,9 @@ public class MouseLook : MonoBehaviour
         _gameController.HideCursor();
     } 
     
-    void FixedUpdate()
+    void LateUpdate()
     {
-        if (_gameController.keysDisabled)
+        if (_gameController.lookDisabled)
         {
             return;
         }

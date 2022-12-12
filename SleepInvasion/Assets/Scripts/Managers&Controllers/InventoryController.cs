@@ -66,6 +66,7 @@ public class InventoryController : MonoBehaviour
         inventoryPanel.Setup();
         _gameController.ShowCursor();
         _gameController.DisableAllKeys();
+        _gameController.DisableLook();
     }
 
     public void CloseInventoryPanel()
@@ -73,6 +74,7 @@ public class InventoryController : MonoBehaviour
         inventoryPanel.Close();
         _gameController.HideCursor();
         _gameController.EnableAllKeys();
+        _gameController.EnableLook();
     }
     
     public void SetupInspectPanel(InteractableItemSO scriptableObject)

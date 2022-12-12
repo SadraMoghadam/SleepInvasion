@@ -24,6 +24,7 @@ public class GameController : MonoBehaviour
     [NonSerialized] public bool IsInDiaryView = false;
     [NonSerialized] public Transform PlayerTransform;
     
+    [HideInInspector] public bool lookDisabled;
     [HideInInspector] public bool keysDisabled;
     [HideInInspector] public bool playerControllerKeysDisabled;
 
@@ -96,6 +97,16 @@ public class GameController : MonoBehaviour
     public void EnableAllKeys()
     {
         keysDisabled = false;
+    }
+    
+    public void DisableLook()
+    {
+        lookDisabled = true;
+    }
+    
+    public void EnableLook()
+    {
+        lookDisabled = false;
     }
     
     public void DisablePlayerControllerKeys()
