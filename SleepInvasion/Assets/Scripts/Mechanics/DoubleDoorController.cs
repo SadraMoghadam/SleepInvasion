@@ -28,6 +28,14 @@ public class DoubleDoorController : MonoBehaviour, IDoorController
             return;
         }
         bool currentState = _doorAnimator.GetBool(IsDoorOpen);
+        if (currentState)
+        {
+            GameManager.Instance.AudioManager.Instantplay(SoundName.CloseDoor, transform.position);
+        }
+        else
+        {
+            GameManager.Instance.AudioManager.Instantplay(SoundName.OpenDoor, transform.position);
+        }
         _doorAnimator.SetBool(IsDoorOpen, !currentState);
         _otherDoorAnimator.SetBool(IsDoorOpen, !currentState);
     }
@@ -38,7 +46,7 @@ public class DoubleDoorController : MonoBehaviour, IDoorController
         {
             return;
         }
-        GameManager.Instance.AudioManager.play(SoundName.CloseDoor);
+        GameManager.Instance.AudioManager.Instantplay(SoundName.CloseDoor, transform.position);
         _doorAnimator.SetBool(IsDoorOpen, false);
         _otherDoorAnimator.SetBool(IsDoorOpen, false);
     }
@@ -49,7 +57,7 @@ public class DoubleDoorController : MonoBehaviour, IDoorController
         {
             return;
         }
-        GameManager.Instance.AudioManager.play(SoundName.OpenDoor);
+        GameManager.Instance.AudioManager.Instantplay(SoundName.OpenDoor, transform.position);
         _doorAnimator.SetBool(IsDoorOpen, true);
         _otherDoorAnimator.SetBool(IsDoorOpen, true);
     }

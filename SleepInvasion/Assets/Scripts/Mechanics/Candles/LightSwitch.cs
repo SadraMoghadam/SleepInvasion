@@ -16,7 +16,7 @@ public class LightSwitch: Interactable
 
     IEnumerator UpdateLight()
     {
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(1f);
         m_Light.enabled = isOn;
         obj.SetActive(isOn);
     }
@@ -28,7 +28,7 @@ public class LightSwitch: Interactable
 
     public override void Interact() {
         if(isOn)
-            GameManager.Instance.AudioManager.play(SoundName.CandleBlow);
+            GameManager.Instance.AudioManager.Instantplay(SoundName.CandleBlow, transform.position);
         isOn = !isOn;
         StartCoroutine(UpdateLight());
     }

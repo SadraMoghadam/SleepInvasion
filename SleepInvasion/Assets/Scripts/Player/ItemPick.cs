@@ -16,7 +16,7 @@ public class ItemPick : MonoBehaviour
 
     public void PickUp(Item item)
     {
-        _gameManager.AudioManager.play(SoundName.PickUpItem);
+        _gameManager.AudioManager.Instantplay(SoundName.PickUpItem, item.transform.position);
         if (item.itemInfo.PlaceInInventory)
         {
             _gameController.InventoryController.AddInventoryData(item.itemInfo);

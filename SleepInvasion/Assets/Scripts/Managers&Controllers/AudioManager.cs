@@ -49,4 +49,23 @@ public class AudioManager : MonoBehaviour
             Console.WriteLine(e);
         }
     }
+    
+    public void Instantplay(SoundName name, Vector3 position)
+    {
+        Sound sound = Array.Find(sounds, sound => sound.name == name);
+        if (sound == null)
+        {
+            Debug.Log("Sound " + name + " not found");
+            return;
+        }
+
+        try
+        {
+            AudioSource.PlayClipAtPoint(sound.clip, position, sound.volume);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+        }
+    }
 }

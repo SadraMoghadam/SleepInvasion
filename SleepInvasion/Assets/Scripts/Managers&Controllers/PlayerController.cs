@@ -159,7 +159,7 @@ public class PlayerController : MonoBehaviour
             SavedData savedData = PlayerPrefsManager.LoadGame();
             transform.position = savedData.PlayerTransform.position;
             transform.rotation = savedData.PlayerTransform.rotation;
-            _gameManager.AudioManager.play(SoundName.Respawn);
+            _gameManager.AudioManager.Instantplay(SoundName.Respawn, transform.position);
         }
     }
 
