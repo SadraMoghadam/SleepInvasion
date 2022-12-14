@@ -19,10 +19,10 @@ public class LevelsController : MonoBehaviour
         _levelsGO = new List<GameObject>();
         _levelsContainer = levelsDataContainer.gameObject;
         GetLevels();
-        // _currentLevel = GetCurrentLevel();
-        // SetLevelActive(_currentLevel.LevelNum);
-        _currentLevel = _levels[0];
-        SetLevelActive(0);
+        _currentLevel = GetCurrentLevel();
+        SetLevelActive(_currentLevel.LevelNum - 1);
+        // _currentLevel = _levels[0];
+        // SetLevelActive(0);
     }
 
     private void Start()
@@ -61,7 +61,7 @@ public class LevelsController : MonoBehaviour
 
     public Level GetCurrentLevel()
     {
-        int currentLevel = PlayerPrefsManager.GetInt(PlayerPrefsKeys.Level, -1);
+        int currentLevel = PlayerPrefsManager.GetInt(PlayerPrefsKeys.Level, 1) - 1;
         return _levels[currentLevel];
     }
     

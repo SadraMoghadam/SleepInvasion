@@ -56,6 +56,7 @@ MonoBehaviour:
   MayaStone: {fileID: 0}
   Lock: {fileID: 0}
   DataReaders: {fileID: 0}
+  lookDisabled: 0
   keysDisabled: 0
   playerControllerKeysDisabled: 0
 --- !u!114 &6917092360357706117
@@ -77,9 +78,12 @@ MonoBehaviour:
   keyDownSprite: {fileID: 21300000, guid: 8681319ed761e094f87936a0fa83b5e7, type: 3}
   keyUpSprite: {fileID: 21300000, guid: d2650d21fe76fd94191cf7d5e2320eba, type: 3}
   pausePanel: {fileID: 0}
+  controlsPanel: {fileID: 0}
   rIcon: {fileID: 0}
   eIcon: {fileID: 0}
   qIcon: {fileID: 0}
+  escIcon: {fileID: 0}
+  mIcon: {fileID: 0}
 --- !u!114 &6917092360357706116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,7 +184,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: e50f8a5313320f049b221ce7117bdcf8, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -193,7 +197,7 @@ AudioSource:
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -201,23 +205,23 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
+      time: 0.002
       value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     - serializedVersion: 3
       time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
+      value: 1.0003052
+      inSlope: -0.011210198
+      outSlope: -0.011210198
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0.103090174
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
