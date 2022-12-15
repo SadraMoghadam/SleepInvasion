@@ -21,7 +21,8 @@ public enum SoundName
     Inventory,
     Respawn,
     Magnifier,
-    CandleBlow
+    CandleBlow,
+    SettingsMenu
     // Click
 }
 

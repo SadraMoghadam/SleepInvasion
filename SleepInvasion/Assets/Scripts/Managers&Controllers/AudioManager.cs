@@ -68,6 +68,7 @@ public class AudioManager : MonoBehaviour
         try
         {
             sound.source.Play();
+            Debug.Log("Playing " + name + " at " + sound.source.volume + " volume");
         }
         catch (Exception e)
         {

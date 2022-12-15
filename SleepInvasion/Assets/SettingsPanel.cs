@@ -18,7 +18,7 @@ public class SettingsPanel : MonoBehaviour
         _gameManager = GameManager.Instance;
         _gameController = GameController.Instance;
         _uiController = _gameController.UIController;
-        _gameManager.AudioManager.play(SoundName.PauseMenu);
+        _gameManager.AudioManager.play(SoundName.SettingsMenu);
         // graphicsButton.onClick.AddListener(OnGraphicsClicked);
         // audioButton.onClick.AddListener(OnAudioClicked);
         // controlsButton.onClick.AddListener(OnControlsClicked);
