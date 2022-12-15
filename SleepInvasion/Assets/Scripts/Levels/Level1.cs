@@ -39,7 +39,8 @@ public class Level1 : Level
         _gameController.PlayerController.transform.rotation = _level1Data.spawnTransform.rotation;
         PlayerPrefsManager.SaveGame(1);
         if(_processNumber == 1)
-            _gameController.HintController.ShowHint(0, _level1Data.startHintTimer - 2);
+            _gameController.DialogueController.Show(1);
+            // _gameController.HintController.ShowHint(0, _level1Data.startHintTimer - 2);
     }
 
     public override void Process()

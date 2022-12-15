@@ -17,6 +17,8 @@ public class GameController : MonoBehaviour
     [NonSerialized] public PlayerInteraction PlayerInteraction;
     [NonSerialized] public HintController HintController;
     [NonSerialized] public HintDataReader HintDataReader;
+    [NonSerialized] public DialogueController DialogueController;
+    [NonSerialized] public DialogueDataReader DialogueDataReader;
     [NonSerialized] public LevelsController LevelsController;
     [NonSerialized] public bool IsInMayaStoneView = false;
     [NonSerialized] public bool IsInInspectView = false;
@@ -51,6 +53,8 @@ public class GameController : MonoBehaviour
         PlayerInteraction = GetComponent<PlayerInteraction>();
         HintController = GetComponent<HintController>();
         HintDataReader = DataReaders.GetComponent<HintDataReader>();
+        DialogueController = GetComponent<DialogueController>();
+        DialogueDataReader = DataReaders.GetComponent<DialogueDataReader>();
         LevelsController = GetComponent<LevelsController>();
         
         IsInMayaStoneView = false;
@@ -69,6 +73,7 @@ public class GameController : MonoBehaviour
             StartCoroutine(SendToGoogle.PostStarted());
         }
         _gameManager.AudioManager.play(SoundName.Game);
+        DialogueController.Show(1);
     }
 
     public Transform GetPlayerTransform()

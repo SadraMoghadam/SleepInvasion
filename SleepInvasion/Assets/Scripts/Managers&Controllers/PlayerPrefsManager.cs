@@ -28,7 +28,8 @@ public enum PlayerPrefsKeys
     GameTimer,
     LockTimer,
     MagnifierTimer,
-    ShaderTimer
+    ShaderTimer,
+    ShownDialogues,
     
 }
 

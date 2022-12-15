@@ -32,6 +32,8 @@ public class ItemsController : MonoBehaviour
 
     public void UseInventoryItem(InteractableItemType type)
     {
+        if(_gameController.DialogueController.IsPanelActive())
+            return;
         _gameController.InventoryController.CloseInspectPanel();
         switch (type)
         {

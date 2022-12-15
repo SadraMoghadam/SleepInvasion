@@ -46,8 +46,11 @@ public class UIController : MonoBehaviour
         controlsPanel.SetActive(false);
         escIcon.SetActive(false);
         pausePanel.gameObject.SetActive(false);
-        _gameController.HideCursor();
-        _gameController.EnableLook();
+        if (!_gameController.DialogueController.IsPanelActive())
+        {
+            _gameController.EnableLook();   
+            _gameController.HideCursor();
+        }
         IsInPauseMenu = false;
         Time.timeScale = 1;
     }

@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 1542037969}
   - component: {fileID: 8428356718263712460}
   - component: {fileID: 558863278}
+  - component: {fileID: 6286080603999356230}
   - component: {fileID: 474900328109857825}
   m_Layer: 0
   m_Name: Controllers
@@ -174,6 +175,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelsDataContainer: {fileID: 0}
+--- !u!114 &6286080603999356230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6917092360357706112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8874d44d3a337534eb30da204fb29354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialoguePanel: {fileID: 0}
 --- !u!82 &474900328109857825
 AudioSource:
   m_ObjectHideFlags: 0
