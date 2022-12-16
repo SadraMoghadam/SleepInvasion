@@ -62,6 +62,10 @@ public class PlayerController : MonoBehaviour
                 {
                     _gameController.UIController.HidePausePanel();
                 }
+                else if (_gameController.UIController.settingsPanel.gameObject.activeSelf)
+                {
+                    _gameController.UIController.HideSettingsPanel();
+                }
                 else if(!(_gameController.IsInInspectView || _gameController.IsInMayaStoneView || _gameController.IsInLockView || _gameController.IsInDiaryView))
                 {
                     _gameController.UIController.ShowPausePanel();

@@ -13,6 +13,7 @@ public class UIController : MonoBehaviour
     public Sprite keyDownSprite;
     public Sprite keyUpSprite;
     public PausePanel pausePanel;
+    public SettingsPanel settingsPanel;
     public GameObject controlsPanel;
     public GameObject rIcon;
     public GameObject eIcon;
@@ -23,6 +24,7 @@ public class UIController : MonoBehaviour
     [NonSerialized] public bool IsInPauseMenu;
 
     private GameController _gameController;
+    private GameObject _currentPanel;
 
     private void Awake()
     {
@@ -40,7 +42,7 @@ public class UIController : MonoBehaviour
         IsInPauseMenu = true;
         Time.timeScale = 0;
     }
-    
+
     public void HidePausePanel()
     {
         controlsPanel.SetActive(false);
@@ -55,6 +57,18 @@ public class UIController : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    public void ShowSettingsPanel()
+    {
+        pausePanel.gameObject.SetActive(false);
+        settingsPanel.gameObject.SetActive(true);
+    }
+
+    public void HideSettingsPanel()
+    {
+        settingsPanel.gameObject.SetActive(false);
+        pausePanel.gameObject.SetActive(true);
+    }
+    
     public void ShowGUI()
     {
         for (int i = 0; i < hidingObjects.Count; i++)
@@ -70,6 +84,4 @@ public class UIController : MonoBehaviour
             hidingObjects[i].gameObject.SetActive(false);   
         }
     }
-
-    
 }

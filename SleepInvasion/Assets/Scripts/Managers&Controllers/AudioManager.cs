@@ -8,7 +8,7 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
-
+    
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -23,6 +23,31 @@ public class AudioManager : MonoBehaviour
             sounds[i].source.volume = sounds[i].volume;
             sounds[i].source.pitch = sounds[i].pitch;
             sounds[i].source.loop = sounds[i].loop;
+        }
+    }
+
+    public void ChangeMasterVolume(float coefficient)
+    {
+        AudioListener.volume = coefficient;
+    }
+
+    public void ChangeMusicVolume(float coefficient)
+    {
+        for (int i = 0; i < 2; i++)
+        {
+            if(sounds[i].source == null)
+                continue;
+            sounds[i].source.volume = sounds[i].volume * coefficient;
+        }
+    }
+
+    public void ChangeEffectsVolume(float coefficient)
+    {
+        for (int i = 2; i < sounds.Length; i++)
+        {
+            if(sounds[i].source == null)
+                continue;
+            sounds[i].source.volume = sounds[i].volume * coefficient;
         }
     }
 
@@ -43,6 +68,7 @@ public class AudioManager : MonoBehaviour
         try
         {
             sound.source.Play();
+            Debug.Log("Playing " + name + " at " + sound.source.volume + " volume");
         }
         catch (Exception e)
         {
