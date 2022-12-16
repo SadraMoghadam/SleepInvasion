@@ -14,6 +14,13 @@ public class DialoguePanel : MonoBehaviour
 
     public void Setup(string dialogueText, bool disableNext = false, bool disablePrev = false)
     {
+        if (!Cursor.visible)
+        {
+            GameController _gameController = GameController.Instance;
+            _gameController.DisableLook();
+            _gameController.DisableAllKeys();
+            _gameController.ShowCursor();
+        }
         dialogue.text = dialogueText;
         nextButtonText.text = disableNext ? "Finish" : "Next";
         previousButton.interactable = !disablePrev;

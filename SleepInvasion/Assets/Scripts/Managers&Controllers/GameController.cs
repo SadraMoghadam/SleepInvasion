@@ -73,7 +73,7 @@ public class GameController : MonoBehaviour
             StartCoroutine(SendToGoogle.PostStarted());
         }
         _gameManager.AudioManager.play(SoundName.Game);
-        DialogueController.Show(1);
+        // DialogueController.Show(1);
     }
 
     public Transform GetPlayerTransform()
@@ -101,7 +101,8 @@ public class GameController : MonoBehaviour
     
     public void EnableAllKeys()
     {
-        keysDisabled = false;
+        if(!DialogueController.IsPanelActive())
+            keysDisabled = false;
     }
     
     public void DisableLook()
@@ -111,7 +112,8 @@ public class GameController : MonoBehaviour
     
     public void EnableLook()
     {
-        lookDisabled = false;
+        if(!DialogueController.IsPanelActive())
+            lookDisabled = false;
     }
     
     public void DisablePlayerControllerKeys()

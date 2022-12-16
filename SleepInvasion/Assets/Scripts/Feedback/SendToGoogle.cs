@@ -109,6 +109,7 @@ public class SendToGoogle : MonoBehaviour {
     
     public static IEnumerator PostTimer(float timer, float lockTimer, float magnifierTimer, float shaderTimer)
     {
+        yield break;
         string URL =
             "https://docs.google.com/forms/d/e/1FAIpQLSeFwyAYVYJfyQE5NovsRw7VlhvCxZksuT1Gf-m_MGqPjy43-w/formResponse";
         
@@ -139,6 +140,7 @@ public class SendToGoogle : MonoBehaviour {
     
     public static IEnumerator PostStarted()
     {
+        yield break;
         string URL =
             "https://docs.google.com/forms/d/e/1FAIpQLSeFwyAYVYJfyQE5NovsRw7VlhvCxZksuT1Gf-m_MGqPjy43-w/formResponse";
         

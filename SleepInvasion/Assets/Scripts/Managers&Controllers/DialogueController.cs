@@ -24,6 +24,9 @@ public class DialogueController : MonoBehaviour
 
     public void Show(int dialogueId)
     {
+        List<int> shownIds = PlayerPrefsManager.GetIntList(PlayerPrefsKeys.ShownDialogues);
+        if(shownIds.Contains(dialogueId))
+            return;
         _dialogueStartId = dialogueId;
         dialoguePanel.gameObject.SetActive(true);
         SetDialogue(dialogueId);
