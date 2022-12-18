@@ -187,10 +187,10 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: 19
-    clip: {fileID: 8300000, guid: fdc38c59705274d499015e7fcc39c742, type: 3}
-    volume: 0.5
-    pitch: 1
-    loop: 0
+    clip: {fileID: 8300000, guid: 459a02bce623b924493f0c195c46c831, type: 3}
+    volume: 0.12
+    pitch: 1.17
+    loop: 1
     source: {fileID: 0}
 --- !u!82 &1532738753
 AudioSource:

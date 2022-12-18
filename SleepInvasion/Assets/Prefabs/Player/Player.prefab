@@ -222,7 +222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 2119518492613409771}
   moveDirection: {x: 0, y: 0, z: 0}
-  movementSpeed: 5
+  movementSpeed: 4
   jumpHeight: 7
   groundCheck: {fileID: 2119518492500229702}
   groundDistance: 1
@@ -268,14 +268,14 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2119518492613409769}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
+  m_audioClip: {fileID: 8300000, guid: 459a02bce623b924493f0c195c46c831, type: 3}
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -648,8 +648,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enabled: 1
-  Amount: 0.00484
-  Frequency: 16
+  Amount: 0.01
+  Frequency: 11
   Smooth: 44.7
   EnabledRoationMovement: 1
   RoationMovementSmooth: 10

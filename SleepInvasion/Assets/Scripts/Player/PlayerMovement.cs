@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector] public float horizontal;
 
     private GameController _gameController;
+    private Vector3 _lastPos = Vector3.zero;
 
     private void Start()
     {
@@ -44,7 +45,10 @@ public class PlayerMovement : MonoBehaviour
         Vector3 right = transform.TransformDirection(Vector3.right);
         vertical = movementSpeed * Input.GetAxis("Vertical");
         horizontal = movementSpeed * Input.GetAxis("Horizontal");
-        if (vertical > .1f || horizontal > .1f)
+        float movementDirectionY = moveDirection.y;
+        moveDirection = (forward * vertical) + (right * horizontal);
+
+        if (Vector3.Distance(transform.position, _lastPos) > .01f && controller.isGrounded)
         {
             _walkAudioSource.enabled = true;
         }
@@ -52,9 +56,7 @@ public class PlayerMovement : MonoBehaviour
         {
             _walkAudioSource.enabled = false;
         }
-        float movementDirectionY = moveDirection.y;
-        moveDirection = (forward * vertical) + (right * horizontal);
-
+        _lastPos = transform.position;
         if (Input.GetButton("Jump") && controller.isGrounded)
         {
             moveDirection.y = jumpHeight;
