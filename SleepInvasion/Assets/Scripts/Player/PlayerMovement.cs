@@ -12,7 +12,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private float groundDistance = 0.2f;
     [SerializeField] private LayerMask groundMask;
-    
+
+    private AudioSource _walkAudioSource;
     private float gravity = 20f;
     private Vector3 _velocity;
     private bool _isGrounded;
@@ -24,6 +25,9 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         _gameController = GameController.Instance;
+        _walkAudioSource = GetComponent<AudioSource>();
+        GameManager.Instance.AudioManager.play(SoundName.WalkStone);
+        _walkAudioSource.enabled = false;
     }
 
     void Update()
@@ -40,6 +44,14 @@ public class PlayerMovement : MonoBehaviour
         Vector3 right = transform.TransformDirection(Vector3.right);
         vertical = movementSpeed * Input.GetAxis("Vertical");
         horizontal = movementSpeed * Input.GetAxis("Horizontal");
+        if (vertical > .1f || horizontal > .1f)
+        {
+            _walkAudioSource.enabled = true;
+        }
+        else
+        {
+            _walkAudioSource.enabled = false;
+        }
         float movementDirectionY = moveDirection.y;
         moveDirection = (forward * vertical) + (right * horizontal);
 

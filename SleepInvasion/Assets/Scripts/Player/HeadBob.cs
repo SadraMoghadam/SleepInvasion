@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,6 +24,7 @@ namespace EvolveGames
         Vector3 StartRot;
         Vector3 FinalRot;
         CharacterController player;
+        
         private void Awake()
         {
             player = GetComponentInParent<CharacterController>();
@@ -54,6 +56,7 @@ namespace EvolveGames
         private Vector3 HeadBobMotion()
         {
             Vector3 pos = Vector3.zero;
+            float finalY = pos.y - Mathf.Sin(Time.time * Frequency) * Amount * 1.4f;
             pos.y += Mathf.Lerp(pos.y, Mathf.Sin(Time.time * Frequency) * Amount * 1.4f, Smooth * Time.deltaTime);
             pos.x += Mathf.Lerp(pos.x, Mathf.Cos(Time.time * Frequency / 2f) * Amount * 1.6f, Smooth * Time.deltaTime);
             return pos;
@@ -61,7 +64,10 @@ namespace EvolveGames
 
         private void ResetPos()
         {
-            if (transform.localPosition == StartPos) return;
+            if (transform.localPosition == StartPos)
+            {
+                return;
+            }
             transform.localPosition = Vector3.Lerp(transform.localPosition, StartPos, 1 * Time.deltaTime);
             FinalRot = Vector3.Lerp(FinalRot, StartRot, 1 * Time.deltaTime);
         }

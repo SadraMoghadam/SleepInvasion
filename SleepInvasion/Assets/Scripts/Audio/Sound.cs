@@ -22,7 +22,8 @@ public enum SoundName
     Respawn,
     Magnifier,
     CandleBlow,
-    SettingsMenu
+    SettingsMenu,
+    WalkStone
     // Click
 }
 
