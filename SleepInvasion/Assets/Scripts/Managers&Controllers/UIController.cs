@@ -10,6 +10,7 @@ public class UIController : MonoBehaviour
     // [SerializeField] private Canvas canvas;
     [SerializeField] private List<GameObject> hidingObjects;
     public Image leftMouseClickImage;
+    public Sprite DotSprite;
     public Sprite keyDownSprite;
     public Sprite keyUpSprite;
     public PausePanel pausePanel;

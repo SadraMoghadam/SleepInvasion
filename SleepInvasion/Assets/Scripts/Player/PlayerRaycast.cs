@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Mechanics;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -23,6 +24,7 @@ public class PlayerRaycast : MonoBehaviour
     [SerializeField] private LayerMask layerMaskInteract;
     [SerializeField] private Transform cameraTransform;
     private Image _leftMouseClickImage;
+    private Sprite _dotSprite;
     private Sprite _keyDownSprite;
     private Sprite _keyUpSprite;
     private float _keyDownTimer;
@@ -39,6 +41,7 @@ public class PlayerRaycast : MonoBehaviour
         _keyDownTimer = keyDownCooldown;
         _uiController = _gameController.UIController;
         _leftMouseClickImage = _uiController.leftMouseClickImage;
+        _dotSprite = _uiController.DotSprite;
         _keyDownSprite = _uiController.keyDownSprite;
         _keyUpSprite = _uiController.keyUpSprite;
         _firstRaycast = PlayerPrefsManager.GetBool(PlayerPrefsKeys.FirstRaycast, true);
@@ -51,6 +54,7 @@ public class PlayerRaycast : MonoBehaviour
             _leftMouseClickImage.gameObject.SetActive(false);
             return;
         }
+        
         RaycastHit hit;
         if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, rayLength, layerMaskInteract))
         {
@@ -66,7 +70,7 @@ public class PlayerRaycast : MonoBehaviour
             // }
             if (hit.collider.gameObject.CompareTag("UsableItem") || hit.collider.gameObject.CompareTag("Chest") || _gameController.IsInLockView)
             {
-                _leftMouseClickImage.gameObject.SetActive(false);
+                _leftMouseClickImage.sprite = _dotSprite;
                 return;
             }
             _leftMouseClickImage.gameObject.SetActive(true);
@@ -177,7 +181,21 @@ public class PlayerRaycast : MonoBehaviour
         }
         else
         {
-            _leftMouseClickImage.gameObject.SetActive(false);
+            
+            _leftMouseClickImage.sprite = _dotSprite;
+            // RaycastHit[] hits = Physics.RaycastAll(transform.position, transform.forward, rayLength);
+            // for (int i = 0; i < hits.Length; i++)
+            // {
+            //     if (hits[i].transform.gameObject.layer == layerMaskInteract)
+            //     {
+            //         break;
+            //     }
+            //     else
+            //     {
+            //         break;
+            //     }
+            // }
+            // _leftMouseClickImage.gameObject.SetActive(false);
         }
     }
 }

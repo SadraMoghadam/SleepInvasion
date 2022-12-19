@@ -21,8 +21,16 @@ public class DialoguePanel : MonoBehaviour
             _gameController.DisableAllKeys();
             _gameController.ShowCursor();
         }
-        dialogue.text = dialogueText;
+        // dialogue.text = dialogueText;
+        StartCoroutine(ShowDialogueText(dialogueText));
         nextButtonText.text = disableNext ? "Finish" : "Next";
         previousButton.interactable = !disablePrev;
+    }
+    
+    IEnumerator ShowDialogueText(string fullText){
+        for(int i = 0; i < fullText.Length + 1; i++){
+            dialogue.text = fullText.Substring(0,i);
+            yield return new WaitForSeconds(.01f);
+        }
     }
 }

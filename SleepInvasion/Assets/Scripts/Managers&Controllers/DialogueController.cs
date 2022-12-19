@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogueController : MonoBehaviour
 {
@@ -29,6 +30,7 @@ public class DialogueController : MonoBehaviour
             return;
         _dialogueStartId = dialogueId;
         dialoguePanel.gameObject.SetActive(true);
+        FadeDialoguePanelInAndOut(true, .5f);
         SetDialogue(dialogueId);
         _gameController.DisableLook();
         _gameController.DisableAllKeys();
@@ -64,10 +66,12 @@ public class DialogueController : MonoBehaviour
         List<int> shownDialogueIds = PlayerPrefsManager.GetIntList(PlayerPrefsKeys.ShownDialogues);
         shownDialogueIds.Add(_dialogueStartId);
         PlayerPrefsManager.SetIntList(PlayerPrefsKeys.ShownDialogues, shownDialogueIds);
-        dialoguePanel.gameObject.SetActive(false);
+        // dialoguePanel.gameObject.SetActive(false);
+        StartCoroutine(DisableDialoguePanel(.5f));
         _gameController.EnableLook();
         _gameController.EnableAllKeys();
         _gameController.HideCursor();
+        FadeDialoguePanelInAndOut(false, .5f);
     }
 
     private void SetDialogue(int id)
@@ -78,6 +82,24 @@ public class DialogueController : MonoBehaviour
         dialoguePanel.Setup(_currentDialogue.Dialogue, _currentDialogue.NextId == 0, _currentDialogue.Id == _dialogueStartId);
     }
 
+    private void FadeDialoguePanelInAndOut(bool fadeIn, float duration = 1)
+    {
+        Transform dialoguePanelChildrenContainer = dialoguePanel.transform.GetChild(0);
+        
+        StartCoroutine(GameController.Instance.FadeInAndOut(dialoguePanelChildrenContainer.gameObject, fadeIn, duration));
+        for (int i = 0; i < dialoguePanelChildrenContainer.childCount; i++)
+        {
+            StartCoroutine(GameController.Instance.FadeInAndOut(
+                dialoguePanelChildrenContainer.GetChild(i).gameObject, fadeIn, duration));
+        }
+    }
+
+    private IEnumerator DisableDialoguePanel(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        dialoguePanel.gameObject.SetActive(false);
+    }
+    
     public bool IsPanelActive()
     {
         return dialoguePanel.gameObject.activeSelf;
