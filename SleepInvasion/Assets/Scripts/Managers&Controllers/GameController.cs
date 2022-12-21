@@ -73,7 +73,7 @@ public class GameController : MonoBehaviour
             StartCoroutine(SendToGoogle.PostStarted());
         }
         _gameManager.AudioManager.play(SoundName.Game);
-        DialogueController.Show(1);
+        // DialogueController.Show(1);
     }
 
     public Transform GetPlayerTransform()
