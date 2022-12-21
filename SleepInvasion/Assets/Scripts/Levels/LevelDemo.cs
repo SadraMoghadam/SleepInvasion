@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Level1 : Level
+public class LevelDemo : Level
 {
     private GameController _gameController;
     private GameManager _gameManager;
@@ -90,6 +90,7 @@ public class Level1 : Level
             _timer = 0;
             SaveCompletedProcess(2);
         }
+
     }
     
     private void secondProcess()
@@ -106,9 +107,9 @@ public class Level1 : Level
     {
         SixthProcess();
         _lockTimer += Time.deltaTime;
-        if (_gameController.InventoryController.IsItemInInventory(InteractableItemType.Diary))
+        if (_gameController.IsInLockView && PlayerPrefsManager.GetBool(PlayerPrefsKeys.FirstLockView, true))
         {
-            // _gameController.HintController.ShowHint(4);
+            _gameController.HintController.ShowHint(4);
             PlayerPrefsManager.SetBool(PlayerPrefsKeys.FirstLockView, false);
             SaveCompletedProcess(4);
         }
@@ -117,12 +118,10 @@ public class Level1 : Level
     private void FourthProcess()
     {
         SixthProcess();
-        _lockTimer += Time.deltaTime;
-        if (_gameController.IsInLockView && PlayerPrefsManager.GetBool(PlayerPrefsKeys.FirstLockView, true))
+        if (_gameController.InventoryController.IsItemInInventory(InteractableItemType.Magnifier))
         {
             PlayerPrefsManager.SetFloat(PlayerPrefsKeys.LockTimer, _lockTimer);
-            _gameController.HintController.ShowHint(4);
-            PlayerPrefsManager.SetBool(PlayerPrefsKeys.FirstLockView, false);
+            _gameController.HintController.ShowHint(5);
             SaveCompletedProcess(5);
         }
     }
@@ -130,10 +129,11 @@ public class Level1 : Level
     private void FifthProcess()
     {
         SixthProcess();
-        if (_gameController.InventoryController.IsItemInInventory(InteractableItemType.Magnifier))
+        _magnifierTimer += Time.deltaTime;
+        if (_gameController.InventoryController.IsItemInInventory(InteractableItemType.Shader))
         {
-            StartCoroutine(SendToGoogle.PostTimer(PlayerPrefsKeys.LockTimer));
-            _gameController.HintController.ShowHint(5);
+            PlayerPrefsManager.SetFloat(PlayerPrefsKeys.MagnifierTimer, _magnifierTimer);
+            _gameController.HintController.ShowHint(6);
             SaveCompletedProcess(6);
         }
     }
@@ -157,7 +157,10 @@ public class Level1 : Level
             _gameController.HintController.ShowHint(20, 6);
             PlayerPrefsManager.SetFloat(PlayerPrefsKeys.GameTimer, _gameTimer);
             
-            StartCoroutine(SendToGoogle.PostTimer(PlayerPrefsKeys.GameTimer));
+            // StartCoroutine(SendToGoogle.PostTimer(PlayerPrefsManager.GetFloat(PlayerPrefsKeys.GameTimer, 0),
+            // PlayerPrefsManager.GetFloat(PlayerPrefsKeys.LockTimer, 0),
+            // PlayerPrefsManager.GetFloat(PlayerPrefsKeys.MagnifierTimer, 0),
+            // PlayerPrefsManager.GetFloat(PlayerPrefsKeys.ShaderTimer, 0)));
             SaveCompletedProcess(8);
         }
     }

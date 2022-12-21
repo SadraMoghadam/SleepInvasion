@@ -20,7 +20,7 @@ public class MouseLook : MonoBehaviour
         _gameController.HideCursor();
     } 
     
-    void LateUpdate()
+    void Update()
     {
         if (_gameController.lookDisabled)
         {
@@ -38,6 +38,6 @@ public class MouseLook : MonoBehaviour
 
     public void ChangeMouseSensitivity(float coefficient)
     {
-        mouseSensitivity = BaseMouseSensitivity * coefficient;
+        mouseSensitivity = BaseMouseSensitivity * coefficient == 0 ? 1 : BaseMouseSensitivity * coefficient;
     }
 }

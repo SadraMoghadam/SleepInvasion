@@ -107,17 +107,17 @@ public class SendToGoogle : MonoBehaviour {
     
     
     
-    public static IEnumerator PostTimer(float timer, float lockTimer, float magnifierTimer, float shaderTimer)
+    public static IEnumerator PostTimer(PlayerPrefsKeys key)
     {
         yield break;
+        float timer = PlayerPrefsManager.GetFloat(key, 0);
+        string name = key.ToString();
         string URL =
             "https://docs.google.com/forms/d/e/1FAIpQLSeFwyAYVYJfyQE5NovsRw7VlhvCxZksuT1Gf-m_MGqPjy43-w/formResponse";
         
         WWWForm form = new WWWForm();
 
-        string timerStr = "Time Play = " + (timer / 60.0).ToString("#.##") + " // Lock Time Play = " +
-                          (lockTimer / 60.0).ToString("#.##") + " // Magnifier Time Play = " +
-                          (magnifierTimer / 60.0).ToString("#.##") + " // Shader Time Play = " + (shaderTimer / 60.0).ToString("#.##"); 
+        string timerStr = name + " = " + (timer / 60.0).ToString("#.##");
         
         form.AddField("entry.1560066554", timerStr);
 

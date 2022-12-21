@@ -22,18 +22,29 @@ namespace EvolveGames
         float ToggleSpeed = 3.0f;
         Vector3 StartPos;
         Vector3 StartRot;
+        Vector3 InitialPos;
+        Vector3 InitialRot;
         Vector3 FinalRot;
         CharacterController player;
+        private GameController _gameController;
         
         private void Awake()
         {
             player = GetComponentInParent<CharacterController>();
             StartPos = transform.localPosition;
             StartRot = transform.localRotation.eulerAngles;
+            InitialPos = StartPos;
+            InitialRot = StartRot;
+            _gameController = GameController.Instance;
         }
 
         private void Update()
         {
+            if (_gameController.lookDisabled)
+            {
+                StartPos = InitialPos;
+                StartRot = InitialRot;
+            }
             if (!Enabled) return;
             CheckMotion();
             ResetPos();
@@ -64,12 +75,13 @@ namespace EvolveGames
 
         private void ResetPos()
         {
-            if (transform.localPosition == StartPos)
+            if (transform.localPosition == StartPos && FinalRot == StartRot)
             {
                 return;
             }
             transform.localPosition = Vector3.Lerp(transform.localPosition, StartPos, 1 * Time.deltaTime);
             FinalRot = Vector3.Lerp(FinalRot, StartRot, 1 * Time.deltaTime);
+            
         }
     }
 

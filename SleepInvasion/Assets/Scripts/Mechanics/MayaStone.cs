@@ -135,12 +135,14 @@ public class MayaStone : MonoBehaviour
         {
             _gameController.ShowCursor();
             _gameController.DisableAllKeys();
+            _gameController.DisableLook();
             // _gameController.DisablePlayerControllerKeys();   
         }
         else
         {
             _gameController.HideCursor();
             _gameController.EnableAllKeys();
+            _gameController.EnableLook();
             // _gameController.EnablePlayerControllerKeys();
         }
     }
