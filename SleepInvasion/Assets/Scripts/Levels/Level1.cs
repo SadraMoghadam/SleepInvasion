@@ -15,6 +15,7 @@ public class Level1 : Level
     private float _lockTimer;
     private float _magnifierTimer;
     private float _shaderTimer;
+    private InteractableItemType _firstFoundItemType = InteractableItemType.None; //between Diary and Watch (Pocket Clock)
 
     private void Awake()
     {
@@ -96,9 +97,16 @@ public class Level1 : Level
     
     private void secondProcess()
     {
-        if (_gameController.InventoryController.IsItemInInventory(InteractableItemType.Diary))
+        if (_gameController.InventoryController.IsItemInInventory(InteractableItemType.Diary) || _gameController.InventoryController.IsItemInInventory(InteractableItemType.Watch))
         {
-            _gameController.HintController.ShowHint(2, 5);
+            if (_gameController.InventoryController.IsItemInInventory(InteractableItemType.Diary))
+            {
+                DiaryProcess();
+            }
+            else
+            {
+                WatchProcess();
+            }
             SaveCompletedProcess(3);
         }
     }
@@ -106,12 +114,32 @@ public class Level1 : Level
     private void ThirdProcess()
     {
         _lockTimer += Time.deltaTime;
-        if (_gameController.InventoryController.IsItemInInventory(InteractableItemType.Diary))
+        if (_gameController.InventoryController.IsItemInInventory(InteractableItemType.Watch) && 
+            _firstFoundItemType == InteractableItemType.Diary)
         {
-            // _gameController.HintController.ShowHint(4);
-            PlayerPrefsManager.SetBool(PlayerPrefsKeys.FirstLockView, false);
+            WatchProcess();
             SaveCompletedProcess(4);
         }
+        else if (_gameController.InventoryController.IsItemInInventory(InteractableItemType.Diary) &&
+                 _firstFoundItemType == InteractableItemType.Watch)
+        {
+            DiaryProcess();
+            SaveCompletedProcess(4);
+        }
+    }
+
+    private void DiaryProcess()
+    {
+        _firstFoundItemType = InteractableItemType.Diary;
+        _gameController.HintController.ShowHint(2, 5);
+        //some Dialogues   
+    }
+    
+    private void WatchProcess()
+    {
+        _firstFoundItemType = InteractableItemType.Watch;
+        // _gameController.HintController.ShowHint(2, 5);
+        //some Dialogues  
     }
     
     private void FourthProcess()

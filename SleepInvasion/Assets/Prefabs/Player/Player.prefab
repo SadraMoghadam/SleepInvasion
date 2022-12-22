@@ -647,8 +647,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 361dc784b35f6014dae68baab8212d17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enabled: 1
-  Amount: 0.01
+  Enabled: 0
+  Amount: 0.00222
   Frequency: 11
   Smooth: 44.7
   EnabledRoationMovement: 1

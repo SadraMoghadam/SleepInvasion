@@ -5,14 +5,16 @@ using UnityEngine;
 
 using UnityEngine;
 
-public class Lock : MonoBehaviour {
-    public LockControl lockControl;
+public class Lock : MonoBehaviour
+{
+    public int id;
+    [NonSerialized] public LockControl lockControl;
     [SerializeField] private Camera FirstPersonCamera;
     [SerializeField] private Camera OverheadCamera; 
     private GameController _gameController;
 
     void Awake(){
-        // lockControl = Shackle.GetComponent<LockControl>();
+        lockControl = GetComponent<LockControl>();
     }
 
     void Start(){

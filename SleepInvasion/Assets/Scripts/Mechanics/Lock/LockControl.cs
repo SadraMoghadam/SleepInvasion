@@ -1,12 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class LockControl : MonoBehaviour
 {
     //Animator m_Animator; //get Lock object
-    [SerializeField] private Animator myAnimator;
-    private int[] result, correctCombination;
+    public int numOfDigits = 4;
+    [SerializeField] private int[] correctCombination = new int[4]{0, 0, 0, 0};
+    private int[] result;
+    private Animator myAnimator;
     public bool isOpened;
 
     // void Awake(){
@@ -15,8 +19,9 @@ public class LockControl : MonoBehaviour
 
     private void Start()
     {
-        result = new int[]{0,0,0,0,0,0};
-        correctCombination = new int[] {8, 9, 1, 5, 1, 1};
+        myAnimator = GetComponent<Animator>();
+        result = new int[numOfDigits];
+        // correctCombination = new int[] {8, 9, 1, 5, 1, 1};
         isOpened = false;
         Rotate.Rotated += CheckResults;
         if (PlayerPrefsManager.GetBool(PlayerPrefsKeys.ChestUnlocked, false))
@@ -26,36 +31,37 @@ public class LockControl : MonoBehaviour
         }
     }
 
-    private void CheckResults(string wheelName, int number)
+    private void CheckResults(int numberOfWheel, int number)
     {
-        switch (wheelName)
-        {
-            case "WheelOne":
-                result[0] = number;
-                break;
+        // switch (wheelName)
+        // {
+        //     case "Wheel1":
+        //         result[0] = number;
+        //         break;
+        //
+        //     case "Wheel2":
+        //         result[1] = number;
+        //         break;
+        //
+        //     case "Wheel3":
+        //         result[2] = number;
+        //         break;
+        //
+        //     case "Wheel4":
+        //         result[3] = number;
+        //         break;
+        //     
+        //     case "Wheel5":
+        //         result[4] = number;
+        //         break;
+        //     
+        //     case "Wheel6":
+        //         result[5] = number;
+        //         break;
+        // }
 
-            case "WheelTwo":
-                result[1] = number;
-                break;
-
-            case "WheelThree":
-                result[2] = number;
-                break;
-
-            case "WheelFour":
-                result[3] = number;
-                break;
-            case "WheelFive":
-                result[4] = number;
-                break;
-            case "WheelSix":
-                result[5] = number;
-                break;
-        }
-
-        if (result[0] == correctCombination[0] && result[1] == correctCombination[1]
-            && result[2] == correctCombination[2] && result[3] == correctCombination[3] 
-            && result[4] == correctCombination[4]&& result[5] == correctCombination[5] && !isOpened)
+        result[numberOfWheel] = number;
+        if (result.SequenceEqual(correctCombination) && !isOpened)
         {
             transform.Rotate(0f, 170f, 0f);
             // transform.position = new Vector3(transform.position.x, transform.position.y + 0.3f, transform.position.z);

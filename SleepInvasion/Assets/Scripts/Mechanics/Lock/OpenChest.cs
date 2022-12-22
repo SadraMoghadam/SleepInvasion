@@ -4,19 +4,18 @@ using UnityEngine;
 
 public class OpenChest : MonoBehaviour
 {
-    LockControl lockControl;
-    [SerializeField] GameObject Shackle;
-    Animator animator;
+    private LockControl lockControl;
+    [SerializeField] private GameObject lockGO;
+    [SerializeField] private Animator animator;
 
     void Awake()
     {
-        lockControl = Shackle.GetComponent<LockControl>();
+        lockControl = lockGO.GetComponent<LockControl>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent<Animator>();
         if (PlayerPrefsManager.GetBool(PlayerPrefsKeys.ChestUnlocked, false))
         {
             animator.Play("ChestOpened");
@@ -26,7 +25,7 @@ public class OpenChest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (lockControl.isOpened == true)
+        if (lockControl.isOpened)
         {
             animator.SetBool("_open", true);
         }

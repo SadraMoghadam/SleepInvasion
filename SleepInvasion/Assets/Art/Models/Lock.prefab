@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 317923110755981094}
   - component: {fileID: 5770405651331924790}
   - component: {fileID: 6732423143620044895}
-  - component: {fileID: 6198893209175234444}
   m_Layer: 7
   m_Name: Shackle
   m_TagString: Untagged
@@ -84,20 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6198893209175234444
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1375653409767724431}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2184989c72cb7d847bcdf8822b7719fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myAnimator: {fileID: 881381873}
-  isOpened: 0
 --- !u!1 &1995913832301806237
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,12 +97,12 @@ GameObject:
   - component: {fileID: 2628338179942239898}
   - component: {fileID: 1228413803145798373}
   m_Layer: 7
-  m_Name: WheelOne
+  m_Name: Wheel1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4933193611006675713
 Transform:
   m_ObjectHideFlags: 0
@@ -224,12 +209,12 @@ GameObject:
   - component: {fileID: 7404222998738819591}
   - component: {fileID: 2288781167705534347}
   m_Layer: 7
-  m_Name: WheelTwo
+  m_Name: Wheel2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7441477096744863984
 Transform:
   m_ObjectHideFlags: 0
@@ -366,8 +351,10 @@ GameObject:
   - component: {fileID: 881381873}
   - component: {fileID: 881381876}
   - component: {fileID: 4993558826992185146}
+  - component: {fileID: 3897219146639417655}
+  - component: {fileID: 2045479058}
   m_Layer: 7
-  m_Name: Lock6
+  m_Name: Lock
   m_TagString: Lock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -428,8 +415,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.28, y: 5.61, z: 2.43}
-  m_Center: {x: 0, y: 0.7978384, z: 0.07994777}
+  m_Size: {x: 16.5, y: 10.7, z: 6.4}
+  m_Center: {x: 0, y: 5.07, z: -1.2}
 --- !u!114 &4993558826992185146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -442,9 +429,122 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53b9b622b4385334ba84711ea02c8ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lockControl: {fileID: 6198893209175234444}
+  id: 0
+  lockControl: {fileID: 0}
   FirstPersonCamera: {fileID: 0}
   OverheadCamera: {fileID: 3490894737258148296}
+--- !u!114 &3897219146639417655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3492098079754266364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbfe5fcbfca8f2442b2f25f780219132, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numOfDigits: 4
+  myAnimator: {fileID: 881381873}
+  correctCombination: 01000000000000000100000000000000
+  isOpened: 0
+--- !u!82 &2045479058
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3492098079754266364}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &3645894302480020614
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,7 +570,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3645894302480020614}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.2, z: 0}
+  m_LocalPosition: {x: 0, y: 0.6, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -534,7 +634,7 @@ GameObject:
   - component: {fileID: 6198893209678096840}
   - component: {fileID: 6198893209678096843}
   m_Layer: 7
-  m_Name: WheelThree
+  m_Name: Wheel3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -646,7 +746,7 @@ GameObject:
   - component: {fileID: 6198893209646129142}
   - component: {fileID: 6198893209646129129}
   m_Layer: 7
-  m_Name: WheelFive
+  m_Name: Wheel5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -758,7 +858,7 @@ GameObject:
   - component: {fileID: 6198893208393063856}
   - component: {fileID: 6198893208393063859}
   m_Layer: 7
-  m_Name: WheelFour
+  m_Name: Wheel4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -919,7 +1019,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: -4863635722809962313, guid: 8e28fcaf9a0c5f34fa9166812f114290, type: 3}
   - {fileID: 3739469757846468259, guid: 8e28fcaf9a0c5f34fa9166812f114290, type: 3}
-  - {fileID: 7108631595466352291, guid: 8e28fcaf9a0c5f34fa9166812f114290, type: 3}
+  - {fileID: 2100000, guid: 47f29734fe2488d42bc0f95a6f795fee, type: 2}
   - {fileID: -1580535799172915004, guid: 8e28fcaf9a0c5f34fa9166812f114290, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -956,7 +1056,7 @@ GameObject:
   - component: {fileID: 6198893209436971945}
   - component: {fileID: 6198893209436971944}
   m_Layer: 7
-  m_Name: WheelSix
+  m_Name: Wheel6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

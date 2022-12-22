@@ -9,8 +9,8 @@ public class GameController : MonoBehaviour
 {
     public PlayerController PlayerController;
     public MayaStone MayaStone;
-    public Lock Lock;
     public GameObject DataReaders;
+    [NonSerialized] public Lock Lock;
     [NonSerialized] public UIController UIController;
     [NonSerialized] public InventoryController InventoryController;
     [NonSerialized] public ItemsController ItemsController;
@@ -101,8 +101,11 @@ public class GameController : MonoBehaviour
     
     public void EnableAllKeys()
     {
-        if(!DialogueController.IsPanelActive())
+        if (!DialogueController.IsPanelActive())
+        {
             keysDisabled = false;
+            UIController.leftMouseClickImage.gameObject.SetActive(true);
+        }
     }
     
     public void DisableLook()
