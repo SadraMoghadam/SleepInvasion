@@ -31,6 +31,7 @@ public class LevelDemo : Level
     public override int LevelNum => 1;
 
     public override GameObject Self => _gameController.LevelsController.levelsDataContainer.level1Data.levelGO;
+    public override bool IsDone { get; protected set; }
 
     public override void Setup()
     {

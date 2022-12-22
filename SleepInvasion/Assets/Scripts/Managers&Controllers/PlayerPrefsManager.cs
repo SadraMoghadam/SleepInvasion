@@ -30,7 +30,10 @@ public enum PlayerPrefsKeys
     MagnifierTimer,
     ShaderTimer,
     ShownDialogues,
-    
+    Sundial1Finished,
+    Sundial2Finished,
+    Sundial3Finished,
+    Sundial4Finished
 }
 
 public struct SavedData
@@ -61,6 +64,11 @@ public class PlayerPrefsManager : MonoBehaviour
     public static void DeletePlayerPrefs()
     {
         PlayerPrefs.DeleteAll();
+    }
+    
+    public static void DeleteKey(PlayerPrefsKeys key)
+    {
+        PlayerPrefs.DeleteKey(key.ToString());
     }
 
     public static void SaveGame(int level = -100)

@@ -28,7 +28,7 @@ public class MayaStone : MonoBehaviour
     private float[] _fourthRingDegrees;
 
 
-    private int[] _trueIndexCombination = { 7, 6, 0, 0 };
+    private int[] _trueIndexCombination = { 7, 6, 1, 2 };
     private int[] _initialDegreesIndex = { 0, 0, 0, 0 };
 
     private float ringRotationTime = 0.2f;

@@ -70,7 +70,7 @@ public class PlayerRaycast : MonoBehaviour
             // }
             if (hit.collider.gameObject.CompareTag("UsableItem") || hit.collider.gameObject.CompareTag("Chest") || _gameController.IsInLockView)
             {
-                _leftMouseClickImage.sprite = _dotSprite;
+                _leftMouseClickImage.gameObject.SetActive(false);
                 return;
             }
             _leftMouseClickImage.gameObject.SetActive(true);

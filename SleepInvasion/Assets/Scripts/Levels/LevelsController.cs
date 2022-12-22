@@ -19,8 +19,7 @@ public class LevelsController : MonoBehaviour
         _levelsGO = new List<GameObject>();
         _levelsContainer = levelsDataContainer.gameObject;
         GetLevels();
-        _currentLevel = GetCurrentLevel();
-        SetLevelActive(_currentLevel.LevelNum - 1);
+        SetupCurrentLevel();
         // _currentLevel = _levels[0];
         // SetLevelActive(0);
     }
@@ -32,6 +31,10 @@ public class LevelsController : MonoBehaviour
 
     private void Update()
     {
+        if (_currentLevel.IsDone)
+        {
+            SetupCurrentLevel();
+        }
         _currentLevel.Process();
     }
 
@@ -42,6 +45,12 @@ public class LevelsController : MonoBehaviour
         {
             _levelsGO.Add(_levels[i].Self);
         }
+    }
+
+    private void SetupCurrentLevel()
+    {
+        _currentLevel = GetCurrentLevel();
+        SetLevelActive(_currentLevel.LevelNum - 1);
     }
     
     public void SetLevelActive(int level)

@@ -31,6 +31,8 @@ public class Level1 : Level
     public override int LevelNum => 1;
 
     public override GameObject Self => _gameController.LevelsController.levelsDataContainer.level1Data.levelGO;
+    
+    public override bool IsDone { get; protected set; }
 
     public override void Setup()
     {
@@ -94,7 +96,6 @@ public class Level1 : Level
     
     private void secondProcess()
     {
-        SixthProcess();
         if (_gameController.InventoryController.IsItemInInventory(InteractableItemType.Diary))
         {
             _gameController.HintController.ShowHint(2, 5);
@@ -104,7 +105,6 @@ public class Level1 : Level
 
     private void ThirdProcess()
     {
-        SixthProcess();
         _lockTimer += Time.deltaTime;
         if (_gameController.InventoryController.IsItemInInventory(InteractableItemType.Diary))
         {
@@ -116,7 +116,6 @@ public class Level1 : Level
     
     private void FourthProcess()
     {
-        SixthProcess();
         _lockTimer += Time.deltaTime;
         if (_gameController.IsInLockView && PlayerPrefsManager.GetBool(PlayerPrefsKeys.FirstLockView, true))
         {
@@ -129,7 +128,6 @@ public class Level1 : Level
     
     private void FifthProcess()
     {
-        SixthProcess();
         if (_gameController.InventoryController.IsItemInInventory(InteractableItemType.Magnifier))
         {
             StartCoroutine(SendToGoogle.PostTimer(PlayerPrefsKeys.LockTimer));
@@ -140,9 +138,10 @@ public class Level1 : Level
     
     private void SixthProcess()
     {
-        _shaderTimer += Time.deltaTime;
-        if (PlayerPrefsManager.GetBool(PlayerPrefsKeys.MayaStoneUnlocked, false))
+        _magnifierTimer += Time.deltaTime;
+        if (PlayerPrefsManager.GetBool(PlayerPrefsKeys.Sundial1Finished, false))
         {
+            PlayerPrefsManager.SetFloat(PlayerPrefsKeys.MagnifierTimer, _magnifierTimer);
             _gameController.HintController.ShowHint(19);
             PlayerPrefsManager.SetBool(PlayerPrefsKeys.DoorLocked, false);
             SaveCompletedProcess(7);
@@ -153,12 +152,12 @@ public class Level1 : Level
     {
         if (_level1Data.doubleDoorController.IsOpen())
         {
-            PlayerPrefsManager.SetFloat(PlayerPrefsKeys.ShaderTimer, _shaderTimer);
-            _gameController.HintController.ShowHint(20, 6);
-            PlayerPrefsManager.SetFloat(PlayerPrefsKeys.GameTimer, _gameTimer);
+            // _gameController.HintController.ShowHint(20, 6);
+            // PlayerPrefsManager.SetFloat(PlayerPrefsKeys.GameTimer, _gameTimer);
             
-            StartCoroutine(SendToGoogle.PostTimer(PlayerPrefsKeys.GameTimer));
+            StartCoroutine(SendToGoogle.PostTimer(PlayerPrefsKeys.MagnifierTimer));
             SaveCompletedProcess(8);
+            EndOfLevel();
         }
     }
 
@@ -170,6 +169,8 @@ public class Level1 : Level
 
     public override void EndOfLevel()
     {
-        // throw new NotImplementedException();
+        PlayerPrefsManager.SetInt(PlayerPrefsKeys.Level, 2);
+        IsDone = true;
+        PlayerPrefsManager.DeleteKey(PlayerPrefsKeys.Level1Process);
     }
 }
