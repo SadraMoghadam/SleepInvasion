@@ -7,10 +7,11 @@ using UnityEngine;
 
 public class LockControl : MonoBehaviour
 {
+    public int id;
     //Animator m_Animator; //get Lock object
     public int numOfDigits = 4;
-    [SerializeField] private int[] correctCombination = new int[4]{0, 0, 0, 0};
-    private int[] result;
+    [SerializeField] private List<int> correctCombination;
+    private List<int> result;
     private Animator myAnimator;
     public bool isOpened;
 
@@ -20,8 +21,9 @@ public class LockControl : MonoBehaviour
 
     private void Start()
     {
+        id = gameObject.GetComponent<Lock>().id;
         myAnimator = GetComponent<Animator>();
-        result = new int[numOfDigits];
+        result = Enumerable.Repeat(0, numOfDigits).ToList();
         // correctCombination = new int[] {8, 9, 1, 5, 1, 1};
         isOpened = false;
         Rotate.Rotated += CheckResults;
@@ -37,6 +39,8 @@ public class LockControl : MonoBehaviour
 
     private void CheckResults(int numberOfWheel, int number)
     {
+        if(!enabled)
+            return;
         // switch (wheelName)
         // {
         //     case "Wheel1":
