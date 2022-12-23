@@ -12,7 +12,7 @@ public enum PlayerPrefsKeys
     DestroyedItems,
     MayaStoneRingsIndex,
     LastDiaryPage,
-    ChestUnlocked,
+    Chest1Unlocked,
     Level1Process,
     FirstRaycast,
     FirstLockView,

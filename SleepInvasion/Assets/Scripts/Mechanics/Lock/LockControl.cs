@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using UnityEngine;
 
 public class LockControl : MonoBehaviour
@@ -24,11 +25,14 @@ public class LockControl : MonoBehaviour
         // correctCombination = new int[] {8, 9, 1, 5, 1, 1};
         isOpened = false;
         Rotate.Rotated += CheckResults;
-        if (PlayerPrefsManager.GetBool(PlayerPrefsKeys.ChestUnlocked, false))
+        PlayerPrefsKeys key = PlayerPrefsKeys.Chest1Unlocked;
+        if (PlayerPrefsManager.GetBool(key, false) && gameObject.GetComponent<Lock>().id + 1 == Int32.Parse(Regex.Match(key.ToString(), @"\d+").Value))
         {
             myAnimator.Play("Unlocked");
             
         }
+
+        enabled = false;
     }
 
     private void CheckResults(int numberOfWheel, int number)

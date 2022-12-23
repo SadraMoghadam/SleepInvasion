@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using UnityEngine;
 
 using UnityEngine;
@@ -15,6 +16,7 @@ public class Lock : MonoBehaviour
 
     void Awake(){
         lockControl = GetComponent<LockControl>();
+        // lockControl.enabled = false;
     }
 
     void Start(){
@@ -22,7 +24,8 @@ public class Lock : MonoBehaviour
         OverheadCamera.enabled = false;
         _gameController = GameController.Instance;
         
-        if (PlayerPrefsManager.GetBool(PlayerPrefsKeys.ChestUnlocked, false))
+        PlayerPrefsKeys key = PlayerPrefsKeys.Chest1Unlocked;
+        if (PlayerPrefsManager.GetBool(PlayerPrefsKeys.Chest1Unlocked, false) && id + 1 == Int32.Parse(Regex.Match(key.ToString(), @"\d+").Value))
         {
             GetComponent<Collider>().enabled = false;
         }
@@ -42,6 +45,7 @@ public class Lock : MonoBehaviour
         OverheadCamera.enabled = !OverheadCamera.enabled;
         if (FirstPersonCamera.enabled)
         {
+            lockControl.enabled = false;
             GetComponent<Collider>().enabled = true;
             _gameController.IsInLockView = false;
             _gameController.UIController.escIcon.SetActive(false);
@@ -49,6 +53,7 @@ public class Lock : MonoBehaviour
         }
         if (OverheadCamera.enabled)
         {
+            lockControl.enabled = true;
             GetComponent<Collider>().enabled = false;
             _gameController.IsInLockView = true;
             _gameController.UIController.escIcon.SetActive(true);
@@ -65,6 +70,6 @@ public class Lock : MonoBehaviour
         GetComponent<Collider>().enabled = false;
         _gameController.IsInLockView = false;
         _gameController.HideCursor();
-        PlayerPrefsManager.SetBool(PlayerPrefsKeys.ChestUnlocked, true);
+        PlayerPrefsManager.SetBool(PlayerPrefsKeys.Chest1Unlocked, true);
     }
 }   

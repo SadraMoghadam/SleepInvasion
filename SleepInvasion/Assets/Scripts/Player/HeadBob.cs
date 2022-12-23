@@ -40,12 +40,13 @@ namespace EvolveGames
 
         private void Update()
         {
+            
+            if (!Enabled) return;
             if (_gameController.lookDisabled)
             {
                 StartPos = InitialPos;
                 StartRot = InitialRot;
             }
-            if (!Enabled) return;
             CheckMotion();
             ResetPos();
             if (EnabledRoationMovement) transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.Euler(FinalRot), RoationMovementSmooth * Time.deltaTime);

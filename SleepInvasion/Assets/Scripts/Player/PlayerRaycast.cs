@@ -123,11 +123,11 @@ public class PlayerRaycast : MonoBehaviour
                     else if (hit.collider.CompareTag(InteractableObjects.Lock.ToString()))
                     {
                         Lock lockZoom = hit.collider.gameObject.GetComponent<Lock>();
-                        GameController.Instance.Lock = lockZoom;
                         if (lockZoom == null)
                         {
                             lockZoom = hit.collider.transform.parent.GetComponent<Lock>();
                         }
+                        GameController.Instance.Lock = lockZoom;
                         if (!lockZoom.lockControl.isOpened)
                         {
                             lockZoom.ToggleView();

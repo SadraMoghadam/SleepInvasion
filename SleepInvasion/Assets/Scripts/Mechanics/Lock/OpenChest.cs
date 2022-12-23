@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using UnityEngine;
 
 public class OpenChest : MonoBehaviour
 {
+    public int id;
     private LockControl lockControl;
     [SerializeField] private GameObject lockGO;
     [SerializeField] private Animator animator;
@@ -16,7 +19,8 @@ public class OpenChest : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (PlayerPrefsManager.GetBool(PlayerPrefsKeys.ChestUnlocked, false))
+        PlayerPrefsKeys key = PlayerPrefsKeys.Chest1Unlocked;
+        if (PlayerPrefsManager.GetBool(key, false) && id + 1 == Int32.Parse(Regex.Match(key.ToString(), @"\d+").Value))
         {
             animator.Play("ChestOpened");
         }
