@@ -21,7 +21,7 @@ public class Level1 : Level
     {
         _gameController = GameController.Instance;
         _gameManager = GameManager.Instance;
-        _gameTimer = PlayerPrefsManager.GetFloat(PlayerPrefsKeys.GameTimer, 0);
+        // _gameTimer = PlayerPrefsManager.GetFloat(PlayerPrefsKeys.GameTimer, 0);
         _lockTimer = PlayerPrefsManager.GetFloat(PlayerPrefsKeys.LockTimer, 0);
         _magnifierTimer = PlayerPrefsManager.GetFloat(PlayerPrefsKeys.MagnifierTimer, 0);
         _shaderTimer = PlayerPrefsManager.GetFloat(PlayerPrefsKeys.ShaderTimer, 0);
