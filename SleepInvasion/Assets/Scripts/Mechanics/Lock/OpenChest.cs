@@ -20,6 +20,15 @@ public class OpenChest : MonoBehaviour
     void Start()
     {
         PlayerPrefsKeys key = PlayerPrefsKeys.Chest1Unlocked;
+        switch (id)
+        {
+            case 0:
+                key = PlayerPrefsKeys.Chest1Unlocked;
+                break;
+            case 1:
+                key = PlayerPrefsKeys.Chest3Unlocked;
+                break;
+        }
         if (PlayerPrefsManager.GetBool(key, false) && id + 1 == Int32.Parse(Regex.Match(key.ToString(), @"\d+").Value))
         {
             animator.Play("ChestOpened");

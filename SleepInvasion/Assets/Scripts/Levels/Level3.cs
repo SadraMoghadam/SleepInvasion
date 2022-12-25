@@ -15,7 +15,7 @@ public class Level3 : Level
     {
         _gameController = GameController.Instance;
         _gameManager = GameManager.Instance;
-        _processNumber = PlayerPrefsManager.GetInt(PlayerPrefsKeys.Level1Process, 1);
+        _processNumber = PlayerPrefsManager.GetInt(PlayerPrefsKeys.Level3Process, 1);
     }
 
     public override int LevelNum => 3;
@@ -50,12 +50,6 @@ public class Level3 : Level
                 FourthProcess();
                 break;
             case 5:
-                FifthProcess();
-                break;
-            case 6:
-                SixthProcess();
-                break;
-            case 7:
                 LastProcess();
                 break;
             
@@ -67,44 +61,50 @@ public class Level3 : Level
 
     private void firstProcess()
     {
-        SaveCompletedProcess(2);
+        if (PlayerPrefsManager.GetBool(PlayerPrefsKeys.Chest3Unlocked, false))
+        {
+            //show some dialogues and hints
+            SaveCompletedProcess(2);
+        }
     }
     
     private void secondProcess()
     {
-        SaveCompletedProcess(3);
+        if (_gameController.InventoryController.IsItemInInventory(InteractableItemType.Cylinder))
+        {
+            //show some dialogues and hints
+            SaveCompletedProcess(3);
+        }
     }
 
     private void ThirdProcess()
     {
-        SaveCompletedProcess(4);
+        if (PlayerPrefsManager.GetBool(PlayerPrefsKeys.Door3Unlocked, false))
+        {
+            //show some dialogues and hints
+            SaveCompletedProcess(4);
+        }
     }
     
     private void FourthProcess()
     {
-        SaveCompletedProcess(5);
-    }
-    
-    private void FifthProcess()
-    {
-        SaveCompletedProcess(6);
-    }
-    
-    private void SixthProcess()
-    {
-        SaveCompletedProcess(7);
+        if (PlayerPrefsManager.GetBool(PlayerPrefsKeys.Sundial3Finished, false))
+        {
+            //show some dialogues and hints
+            SaveCompletedProcess(5);
+        }
     }
 
     private void LastProcess()
     {
-        SaveCompletedProcess(8);
+        SaveCompletedProcess(6);
         EndOfLevel();
     }
 
     private void SaveCompletedProcess(int processNumber)
     {
         _processNumber = processNumber;
-        PlayerPrefsManager.SetInt(PlayerPrefsKeys.Level1Process, processNumber);
+        PlayerPrefsManager.SetInt(PlayerPrefsKeys.Level3Process, processNumber);
     }
 
     public override void EndOfLevel()

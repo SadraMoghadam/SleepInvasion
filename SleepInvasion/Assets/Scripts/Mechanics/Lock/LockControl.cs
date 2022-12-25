@@ -28,6 +28,15 @@ public class LockControl : MonoBehaviour
         isOpened = false;
         Rotate.Rotated += CheckResults;
         PlayerPrefsKeys key = PlayerPrefsKeys.Chest1Unlocked;
+        switch (id)
+        {
+            case 0:
+                key = PlayerPrefsKeys.Chest1Unlocked;
+                break;
+            case 1:
+                key = PlayerPrefsKeys.Chest3Unlocked;
+                break;
+        }
         if (PlayerPrefsManager.GetBool(key, false) && gameObject.GetComponent<Lock>().id + 1 == Int32.Parse(Regex.Match(key.ToString(), @"\d+").Value))
         {
             myAnimator.Play("Unlocked");

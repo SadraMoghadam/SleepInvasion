@@ -13,6 +13,8 @@ public enum PlayerPrefsKeys
     MayaStoneRingsIndex,
     LastDiaryPage,
     Chest1Unlocked,
+    Chest3Unlocked,
+    Door3Unlocked,
     Level1Process,
     Level2Process,
     Level3Process,
