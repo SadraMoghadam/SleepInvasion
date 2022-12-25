@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6917092360357706117}
   - component: {fileID: 6917092360357706116}
   - component: {fileID: 6917092360357706119}
+  - component: {fileID: 471663664227224404}
   - component: {fileID: 6917092360357706118}
   - component: {fileID: 1542037969}
   - component: {fileID: 8428356718263712460}
@@ -55,7 +56,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerController: {fileID: 0}
   MayaStone: {fileID: 0}
-  Lock: {fileID: 0}
   DataReaders: {fileID: 0}
   lookDisabled: 0
   keysDisabled: 0
@@ -123,6 +123,30 @@ MonoBehaviour:
   inspectLayer:
     serializedVersion: 2
     m_Bits: 128
+--- !u!114 &471663664227224404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6917092360357706112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 247974fd37820a941a2a18e83083485c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particle: {fileID: 7740860496932686303, guid: cf8a449208bab7342a6b54eef4a24a7f, type: 3}
+  hintObjectsData:
+  - hintItem: {fileID: 0}
+    timeToShow: 0
+  - hintItem: {fileID: 0}
+    timeToShow: 120
+  - hintItem: {fileID: 0}
+    timeToShow: 120
+  - hintItem: {fileID: 0}
+    timeToShow: 120
+  - hintItem: {fileID: 0}
+    timeToShow: 120
 --- !u!114 &6917092360357706118
 MonoBehaviour:
   m_ObjectHideFlags: 0

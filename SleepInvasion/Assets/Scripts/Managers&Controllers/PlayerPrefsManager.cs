@@ -10,6 +10,7 @@ public enum PlayerPrefsKeys
     Level,
     InventoryItems,
     DestroyedItems,
+    ParticleHintObjectId,
     MayaStoneRingsIndex,
     LastDiaryPage,
     Chest1Unlocked,
