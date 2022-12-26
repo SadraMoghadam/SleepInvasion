@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Diary : MonoBehaviour, IItemUsage
 {
-    [SerializeField] private int numberOfPages = 6;
+    [SerializeField] private int numberOfPages = 2;
     [SerializeField] private GameObject leftPage;
     [SerializeField] private GameObject rightPage;
     [SerializeField] private TMP_Text leftText;
@@ -24,19 +24,17 @@ public class Diary : MonoBehaviour, IItemUsage
     private static readonly int Next = Animator.StringToHash("Next");
     private static readonly int Previous = Animator.StringToHash("Previous");
 
-    private string[] texts = new []
+    private string[] texts;
+    private GameController _gameController;
+    
+    private void Awake()
     {
-        "Venus calendar:\nYear 102 Month 18 Date 02\n\nToday is a day with surprise, our people have found something very special. There was a big breakthrough In the Maya temple which we’ve been graving for months,",
-        "Weather: Sunny\nMood: Excited\n\nand the core of the temple has finally been reached. On the top of the central hall, there was a floating stone. There’s so much to know about Maya civilization, so I decided to put the stone in my room to study it better.",
-        "Venus calendar:\nYear 102 Month 18 Date 20\n\nToday I’ve found out the mathematics knowledge that Maya people knew. They have such fascinating way to calculate.",
-        "Weather: Sunny\nMood: Peaceful\n\nHere is the rules of Maya number. Maya Math uses three symbols: dot, stick and shell. In our number, •| = 6, •••|| = 13, •|||=16. And my birthday date in Maya calendar would be •••|, ••••|, •, |, •, •",
-        "Venus calendar:\nYear 102 Month 19 Date 11\n\nCuriosity has brought prosperity to our empire. Our people have been exploring the way to see the unseen, and I’m so proud that we have the technique to see what’s hidden behind the reality.",
-        "Weather: Cloudy\nMood: Pleased\n\nWith the eye of our angel animal, truth of the Maya stone has been revealed. And a brighter future is waiting ahead of us through the white gate."
-    };
-
+        _gameController = GameController.Instance;
+    }
 
     private void OnEnable()
     {
+        numberOfPages = PlayerPrefsManager.GetInt(PlayerPrefsKeys.DiaryMaxShownPages, 2);
         _currentLeftPage = PlayerPrefsManager.GetInt(PlayerPrefsKeys.LastDiaryPage, 1);
         _animator = GetComponent<Animator>();
         _isChangingPage = false;
@@ -115,8 +113,8 @@ public class Diary : MonoBehaviour, IItemUsage
     {
         leftPage.SetActive(true);
         rightPage.SetActive(true);
-        leftText.text = texts[_currentLeftPage - 1];
-        rightText.text = texts[_currentLeftPage];
+        leftText.text = _gameController.DiaryDataReader.GetDiaryData(_currentLeftPage - 1).Diary;
+        rightText.text = _gameController.DiaryDataReader.GetDiaryData(_currentLeftPage).Diary;
         leftNum.text = _currentLeftPage.ToString() + "/" + numberOfPages.ToString();
         rightNum.text = (_currentLeftPage + 1).ToString() + "/" + numberOfPages.ToString();
     }
@@ -126,7 +124,5 @@ public class Diary : MonoBehaviour, IItemUsage
         leftPage.SetActive(false);
         rightPage.SetActive(false);
     }
-
-    
     
 }

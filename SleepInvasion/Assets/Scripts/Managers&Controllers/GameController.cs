@@ -19,6 +19,7 @@ public class GameController : MonoBehaviour
     [NonSerialized] public HintDataReader HintDataReader;
     [NonSerialized] public DialogueController DialogueController;
     [NonSerialized] public DialogueDataReader DialogueDataReader;
+    [NonSerialized] public DiaryDataReader DiaryDataReader;
     [NonSerialized] public LevelsController LevelsController;
     [NonSerialized] public bool IsInMayaStoneView = false;
     [NonSerialized] public bool IsInInspectView = false;
@@ -55,6 +56,7 @@ public class GameController : MonoBehaviour
         HintDataReader = DataReaders.GetComponent<HintDataReader>();
         DialogueController = GetComponent<DialogueController>();
         DialogueDataReader = DataReaders.GetComponent<DialogueDataReader>();
+        DiaryDataReader = DataReaders.GetComponent<DiaryDataReader>();
         LevelsController = GetComponent<LevelsController>();
         
         IsInMayaStoneView = false;

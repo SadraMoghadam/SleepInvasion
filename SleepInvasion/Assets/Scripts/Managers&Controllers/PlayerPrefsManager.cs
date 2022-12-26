@@ -13,6 +13,7 @@ public enum PlayerPrefsKeys
     ParticleHintObjectId,
     MayaStoneRingsIndex,
     LastDiaryPage,
+    DiaryMaxShownPages,
     Chest1Unlocked,
     Chest3Unlocked,
     Door3Unlocked,

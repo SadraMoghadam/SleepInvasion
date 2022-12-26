@@ -119,6 +119,7 @@ public class Level1 : Level
         {
             WatchProcess();
             SaveCompletedProcess(4);
+            PlayerPrefsManager.SetInt(PlayerPrefsKeys.DiaryMaxShownPages, 4);
         }
         else if (_gameController.InventoryController.IsItemInInventory(InteractableItemType.Diary) &&
                  _firstFoundItemType == InteractableItemType.Watch)
