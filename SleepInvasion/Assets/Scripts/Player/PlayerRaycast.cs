@@ -49,10 +49,14 @@ public class PlayerRaycast : MonoBehaviour
 
     private void Update()
     {
-        if (_gameController.keysDisabled || _gameController.IsInInspectView)
+        if (_gameController.keysDisabled || _gameController.IsInInspectView || _gameController.IsInDiaryView)
         {
             _leftMouseClickImage.gameObject.SetActive(false);
             return;
+        }
+        else
+        {
+            _leftMouseClickImage.gameObject.SetActive(true);
         }
         
         RaycastHit hit;
