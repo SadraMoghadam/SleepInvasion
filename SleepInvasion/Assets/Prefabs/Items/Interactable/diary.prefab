@@ -92,7 +92,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2902552833000120907, guid: b453b6ff76376e04bb8c49e18cd28a35, type: 3}
+  - {fileID: 2100000, guid: 54c41e9c5427b314b86c8a6d1175985c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -239,7 +239,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 8290782892783832528, guid: b453b6ff76376e04bb8c49e18cd28a35, type: 3}
+  - {fileID: 2100000, guid: 8a7ef7bcef065564e864d0b47012f01c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -314,7 +314,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5323924249916961625, guid: b453b6ff76376e04bb8c49e18cd28a35, type: 3}
+  - {fileID: 2100000, guid: 2d360700bce1330428160d8c9299bdba, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -477,7 +477,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 8290782892783832528, guid: b453b6ff76376e04bb8c49e18cd28a35, type: 3}
+  - {fileID: 2100000, guid: 8a7ef7bcef065564e864d0b47012f01c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -512,7 +512,7 @@ GameObject:
   - component: {fileID: -1051017307128502605}
   - component: {fileID: 8564951502468664609}
   m_Layer: 7
-  m_Name: Diary
+  m_Name: diary
   m_TagString: InteractableItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
