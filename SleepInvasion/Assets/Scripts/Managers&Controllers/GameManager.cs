@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     [NonSerialized] public AudioManager AudioManager;
+    public bool introOutroEnabled = false;
     
     public static GameManager Instance => _instance;
     private static GameManager _instance;
@@ -59,7 +60,7 @@ public class GameManager : MonoBehaviour
         var scene = SceneManager.LoadSceneAsync(sceneName);
         SceneManager.LoadScene($"Loading");
         scene.allowSceneActivation = false;
-        await Task.Delay(200);
+        await Task.Delay(400);
         var slider = FindObjectOfType<Slider>();
         do
         {

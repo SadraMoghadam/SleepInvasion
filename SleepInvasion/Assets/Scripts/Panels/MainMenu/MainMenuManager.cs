@@ -53,7 +53,14 @@ public class MainMenuManager : MonoBehaviour
     private void OnNewGameClick()
     {
         PlayerPrefsManager.DeletePlayerPrefs();
-        _gameManager.LoadScene("MainGame");
+        if (_gameManager.introOutroEnabled)
+        {
+            _gameManager.LoadScene("Intro");   
+        }
+        else
+        {
+            _gameManager.LoadScene("MainGame");
+        }
     }
     
     private void OnFeedbackClick()
