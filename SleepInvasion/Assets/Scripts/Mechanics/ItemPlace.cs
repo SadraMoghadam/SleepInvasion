@@ -24,16 +24,18 @@ public class ItemPlace : MonoBehaviour
         var tempItem = item.itemInfo.ItemScriptableObject;
         if (!_isEmpty)
         {
-            // TODO hint: there already is an item here
+            // hint: an item is already here
+            _gameController.HintController.ShowHint(10);
             return false;
         }
         
         if (!_gameController.InventoryController.IsItemInInventory(tempItem.type))
         {
-            // TODO hint: the required object is not in the inventory
+            // hint: you don't have any item that can be placed here
+            _gameController.HintController.ShowHint(9);
             return false;
         }
-        Instantiate(tempItem.prefab, placementPosition.position, placementPosition.rotation, gameObject.transform);
+        Instantiate(tempItem.prefab, placementPosition.position, placementPosition.rotation, transform);
         _isEmpty = false;
         _gameController.InventoryController.DeleteInventoryData(tempItem.type);
         

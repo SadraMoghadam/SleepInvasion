@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,16 +22,17 @@ public class GameController : MonoBehaviour
     [NonSerialized] public DialogueDataReader DialogueDataReader;
     [NonSerialized] public LevelsController LevelsController;
     [NonSerialized] public bool IsInMayaStoneView = false;
+    [NonSerialized] public bool IsInSundialView = false;
     [NonSerialized] public bool IsInInspectView = false;
     [NonSerialized] public bool IsInLockView = false;
     [NonSerialized] public bool IsInDiaryView = false;
     [NonSerialized] public Transform PlayerTransform;
+    [NonSerialized] public Sundial Sundial;
     
     [HideInInspector] public bool lookDisabled;
     [HideInInspector] public bool keysDisabled;
     [HideInInspector] public bool playerControllerKeysDisabled;
 
-    
     private GameManager _gameManager;
     
     private static GameController _instance;
@@ -56,8 +58,11 @@ public class GameController : MonoBehaviour
         DialogueController = GetComponent<DialogueController>();
         DialogueDataReader = DataReaders.GetComponent<DialogueDataReader>();
         LevelsController = GetComponent<LevelsController>();
+
+        Sundial = null;
         
         IsInMayaStoneView = false;
+        IsInSundialView = false;
         IsInInspectView = false;
         SavedData savedData = PlayerPrefsManager.LoadGame();
         PlayerController.transform.position = savedData.PlayerTransform.position;

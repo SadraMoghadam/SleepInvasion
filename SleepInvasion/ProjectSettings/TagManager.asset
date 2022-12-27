@@ -16,6 +16,7 @@ TagManager:
   - Candle
   - UseableItems
   - Chest
+  - Sundial
   layers:
   - Default
   - TransparentFX
