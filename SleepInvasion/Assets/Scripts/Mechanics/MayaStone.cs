@@ -31,7 +31,7 @@ public class MayaStone : MonoBehaviour
     private int[] _trueIndexCombination = { 7, 6, 1, 2 };
     private int[] _initialDegreesIndex = { 0, 0, 0, 0 };
 
-    private float ringRotationTime = 0.2f;
+    private float ringRotationTime;
 
     private bool _clickable;
 
@@ -51,7 +51,8 @@ public class MayaStone : MonoBehaviour
         SetupOverallDegrees(out _thirdRingDegrees, 2);
         SetupOverallDegrees(out _fourthRingDegrees, 3);
         SetupRingDegrees();
-        
+        ringRotationTime = Time.deltaTime * 5;
+
     }
 
     private void Update()
@@ -210,7 +211,7 @@ public class MayaStone : MonoBehaviour
         _clickable = false;
         while (elapsedTime < waitTime)
         {
-            startTransform.localRotation = Quaternion.Lerp(startTransform.localRotation, endRot, (waitTime));
+            startTransform.localRotation = Quaternion.Lerp(startTransform.localRotation, endRot, (elapsedTime / waitTime));
             elapsedTime += Time.deltaTime;
             // Yield here
             yield return null;

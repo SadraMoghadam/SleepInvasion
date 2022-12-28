@@ -104,7 +104,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6223627619352700335}
   - component: {fileID: 4196407636111376130}
-  - component: {fileID: 6051669370485321847}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -170,14 +169,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &6051669370485321847
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1750630264831389711}
-  m_Enabled: 1
 --- !u!1 &3137637840965469296
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,3 +362,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sundialCamera: {fileID: 4196407636111376130}
+  spotLight: {fileID: 0}
+  lightStartsOn: 0

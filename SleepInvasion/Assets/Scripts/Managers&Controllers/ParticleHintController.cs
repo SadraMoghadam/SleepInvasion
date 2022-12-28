@@ -24,6 +24,8 @@ public class ParticleHintController : MonoBehaviour
 
     private void Update()
     {
+        if(_id >= hintObjectsData.Count)
+            return;
         _timer += Time.deltaTime;
         if (_gameController.InventoryController.IsItemInInventory(_type))
         {
@@ -41,6 +43,10 @@ public class ParticleHintController : MonoBehaviour
 
     private void SetupData()
     {
+        if (hintObjectsData[_id].hintItem == null)
+        {
+            PlayerPrefsManager.SetInt(PlayerPrefsKeys.ParticleHintObjectId, _id + 1);
+        }
         _id = PlayerPrefsManager.GetInt(PlayerPrefsKeys.ParticleHintObjectId, 0);
         _type = hintObjectsData[_id].hintItem.itemInfo.ItemScriptableObject.type;
     }

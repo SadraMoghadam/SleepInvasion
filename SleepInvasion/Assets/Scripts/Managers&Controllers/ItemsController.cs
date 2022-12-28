@@ -57,6 +57,7 @@ public class ItemsController : MonoBehaviour
                 break;
         }
         _gameController.UIController.rIcon.SetActive(true);
+        _gameController.UIController.escIcon.SetActive(false);
         _gameController.UIController.HideGUI();
     }
     
