@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
         if(_gameController.playerControllerKeysDisabled)
             return;
         
-        if (Input.GetKeyDown(KeyCode.I) && !_gameController.IsInDiaryView && !_gameController.IsInLockView && !_gameController.IsInMayaStoneView)
+        if (Input.GetKeyDown(KeyCode.I) && !_gameController.IsInDiaryView && !_gameController.IsInLockView && !_gameController.IsInMayaStoneView && !_gameController.IsInSundialView)
         {
             if(!_gameController.InventoryController.inventoryPanel.gameObject.activeSelf)
             {
@@ -66,17 +66,17 @@ public class PlayerController : MonoBehaviour
                 {
                     _gameController.UIController.HideSettingsPanel();
                 }
-                else if(!(_gameController.IsInInspectView || _gameController.IsInMayaStoneView || _gameController.IsInLockView || _gameController.IsInDiaryView))
+                else if(!(_gameController.IsInInspectView || _gameController.IsInMayaStoneView || _gameController.IsInLockView || _gameController.IsInDiaryView || _gameController.IsInSundialView))
                 {
                     _gameController.UIController.ShowPausePanel();
                 }
             }
         }
-        else if (Input.GetKeyDown(KeyCode.R) && !_gameController.IsInInspectView && !_gameController.IsInLockView && !_gameController.IsInMayaStoneView)
+        else if (Input.GetKeyDown(KeyCode.R) && !_gameController.IsInInspectView && !_gameController.IsInLockView && !_gameController.IsInMayaStoneView && !_gameController.IsInSundialView)
         {
             _gameController.ItemsController.AbandonUsingItem();
         }
-        else if (_gameController.ItemsController.TypeUsing == InteractableItemType.None && !_gameController.IsInDiaryView && !_gameController.IsInInspectView && !_gameController.IsInLockView && !_gameController.IsInMayaStoneView)
+        else if (_gameController.ItemsController.TypeUsing == InteractableItemType.None && !_gameController.IsInDiaryView && !_gameController.IsInInspectView && !_gameController.IsInLockView && !_gameController.IsInMayaStoneView && !_gameController.IsInSundialView)
         {
             if (Input.GetKeyDown(KeyCode.Alpha3) && _gameController.InventoryController.IsItemInInventory(InteractableItemType.Shader))
             {
@@ -122,6 +122,17 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 _gameController.Lock.ToggleView();
+            }
+        }
+        else if (_gameController.IsInSundialView)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                if (_gameController.Sundial != null)
+                {
+                    _gameController.Sundial.ChangeView(false);
+                    _gameController.Sundial = null;
+                }
             }
         }
         // else if (_gameController.IsInDiaryView)

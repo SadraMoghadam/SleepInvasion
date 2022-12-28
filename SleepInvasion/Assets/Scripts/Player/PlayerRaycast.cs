@@ -16,7 +16,8 @@ public class PlayerRaycast : MonoBehaviour
         Door,
         MayaStone,
         Lock,
-        Candle
+        Candle,
+        Sundial
     }
     
     [SerializeField] private float keyDownCooldown = .1f;
@@ -150,7 +151,15 @@ public class PlayerRaycast : MonoBehaviour
                         }
                         lightSwitch.Interact();
                     }
-                    
+                    else if(hit.collider.CompareTag(InteractableObjects.Sundial.ToString()))
+                    {
+                        Sundial sundial = hit.collider.gameObject.GetComponent<Sundial>();
+                        if (sundial == null)
+                        {
+                            sundial = hit.collider.transform.parent.GetComponent<Sundial>();
+                        }
+                        sundial.ChangeView(true);
+                    }
                 }
                 catch (Exception e)
                 {

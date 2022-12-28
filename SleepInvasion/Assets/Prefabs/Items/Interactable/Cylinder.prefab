@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 213346580027235237}
-  - component: {fileID: -8298538780030827886}
   - component: {fileID: 3357955567924800236}
   - component: {fileID: -597753399139276198}
+  - component: {fileID: -8298538780030827886}
   m_Layer: 7
   m_Name: Cylinder
   m_TagString: InteractableItem
@@ -36,24 +36,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-8298538780030827886
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 702039519031001375}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bb8c4fe1ad27054da9ff5586cf73b9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemInfo:
-    Id: 4
-    Name: Cylinder
-    ItemScriptableObject: {fileID: 11400000, guid: d16a1ed739021754ebb62294136a56b1, type: 2}
-    Count: 1
-    PlaceInInventory: 1
 --- !u!54 &3357955567924800236
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -83,6 +65,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 3.79, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-8298538780030827886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702039519031001375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bb8c4fe1ad27054da9ff5586cf73b9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemInfo:
+    Id: 4
+    Name: Cylinder
+    ItemScriptableObject: {fileID: 11400000, guid: d16a1ed739021754ebb62294136a56b1, type: 2}
+    Count: 1
+    PlaceInInventory: 1
 --- !u!1 &2878290775309507416
 GameObject:
   m_ObjectHideFlags: 0
