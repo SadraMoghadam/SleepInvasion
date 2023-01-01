@@ -1,29 +1,9 @@
 id,Dialogue,NextDialogueID
-1,"This seems like 
-a notebook...
-Maybe it holds a clue?",2
-2,"The watch 
-is not working, the time got stuck! ",3
+1,"This seems like a notebook...Maybe it holds a clue?",2
+2,"The watch is not working. the time got stuck! ",3
 3,Seems like the chest is locked..,4
-4,"Wow! A 
-magnifier and..a 
-needle?",5
-5,"This needle is too small to 
-fit in my 
-inventory. Is 
-there any other 
-way to use it?",6
-6,"A stone board 
-with some 
-strange 
-symbols. Looks 
-like there’s 
-something 
-missing in the 
-center?",7
-7,"Is there something that I can do with the candle?
-
-",8
-8,"It seems like a twisted drawing. Is there someway i can make the drawing to be more clear?
-Looks like there is something missing...
-",9
+4,"Wow! A magnifier and..a needle?",5
+5,"This needle is too small to fit in my inventory. Is there any other way to use it?",6
+6,"A stone board with some strange symbols. Looks like there’s something missing in the center?",7
+7,"Is there somethig that I can do with the candle?",8
+8,"It seems like a twisted drawing. Is there someway i can make the drawing to be more clear? Looks like there is something missing...",0
