@@ -53,6 +53,7 @@ public class PlayerRaycast : MonoBehaviour
         if (_gameController.keysDisabled || _gameController.IsInInspectView || _gameController.IsInDiaryView || _gameController.IsInLockView)
         {
             _leftMouseClickImage.gameObject.SetActive(false);
+            _uiController.placeIcon.SetActive(false);
             return;
         }
         else
@@ -86,6 +87,7 @@ public class PlayerRaycast : MonoBehaviour
                 return;
             }
             _leftMouseClickImage.sprite = _keyUpSprite;
+            _uiController.placeIcon.SetActive(hit.collider.CompareTag("Sundial") && _gameController.InventoryController.IsItemInInventory(InteractableItemType.Needle));
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 try
@@ -197,6 +199,7 @@ public class PlayerRaycast : MonoBehaviour
         {
             
             _leftMouseClickImage.sprite = _dotSprite;
+            _uiController.placeIcon.SetActive(false);
             // RaycastHit[] hits = Physics.RaycastAll(transform.position, transform.forward, rayLength);
             // for (int i = 0; i < hits.Length; i++)
             // {
