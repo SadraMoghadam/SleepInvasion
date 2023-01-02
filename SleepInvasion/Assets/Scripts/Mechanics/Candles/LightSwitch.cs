@@ -2,6 +2,7 @@
 
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class LightSwitch: Interactable 
 {
@@ -10,6 +11,8 @@ public class LightSwitch: Interactable
     [SerializeField] private GameObject obj;
     [SerializeField] private bool isOn;
 
+    public UnityEvent onCandleSwitch;
+
     private void Start() {
         UpdateLight();
     }
@@ -17,6 +20,7 @@ public class LightSwitch: Interactable
     IEnumerator UpdateLight()
     {
         yield return new WaitForSeconds(1f);
+        onCandleSwitch.Invoke();
         m_Light.enabled = isOn;
         obj.SetActive(isOn);
     }
@@ -31,5 +35,10 @@ public class LightSwitch: Interactable
             GameManager.Instance.AudioManager.Instantplay(SoundName.CandleBlow, transform.position);
         isOn = !isOn;
         StartCoroutine(UpdateLight());
+    }
+
+    public bool IsOn()
+    {
+        return isOn;
     }
 }

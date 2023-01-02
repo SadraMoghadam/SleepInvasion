@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ItemPlace : MonoBehaviour
 {
@@ -7,6 +8,8 @@ public class ItemPlace : MonoBehaviour
     
     private bool _isEmpty;
     private GameController _gameController;
+
+    public UnityEvent onItemPlaced;
     
     private void Awake()
     {
@@ -38,6 +41,8 @@ public class ItemPlace : MonoBehaviour
         Instantiate(tempItem.prefab, placementPosition.position, placementPosition.rotation, transform);
         _isEmpty = false;
         _gameController.InventoryController.DeleteInventoryData(tempItem.type);
+        
+        onItemPlaced.Invoke();
         
         return true;
     }

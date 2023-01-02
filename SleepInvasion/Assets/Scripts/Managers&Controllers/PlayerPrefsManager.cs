@@ -31,6 +31,8 @@ public enum PlayerPrefsKeys
     FirstDiary,
     MayaStoneUnlocked,
     DoorLocked,
+    L2DoorClosed,
+    L2SundialLight,
     // Analytics
     GameTimer,
     LockTimer,
