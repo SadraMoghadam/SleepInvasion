@@ -8772,6 +8772,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5355901529959943010, guid: f1fce1cfa1e123749b3d5ab47f6da918, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b4ce17d55fa7aa04480822f7614e8621, type: 3}
+    - target: {fileID: 5649525770274609262, guid: f1fce1cfa1e123749b3d5ab47f6da918, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3811229dacc4ca6458c20aac09fea768, type: 3}
+    - target: {fileID: 5985807027975691782, guid: f1fce1cfa1e123749b3d5ab47f6da918, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c963676894baaa0418a84a1f50b887c3, type: 3}
     - target: {fileID: 6899005172814907059, guid: f1fce1cfa1e123749b3d5ab47f6da918, type: 3}
       propertyPath: FirstPersonCamera
       value: 
