@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4404738462634208147}
   - component: {fileID: 8487219253902891733}
   - component: {fileID: 5921670190144231537}
+  - component: {fileID: 6444680339919045686}
   m_Layer: 7
   m_Name: Needle
   m_TagString: InteractableItem
@@ -65,6 +66,19 @@ MonoBehaviour:
     ItemScriptableObject: {fileID: 11400000, guid: a2c2a71785f763745a9c5b45e32b5f1f, type: 2}
     Count: 1
     PlaceInInventory: 1
+--- !u!114 &6444680339919045686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003121319151205149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56533fb213d8d054ba4729ebb461d380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coefficient: 2
 --- !u!1001 &1517059516620036457
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -128,6 +142,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6015535729791225082, guid: 9e153f8f48145ad4c86a7971fa7531b1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e82661c1b6c8fd745b8977035bd07d9a, type: 2}
     - target: {fileID: 7886979408523428197, guid: 9e153f8f48145ad4c86a7971fa7531b1, type: 3}
       propertyPath: m_Name
       value: Needle

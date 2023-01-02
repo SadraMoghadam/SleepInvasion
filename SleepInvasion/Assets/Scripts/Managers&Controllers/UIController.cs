@@ -21,8 +21,11 @@ public class UIController : MonoBehaviour
     public GameObject qIcon;
     public GameObject escIcon;
     public GameObject mIcon;
+    public GameObject placeIcon;
+    public GameObject SundialIcon;
+    public GameObject MayaStoneIcon;
 
-    [NonSerialized] public bool IsInPauseMenu;
+        [NonSerialized] public bool IsInPauseMenu;
 
     private GameController _gameController;
     private GameObject _currentPanel;

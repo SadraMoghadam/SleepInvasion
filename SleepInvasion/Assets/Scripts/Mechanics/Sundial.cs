@@ -25,6 +25,7 @@ public class Sundial : MonoBehaviour
         _gameController.IsInSundialView = sundialView;
         _gameController.Sundial = this;
         _gameController.UIController.escIcon.SetActive(sundialView);
+        _gameController.UIController.SundialIcon.SetActive(sundialView);
         if (sundialView)
         {
             _gameController.ShowCursor();
