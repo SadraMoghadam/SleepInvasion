@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Needle
   m_EditorClassIdentifier: 
   name: Needle
-  prefab: {fileID: 7886979408523428197, guid: 9e153f8f48145ad4c86a7971fa7531b1, type: 3}
+  prefab: {fileID: 2003121319151205149, guid: 1559bd50b0d6cda45a06a2b8629f9a25, type: 3}
   type: 11
   effect: 0
   sprite: {fileID: 21300000, guid: a3181a870a8b20f4eadaee2a698b189a, type: 3}
   description: 'A long stick, can I put it somewhere? '
   finalCount: 1
-  usable: 1
+  usable: 0
