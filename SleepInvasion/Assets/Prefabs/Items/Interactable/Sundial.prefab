@@ -110,7 +110,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6223627619352700335
 Transform:
   m_ObjectHideFlags: 0
@@ -349,6 +349,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 7306073548831408612, guid: 9e153f8f48145ad4c86a7971fa7531b1, type: 3}
   placementPosition: {fileID: 1671139595795608509}
+  onItemPlaced:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &639308339544938667
 MonoBehaviour:
   m_ObjectHideFlags: 0
