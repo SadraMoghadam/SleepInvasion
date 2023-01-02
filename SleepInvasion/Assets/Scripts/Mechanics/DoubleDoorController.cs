@@ -24,7 +24,7 @@ public class DoubleDoorController : MonoBehaviour, IDoorController
 
     public void Use()
     {
-        if (id == 0 && PlayerPrefsManager.GetBool(PlayerPrefsKeys.L1DoorLocked, true))
+        if (!CheckUnlocked())
         {
             return;
         }
@@ -43,7 +43,7 @@ public class DoubleDoorController : MonoBehaviour, IDoorController
 
     public void Close()
     {
-        if (id == 0 && PlayerPrefsManager.GetBool(PlayerPrefsKeys.L1DoorLocked, true))
+        if (!CheckUnlocked())
         {
             return;
         }
@@ -54,7 +54,7 @@ public class DoubleDoorController : MonoBehaviour, IDoorController
     
     public void Open()
     {
-        if (id == 0 && PlayerPrefsManager.GetBool(PlayerPrefsKeys.L1DoorLocked, true))
+        if (!CheckUnlocked())
         {
             return;
         }
@@ -76,6 +76,17 @@ public class DoubleDoorController : MonoBehaviour, IDoorController
                 PlayerPrefsManager.SetBool(PlayerPrefsKeys.L1DoorLocked, false);
                 break;
         }
+    }
+
+    private bool CheckUnlocked()
+    {
+        if ((id == 0 && PlayerPrefsManager.GetBool(PlayerPrefsKeys.L1DoorLocked, true)) ||
+            id == 1)
+        {
+            return false;
+        }
+
+        return true;
     }
     
 }
