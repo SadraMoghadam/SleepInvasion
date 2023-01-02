@@ -11,6 +11,7 @@ public class ItemsController : MonoBehaviour
     public Diary diary;  
     [SerializeField] private GameObject lasersParentGO;
     public LayerMask inspectLayer;
+    public Item needle;
     
     private GameController _gameController;
     private InteractableItemType _typeUsing;

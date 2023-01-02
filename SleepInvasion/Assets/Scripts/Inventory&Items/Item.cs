@@ -17,9 +17,9 @@ public class Item : MonoBehaviour
 
         if (itemInfo.ItemScriptableObject.type == InteractableItemType.Needle)
         {
-            if (!PlayerPrefs.HasKey(PlayerPrefsKeys.NeedleOnSundialNumber.ToString()))
+            if (!PlayerPrefs.HasKey(PlayerPrefsKeys.NeedleOnSundialId.ToString()))
             {
-                PlayerPrefsManager.SetInt(PlayerPrefsKeys.NeedleOnSundialNumber, 0);
+                PlayerPrefsManager.SetInt(PlayerPrefsKeys.NeedleOnSundialId, 0);
             }
         }
     }

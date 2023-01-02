@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class DoubleDoorController : MonoBehaviour, IDoorController
 {
+    [SerializeField] private int id;
     [SerializeField] private GameObject otherDoor; 
     [SerializeField] private bool startOpen;
 
@@ -17,13 +18,13 @@ public class DoubleDoorController : MonoBehaviour, IDoorController
         _otherDoorAnimator = otherDoor.GetComponent<Animator>();
         _doorAnimator.SetBool(IsDoorOpen, startOpen);
         _otherDoorAnimator.SetBool(IsDoorOpen, startOpen);
-        if(!PlayerPrefs.HasKey(PlayerPrefsKeys.DoorLocked.ToString()))
-            PlayerPrefsManager.SetBool(PlayerPrefsKeys.DoorLocked, true);
+        if(!PlayerPrefs.HasKey(PlayerPrefsKeys.L1DoorLocked.ToString()))
+            PlayerPrefsManager.SetBool(PlayerPrefsKeys.L1DoorLocked, true);
     }
 
     public void Use()
     {
-        if (PlayerPrefsManager.GetBool(PlayerPrefsKeys.DoorLocked, true))
+        if (id == 0 && PlayerPrefsManager.GetBool(PlayerPrefsKeys.L1DoorLocked, true))
         {
             return;
         }
@@ -42,7 +43,7 @@ public class DoubleDoorController : MonoBehaviour, IDoorController
 
     public void Close()
     {
-        if (PlayerPrefsManager.GetBool(PlayerPrefsKeys.DoorLocked, true))
+        if (id == 0 && PlayerPrefsManager.GetBool(PlayerPrefsKeys.L1DoorLocked, true))
         {
             return;
         }
@@ -53,7 +54,7 @@ public class DoubleDoorController : MonoBehaviour, IDoorController
     
     public void Open()
     {
-        if (PlayerPrefsManager.GetBool(PlayerPrefsKeys.DoorLocked, true))
+        if (id == 0 && PlayerPrefsManager.GetBool(PlayerPrefsKeys.L1DoorLocked, true))
         {
             return;
         }
@@ -66,4 +67,15 @@ public class DoubleDoorController : MonoBehaviour, IDoorController
     {
         return _doorAnimator.GetBool(IsDoorOpen);
     }
+
+    public void SetDoorUnlocked()
+    {
+        switch (id)
+        {
+            case 0:
+                PlayerPrefsManager.SetBool(PlayerPrefsKeys.L1DoorLocked, false);
+                break;
+        }
+    }
+    
 }

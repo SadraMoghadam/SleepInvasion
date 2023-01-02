@@ -145,7 +145,7 @@ public class LevelDemo : Level
         if (PlayerPrefsManager.GetBool(PlayerPrefsKeys.MayaStoneUnlocked, false))
         {
             _gameController.HintController.ShowHint(19);
-            PlayerPrefsManager.SetBool(PlayerPrefsKeys.DoorLocked, false);
+            PlayerPrefsManager.SetBool(PlayerPrefsKeys.L1DoorLocked, false);
             SaveCompletedProcess(7);
         }
     }

@@ -3,6 +3,7 @@ using UnityEngine.Events;
 
 public class ItemPlace : MonoBehaviour
 {
+    [SerializeField] private int id;
     public Item item;
     public Transform placementPosition;
     
@@ -15,6 +16,14 @@ public class ItemPlace : MonoBehaviour
     {
         _gameController = GameController.Instance;
         _isEmpty = true;
+        int needleParentId = PlayerPrefsManager.GetInt(PlayerPrefsKeys.NeedleOnSundialId, 0);
+        if (id == needleParentId)
+        {
+            Instantiate(_gameController.ItemsController.needle.itemInfo.ItemScriptableObject.prefab, placementPosition.position, placementPosition.rotation, transform);
+            PlayerPrefsManager.SetInt(PlayerPrefsKeys.NeedleOnSundialId, id);
+            _isEmpty = false;
+            // _gameController.ItemsController.needle.transform.localPosition = Vector3.zero;
+        }
     }
 
     public void SetEmpty()
@@ -39,6 +48,7 @@ public class ItemPlace : MonoBehaviour
             return false;
         }
         Instantiate(tempItem.prefab, placementPosition.position, placementPosition.rotation, transform);
+        PlayerPrefsManager.SetInt(PlayerPrefsKeys.NeedleOnSundialId, id);
         _isEmpty = false;
         _gameController.InventoryController.DeleteInventoryData(tempItem.type);
         
@@ -46,4 +56,6 @@ public class ItemPlace : MonoBehaviour
         
         return true;
     }
+    
+    
 }

@@ -71,6 +71,9 @@ public class Level1 : Level
                 SixthProcess();
                 break;
             case 7:
+                SeventhProcess();
+                break;
+            case 8:
                 LastProcess();
                 break;
             
@@ -167,12 +170,23 @@ public class Level1 : Level
     
     private void SixthProcess()
     {
+        if (_gameController.InventoryController.IsItemInInventory(InteractableItemType.Needle))
+        {
+            // _gameController.HintController.ShowHint(5);
+            SaveCompletedProcess(6);
+        }
+    }
+    
+    private void SeventhProcess()
+    {
         _magnifierTimer += Time.deltaTime;
+        // bool isSundialActivated = _level1Data.needlePosition.GetComponentInChildren<Item>();
         if (PlayerPrefsManager.GetBool(PlayerPrefsKeys.Sundial1Finished, false))
         {
+            PlayerPrefsManager.SetBool(PlayerPrefsKeys.Sundial1Finished, true);
             PlayerPrefsManager.SetFloat(PlayerPrefsKeys.MagnifierTimer, _magnifierTimer);
             _gameController.HintController.ShowHint(19);
-            PlayerPrefsManager.SetBool(PlayerPrefsKeys.DoorLocked, false);
+            PlayerPrefsManager.SetBool(PlayerPrefsKeys.L1DoorLocked, false);
             SaveCompletedProcess(7);
         }
     }

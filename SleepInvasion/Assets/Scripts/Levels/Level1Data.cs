@@ -12,4 +12,5 @@ public class Level1Data
     public float startHintTimer = 6;
     public GameObject shaderGO;
     public DoubleDoorController doubleDoorController;
+    public GameObject needlePosition;
 }

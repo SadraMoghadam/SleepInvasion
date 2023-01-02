@@ -7,6 +7,7 @@ public enum PlayerPrefsKeys
 {
     GameStarted,
     PlayerTransform,
+    NeedleOnSundialId,
     Level,
     InventoryItems,
     DestroyedItems,
@@ -30,7 +31,7 @@ public enum PlayerPrefsKeys
     FirstShader,
     FirstDiary,
     MayaStoneUnlocked,
-    DoorLocked,
+    L1DoorLocked,
     L2DoorClosed,
     L2SundialLight,
     // Analytics
