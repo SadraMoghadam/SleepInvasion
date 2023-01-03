@@ -198,7 +198,7 @@ public class Level1 : Level
             PlayerPrefsManager.SetBool(PlayerPrefsKeys.Sundial1Finished, true);
             PlayerPrefsManager.SetFloat(PlayerPrefsKeys.MagnifierTimer, _magnifierTimer);
             _gameController.HintController.ShowHint(19);
-            PlayerPrefsManager.SetBool(PlayerPrefsKeys.L1DoorLocked, false);
+            PlayerPrefsManager.SetBool(PlayerPrefsKeys.Door1Locked, false);
             SaveCompletedProcess(7);
         }
     }

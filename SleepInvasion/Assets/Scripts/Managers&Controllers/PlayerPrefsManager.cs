@@ -32,7 +32,7 @@ public enum PlayerPrefsKeys
     FirstDiary,
     FirstDiarySeen,
     MayaStoneUnlocked,
-    L1DoorLocked,
+    Door1Locked,
     L2DoorClosed,
     L2SundialLight,
     // Analytics
