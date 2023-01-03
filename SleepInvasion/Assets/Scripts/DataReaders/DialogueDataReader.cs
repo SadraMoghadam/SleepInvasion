@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using UnityEngine;
 
 public class DialogueDataReader : MonoBehaviour
@@ -27,7 +28,8 @@ public class DialogueDataReader : MonoBehaviour
                 continue;
             }
 
-            string[] lineSplitted = line.Split(',');
+            Regex CSVParser = new Regex(",(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))");
+            string[] lineSplitted = CSVParser.Split(line);
             currentLineNumber++;
 
             if (currentLineNumber == 1)
