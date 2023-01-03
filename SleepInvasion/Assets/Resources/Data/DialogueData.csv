@@ -3,8 +3,8 @@ id,Dialogue,NextDialogueID,Triggers
 2,"The watch is not working, the time got stuck! ",0,picking up the watch
 3,Seems like the chest is locked..,0,clicking the chest
 4,Wow! A magnifier and..a needle?,5,chest opens
-5,"There must be something special about this magnifier, it doesn't seem regular...",6,clicking the magnifier
-6,This needle is too small to fit in my inventory. Is there any other way to use it?,0,clicking the needle
+5,"There must be something special about this magnifier, it doesn't seem regular...",6,
+6,This needle is too small to fit in my inventory. Is there any other way to use it?,0,
 7,"Wow, this needle gets enlarged in real life too! This is truly magic!",0,after using magnifier and needle gets enlarged 
 8,A stone board with strange symbols. Looks like there is omething missing in the center?,0,seeing empty sundial
 9,It seems like a twisted drawing. Is there a way to make the drawing clear?,10,seing the twisted drawing

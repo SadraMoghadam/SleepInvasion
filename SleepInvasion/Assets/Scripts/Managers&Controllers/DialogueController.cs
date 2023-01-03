@@ -95,9 +95,12 @@ public class DialogueController : MonoBehaviour
     {
         yield return new WaitForSeconds(duration);
         dialoguePanel.gameObject.SetActive(false);
-        _gameController.EnableLook();
-        _gameController.EnableAllKeys();
-        _gameController.HideCursor();
+        if (!_gameController.IsInLockView)
+        {
+            _gameController.EnableLook();
+            _gameController.EnableAllKeys();
+            _gameController.HideCursor();   
+        }
     }
     
     public bool IsPanelActive()

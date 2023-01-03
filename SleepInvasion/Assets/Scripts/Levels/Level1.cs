@@ -117,6 +117,17 @@ public class Level1 : Level
     private void ThirdProcess()
     {
         _lockTimer += Time.deltaTime;
+        if (_firstFoundItemType == InteractableItemType.None)
+        {
+            if (_gameController.InventoryController.IsItemInInventory(InteractableItemType.Watch))
+            {
+                _firstFoundItemType = InteractableItemType.Watch;
+            }
+            else if(_gameController.InventoryController.IsItemInInventory(InteractableItemType.Diary))
+            {
+                _firstFoundItemType = InteractableItemType.Diary;
+            }
+        }
         if (_gameController.InventoryController.IsItemInInventory(InteractableItemType.Watch) && 
             _firstFoundItemType == InteractableItemType.Diary)
         {
@@ -153,6 +164,7 @@ public class Level1 : Level
         {
             PlayerPrefsManager.SetFloat(PlayerPrefsKeys.LockTimer, _lockTimer);
             _gameController.HintController.ShowHint(4);
+            _gameController.DialogueController.Show(3);
             PlayerPrefsManager.SetBool(PlayerPrefsKeys.FirstLockView, false);
             SaveCompletedProcess(5);
         }

@@ -97,6 +97,10 @@ public class Magnifier : MonoBehaviour, IItemUsage
                     {
                         if (hit.collider.gameObject.GetComponent<Item>().itemInfo.Name == "Shader" || hit.collider.gameObject.GetComponent<Item>().itemInfo.Name == "Needle")
                         {
+                            if (hit.collider.gameObject.GetComponent<Item>().itemInfo.Name == "Needle")
+                            {
+                                _gameController.DialogueController.Show(7);
+                            }
                             hit.collider.gameObject.tag = "InteractableItem";
                         }
                         _toMagnify.Add(hit.collider.gameObject.GetComponent<Item>());

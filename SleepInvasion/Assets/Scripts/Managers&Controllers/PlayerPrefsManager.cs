@@ -26,7 +26,7 @@ public enum PlayerPrefsKeys
     FirstLockView,
     FirstInventory,
     FirstInspect,
-    FirsMayaStone,
+    FirstMayaStone,
     FirstMagnifier,
     FirstShader,
     FirstDiary,

@@ -1,5 +1,5 @@
 id,Hint,Condition,Name
-0,Welcome to our game prototype. Try to explore the map to solve the puzzles. The clues will lead you to open the final GATE. Hope you enjoy!,Begin of the game,
+0,Welcome to the Sleep invasion. Try to explore the map and solve the puzzles. Enjoy!,Begin of the game,
 1,You can move with WASD and jump with SPACE.,,
 2,That's the DIARY OF PRINCESS! You can access it through the inventory (Press I) or simply by pressing 1 on keyboard.,,
 3,Press left mouse to pick up or interact with items.,Raycast hits object,

@@ -16,6 +16,10 @@ public class ItemPick : MonoBehaviour
 
     public void PickUp(Item item)
     {
+        if (item.itemInfo.ItemScriptableObject.type == InteractableItemType.Watch)
+        {
+            _gameController.DialogueController.Show(2);
+        }
         _gameManager.AudioManager.Instantplay(SoundName.PickUpItem, item.transform.position);
         if (item.itemInfo.PlaceInInventory)
         {

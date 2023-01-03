@@ -59,6 +59,8 @@ public class Lock : MonoBehaviour
             _gameController.IsInLockView = false;
             _gameController.UIController.escIcon.SetActive(false);
             _gameController.HideCursor();
+            _gameController.EnableLook();
+            _gameController.EnableAllKeys();
         }
         if (OverheadCamera.enabled)
         {
@@ -67,6 +69,8 @@ public class Lock : MonoBehaviour
             _gameController.IsInLockView = true;
             _gameController.UIController.escIcon.SetActive(true);
             _gameController.ShowCursor(); //show cursor when using lock
+            _gameController.DisableLook();
+            _gameController.DisableAllKeys();
         }
     }
 
@@ -85,6 +89,7 @@ public class Lock : MonoBehaviour
         {
             case 0:
                 key = PlayerPrefsKeys.Chest1Unlocked;
+                _gameController.DialogueController.Show(4);
                 break;
             case 1:
                 key = PlayerPrefsKeys.Chest3Unlocked;

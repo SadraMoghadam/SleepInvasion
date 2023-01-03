@@ -41,11 +41,6 @@ public class MayaStone : MonoBehaviour
         stoneCamera.gameObject.SetActive(false);
         _animator = GetComponent<Animator>();
         _gameController = GameController.Instance;
-        if(PlayerPrefsManager.GetBool(PlayerPrefsKeys.FirsMayaStone, true))
-        {
-            _gameController.HintController.ShowHint(15);
-            PlayerPrefsManager.SetBool(PlayerPrefsKeys.FirsMayaStone, false);
-        }
         SetupOverallDegrees(out _firstRingDegrees, 0);
         SetupOverallDegrees(out _secondRingDegrees, 1);
         SetupOverallDegrees(out _thirdRingDegrees, 2);
@@ -134,6 +129,11 @@ public class MayaStone : MonoBehaviour
         _gameController.UIController.MayaStoneIcon.SetActive(stoneView);
         if (stoneView)
         {
+            if(PlayerPrefsManager.GetBool(PlayerPrefsKeys.FirstMayaStone, true))
+            {
+                _gameController.HintController.ShowHint(15);
+                PlayerPrefsManager.SetBool(PlayerPrefsKeys.FirstMayaStone, false);
+            }
             _gameController.ShowCursor();
             _gameController.DisableAllKeys();
             _gameController.DisableLook();
