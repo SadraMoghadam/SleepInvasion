@@ -1,22 +1,36 @@
-id,Dialogue,NextDialogueID
-1,This seems like a notebook...Maybe it holds a clue?,0
-2,"The watch is not working, the time got stuck! ",0
-3,Seems like the chest is locked..,0
-4,Wow! A magnifier and..a needle?,5
-5,"There must be something special about this magnifier, it doesn't seem regular...",6
-6,This needle is too small to fit in my inventory. Is there any other way to use it?,0
-7,"Wow, this needle gets enlarged in real life too! This is truly magic!",0
-8,A stone board with strange symbols. Looks like there is omething missing in the center?,0
-9,It seems like a twisted drawing. Is there a way to make the drawing clear?,10
-10,Looks like there is something missing in the center…,0
-11,Is there something I could do with the candle?,0
-12,"The column are in different height, maybe it means something.",0
-13,"This chest is locked, what could be the four number password?",0
-14,Is that a painting on the cylinder?,15
-15,I should look it up closely..Maybe there is a clue hidden in the painting!,0
-16,This sundial already has the shadow…,0
-17,"There’s one light source, seems to be pointing at something",0
-18,How can I make the mirror to reflect the light?,0
-19,"There’s a sundial,but no light source to indicate the icons…",0
-20,Did the door just open? I think I heard something...,0
-21,Now the laser light has been reflected correctly!,0
+id,Dialogue,NextDialogueID,Triggers
+1,This seems like a notebook...Maybe it holds a clue?,0,seein the diary
+2,"The watch is not working, the time got stuck! ",0,picking up the watch
+3,Seems like the chest is locked..,0,clicking the chest
+4,Wow! A magnifier and..a needle?,5,chest opens
+5,"There must be something special about this magnifier, it doesn't seem regular...",6,clicking the magnifier
+6,This needle is too small to fit in my inventory. Is there any other way to use it?,0,clicking the needle
+7,"Wow, this needle gets enlarged in real life too! This is truly magic!",0,after using magnifier and needle gets enlarged 
+8,A stone board with strange symbols. Looks like there is omething missing in the center?,0,seeing empty sundial
+9,It seems like a twisted drawing. Is there a way to make the drawing clear?,10,seing the twisted drawing
+10,Looks like there is something missing in the center…,0,
+11,Is there something I could do with the candle?,0,seeing 2 laser lights pointing to 2 candles
+12,"The column are in different height, maybe it means something.",0,entering the room
+13,"This chest is locked, what could be the four number password?",0,checking the chest
+14,Is that a painting on the cylinder?,15,placing the cylinder on the drawing
+15,I should look it up closely..Maybe there is a clue hidden in the painting!,0,
+16,This sundial already has the shadow…,0,walk to the small room with sundial
+17,"There’s one light source, seems to be pointing at something",0,using the shader
+18,How can I make the mirror to reflect the light?,0,checking the first mirror
+19,"There’s a sundial,but no light source to indicate the icons…",0,checking the table
+20,Did the door just open? I think I heard something...,0,door opens
+21,Now the laser light has been reflected correctly!,0,magnifying first mirror
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
