@@ -68,9 +68,6 @@ public class DialogueController : MonoBehaviour
         PlayerPrefsManager.SetIntList(PlayerPrefsKeys.ShownDialogues, shownDialogueIds);
         // dialoguePanel.gameObject.SetActive(false);
         StartCoroutine(DisableDialoguePanel(.5f));
-        _gameController.EnableLook();
-        _gameController.EnableAllKeys();
-        _gameController.HideCursor();
         FadeDialoguePanelInAndOut(false, .5f);
     }
 
@@ -98,6 +95,9 @@ public class DialogueController : MonoBehaviour
     {
         yield return new WaitForSeconds(duration);
         dialoguePanel.gameObject.SetActive(false);
+        _gameController.EnableLook();
+        _gameController.EnableAllKeys();
+        _gameController.HideCursor();
     }
     
     public bool IsPanelActive()

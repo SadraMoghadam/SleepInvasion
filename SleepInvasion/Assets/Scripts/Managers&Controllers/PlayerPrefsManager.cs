@@ -30,6 +30,7 @@ public enum PlayerPrefsKeys
     FirstMagnifier,
     FirstShader,
     FirstDiary,
+    FirstDiarySeen,
     MayaStoneUnlocked,
     L1DoorLocked,
     L2DoorClosed,
