@@ -398,8 +398,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.04, y: 0.01, z: 0.1}
-  m_Center: {x: 0.01, y: 0, z: 0}
+  m_Size: {x: 0.8, y: 0.18, z: -2.46}
+  m_Center: {x: 0.3, y: 0, z: -0.3}
 --- !u!82 &3627971302526685596
 AudioSource:
   m_ObjectHideFlags: 0
@@ -546,8 +546,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 1
-  DoorRight: {fileID: 5350931937124067143}
-  DoorLeft: {fileID: 7913839329957451366}
+  doorRight: {fileID: 5350931937124067143}
+  doorLeft: {fileID: 7913839329957451366}
   startOpen: 0
 --- !u!1 &7913839329957451366
 GameObject:
