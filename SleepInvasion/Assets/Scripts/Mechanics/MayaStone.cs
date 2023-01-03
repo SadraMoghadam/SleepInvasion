@@ -31,7 +31,7 @@ public class MayaStone : MonoBehaviour
     private int[] _trueIndexCombination = { 7, 6, 1, 2 };
     private int[] _initialDegreesIndex = { 0, 0, 0, 0 };
 
-    private float ringRotationTime;
+    private float ringRotationTime = 1;
 
     private bool _clickable;
 
@@ -51,7 +51,6 @@ public class MayaStone : MonoBehaviour
         SetupOverallDegrees(out _thirdRingDegrees, 2);
         SetupOverallDegrees(out _fourthRingDegrees, 3);
         SetupRingDegrees();
-        ringRotationTime = Time.deltaTime * 5;
 
     }
 
