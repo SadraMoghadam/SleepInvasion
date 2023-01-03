@@ -27,14 +27,14 @@ public class Lock : MonoBehaviour
         PlayerPrefsKeys key = PlayerPrefsKeys.Chest1Unlocked;
         switch (id)
         {
-            case 0:
+            case 1:
                 key = PlayerPrefsKeys.Chest1Unlocked;
                 break;
-            case 1:
+            case 3:
                 key = PlayerPrefsKeys.Chest3Unlocked;
                 break;
         }
-        if (PlayerPrefsManager.GetBool(key, false) && id + 1 == Int32.Parse(Regex.Match(key.ToString(), @"\d+").Value))
+        if (PlayerPrefsManager.GetBool(key, false) && id == Int32.Parse(Regex.Match(key.ToString(), @"\d+").Value))
         {
             GetComponent<Collider>().enabled = false;
         }
@@ -83,15 +83,17 @@ public class Lock : MonoBehaviour
         GetComponent<Collider>().enabled = false;
         _gameController.IsInLockView = false;
         _gameController.HideCursor();
+        _gameController.EnableLook();
+        _gameController.EnableAllKeys();
         
         PlayerPrefsKeys key = PlayerPrefsKeys.Chest1Unlocked;
         switch (id)
         {
-            case 0:
+            case 1:
                 key = PlayerPrefsKeys.Chest1Unlocked;
                 _gameController.DialogueController.Show(4);
                 break;
-            case 1:
+            case 3:
                 key = PlayerPrefsKeys.Chest3Unlocked;
                 break;
         }

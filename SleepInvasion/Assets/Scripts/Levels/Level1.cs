@@ -71,11 +71,12 @@ public class Level1 : Level
                 SixthProcess();
                 break;
             case 7:
-                SeventhProcess();
-                break;
-            case 8:
                 LastProcess();
+                // SeventhProcess();
                 break;
+            // case 8:
+            //     LastProcess();
+            //     break;
             
             default:
                 break;
@@ -185,31 +186,31 @@ public class Level1 : Level
         if (_gameController.InventoryController.IsItemInInventory(InteractableItemType.Needle))
         {
             // _gameController.HintController.ShowHint(5);
-            SaveCompletedProcess(6);
-        }
-    }
-    
-    private void SeventhProcess()
-    {
-        _magnifierTimer += Time.deltaTime;
-        // bool isSundialActivated = _level1Data.needlePosition.GetComponentInChildren<Item>();
-        if (PlayerPrefsManager.GetBool(PlayerPrefsKeys.Sundial1Finished, false))
-        {
-            PlayerPrefsManager.SetBool(PlayerPrefsKeys.Sundial1Finished, true);
-            PlayerPrefsManager.SetFloat(PlayerPrefsKeys.MagnifierTimer, _magnifierTimer);
-            _gameController.HintController.ShowHint(19);
-            PlayerPrefsManager.SetBool(PlayerPrefsKeys.Door1Locked, false);
             SaveCompletedProcess(7);
         }
     }
+    
+    // private void SeventhProcess()
+    // {
+    //     // bool isSundialActivated = _level1Data.needlePosition.GetComponentInChildren<Item>();
+    //     if (PlayerPrefsManager.GetBool(PlayerPrefsKeys.Sundial1Finished, false))
+    //     {
+    //         PlayerPrefsManager.SetBool(PlayerPrefsKeys.Sundial1Finished, true);
+    //         SaveCompletedProcess(7);
+    //     }
+    // }
 
     private void LastProcess()
     {
-        if (_level1Data.doubleDoorController.IsOpen())
+        _magnifierTimer += Time.deltaTime;
+        if (!PlayerPrefsManager.GetBool(PlayerPrefsKeys.Door1Locked, true))
         {
             // _gameController.HintController.ShowHint(20, 6);
             // PlayerPrefsManager.SetFloat(PlayerPrefsKeys.GameTimer, _gameTimer);
             
+            PlayerPrefsManager.SetFloat(PlayerPrefsKeys.MagnifierTimer, _magnifierTimer);
+            // _gameController.HintController.ShowHint(19);
+            // PlayerPrefsManager.SetBool(PlayerPrefsKeys.Door1Locked, false);
             StartCoroutine(SendToGoogle.PostTimer(PlayerPrefsKeys.MagnifierTimer));
             SaveCompletedProcess(8);
             EndOfLevel();

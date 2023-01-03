@@ -17,13 +17,15 @@ public enum PlayerPrefsKeys
     DiaryMaxShownPages,
     Chest1Unlocked,
     Chest3Unlocked,
-    Door3Unlocked,
+    Door3Locked,
+    OutDoor3Locked,
     Level1Process,
     Level2Process,
     Level3Process,
     Level4Process,
     FirstRaycast,
     FirstLockView,
+    FirstLock3View,
     FirstInventory,
     FirstInspect,
     FirstMayaStone,
@@ -31,6 +33,7 @@ public enum PlayerPrefsKeys
     FirstShader,
     FirstDiary,
     FirstDiarySeen,
+    FirstEnterRoom3,
     MayaStoneUnlocked,
     Door1Locked,
     L2DoorClosed,
@@ -41,10 +44,10 @@ public enum PlayerPrefsKeys
     MagnifierTimer,
     ShaderTimer,
     ShownDialogues,
-    Sundial1Finished,
-    Sundial2Finished,
-    Sundial3Finished,
-    Sundial4Finished
+    // Sundial1Finished,
+    // Sundial2Finished,
+    // Sundial3Finished,
+    // Sundial4Finished
 }
 
 public struct SavedData

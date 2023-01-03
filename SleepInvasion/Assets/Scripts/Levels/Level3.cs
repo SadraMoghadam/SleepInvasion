@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -33,6 +34,15 @@ public class Level3 : Level
         // _gameController.DialogueController.Show(1);
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (PlayerPrefsManager.GetBool(PlayerPrefsKeys.FirstEnterRoom3, true))
+        {
+            _gameController.DialogueController.Show(12);
+            PlayerPrefsManager.GetBool(PlayerPrefsKeys.FirstEnterRoom3, false);
+        }
+    }
+
     public override void Process()
     {
         switch (_processNumber)
@@ -61,9 +71,9 @@ public class Level3 : Level
 
     private void firstProcess()
     {
-        if (PlayerPrefsManager.GetBool(PlayerPrefsKeys.Chest3Unlocked, false))
+        if (_gameController.IsInLockView && PlayerPrefsManager.GetBool(PlayerPrefsKeys.FirstLock3View, true))
         {
-            //show some dialogues and hints
+            _gameController.DialogueController.Show(13);
             SaveCompletedProcess(2);
         }
     }
@@ -79,7 +89,7 @@ public class Level3 : Level
 
     private void ThirdProcess()
     {
-        if (PlayerPrefsManager.GetBool(PlayerPrefsKeys.Door3Unlocked, false))
+        if (!PlayerPrefsManager.GetBool(PlayerPrefsKeys.Door3Locked, true))
         {
             //show some dialogues and hints
             SaveCompletedProcess(4);
@@ -88,7 +98,7 @@ public class Level3 : Level
     
     private void FourthProcess()
     {
-        if (PlayerPrefsManager.GetBool(PlayerPrefsKeys.Sundial3Finished, false))
+        if (!PlayerPrefsManager.GetBool(PlayerPrefsKeys.OutDoor3Locked, true))
         {
             //show some dialogues and hints
             SaveCompletedProcess(5);
