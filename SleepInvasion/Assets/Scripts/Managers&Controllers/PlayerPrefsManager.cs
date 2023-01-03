@@ -31,7 +31,7 @@ public enum PlayerPrefsKeys
     FirstShader,
     FirstDiary,
     MayaStoneUnlocked,
-    L1DoorLocked,
+    Door1Locked,
     L2DoorClosed,
     L2SundialLight,
     // Analytics
