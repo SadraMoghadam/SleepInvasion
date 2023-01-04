@@ -14,15 +14,16 @@ public class LightSwitch: Interactable
     public UnityEvent onCandleSwitch;
 
     private void Start() {
-        UpdateLight();
+        m_Light.enabled = isOn;
+        obj.SetActive(isOn);
     }
 
     IEnumerator UpdateLight()
     {
         yield return new WaitForSeconds(1f);
-        onCandleSwitch.Invoke();
         m_Light.enabled = isOn;
         obj.SetActive(isOn);
+        onCandleSwitch.Invoke();
     }
 
     public override string GetDescription() {
