@@ -203,11 +203,11 @@ public class Level1 : Level
     private void LastProcess()
     {
         _magnifierTimer += Time.deltaTime;
-        if (!PlayerPrefsManager.GetBool(PlayerPrefsKeys.Door1Locked, true))
+        if (_level1Data.doubleDoorController.IsOpen())
         {
             // _gameController.HintController.ShowHint(20, 6);
             // PlayerPrefsManager.SetFloat(PlayerPrefsKeys.GameTimer, _gameTimer);
-            
+            PlayerPrefsManager.SetBool(PlayerPrefsKeys.Door1Locked, false);
             PlayerPrefsManager.SetFloat(PlayerPrefsKeys.MagnifierTimer, _magnifierTimer);
             // _gameController.HintController.ShowHint(19);
             // PlayerPrefsManager.SetBool(PlayerPrefsKeys.Door1Locked, false);
