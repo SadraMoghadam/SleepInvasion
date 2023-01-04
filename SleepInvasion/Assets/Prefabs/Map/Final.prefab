@@ -1028,11 +1028,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1610fed694e5ff49924c5c565bbf856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lasers: []
-  solution: 
+  solution:
+  - gameObject: {fileID: 0}
+    state: 1
+  - gameObject: {fileID: 0}
+    state: 1
+  - gameObject: {fileID: 0}
+    state: 0
+  - gameObject: {fileID: 0}
+    state: 0
+  - gameObject: {fileID: 0}
+    state: 1
+  - gameObject: {fileID: 0}
+    state: 1
+  - gameObject: {fileID: 0}
+    state: 0
+  - gameObject: {fileID: 0}
+    state: 1
+  - gameObject: {fileID: 0}
+    state: 1
+  - gameObject: {fileID: 0}
+    state: 0
   onPuzzleSolved:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5303520039878848033}
+        m_TargetAssemblyTypeName: Sundial, Assembly-CSharp
+        m_MethodName: SwitchLight
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &1402747527575608135
 GameObject:
   m_ObjectHideFlags: 0
@@ -2856,7 +2887,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6504063273289269469}
-  - component: {fileID: 8480416544234673897}
+  - component: {fileID: 7999699258002261148}
   m_Layer: 0
   m_Name: CandlesPuzzle
   m_TagString: Untagged
@@ -2879,7 +2910,7 @@ Transform:
   m_Father: {fileID: 7873540194274453232}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8480416544234673897
+--- !u!114 &7999699258002261148
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2888,17 +2919,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 5907385022671856089}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24a8120ebb0e42c48923b09dbbc21fec, type: 3}
+  m_Script: {fileID: 11500000, guid: f1610fed694e5ff49924c5c565bbf856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  candles:
-  - {fileID: 1672930311193962497}
-  - {fileID: 6652884956756524754}
-  - {fileID: 9153873896479499149}
-  - {fileID: 8843346580836674494}
-  - {fileID: 4477424615738712757}
-  - {fileID: 3890125573936935945}
-  solution: 000100000101
+  solution:
+  - gameObject: {fileID: 6020962282584608528}
+    state: 0
+  - gameObject: {fileID: 1795383277797448131}
+    state: 1
+  - gameObject: {fileID: 4301122111669896348}
+    state: 0
+  - gameObject: {fileID: 4467659714559691951}
+    state: 0
+  - gameObject: {fileID: 8834569322421159332}
+    state: 1
+  - gameObject: {fileID: 8161983310984401688}
+    state: 1
   onPuzzleSolved:
     m_PersistentCalls:
       m_Calls:
@@ -87439,7 +87475,7 @@ PrefabInstance:
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 8480416544234673897}
+      objectReference: {fileID: 0}
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -87518,22 +87554,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
+--- !u!1 &1795383277797448131 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1613952466049241509, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
+  m_PrefabInstance: {fileID: 1049218468386179174}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6618447450351010298 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6149348909005343132, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
   m_PrefabInstance: {fileID: 1049218468386179174}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6652884956756524754 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
-  m_PrefabInstance: {fileID: 1049218468386179174}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55b973cc6d7538640b7337b55aca8538, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1570045006866792765
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -87849,7 +87879,7 @@ PrefabInstance:
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 8480416544234673897}
+      objectReference: {fileID: 0}
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -87928,17 +87958,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
---- !u!114 &8843346580836674494 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
+--- !u!1 &4467659714559691951 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1613952466049241509, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
   m_PrefabInstance: {fileID: 2910937112475622666}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55b973cc6d7538640b7337b55aca8538, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &9021653026606109846 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6149348909005343132, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
@@ -88036,7 +88060,7 @@ PrefabInstance:
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 8480416544234673897}
+      objectReference: {fileID: 0}
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -88115,22 +88139,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
+--- !u!1 &4301122111669896348 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1613952466049241509, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
+  m_PrefabInstance: {fileID: 3302632706500891961}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8683976587229633701 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6149348909005343132, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
   m_PrefabInstance: {fileID: 3302632706500891961}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &9153873896479499149 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
-  m_PrefabInstance: {fileID: 3302632706500891961}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55b973cc6d7538640b7337b55aca8538, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &3443464472755816097
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -88434,7 +88452,7 @@ PrefabInstance:
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 8480416544234673897}
+      objectReference: {fileID: 0}
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -88518,17 +88536,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6149348909005343132, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
   m_PrefabInstance: {fileID: 5038165124746059445}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1672930311193962497 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
+--- !u!1 &6020962282584608528 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1613952466049241509, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
   m_PrefabInstance: {fileID: 5038165124746059445}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55b973cc6d7538640b7337b55aca8538, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &5191079495411904065
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -91465,6 +91477,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5389250415941731760, guid: d571b7784819e4740be0eb38ce6c6537, type: 3}
   m_PrefabInstance: {fileID: 7425309773224985345}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5303520039878848033 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3355776031249870112, guid: d571b7784819e4740be0eb38ce6c6537, type: 3}
+  m_PrefabInstance: {fileID: 7425309773224985345}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a00cd9283a3468e47ac7abe5dba1309e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7431178686627267261
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -91495,7 +91518,7 @@ PrefabInstance:
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 8480416544234673897}
+      objectReference: {fileID: 0}
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -91579,17 +91602,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6149348909005343132, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
   m_PrefabInstance: {fileID: 7431178686627267261}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3890125573936935945 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
+--- !u!1 &8161983310984401688 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1613952466049241509, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
   m_PrefabInstance: {fileID: 7431178686627267261}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55b973cc6d7538640b7337b55aca8538, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &7854093903006340097
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -91620,7 +91637,7 @@ PrefabInstance:
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 8480416544234673897}
+      objectReference: {fileID: 0}
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -91704,17 +91721,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6149348909005343132, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
   m_PrefabInstance: {fileID: 7854093903006340097}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4477424615738712757 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
+--- !u!1 &8834569322421159332 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1613952466049241509, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
   m_PrefabInstance: {fileID: 7854093903006340097}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55b973cc6d7538640b7337b55aca8538, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &7999671529790327418
 PrefabInstance:
   m_ObjectHideFlags: 0
