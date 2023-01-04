@@ -27,6 +27,7 @@ public class Level1 : Level
         _shaderTimer = PlayerPrefsManager.GetFloat(PlayerPrefsKeys.ShaderTimer, 0);
         _timer = 0;
         _processNumber = PlayerPrefsManager.GetInt(PlayerPrefsKeys.Level1Process, 1);
+        _level1Data = _gameController.LevelsController.levelsDataContainer.level1Data;
     }
 
     public override int LevelNum => 1;
@@ -37,7 +38,6 @@ public class Level1 : Level
 
     public override void Setup()
     {
-        _level1Data = _gameController.LevelsController.levelsDataContainer.level1Data;
         _gameController.PlayerController.transform.position = _level1Data.spawnTransform.position;
         _gameController.PlayerController.transform.rotation = _level1Data.spawnTransform.rotation;
         PlayerPrefsManager.SaveGame(1);

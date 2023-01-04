@@ -19,6 +19,7 @@ public class Level2 : Level
         _gameManager = GameManager.Instance;
         _gameTimer = PlayerPrefsManager.GetFloat(PlayerPrefsKeys.GameTimer, 0);
         _processNumber = PlayerPrefsManager.GetInt(PlayerPrefsKeys.Level1Process, 1);
+        _level2Data = _gameController.LevelsController.levelsDataContainer.level2Data;
     }
 
     public override int LevelNum => 2;
@@ -26,6 +27,7 @@ public class Level2 : Level
     public override GameObject Self => _gameController.LevelsController.levelsDataContainer.level2Data.levelGO;
     public override bool IsDone { get; protected set; }
 
+    
     public override void Setup()
     {
         _level2Data = _gameController.LevelsController.levelsDataContainer.level2Data;
