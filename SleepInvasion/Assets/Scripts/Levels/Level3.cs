@@ -17,8 +17,7 @@ public class Level3 : Level
         _gameController = GameController.Instance;
         _gameManager = GameManager.Instance;
         _processNumber = PlayerPrefsManager.GetInt(PlayerPrefsKeys.Level3Process, 1);
-        PlayerPrefsManager.SetBool(PlayerPrefsKeys.Door3Locked, true);
-        PlayerPrefsManager.SetBool(PlayerPrefsKeys.OutDoor3Locked, true);
+        // PlayerPrefsManager.SetBool(PlayerPrefsKeys.Door3Locked, true);
     }
 
     public override int LevelNum => 3;
@@ -91,7 +90,7 @@ public class Level3 : Level
 
     private void ThirdProcess()
     {
-        if (!PlayerPrefsManager.GetBool(PlayerPrefsKeys.Door3Locked, true))
+        if (!PlayerPrefsManager.GetBool(PlayerPrefsKeys.Door4Locked, true))
         {
             //show some dialogues and hints
             SaveCompletedProcess(4);
