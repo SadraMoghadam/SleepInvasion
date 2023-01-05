@@ -7,6 +7,5 @@ using UnityEngine;
 public class Level2Data
 {
     public GameObject levelGO;
-    public CandlesPuzzle candlesPuzzle;
     public DoubleDoorController doubleDoorController;
 }
