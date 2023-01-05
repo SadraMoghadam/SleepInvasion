@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4411896974333328}
   - component: {fileID: 33614593074527070}
   - component: {fileID: 23325683971876420}
+  - component: {fileID: 8287966477814186777}
   m_Layer: 0
   m_Name: SM_Park_wall_B_1_LOD1
   m_TagString: Untagged
@@ -84,6 +85,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8287966477814186777
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1107812359770480}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0048376448, y: 0.028524052, z: 0.0048376448}
+  m_Center: {x: -0.000000007450581, y: 0.014262026, z: -0.000000019324943}
 --- !u!1 &1190092196843200
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,6 +436,7 @@ GameObject:
   - component: {fileID: 4052200306520126}
   - component: {fileID: 33979850938779054}
   - component: {fileID: 23766066250757726}
+  - component: {fileID: 3438386800732112674}
   m_Layer: 0
   m_Name: SM_Park_wall_B_1_LOD0
   m_TagString: Untagged
@@ -495,6 +510,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3438386800732112674
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401722060069174}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0048376448, y: 0.028524052, z: 0.0048376448}
+  m_Center: {x: -0.000000007450581, y: 0.014262026, z: -0.000000019324943}
 --- !u!1 &1403843157043744
 GameObject:
   m_ObjectHideFlags: 0
