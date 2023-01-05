@@ -64,7 +64,7 @@ public class PlayerRaycast : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, rayLength, layerMaskInteract))
         {
-            if(PlayerPrefsManager.GetBool(PlayerPrefsKeys.FirstDiarySeen, true))
+            if(PlayerPrefsManager.GetBool(PlayerPrefsKeys.FirstDiarySeen, true) && hit.collider.gameObject.GetComponent<Item>().itemInfo.ItemScriptableObject.type == InteractableItemType.Diary)
             {
                 _gameController.DialogueController.Show(1);
                 PlayerPrefsManager.SetBool(PlayerPrefsKeys.FirstDiarySeen, false);
