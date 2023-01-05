@@ -11,6 +11,7 @@ public class DoubleDoorController : MonoBehaviour, IDoorController
     [SerializeField] private GameObject doorRight;
     [SerializeField] private GameObject doorLeft;  
     [SerializeField] private bool startOpen;
+    [SerializeField] private bool startLocked;
 
     private Animator _doorAnimatorR;
     private Animator _doorAnimatorL;
@@ -28,41 +29,23 @@ public class DoubleDoorController : MonoBehaviour, IDoorController
         _doorAnimatorL.SetBool(IsDoorOpen, startOpen);
         if (!PlayerPrefs.HasKey(_prefsId))
         {
-            PlayerPrefsManager.SetBool(Enum.Parse<PlayerPrefsKeys>(_prefsId), true);
+            PlayerPrefsManager.SetBool(Enum.Parse<PlayerPrefsKeys>(_prefsId), startLocked);
         }
     }
 
-    public void Use()
+    private bool IsLocked()
     {
-        if (IsLocked())
-        {
-            return;
-        }
-
-        Debug.Log("#");
-        bool currentState = IsOpen();
-        if (currentState)
-        {
-            GameManager.Instance.AudioManager.Instantplay(SoundName.CloseDoor, transform.position);
-        }
-        else
-        {
-            GameManager.Instance.AudioManager.Instantplay(SoundName.OpenDoor, transform.position);
-        }
-        _doorAnimatorR.SetBool(IsDoorOpen, !currentState);
-        _doorAnimatorL.SetBool(IsDoorOpen, !currentState);
+        return PlayerPrefsManager.GetBool(Enum.Parse<PlayerPrefsKeys>(_prefsId), true);
     }
 
-    public void Close()
+    public bool IsOpen()
     {
-        if (IsLocked())
-        {
-            return;
-        }
-        
-        GameManager.Instance.AudioManager.Instantplay(SoundName.CloseDoor, transform.position);
-        _doorAnimatorR.SetBool(IsDoorOpen, false);
-        _doorAnimatorL.SetBool(IsDoorOpen, false);
+        return _doorAnimatorR.GetBool(IsDoorOpen);
+    }
+
+    public void UnlockDoor()
+    {
+        PlayerPrefsManager.SetBool(Enum.Parse<PlayerPrefsKeys>(_prefsId), false);
     }
     
     public void Open()
@@ -76,19 +59,42 @@ public class DoubleDoorController : MonoBehaviour, IDoorController
         _doorAnimatorL.SetBool(IsDoorOpen, true);
     }
 
-    public bool IsOpen()
+    public void Close()
     {
-        return _doorAnimatorR.GetBool(IsDoorOpen);
+        if (IsLocked())
+        {
+            return;
+        }
+        
+        GameManager.Instance.AudioManager.Instantplay(SoundName.CloseDoor, transform.position);
+        _doorAnimatorR.SetBool(IsDoorOpen, false);
+        _doorAnimatorL.SetBool(IsDoorOpen, false);
     }
 
-    public void UnlockDoor()
+    public void Use()
     {
-        PlayerPrefsManager.SetBool(Enum.Parse<PlayerPrefsKeys>(_prefsId), false);
+        if (IsLocked())
+        {
+            return;
+        }
+
+        bool currentState = IsOpen();
+        if (currentState)
+        {
+            GameManager.Instance.AudioManager.Instantplay(SoundName.CloseDoor, transform.position);
+        }
+        else
+        {
+            GameManager.Instance.AudioManager.Instantplay(SoundName.OpenDoor, transform.position);
+        }
+        _doorAnimatorR.SetBool(IsDoorOpen, !currentState);
+        _doorAnimatorL.SetBool(IsDoorOpen, !currentState);
     }
 
-    private bool IsLocked()
+    public void UnlockAndOpen()
     {
-        return PlayerPrefsManager.GetBool(Enum.Parse<PlayerPrefsKeys>(_prefsId), true);
+        UnlockDoor();
+        Open();
     }
     
 }
