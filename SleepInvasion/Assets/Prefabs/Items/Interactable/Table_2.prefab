@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5799307948564492120}
   - component: {fileID: 8532860975480198714}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: cylinder_2
-  m_TagString: Untagged
+  m_TagString: Table
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25,12 +25,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2879798497898500302}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.08460044, z: 0.08190018}
-  m_LocalScale: {x: 0.44999996, y: 0.45, z: 0.45}
+  m_LocalPosition: {x: 0, y: 0.094000496, z: 0.09099951}
+  m_LocalScale: {x: 0.50000006, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 4022471436060142384}
-  m_RootOrder: 2
+  m_Father: {fileID: 4022471437382994472}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!212 &8532860975480198714
 SpriteRenderer:
@@ -96,9 +96,9 @@ GameObject:
   - component: {fileID: 6465725510105687223}
   - component: {fileID: 4745343309923230570}
   - component: {fileID: 4219161216383521151}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: changjing:COL01C (1)
-  m_TagString: Untagged
+  m_TagString: Table
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -196,9 +196,11 @@ GameObject:
   - component: {fileID: 4022471436060142391}
   - component: {fileID: 4022471436060142390}
   - component: {fileID: 4022471436060142385}
-  m_Layer: 0
+  - component: {fileID: 5378290600684215484}
+  - component: {fileID: 3722654441523586795}
+  m_Layer: 7
   m_Name: Table_2
-  m_TagString: Untagged
+  m_TagString: Table
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -217,7 +219,6 @@ Transform:
   m_Children:
   - {fileID: 4022471437382994472}
   - {fileID: 9183256481569486293}
-  - {fileID: 5799307948564492120}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2272,6 +2273,50 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &5378290600684215484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4022471436060142387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f949d1eca82dd8d4eb16f46fbf03b1d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 1
+  image: {fileID: 4022471437382994475}
+--- !u!114 &3722654441523586795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4022471436060142387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 247e601127d7ce84ab8be8404f275865, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 4
+  item: {fileID: -8298538780030827886, guid: 308b542f458d12d4682ef1d6b20becef, type: 3}
+  placementPosition: {fileID: 4022471437382994472}
+  onItemPlaced:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4022471437382994475}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &4022471437382994475
 GameObject:
   m_ObjectHideFlags: 0
@@ -2286,13 +2331,13 @@ GameObject:
   - component: {fileID: 4022471437382994479}
   - component: {fileID: 4022471437382994478}
   - component: {fileID: 4022471437382994473}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bottom
-  m_TagString: Untagged
+  m_TagString: Table
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4022471437382994472
 Transform:
   m_ObjectHideFlags: 0
@@ -2304,7 +2349,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 5799307948564492120}
   m_Father: {fileID: 4022471436060142384}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -22,5 +22,12 @@ public class Item : MonoBehaviour
                 PlayerPrefsManager.SetInt(PlayerPrefsKeys.NeedleOnSundialId, 0);
             }
         }
+        else if (itemInfo.ItemScriptableObject.type == InteractableItemType.Cylinder)
+        {
+            if (!PlayerPrefs.HasKey(PlayerPrefsKeys.CylinderOnTableId.ToString()))
+            {
+                PlayerPrefsManager.SetInt(PlayerPrefsKeys.CylinderOnTableId, 0);
+            }
+        }
     }
 }

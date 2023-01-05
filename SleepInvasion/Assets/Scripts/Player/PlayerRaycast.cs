@@ -93,13 +93,19 @@ public class PlayerRaycast : MonoBehaviour
             }
             _leftMouseClickImage.gameObject.SetActive(true);
             _keyDownTimer += Time.deltaTime;
-            if (_keyDownTimer < keyDownCooldown)
+
+            if (!hit.collider.gameObject.CompareTag("Table"))
             {
-                _leftMouseClickImage.sprite = _keyDownSprite;
-                return;
+                if (_keyDownTimer < keyDownCooldown)
+                {
+                    _leftMouseClickImage.sprite = _keyDownSprite;
+                    return;
+                }
+                _leftMouseClickImage.sprite = _keyUpSprite;    
             }
-            _leftMouseClickImage.sprite = _keyUpSprite;
-            _uiController.placeIcon.SetActive(hit.collider.CompareTag("Sundial") && _gameController.InventoryController.IsItemInInventory(InteractableItemType.Needle));
+            
+            _uiController.placeIcon.SetActive((hit.collider.CompareTag("Sundial") && _gameController.InventoryController.IsItemInInventory(InteractableItemType.Needle)) || 
+                                              (hit.collider.CompareTag("Table") && _gameController.InventoryController.IsItemInInventory(InteractableItemType.Cylinder)));
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 try

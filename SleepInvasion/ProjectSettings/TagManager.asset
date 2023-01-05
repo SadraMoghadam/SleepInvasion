@@ -17,6 +17,7 @@ TagManager:
   - UseableItems
   - Chest
   - Sundial
+  - Table
   layers:
   - Default
   - TransparentFX

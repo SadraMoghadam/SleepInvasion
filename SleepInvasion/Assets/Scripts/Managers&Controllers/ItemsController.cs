@@ -12,6 +12,7 @@ public class ItemsController : MonoBehaviour
     [SerializeField] private GameObject lasersParentGO;
     public LayerMask inspectLayer;
     public Item needle;
+    public Item cylinder;
     
     private GameController _gameController;
     private InteractableItemType _typeUsing;

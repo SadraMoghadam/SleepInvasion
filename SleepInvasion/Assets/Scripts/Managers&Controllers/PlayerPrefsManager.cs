@@ -8,6 +8,7 @@ public enum PlayerPrefsKeys
     GameStarted,
     PlayerTransform,
     NeedleOnSundialId,
+    CylinderOnTableId,
     Level,
     InventoryItems,
     DestroyedItems,
@@ -48,6 +49,8 @@ public enum PlayerPrefsKeys
     MagnifierTimer,
     ShaderTimer,
     ShownDialogues,
+    CylinderOnTable1,
+    CylinderOnTable2
     // Sundial1Finished,
     // Sundial2Finished,
     // Sundial3Finished,
