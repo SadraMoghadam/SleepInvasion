@@ -10,4 +10,6 @@ public class LevelsDataContainer : MonoBehaviour
     public Level2Data level2Data;
     [Header("Level 3")] 
     public Level3Data level3Data;
+    [Header("Level 4")] 
+    public Level4Data level4Data;
 }

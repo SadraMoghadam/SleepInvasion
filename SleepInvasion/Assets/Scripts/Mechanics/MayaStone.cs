@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class MayaStone : MonoBehaviour
 {
@@ -218,6 +219,11 @@ public class MayaStone : MonoBehaviour
         }
         _clickable = true;
         yield return null;
+    }
+
+    public bool IsSolved()
+    {
+        return _initialDegreesIndex.SequenceEqual(_initialDegreesIndex);
     }
     
 }
