@@ -26,6 +26,7 @@ public enum PlayerPrefsKeys
     Door3Locked,
     Door4Locked,
     Door5Locked,
+    Door6Locked,
     OutDoor3Locked,
     Level1Process,
     Level2Process,

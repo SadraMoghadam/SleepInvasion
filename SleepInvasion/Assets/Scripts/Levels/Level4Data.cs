@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public class Level2Data
+public class Level4Data
 {
     public GameObject levelGO;
-    public DoubleDoorController doubleDoorController;
     public Transform spawnTransform;
+    public MayaStone mayaStone;
 }
