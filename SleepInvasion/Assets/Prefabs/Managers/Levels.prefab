@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4120046393371029830}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -7.76, y: 13.83, z: 5.64}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -55,7 +55,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5528483430344195267}
   m_LocalRotation: {x: -0, y: 0.9116903, z: -0, w: 0.4108781}
-  m_LocalPosition: {x: -4.026, y: 1.56, z: 10.16}
+  m_LocalPosition: {x: 14.11, y: 1.56, z: -16.69}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -117,11 +117,16 @@ MonoBehaviour:
     doubleDoorController: {fileID: 0}
   level2Data:
     levelGO: {fileID: 5528483430668485729}
-    doubleDoorController: {fileID: 0}
+    doorController: {fileID: 0}
+    spawnTransform: {fileID: 5528483430344195264}
   level3Data:
     levelGO: {fileID: 5528483431825993458}
     spawnTransform: {fileID: 5528483430681102376}
-  level4Data: {fileID: 0}
+    doorController: {fileID: 0}
+  level4Data:
+    levelGO: {fileID: 5639330271314804647}
+    spawnTransform: {fileID: 4570359567252729639}
+    mayaStone: {fileID: 0}
 --- !u!1 &5528483430668485729
 GameObject:
   m_ObjectHideFlags: 0

@@ -71,11 +71,11 @@ public class LevelsController : MonoBehaviour
     public Level GetCurrentLevel()
     {
         int currentLevel = PlayerPrefsManager.GetInt(PlayerPrefsKeys.Level, 1) - 1;
-        if (currentLevel == _levels.Count)
-        {
-            currentLevel--;
-            _gameManager.LoadScene("Outro");
-        }
+        // if (currentLevel == _levels.Count)
+        // {
+        //     currentLevel--;
+        //     _gameManager.LoadScene("Outro");
+        // }
         return _levels[currentLevel];
     }
     

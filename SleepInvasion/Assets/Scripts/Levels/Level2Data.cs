@@ -7,6 +7,6 @@ using UnityEngine;
 public class Level2Data
 {
     public GameObject levelGO;
-    public DoubleDoorController doubleDoorController;
+    public DoorController doorController;
     public Transform spawnTransform;
 }

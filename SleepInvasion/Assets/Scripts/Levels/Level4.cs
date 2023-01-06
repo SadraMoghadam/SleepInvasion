@@ -30,6 +30,8 @@ public class Level4 : Level
     public override void Setup()
     {
         _level4Data = _gameController.LevelsController.levelsDataContainer.level4Data;
+        _gameController.PlayerController.transform.position = _level4Data.spawnTransform.position;
+        _gameController.PlayerController.transform.rotation = _level4Data.spawnTransform.rotation;
     }
 
     public override void Process()
@@ -46,20 +48,21 @@ public class Level4 : Level
     {
         if (_level4Data.mayaStone.IsSolved())
         {
-            // trigger cut scene
+            EndOfLevel();
+            SaveCompletedProcess(2);
         }
     }
 
     private void SaveCompletedProcess(int processNumber)
     {
         _processNumber = processNumber;
-        PlayerPrefsManager.SetInt(PlayerPrefsKeys.Level2Process, processNumber);
+        PlayerPrefsManager.SetInt(PlayerPrefsKeys.Level4Process, processNumber);
     }
 
     public override void EndOfLevel()
     {
-        PlayerPrefsManager.SetInt(PlayerPrefsKeys.Level, 3);
+        PlayerPrefsManager.SetInt(PlayerPrefsKeys.Level, 4);
         IsDone = true;
-        PlayerPrefsManager.DeleteKey(PlayerPrefsKeys.Level2Process);
+        PlayerPrefsManager.DeleteKey(PlayerPrefsKeys.Level4Process);
     }
 }

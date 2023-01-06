@@ -31,6 +31,8 @@ public class Level2 : Level
     public override void Setup()
     {
         _level2Data = _gameController.LevelsController.levelsDataContainer.level2Data;
+        _gameController.PlayerController.transform.position = _level2Data.spawnTransform.position;
+        _gameController.PlayerController.transform.rotation = _level2Data.spawnTransform.rotation;
     }
 
     public override void Process()
@@ -45,7 +47,7 @@ public class Level2 : Level
 
     public void FirstProcess()
     {
-        if (_level2Data.doubleDoorController.IsOpen())
+        if (_level2Data.doorController.IsOpen())
         {
             SaveCompletedProcess(2);
             EndOfLevel();

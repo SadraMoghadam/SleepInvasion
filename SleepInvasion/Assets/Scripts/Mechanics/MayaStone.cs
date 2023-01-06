@@ -29,7 +29,7 @@ public class MayaStone : MonoBehaviour
     private float[] _fourthRingDegrees;
 
 
-    private int[] _trueIndexCombination = { 7, 6, 1, 2 };
+    private int[] _trueIndexCombination = { 7, 4, 5, 2 };
     private int[] _initialDegreesIndex = { 0, 0, 0, 0 };
 
     private float ringRotationTime = 1;
@@ -67,12 +67,12 @@ public class MayaStone : MonoBehaviour
             int index = Int32.Parse(Regex.Match(rend.gameObject.tag.ToString(), @"\d+").Value);
             if(_clickable)
                 OnRingClick(index - 1);
-            if (_trueIndexCombination[0] == _initialDegreesIndex[0] &&
-                _trueIndexCombination[1] == _initialDegreesIndex[1])
-            {
-                PlayerPrefsManager.SetBool(PlayerPrefsKeys.MayaStoneUnlocked, true);
-                ChangeView(false);
-            }
+            // if (_trueIndexCombination[0] == _initialDegreesIndex[0] &&
+            //     _trueIndexCombination[1] == _initialDegreesIndex[1])
+            // {
+            //     PlayerPrefsManager.SetBool(PlayerPrefsKeys.MayaStoneUnlocked, true);
+            //     ChangeView(false);
+            // }
         }
 
         
@@ -204,6 +204,10 @@ public class MayaStone : MonoBehaviour
         }
         
         PlayerPrefsManager.SetIntList(PlayerPrefsKeys.MayaStoneRingsIndex, _initialDegreesIndex.ToList());
+        if (IsSolved())
+        {
+            GameManager.Instance.LoadScene("Outro");
+        }
     }
 
     IEnumerator SmoothRingRotation(Transform startTransform, Quaternion endRot, float waitTime)
@@ -223,7 +227,7 @@ public class MayaStone : MonoBehaviour
 
     public bool IsSolved()
     {
-        return _initialDegreesIndex.SequenceEqual(_initialDegreesIndex);
+        return _initialDegreesIndex.SequenceEqual(_trueIndexCombination);
     }
     
 }
