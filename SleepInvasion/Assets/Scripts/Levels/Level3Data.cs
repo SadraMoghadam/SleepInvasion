@@ -9,4 +9,5 @@ public class Level3Data
 {
     public GameObject levelGO;
     public Transform spawnTransform;
+    public DoorController doorController;
 }

@@ -58,11 +58,12 @@ public class Level3 : Level
                 ThirdProcess();
                 break;
             case 4:
-                FourthProcess();
-                break;
-            case 5:
                 LastProcess();
+                // FourthProcess();
                 break;
+            // case 5:
+            //     LastProcess();
+            //     break;
             
             default:
                 break;
@@ -90,25 +91,25 @@ public class Level3 : Level
 
     private void ThirdProcess()
     {
-        if (!PlayerPrefsManager.GetBool(PlayerPrefsKeys.Door4Locked, true))
+        if (!PlayerPrefsManager.GetBool(PlayerPrefsKeys.Door4Locked, true) && _level3Data.doorController.IsOpen())
         {
             //show some dialogues and hints
             SaveCompletedProcess(4);
         }
     }
     
-    private void FourthProcess()
-    {
-        if (!PlayerPrefsManager.GetBool(PlayerPrefsKeys.OutDoor3Locked, true))
-        {
-            //show some dialogues and hints
-            SaveCompletedProcess(5);
-        }
-    }
+    // private void FourthProcess()
+    // {
+    //     if (!PlayerPrefsManager.GetBool(PlayerPrefsKeys.OutDoor3Locked, true))
+    //     {
+    //         //show some dialogues and hints
+    //         SaveCompletedProcess(5);
+    //     }
+    // }
 
     private void LastProcess()
     {
-        SaveCompletedProcess(6);
+        SaveCompletedProcess(5);
         EndOfLevel();
     }
 
