@@ -33,6 +33,12 @@ public class Lock : MonoBehaviour
             case 3:
                 key = PlayerPrefsKeys.Chest3Unlocked;
                 break;
+            case 4:
+                key = PlayerPrefsKeys.DoorLock4Unlocked;
+                break;
+            case 5:
+                key = PlayerPrefsKeys.DoorLock5Unlocked;
+                break;
         }
         if (PlayerPrefsManager.GetBool(key, false) && id == Int32.Parse(Regex.Match(key.ToString(), @"\d+").Value))
         {
@@ -87,6 +93,7 @@ public class Lock : MonoBehaviour
         _gameController.EnableAllKeys();
         
         PlayerPrefsKeys key = PlayerPrefsKeys.Chest1Unlocked;
+        PlayerPrefsKeys doorKey = PlayerPrefsKeys.Door4Locked;
         switch (id)
         {
             case 1:
@@ -96,7 +103,16 @@ public class Lock : MonoBehaviour
             case 3:
                 key = PlayerPrefsKeys.Chest3Unlocked;
                 break;
+            case 4:
+                key = PlayerPrefsKeys.DoorLock4Unlocked;
+                doorKey = PlayerPrefsKeys.Door4Locked;
+                break;
+            case 5:
+                key = PlayerPrefsKeys.DoorLock5Unlocked;
+                doorKey = PlayerPrefsKeys.Door4Locked;
+                break;
         }
         PlayerPrefsManager.SetBool(key, true);
+        PlayerPrefsManager.SetBool(doorKey, false);
     }
 }   

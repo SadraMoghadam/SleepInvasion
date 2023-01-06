@@ -18,6 +18,8 @@ public enum PlayerPrefsKeys
     DiaryMaxShownPages,
     Chest1Unlocked,
     Chest3Unlocked,
+    DoorLock4Unlocked,
+    DoorLock5Unlocked,
     Door0Locked,
     Door1Locked,
     Door2Locked,

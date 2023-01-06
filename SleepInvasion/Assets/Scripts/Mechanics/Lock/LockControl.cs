@@ -36,6 +36,12 @@ public class LockControl : MonoBehaviour
             case 3:
                 key = PlayerPrefsKeys.Chest3Unlocked;
                 break;
+            case 4:
+                key = PlayerPrefsKeys.DoorLock4Unlocked;
+                break;
+            case 5:
+                key = PlayerPrefsKeys.DoorLock5Unlocked;
+                break;
         }
         if (PlayerPrefsManager.GetBool(key, false) && gameObject.GetComponent<Lock>().id == Int32.Parse(Regex.Match(key.ToString(), @"\d+").Value))
         {
