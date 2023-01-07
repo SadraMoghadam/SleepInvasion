@@ -9,4 +9,5 @@ public class Level4Data
     public GameObject levelGO;
     public Transform spawnTransform;
     public MayaStone mayaStone;
+    public float puzzleHintTimer = 5;
 }

@@ -43,6 +43,7 @@ public enum PlayerPrefsKeys
     FirstDiary,
     FirstDiarySeen,
     FirstEnterRoom3,
+    FirstEnterRoom4,
     FirstTable,
     FirstCylinderPlaced,
     MayaStoneUnlocked,
@@ -53,6 +54,7 @@ public enum PlayerPrefsKeys
     LockTimer,
     MagnifierTimer,
     ShaderTimer,
+    LasersPuzzleTimer,
     ShownDialogues,
     CylinderOnTable1,
     CylinderOnTable2

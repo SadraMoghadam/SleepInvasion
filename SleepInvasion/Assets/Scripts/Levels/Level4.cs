@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,7 @@ public class Level4 : Level
     private Level4Data _level4Data;
 
     private float _gameTimer;
+    private float _lasersPuzzleTimer;
 
     private int _processNumber;
     
@@ -19,6 +21,7 @@ public class Level4 : Level
         _gameTimer = PlayerPrefsManager.GetFloat(PlayerPrefsKeys.GameTimer, 0);
         _processNumber = PlayerPrefsManager.GetInt(PlayerPrefsKeys.Level1Process, 1);
         _level4Data = _gameController.LevelsController.levelsDataContainer.level4Data;
+        _lasersPuzzleTimer = PlayerPrefsManager.GetFloat(PlayerPrefsKeys.LasersPuzzleTimer, 0);
     }
 
     public override int LevelNum => 4;
@@ -46,6 +49,19 @@ public class Level4 : Level
 
     public void FirstProcess()
     {
+        Debug.Log(_lasersPuzzleTimer);
+        if (_lasersPuzzleTimer >= 0)
+        {
+            if (_lasersPuzzleTimer > _level4Data.puzzleHintTimer * 60)
+            {
+                _gameController.HintController.ShowHint(23);
+                _lasersPuzzleTimer = -1;
+            }
+            else
+            {
+                _lasersPuzzleTimer += Time.deltaTime;
+            }
+        }
         if (_level4Data.mayaStone.IsSolved())
         {
             EndOfLevel();
@@ -64,5 +80,14 @@ public class Level4 : Level
         PlayerPrefsManager.SetInt(PlayerPrefsKeys.Level, 4);
         IsDone = true;
         PlayerPrefsManager.DeleteKey(PlayerPrefsKeys.Level4Process);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (PlayerPrefsManager.GetBool(PlayerPrefsKeys.FirstEnterRoom4, true))
+        {
+            _gameController.DialogueController.Show(20);
+            PlayerPrefsManager.SetBool(PlayerPrefsKeys.FirstEnterRoom4, false);
+        }
     }
 }
