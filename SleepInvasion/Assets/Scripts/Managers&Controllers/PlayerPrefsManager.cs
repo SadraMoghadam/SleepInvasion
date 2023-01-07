@@ -43,6 +43,8 @@ public enum PlayerPrefsKeys
     FirstDiary,
     FirstDiarySeen,
     FirstEnterRoom3,
+    FirstTable,
+    FirstCylinderPlaced,
     MayaStoneUnlocked,
     L2DoorClosed,
     L2SundialLight,

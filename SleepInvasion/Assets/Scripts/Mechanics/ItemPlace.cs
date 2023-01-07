@@ -42,6 +42,11 @@ public class ItemPlace : MonoBehaviour
     public bool PlaceItem()
     {
         var tempItem = item.itemInfo.ItemScriptableObject;
+        if (tempItem.type == InteractableItemType.Cylinder && PlayerPrefsManager.GetBool(PlayerPrefsKeys.FirstCylinderPlaced, true))
+        {
+            _gameController.DialogueController.Show(14);
+            PlayerPrefsManager.SetBool(PlayerPrefsKeys.FirstCylinderPlaced, false);
+        }
         if (!_isEmpty)
         {
             // hint: an item is already here

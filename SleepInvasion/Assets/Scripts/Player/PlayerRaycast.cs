@@ -103,6 +103,11 @@ public class PlayerRaycast : MonoBehaviour
                 }
                 _leftMouseClickImage.sprite = _keyUpSprite;    
             }
+            else if (PlayerPrefsManager.GetBool(PlayerPrefsKeys.FirstTable, true))
+            {
+                _gameController.DialogueController.Show(9);
+                PlayerPrefsManager.SetBool(PlayerPrefsKeys.FirstTable, false);
+            }
             
             _uiController.placeIcon.SetActive((hit.collider.CompareTag("Sundial") && _gameController.InventoryController.IsItemInInventory(InteractableItemType.Needle)) || 
                                               (hit.collider.CompareTag("Table") && _gameController.InventoryController.IsItemInInventory(InteractableItemType.Cylinder)));
