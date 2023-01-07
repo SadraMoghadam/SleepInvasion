@@ -1,31 +1,30 @@
 id,Dialogue,NextDialogueID,Triggers
 1,This seems like a notebook...Maybe it holds a clue?,0,seeing the diary
 2,"The watch is not working, the time got stuck! ",0,picking up the watch
-3,Seems like the chest is locked..,0,clicking the chest
-4,Wow! A magnifier and..a needle?,5,chest opens
-5,"There must be something special about this magnifier, it doesn't seem regular...",6,
+3,Seems like the chest is locked.,0,clicking the chest
+4,Wow! A magnifier and ... a needle?,5,chest opens
+5,"There must be something special about this magnifier, it doesn't seem regular ...",6,
 6,This needle is too small to fit in my inventory. Is there any other way to use it?,0,
 7,"Wow, this needle gets enlarged in real life too! This is truly magic!",0,after using magnifier and needle gets enlarged 
 8,A stone board with strange symbols.,26,seeing empty sundial
 9,Is that a circular concave in the center?,10,seing the floating table
 10,Looks like something can be placed in the center …,0,
 11,Is there something I could do with the candles?,0,seeing 2 laser lights pointing to 2 candles
-12,"The column are in different height, maybe it means something.",0,entering the room
+12,"The columns are at different heights, maybe it means something.",0,entering the room
 13,Is the needle reusable? ,27,Getting close to the sundial with the needle
 14,"Oh, there's something showing up! ",15,placing the cylinder in the center
-15,I should look it up closely..Maybe there is a clue hidden in the painting!,0,
+15,I should look it up closely. Maybe there is a clue hidden in the painting!,0,
 16,This sundial doesn't have any shadows. What should I do?,0,walk to the small room with sundial
-17,The door is locked again... Where could I find the four number code?,0,After going upstairs and seeing the door
+17,The door is locked again... Where could I find the four-number code?,0,After going upstairs and seeing the door
 18,An empty platform? Maybe something will show up...,0,When seeing the platform outside of room 4
 19,"Oh, there's something showing up! ",0,Image shows after putting the cylinder
-20,Four lights on the stairs to the room... What is it trying to tell?,0,Using shader to see laser light 
-21,There seem to be a pattern in these lights!,0,When seeing the laser light in the room
-22,Are the laser lights somehow connected to the candles.,0,First time blowing off candle and laser light changes 
-23,"Wow,there's something here!",0,When getting close the the top statue
+20,Four lights on the stairs to the room ... What is it trying to tell?,0,Using shader to see laser light 
+21,There seems to be a pattern in these lights!,0,When seeing the laser light in the room
+22,Are the laser lights somehow connected to the candles?,0,First time blowing off candle and laser light changes 
+23,"Wow, there's something here!",0,When getting close the the top statue
 24,You've found the missing piece for the center of maya stone ,0,After picking up the final piece from the mouth
 25,"The maya stone has now been completed. Congrats, you've escaped from your dream and come back to real world.",0,Putting in the final piece
 26,Looks like there is something missing in the center?,0,
 27,Maybe I can Pick it up and see if it comes in handy.,0,
 28,Something is missing in this sundial again.,29,
-29,Maybe I can pickup the needle from the previous sundial and use it here.,0,
-,,,
+29,Maybe I can pick up the needle from the previous sundial and use it here.,0,
