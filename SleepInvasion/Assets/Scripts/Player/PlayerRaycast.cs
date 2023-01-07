@@ -86,7 +86,7 @@ public class PlayerRaycast : MonoBehaviour
             {
                 if (hit.collider.gameObject.CompareTag("Sundial"))
                 {
-                    if (hit.collider.transform.parent.GetComponent<ItemPlace>().id == 2)
+                    if (hit.collider.transform.parent.GetComponent<ItemPlace>().id == 2 && PlayerPrefsManager.GetInt(PlayerPrefsKeys.NeedleOnSundialId, 0) != 2)
                     {
                         _gameController.DialogueController.Show(28);
                         PlayerPrefsManager.SetBool(PlayerPrefsKeys.FirstNeedleMissed, false);

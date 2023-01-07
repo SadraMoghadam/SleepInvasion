@@ -18,7 +18,7 @@ id,Dialogue,NextDialogueID,Triggers
 17,The door is locked again... Where could I find the four-number code?,0,After going upstairs and seeing the door
 18,An empty platform? Maybe something will show up...,0,When seeing the platform outside of room 4
 19,"Oh, there's something showing up! ",0,Image shows after putting the cylinder
-20,Four lights on the stairs to the room ... What is it trying to tell?,0,Using shader to see laser light 
+20,I have the feeling there is something hidden in this room.,0,Using shader to see laser light 
 21,There seems to be a pattern in these lights!,0,When seeing the laser light in the room
 22,Are the laser lights somehow connected to the candles?,0,First time blowing off candle and laser light changes 
 23,"Wow, there's something here!",0,When getting close the the top statue

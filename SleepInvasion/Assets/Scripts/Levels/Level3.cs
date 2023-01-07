@@ -74,7 +74,7 @@ public class Level3 : Level
     {
         if (_gameController.IsInLockView && PlayerPrefsManager.GetBool(PlayerPrefsKeys.FirstLock3View, true))
         {
-            _gameController.DialogueController.Show(13);
+            // _gameController.DialogueController.Show(13);
             SaveCompletedProcess(2);
         }
     }
