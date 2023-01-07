@@ -127,6 +127,7 @@ MonoBehaviour:
     levelGO: {fileID: 5639330271314804647}
     spawnTransform: {fileID: 4570359567252729639}
     mayaStone: {fileID: 0}
+    puzzleHintTimer: 5
 --- !u!1 &5528483430668485729
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,6 +349,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4372011876795778353}
   - component: {fileID: 5598102660034734872}
+  - component: {fileID: 837204803}
   m_Layer: 0
   m_Name: Level4
   m_TagString: Untagged
@@ -362,15 +364,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5639330271314804647}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0.16348504, z: -0, w: 0.9865458}
+  m_LocalPosition: {x: 2.55, y: 22.9, z: -6.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4570359567252729639}
   m_Father: {fileID: 5528483430581047793}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -18.818, z: 0}
 --- !u!114 &5598102660034734872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -383,3 +385,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b80f0861a90cde4a8486c3765b80829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &837204803
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5639330271314804647}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1913223, y: 6.09017, z: 4.9055424}
+  m_Center: {x: 0.095660515, y: -2.545085, z: -1.952779}
