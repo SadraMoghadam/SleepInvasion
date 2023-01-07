@@ -50,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Vector3.Distance(transform.position, _lastPos) > .01f && controller.isGrounded)
         {
-            _walkAudioSource.enabled = true;
+            _walkAudioSource.enabled = true;   
         }
         else
         {
@@ -102,6 +102,10 @@ public class PlayerMovement : MonoBehaviour
         // controller.Move(movementSpeed * Time.deltaTime * move);
     }
 
+    public void DisableWalkAudio()
+    {
+        _walkAudioSource.enabled = false;
+    }
     // private void OnCollisionEnter(Collision collision)
     // {
     //     if(!_isGrounded)

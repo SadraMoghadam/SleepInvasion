@@ -9,7 +9,7 @@ public class Table : MonoBehaviour
     [SerializeField] private GameObject image;
     private void Start()
     {
-        if ((id == PlayerPrefsManager.GetInt(PlayerPrefsKeys.CylinderOnTableId, 0) - 3) && !GameController.Instance.InventoryController.IsItemInInventory(InteractableItemType.Cylinder))
+        if ((id == PlayerPrefsManager.GetInt(PlayerPrefsKeys.CylinderOnTableId, 0) - 5) && !GameController.Instance.InventoryController.IsItemInInventory(InteractableItemType.Cylinder))
         {
             image.SetActive(true);
         } 

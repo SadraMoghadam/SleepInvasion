@@ -104,6 +104,7 @@ public class GameController : MonoBehaviour
     public void DisableAllKeys()
     {
         keysDisabled = true;
+        PlayerController.PlayerMovement.DisableWalkAudio();
     }
     
     public void EnableAllKeys()

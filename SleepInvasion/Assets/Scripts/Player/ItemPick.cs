@@ -42,7 +42,7 @@ public class ItemPick : MonoBehaviour
             List<Table> tables = FindObjectsOfType<Table>().ToList();
             foreach (var table in tables)
             {
-                if (table.id == PlayerPrefsManager.GetInt(PlayerPrefsKeys.CylinderOnTableId, 0) - 3 && !_gameController.InventoryController.IsItemInInventory(InteractableItemType.Cylinder))
+                if (table.id == PlayerPrefsManager.GetInt(PlayerPrefsKeys.CylinderOnTableId, 0) - 5 && !_gameController.InventoryController.IsItemInInventory(InteractableItemType.Cylinder))
                 {
                     table.DeactiveImage();
                 }
