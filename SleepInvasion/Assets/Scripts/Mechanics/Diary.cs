@@ -34,7 +34,7 @@ public class Diary : MonoBehaviour, IItemUsage
 
     private void OnEnable()
     {
-        numberOfPages = PlayerPrefsManager.GetInt(PlayerPrefsKeys.DiaryMaxShownPages, 2);
+        numberOfPages = PlayerPrefsManager.GetInt(PlayerPrefsKeys.DiaryMaxShownPages, 6);
         _currentLeftPage = PlayerPrefsManager.GetInt(PlayerPrefsKeys.LastDiaryPage, 1);
         _animator = GetComponent<Animator>();
         _isChangingPage = false;
@@ -44,7 +44,7 @@ public class Diary : MonoBehaviour, IItemUsage
     {
         if(PlayerPrefsManager.GetBool(PlayerPrefsKeys.FirstDiary, true))
         {
-            GameController.Instance.HintController.ShowHint(14);
+            GameController.Instance.HintController.ShowHint(15);
             PlayerPrefsManager.SetBool(PlayerPrefsKeys.FirstDiary, false);
         }
         GameManager.Instance.AudioManager.play(SoundName.BookOpen);

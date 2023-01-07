@@ -12,12 +12,12 @@ public class DiaryDataReader : MonoBehaviour
     public List<DiaryData> diaryData;
     private string[] texts = new []
     {
-        "It’s been a month that we’ve been rebuilding the village after the earthquake. A watch was found under the ruins, and the time on that watch got stuck on the time that disaster happened. This time need to be remembered, in memorial for every villager who suffered from the earthquake.",
-        "It’s been a month that we’ve been rebuilding the village after the earthquake. A special watch was found under the ruins, and the time on that watch got stuck on the time that disaster happened. This time need to be remembered, in memorial for every villager who suffered from the earthquake.",
-        "Technology has brought our people prosperity. We’ve had a breakthrough in transforming objects into different size.For now it can be used on only a few things but it has big potentiality.",
+        "It has been a month that we have been rebuilding the village after the earthquake.A watch was found under the ruins, and the time on that watch got stuck on the time that disaster happened. This time need to be remembered, in memorial for every villager who suffered from the earthquake.",
+        "Technology has brought our people prosperity.We have had a breakthrough in transforming objects into different size.For now it can be used on only a few things but it has big potentiality.",
         "Maya people used sundial to tell time. It needs to be placed in the correct place to see the shadow.So far, we have collected 4 sundials in which the symbols matches the Maya stone.",
         "The king of the village had 6 beautiful daughters. As he was building the castle, he dedicated each column to each daughter, to represent them keeping the family together. When the king died, only one princess realized the truth, and kept it safe to this day...",
-        "There is a special room: when you enter it, something is different...Your mind must be the opposite of the clock!"
+        "Time is writ upon my face, my heart ticks in its weary pace. Though wind and rain do leave their trace, I watch them in their endless race. If you want to find the clue, do not think about me now. Think opposite, I'll show you how!",
+        "You see me quite often, but don’t really care. If you pass by me, you’ll often stop and stare. I can’t speak or see, but don’t think me uncouth, because no matter what, I always tell the truth. Let me help you find the way, and reflect the light of day."
     };
     // private string[] texts = new []
     // {

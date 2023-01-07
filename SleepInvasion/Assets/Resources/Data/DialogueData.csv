@@ -8,13 +8,13 @@ id,Dialogue,NextDialogueID,Triggers
 7,"Wow, this needle gets enlarged in real life too! This is truly magic!",0,after using magnifier and needle gets enlarged 
 8,A stone board with strange symbols.,26,seeing empty sundial
 9,Is that a circular concave in the center?,10,seing the floating table
-10,Looks like something can be placed in the center…,0,
+10,Looks like something can be placed in the center …,0,
 11,Is there something I could do with the candles?,0,seeing 2 laser lights pointing to 2 candles
 12,"The column are in different height, maybe it means something.",0,entering the room
 13,Is the needle reusable? ,27,Getting close to the sundial with the needle
 14,"Oh, there's something showing up! ",15,placing the cylinder in the center
 15,I should look it up closely..Maybe there is a clue hidden in the painting!,0,
-16,This sundial already has the shadow indicated,0,walk to the small room with sundial
+16,This sundial doesn't have any shadows. What should I do?,0,walk to the small room with sundial
 17,The door is locked again... Where could I find the four number code?,0,After going upstairs and seeing the door
 18,An empty platform? Maybe something will show up...,0,When seeing the platform outside of room 4
 19,"Oh, there's something showing up! ",0,Image shows after putting the cylinder
