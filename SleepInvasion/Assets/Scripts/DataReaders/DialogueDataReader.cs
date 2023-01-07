@@ -23,20 +23,24 @@ public class DialogueDataReader : MonoBehaviour
         dialogueData = new List<DialogueData>();
         foreach (string line in lines)
         {
-            if (line == "")
-            {
-                continue;
-            }
 
             Regex CSVParser = new Regex(",(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))");
             string[] lineSplitted = CSVParser.Split(line);
             currentLineNumber++;
+            if (lineSplitted[0] == "")
+            {
+                continue;
+            }
 
             if (currentLineNumber == 1)
             {
                 continue;
             }
 
+            if (currentLineNumber == 31)
+            {
+                Debug.Log(currentLineNumber);   
+            }
             int id = int.Parse(lineSplitted[0]);
             string hint = lineSplitted[1];
             int nextId = int.Parse(lineSplitted[2]);

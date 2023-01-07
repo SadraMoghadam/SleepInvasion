@@ -34,9 +34,17 @@ public class ParticleHintController : MonoBehaviour
             SetupData();
             _timer = 0;
         }
-        if (_timer >= hintObjectsData[_id].timeToShow && _instantiatedParticle == null)
+
+        try
         {
-            InstantiateHint();
+            if (_id < hintObjectsData.Count && _timer >= hintObjectsData[_id].timeToShow && _instantiatedParticle == null)
+            {
+                InstantiateHint();
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.Log("Particle Hint Update Problem");
         }
         
     }
