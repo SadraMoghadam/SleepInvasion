@@ -52,6 +52,7 @@ public class DoubleDoorController : MonoBehaviour, IDoorController
     {
         if (IsLocked())
         {
+            GameController.Instance.HintController.ShowHint(11);
             return;
         }
         GameManager.Instance.AudioManager.Instantplay(SoundName.OpenDoor, transform.position);
@@ -75,6 +76,7 @@ public class DoubleDoorController : MonoBehaviour, IDoorController
     {
         if (IsLocked())
         {
+            GameController.Instance.HintController.ShowHint(11);
             return;
         }
 

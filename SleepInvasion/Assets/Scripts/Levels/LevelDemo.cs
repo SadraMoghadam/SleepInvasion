@@ -144,7 +144,7 @@ public class LevelDemo : Level
         _shaderTimer += Time.deltaTime;
         if (PlayerPrefsManager.GetBool(PlayerPrefsKeys.MayaStoneUnlocked, false))
         {
-            _gameController.HintController.ShowHint(19);
+            // _gameController.HintController.ShowHint(19);
             PlayerPrefsManager.SetBool(PlayerPrefsKeys.Door1Locked, false);
             SaveCompletedProcess(7);
         }

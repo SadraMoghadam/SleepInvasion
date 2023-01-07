@@ -58,7 +58,7 @@ public class InventoryController : MonoBehaviour
             return;
         if(PlayerPrefsManager.GetBool(PlayerPrefsKeys.FirstInventory, true))
         {
-            _gameController.HintController.ShowHint(16);
+            _gameController.HintController.ShowHint(17);
             PlayerPrefsManager.SetBool(PlayerPrefsKeys.FirstInventory, false);
         }
         if(_gameController.IsInInspectView)

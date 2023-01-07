@@ -132,7 +132,7 @@ public class MayaStone : MonoBehaviour
         {
             if(PlayerPrefsManager.GetBool(PlayerPrefsKeys.FirstMayaStone, true))
             {
-                _gameController.HintController.ShowHint(15);
+                _gameController.HintController.ShowHint(16);
                 PlayerPrefsManager.SetBool(PlayerPrefsKeys.FirstMayaStone, false);
             }
             _gameController.ShowCursor();

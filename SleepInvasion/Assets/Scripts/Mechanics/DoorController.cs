@@ -47,6 +47,14 @@ public class DoorController : MonoBehaviour, IDoorController
     {
         if (IsLocked())
         {
+            if (id == 4)
+            {
+                GameController.Instance.HintController.ShowHint(14);
+            }
+            else
+            {
+                GameController.Instance.HintController.ShowHint(11);   
+            }
             return;
         }
         GameManager.Instance.AudioManager.Instantplay(SoundName.OpenDoor, transform.position);
@@ -68,6 +76,14 @@ public class DoorController : MonoBehaviour, IDoorController
     {
         if (IsLocked())
         {
+            if (id == 4)
+            {
+                GameController.Instance.HintController.ShowHint(14);
+            }
+            else
+            {
+                GameController.Instance.HintController.ShowHint(11);   
+            }
             return;
         }
 

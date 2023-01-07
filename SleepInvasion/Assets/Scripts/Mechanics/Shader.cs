@@ -27,7 +27,7 @@ public class Shader : MonoBehaviour, IItemUsage
     {
         if(PlayerPrefsManager.GetBool(PlayerPrefsKeys.FirstShader, true))
         {
-            GameController.Instance.HintController.ShowHint(18);
+            GameController.Instance.HintController.ShowHint(19);
             PlayerPrefsManager.SetBool(PlayerPrefsKeys.FirstShader, false);
         }
         GameManager.Instance.AudioManager.play(SoundName.Shader);
