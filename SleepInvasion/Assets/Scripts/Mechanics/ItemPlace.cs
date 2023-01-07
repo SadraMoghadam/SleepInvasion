@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 public class ItemPlace : MonoBehaviour
 {
-    [SerializeField] private int id;
+    public int id;
     public Item item;
     public Transform placementPosition;
     

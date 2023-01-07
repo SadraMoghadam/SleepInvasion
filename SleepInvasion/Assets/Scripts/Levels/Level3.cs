@@ -91,6 +91,10 @@ public class Level3 : Level
 
     private void ThirdProcess()
     {
+        if (_level3Data == null)
+        {
+            _level3Data = _gameController.LevelsController.levelsDataContainer.level3Data;
+        }
         if (!PlayerPrefsManager.GetBool(PlayerPrefsKeys.Door4Locked, true) && _level3Data.doorController.IsOpen())
         {
             //show some dialogues and hints

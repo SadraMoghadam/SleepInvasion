@@ -149,7 +149,7 @@ public class PlayerPrefsManager : MonoBehaviour
         }
         else
         {
-            PlayerPrefs.SetInt(key.ToString(), 0);
+            PlayerPrefs.SetInt(key.ToString(), value);
         }
 
         return value == 1 ? true : false;

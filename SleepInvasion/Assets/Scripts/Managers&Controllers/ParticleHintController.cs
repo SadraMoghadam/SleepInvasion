@@ -48,7 +48,14 @@ public class ParticleHintController : MonoBehaviour
             PlayerPrefsManager.SetInt(PlayerPrefsKeys.ParticleHintObjectId, _id + 1);
         }
         _id = PlayerPrefsManager.GetInt(PlayerPrefsKeys.ParticleHintObjectId, 0);
-        _type = hintObjectsData[_id].hintItem.itemInfo.ItemScriptableObject.type;
+        try
+        {
+            _type = hintObjectsData[_id].hintItem.itemInfo.ItemScriptableObject.type;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("Particle Hint bug catched");
+        }
     }
 
     private void InstantiateHint()

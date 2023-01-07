@@ -15,6 +15,11 @@ public class Sundial : MonoBehaviour
 
     private void Start()
     {
+        ItemPlace itemPlace = GetComponent<ItemPlace>();
+        if (itemPlace.id < PlayerPrefsManager.GetInt(PlayerPrefsKeys.Level, 1))
+        {
+            lightStartsOn = true;
+        }
         spotLight.gameObject.SetActive(lightStartsOn);
         _gameController = GameController.Instance;
     }
