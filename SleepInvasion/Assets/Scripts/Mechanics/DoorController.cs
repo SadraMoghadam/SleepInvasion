@@ -28,7 +28,7 @@ public class DoorController : MonoBehaviour, IDoorController
         }
     }
 
-    private bool IsLocked()
+    public bool IsLocked()
     {
         return PlayerPrefsManager.GetBool(Enum.Parse<PlayerPrefsKeys>(_prefsId), true);
     }

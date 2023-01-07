@@ -1076,6 +1076,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 8220031156104999206}
+        m_TargetAssemblyTypeName: DoubleDoorController, Assembly-CSharp
+        m_MethodName: UnlockDoor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &1402747527575608135
 GameObject:
   m_ObjectHideFlags: 0
@@ -2849,7 +2861,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2589
+  m_VersionIndex: 2604
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -4145,7 +4157,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2547
+  m_VersionIndex: 2559
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -4603,7 +4615,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 15173
+  m_VersionIndex: 15185
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -7516,7 +7528,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 10141
+  m_VersionIndex: 10153
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -9228,7 +9240,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3046
+  m_VersionIndex: 3058
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -10260,7 +10272,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3670
+  m_VersionIndex: 3682
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -17236,7 +17248,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 15372
+  m_VersionIndex: 15384
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -19151,7 +19163,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3393
+  m_VersionIndex: 3405
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -20082,7 +20094,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3141
+  m_VersionIndex: 3153
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -20760,7 +20772,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3045
+  m_VersionIndex: 3060
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -24056,7 +24068,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2962
+  m_VersionIndex: 2974
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -28670,7 +28682,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2295
+  m_VersionIndex: 2307
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -31508,7 +31520,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 4125
+  m_VersionIndex: 4137
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -31955,7 +31967,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2946
+  m_VersionIndex: 2961
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -33363,7 +33375,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 4665
+  m_VersionIndex: 4677
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -34282,7 +34294,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 7450
+  m_VersionIndex: 7462
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -35172,7 +35184,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3048
+  m_VersionIndex: 3060
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -36239,7 +36251,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3629
+  m_VersionIndex: 3641
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -37168,7 +37180,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 4323
+  m_VersionIndex: 4335
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -37941,7 +37953,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 7136
+  m_VersionIndex: 7148
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -44472,7 +44484,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 13027
+  m_VersionIndex: 13039
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -45458,7 +45470,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3641
+  m_VersionIndex: 3653
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -49007,7 +49019,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2985
+  m_VersionIndex: 2997
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -50918,7 +50930,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3798
+  m_VersionIndex: 3810
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -56123,7 +56135,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 6657
+  m_VersionIndex: 6669
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -57153,7 +57165,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3661
+  m_VersionIndex: 3673
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -63502,7 +63514,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 6785
+  m_VersionIndex: 6797
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -64531,7 +64543,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3632
+  m_VersionIndex: 3644
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -65113,7 +65125,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3056
+  m_VersionIndex: 3071
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -66134,7 +66146,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3195
+  m_VersionIndex: 3207
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -67064,7 +67076,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3652
+  m_VersionIndex: 3664
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -67411,7 +67423,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2766
+  m_VersionIndex: 2778
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -68337,7 +68349,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3671
+  m_VersionIndex: 3683
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -69597,7 +69609,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3638
+  m_VersionIndex: 3650
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -70526,7 +70538,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3655
+  m_VersionIndex: 3667
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -71455,7 +71467,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3664
+  m_VersionIndex: 3676
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -72419,7 +72431,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 4447
+  m_VersionIndex: 4459
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -74827,7 +74839,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 8459
+  m_VersionIndex: 8471
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -76390,7 +76402,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3177
+  m_VersionIndex: 3189
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -77332,7 +77344,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3667
+  m_VersionIndex: 3679
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -80115,7 +80127,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2282
+  m_VersionIndex: 2294
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -82030,7 +82042,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3406
+  m_VersionIndex: 3418
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -82995,7 +83007,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3658
+  m_VersionIndex: 3673
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -88436,7 +88448,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 24237
+  m_VersionIndex: 24252
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -90014,7 +90026,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4022471436060142389, guid: c565b9f16e42f1a4888a7a1e00819450, type: 3}
       propertyPath: m_VersionIndex
-      value: 2242
+      value: 2254
       objectReference: {fileID: 0}
     - target: {fileID: 4022471436060142390, guid: c565b9f16e42f1a4888a7a1e00819450, type: 3}
       propertyPath: m_Mesh
@@ -90866,6 +90878,10 @@ PrefabInstance:
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
+      propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
       objectReference: {fileID: 2221612297063502738}
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -90885,7 +90901,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CheckSolution
+      value: Toggle
       objectReference: {fileID: 0}
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -90897,11 +90913,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: Toggle
+      value: CheckSolution
       objectReference: {fileID: 0}
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PatternMatchPuzzle, Assembly-CSharp
+      value: ToggleActive, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -90913,7 +90929,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
-      value: ToggleActive, Assembly-CSharp
+      value: PatternMatchPuzzle, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -91380,6 +91396,10 @@ PrefabInstance:
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
+      propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
       objectReference: {fileID: 2221612297063502738}
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -91399,7 +91419,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CheckSolution
+      value: Toggle
       objectReference: {fileID: 0}
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -91411,11 +91431,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: Toggle
+      value: CheckSolution
       objectReference: {fileID: 0}
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PatternMatchPuzzle, Assembly-CSharp
+      value: ToggleActive, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -91427,7 +91447,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
-      value: ToggleActive, Assembly-CSharp
+      value: PatternMatchPuzzle, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -92191,15 +92211,15 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4387820dff7e75f41be419b723ebae3b, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.448
+  m_Volume: 0.265
   m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 79
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 0.6
   MaxDistance: 4
   Pan2D: 0
   rolloffMode: 0
@@ -92416,6 +92436,10 @@ PrefabInstance:
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
+      propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
       objectReference: {fileID: 2221612297063502738}
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -92427,19 +92451,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CheckSolution
-      objectReference: {fileID: 0}
-    - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
-      propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: Toggle
       objectReference: {fileID: 0}
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
+      propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: CheckSolution
+      objectReference: {fileID: 0}
+    - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PatternMatchPuzzle, Assembly-CSharp
+      value: ToggleActive, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: ToggleActive, Assembly-CSharp
+      value: PatternMatchPuzzle, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -92528,20 +92552,56 @@ PrefabInstance:
       value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 2958962645232620736, guid: 428a2a0e3a6220f40a79b95d4d92c491, type: 3}
+      propertyPath: Priority
+      value: 79
+      objectReference: {fileID: 0}
+    - target: {fileID: 2958962645232620736, guid: 428a2a0e3a6220f40a79b95d4d92c491, type: 3}
+      propertyPath: m_Volume
+      value: 0.265
+      objectReference: {fileID: 0}
+    - target: {fileID: 2958962645232620736, guid: 428a2a0e3a6220f40a79b95d4d92c491, type: 3}
       propertyPath: MaxDistance
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2958962645232620736, guid: 428a2a0e3a6220f40a79b95d4d92c491, type: 3}
+      propertyPath: MinDistance
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2958962645471762176, guid: 428a2a0e3a6220f40a79b95d4d92c491, type: 3}
+      propertyPath: Priority
+      value: 79
+      objectReference: {fileID: 0}
+    - target: {fileID: 2958962645471762176, guid: 428a2a0e3a6220f40a79b95d4d92c491, type: 3}
+      propertyPath: m_Volume
+      value: 0.265
       objectReference: {fileID: 0}
     - target: {fileID: 2958962645471762176, guid: 428a2a0e3a6220f40a79b95d4d92c491, type: 3}
       propertyPath: MaxDistance
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2958962645471762176, guid: 428a2a0e3a6220f40a79b95d4d92c491, type: 3}
+      propertyPath: MinDistance
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 2958962646002948973, guid: 428a2a0e3a6220f40a79b95d4d92c491, type: 3}
       propertyPath: Loop
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2958962646002948973, guid: 428a2a0e3a6220f40a79b95d4d92c491, type: 3}
+      propertyPath: Priority
+      value: 79
+      objectReference: {fileID: 0}
+    - target: {fileID: 2958962646002948973, guid: 428a2a0e3a6220f40a79b95d4d92c491, type: 3}
+      propertyPath: m_Volume
+      value: 0.265
+      objectReference: {fileID: 0}
+    - target: {fileID: 2958962646002948973, guid: 428a2a0e3a6220f40a79b95d4d92c491, type: 3}
       propertyPath: MaxDistance
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2958962646002948973, guid: 428a2a0e3a6220f40a79b95d4d92c491, type: 3}
+      propertyPath: MinDistance
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 5584981445281939508, guid: 428a2a0e3a6220f40a79b95d4d92c491, type: 3}
       propertyPath: m_RootOrder
@@ -92604,8 +92664,20 @@ PrefabInstance:
       value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 5756549736777286568, guid: 428a2a0e3a6220f40a79b95d4d92c491, type: 3}
+      propertyPath: Priority
+      value: 79
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756549736777286568, guid: 428a2a0e3a6220f40a79b95d4d92c491, type: 3}
+      propertyPath: m_Volume
+      value: 0.265
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756549736777286568, guid: 428a2a0e3a6220f40a79b95d4d92c491, type: 3}
       propertyPath: MaxDistance
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756549736777286568, guid: 428a2a0e3a6220f40a79b95d4d92c491, type: 3}
+      propertyPath: MinDistance
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 428a2a0e3a6220f40a79b95d4d92c491, type: 3}
@@ -93298,6 +93370,10 @@ PrefabInstance:
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
+      propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
       objectReference: {fileID: 2221612297063502738}
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -93313,7 +93389,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CheckSolution
+      value: Toggle
       objectReference: {fileID: 0}
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -93321,11 +93397,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: Toggle
+      value: CheckSolution
       objectReference: {fileID: 0}
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PatternMatchPuzzle, Assembly-CSharp
+      value: ToggleActive, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -93333,7 +93409,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: ToggleActive, Assembly-CSharp
+      value: PatternMatchPuzzle, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -96262,6 +96338,10 @@ PrefabInstance:
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
+      propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
       objectReference: {fileID: 2221612297063502738}
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -96277,7 +96357,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CheckSolution
+      value: Toggle
       objectReference: {fileID: 0}
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -96285,11 +96365,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: Toggle
+      value: CheckSolution
       objectReference: {fileID: 0}
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PatternMatchPuzzle, Assembly-CSharp
+      value: ToggleActive, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -96297,7 +96377,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: ToggleActive, Assembly-CSharp
+      value: PatternMatchPuzzle, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5970745328556783284, guid: 244317cfa9e5da745a495e1363265ed6, type: 3}
       propertyPath: onCandleSwitch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -96431,7 +96511,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4022471436060142389, guid: b25d24c289c47e743834b0a78c6a595b, type: 3}
       propertyPath: m_VersionIndex
-      value: 2245
+      value: 2257
       objectReference: {fileID: 0}
     - target: {fileID: 4022471436060142390, guid: b25d24c289c47e743834b0a78c6a595b, type: 3}
       propertyPath: m_Mesh

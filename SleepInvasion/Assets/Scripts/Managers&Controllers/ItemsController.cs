@@ -28,9 +28,13 @@ public class ItemsController : MonoBehaviour
         _gameController = GameController.Instance;
         // _typeUsing = InteractableItemType.None;
         UsingMagnifier = false;
+        
+    }
+
+    private void OnEnable()
+    {
         if(lasersParentGO != null)
             lasersParentGO.SetActive(false);
-        
     }
 
     public void UseInventoryItem(InteractableItemType type)

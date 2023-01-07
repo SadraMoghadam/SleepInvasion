@@ -7,7 +7,7 @@ public class ToggleActive : MonoBehaviour
 {
     [SerializeField] private bool startsOn;
 
-    private void Start()
+    private void Awake()
     {
         gameObject.SetActive(startsOn);
     }

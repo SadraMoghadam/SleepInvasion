@@ -47,7 +47,7 @@ public class Level2 : Level
 
     public void FirstProcess()
     {
-        if (_level2Data.doorController.IsOpen())
+        if (!_level2Data.doorController.IsLocked())
         {
             SaveCompletedProcess(2);
             EndOfLevel();

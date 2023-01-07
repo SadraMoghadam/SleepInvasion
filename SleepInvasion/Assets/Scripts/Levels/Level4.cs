@@ -49,7 +49,7 @@ public class Level4 : Level
 
     public void FirstProcess()
     {
-        Debug.Log(_lasersPuzzleTimer);
+        // Debug.Log(_lasersPuzzleTimer);
         if (_lasersPuzzleTimer >= 0)
         {
             if (_lasersPuzzleTimer > _level4Data.puzzleHintTimer * 60)
@@ -77,6 +77,7 @@ public class Level4 : Level
 
     public override void EndOfLevel()
     {
+        PlayerPrefsManager.SetBool(PlayerPrefsKeys.Door0Locked, false);
         PlayerPrefsManager.SetInt(PlayerPrefsKeys.Level, 4);
         IsDone = true;
         PlayerPrefsManager.DeleteKey(PlayerPrefsKeys.Level4Process);

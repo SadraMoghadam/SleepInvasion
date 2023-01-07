@@ -90,7 +90,6 @@ public class Lock : MonoBehaviour
         _gameController.EnableAllKeys();
         
         PlayerPrefsKeys key = PlayerPrefsKeys.Chest1Unlocked;
-        PlayerPrefsKeys doorKey = PlayerPrefsKeys.Door4Locked;
         switch (id)
         {
             case 1:
@@ -102,8 +101,7 @@ public class Lock : MonoBehaviour
                 break;
             case 4:
                 key = PlayerPrefsKeys.DoorLock4Unlocked;
-                doorKey = PlayerPrefsKeys.Door4Locked;
-                PlayerPrefsManager.SetBool(doorKey, false);
+                PlayerPrefsManager.SetBool(PlayerPrefsKeys.Door4Locked, false);
                 break;
         }
         PlayerPrefsManager.SetBool(key, true);

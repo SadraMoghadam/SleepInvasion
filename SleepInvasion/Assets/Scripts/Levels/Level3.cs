@@ -17,7 +17,6 @@ public class Level3 : Level
         _gameController = GameController.Instance;
         _gameManager = GameManager.Instance;
         _processNumber = PlayerPrefsManager.GetInt(PlayerPrefsKeys.Level3Process, 1);
-        PlayerPrefsManager.SetBool(PlayerPrefsKeys.Door4Locked, true);
     }
 
     public override int LevelNum => 3;
@@ -125,6 +124,8 @@ public class Level3 : Level
 
     public override void EndOfLevel()
     {
+        _gameController.LevelsController.levelsDataContainer.level1Data.doubleDoorController.Close();
+        PlayerPrefsManager.SetBool(PlayerPrefsKeys.Door0Locked, true);
         PlayerPrefsManager.SetInt(PlayerPrefsKeys.Level, 4);
         IsDone = true;
         PlayerPrefsManager.DeleteKey(PlayerPrefsKeys.Level3Process);
