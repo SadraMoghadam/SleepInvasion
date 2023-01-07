@@ -20,7 +20,7 @@ public class LightSwitch: Interactable
 
     IEnumerator UpdateLight()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.1f);
         m_Light.enabled = isOn;
         obj.SetActive(isOn);
         onCandleSwitch.Invoke();

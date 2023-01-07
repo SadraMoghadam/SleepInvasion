@@ -36,9 +36,6 @@ public class Lock : MonoBehaviour
             case 4:
                 key = PlayerPrefsKeys.DoorLock4Unlocked;
                 break;
-            case 5:
-                key = PlayerPrefsKeys.DoorLock5Unlocked;
-                break;
         }
         if (PlayerPrefsManager.GetBool(key, false) && id == Int32.Parse(Regex.Match(key.ToString(), @"\d+").Value))
         {
@@ -106,13 +103,9 @@ public class Lock : MonoBehaviour
             case 4:
                 key = PlayerPrefsKeys.DoorLock4Unlocked;
                 doorKey = PlayerPrefsKeys.Door4Locked;
-                break;
-            case 5:
-                key = PlayerPrefsKeys.DoorLock5Unlocked;
-                doorKey = PlayerPrefsKeys.Door4Locked;
+                PlayerPrefsManager.SetBool(doorKey, false);
                 break;
         }
         PlayerPrefsManager.SetBool(key, true);
-        PlayerPrefsManager.SetBool(doorKey, false);
     }
 }   

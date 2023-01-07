@@ -20,11 +20,11 @@ id,Dialogue,NextDialogueID,Triggers
 19,"Oh, there's something showing up! ",0,Image shows after putting the cylinder
 20,Four lights on the stairs to the room... What is it trying to tell?,0,Using shader to see laser light 
 21,There seem to be a pattern in these lights!,0,When seeing the laser light in the room
-22,Are laser lights are connected with candle?,0,First time blowing off candle and laser light changes 
+22,Are the laser lights somehow connected to the candles.,0,First time blowing off candle and laser light changes 
 23,"Wow,there's something here!",0,When getting close the the top statue
 24,You've found the missing piece for the center of maya stone ,0,After picking up the final piece from the mouth
 25,"The maya stone has now been completed. Congrats, you've escaped from your dream and come back to real world.",0,Putting in the final piece
-26,Looks like there is omething missing in the center?,0,
+26,Looks like there is something missing in the center?,0,
 27,Maybe I can Pick it up and see if it comes in handy.,0,
 28,Something is missing in this sundial again.,29,
 29,Maybe I can pickup the needle from the previous sundial and use it here.,0,
