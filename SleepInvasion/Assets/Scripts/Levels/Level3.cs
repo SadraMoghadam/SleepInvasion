@@ -40,7 +40,7 @@ public class Level3 : Level
         if (PlayerPrefsManager.GetBool(PlayerPrefsKeys.FirstEnterRoom3, true))
         {
             _gameController.DialogueController.Show(12);
-            PlayerPrefsManager.GetBool(PlayerPrefsKeys.FirstEnterRoom3, false);
+            PlayerPrefsManager.SetBool(PlayerPrefsKeys.FirstEnterRoom3, false);
         }
     }
 
