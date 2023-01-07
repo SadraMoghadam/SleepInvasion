@@ -177,8 +177,8 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: 17
     clip: {fileID: 8300000, guid: e3540231a89ebc9478c3b10622f30168, type: 3}
-    volume: 0.248
-    pitch: 1.99
+    volume: 1
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: 18
@@ -189,6 +189,12 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: 19
     clip: {fileID: 8300000, guid: 459a02bce623b924493f0c195c46c831, type: 3}
+    volume: 0.12
+    pitch: 1.17
+    loop: 1
+    source: {fileID: 0}
+  - name: 20
+    clip: {fileID: 8300000, guid: c6de1e36ad9328d41ad197cad6e6ee42, type: 3}
     volume: 0.12
     pitch: 1.17
     loop: 1

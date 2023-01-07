@@ -82,6 +82,17 @@ public class PlayerRaycast : MonoBehaviour
                 PlayerPrefsManager.SetBool(PlayerPrefsKeys.FirstRaycast, false);
                 _gameController.HintController.ShowHint(3);
             }
+            if(PlayerPrefsManager.GetBool(PlayerPrefsKeys.FirstNeedleMissed, true) && !_gameController.InventoryController.IsItemInInventory(InteractableItemType.Needle))
+            {
+                if (hit.collider.gameObject.CompareTag("Sundial"))
+                {
+                    if (hit.collider.transform.parent.GetComponent<ItemPlace>().id == 2)
+                    {
+                        _gameController.DialogueController.Show(28);
+                        PlayerPrefsManager.SetBool(PlayerPrefsKeys.FirstNeedleMissed, false);
+                    }
+                }
+            }   
             // if (hit.collider.gameObject.GetComponent<Item>() == null)
             // {
             //     return;

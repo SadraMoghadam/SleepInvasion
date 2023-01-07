@@ -41,6 +41,7 @@ public class DoorController : MonoBehaviour, IDoorController
     public void UnlockDoor()
     {
         PlayerPrefsManager.SetBool(Enum.Parse<PlayerPrefsKeys>(_prefsId), false);
+        GameManager.Instance.AudioManager.Instantplay(SoundName.UnlockDoor, transform.position);
     }
     
     public void Open()

@@ -44,6 +44,7 @@ public enum PlayerPrefsKeys
     FirstEnterRoom3,
     FirstTable,
     FirstCylinderPlaced,
+    FirstNeedleMissed,
     MayaStoneUnlocked,
     L2DoorClosed,
     L2SundialLight,

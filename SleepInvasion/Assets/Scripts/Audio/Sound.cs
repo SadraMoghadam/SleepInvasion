@@ -23,7 +23,8 @@ public enum SoundName
     Magnifier,
     CandleBlow,
     SettingsMenu,
-    WalkStone
+    WalkStone,
+    UnlockDoor
     // Click
 }
 
