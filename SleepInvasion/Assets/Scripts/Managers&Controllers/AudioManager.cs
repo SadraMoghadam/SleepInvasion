@@ -61,14 +61,14 @@ public class AudioManager : MonoBehaviour
         Sound sound = Array.Find(sounds, sound => sound.name == name);
         if (sound == null)
         {
-            Debug.Log("Sound " + name + " not found");
+            // Debug.Log("Sound " + name + " not found");
             return;
         }
 
         try
         {
             sound.source.Play();
-            Debug.Log("Playing " + name + " at " + sound.source.volume + " volume");
+            // Debug.Log("Playing " + name + " at " + sound.source.volume + " volume");
         }
         catch (Exception e)
         {
@@ -81,7 +81,7 @@ public class AudioManager : MonoBehaviour
         Sound sound = Array.Find(sounds, sound => sound.name == name);
         if (sound == null)
         {
-            Debug.Log("Sound " + name + " not found");
+            // Debug.Log("Sound " + name + " not found");
             return;
         }
 
