@@ -206,13 +206,13 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4347485064245386096}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.9245283, g: 0.64280534, b: 0.09158063, a: 1}
   m_Intensity: 3
-  m_Range: 1.8
+  m_Range: 3
   m_SpotAngle: 45
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -245,7 +245,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -327,6 +327,9 @@ MonoBehaviour:
   m_Light: {fileID: 2009202953039244069}
   obj: {fileID: 1613952466049241509}
   isOn: 1
+  onCandleSwitch:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6946084051229171831
 GameObject:
   m_ObjectHideFlags: 0

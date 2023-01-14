@@ -57,7 +57,8 @@ public enum PlayerPrefsKeys
     LasersPuzzleTimer,
     ShownDialogues,
     CylinderOnTable1,
-    CylinderOnTable2
+    CylinderOnTable2,
+    QualityIndex
     // Sundial1Finished,
     // Sundial2Finished,
     // Sundial3Finished,

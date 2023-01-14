@@ -48,6 +48,7 @@ public class GameController : MonoBehaviour
         }
         Time.timeScale = 1;
         _gameManager = GameManager.Instance;
+        QualitySettings.SetQualityLevel(PlayerPrefsManager.GetInt(PlayerPrefsKeys.QualityIndex, 1), false);
 
         // PlayerController = GetComponent<PlayerController>();
         UIController = GetComponent<UIController>();

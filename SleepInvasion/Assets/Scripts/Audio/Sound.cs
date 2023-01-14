@@ -24,7 +24,9 @@ public enum SoundName
     CandleBlow,
     SettingsMenu,
     WalkStone,
-    UnlockDoor
+    UnlockDoor,
+    OpenGate,
+    CloseGate
     // Click
 }
 

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -8,7 +9,8 @@ public class GraphicsSettings : MonoBehaviour
 {
     [SerializeField] private Toggle fullScreenToggle;
     [SerializeField] private TMP_Dropdown qualityDropdown;
-    
+
+
     void Start()
     {
         fullScreenToggle.onValueChanged.AddListener(ToggleFullScreen);
@@ -23,5 +25,6 @@ public class GraphicsSettings : MonoBehaviour
     private void ChangeQuality(int index)
     {
         QualitySettings.SetQualityLevel(index, false);
+        PlayerPrefsManager.SetInt(PlayerPrefsKeys.QualityIndex, index);
     }
 }

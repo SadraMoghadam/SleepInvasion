@@ -58,7 +58,15 @@ public class DoorController : MonoBehaviour, IDoorController
             }
             return;
         }
-        GameManager.Instance.AudioManager.Instantplay(SoundName.OpenDoor, transform.position);
+
+        if (id == 4 || id == 6)
+        {
+            GameManager.Instance.AudioManager.Instantplay(SoundName.OpenGate, transform.position);   
+        }
+        else
+        {
+            GameManager.Instance.AudioManager.Instantplay(SoundName.OpenDoor, transform.position);   
+        }
         _doorAnimator.SetBool(IsDoorOpen, true);
     }
 
@@ -68,8 +76,14 @@ public class DoorController : MonoBehaviour, IDoorController
         {
             return;
         }
-        
-        GameManager.Instance.AudioManager.Instantplay(SoundName.CloseDoor, transform.position);
+        if (id == 4 || id == 6)
+        {
+            GameManager.Instance.AudioManager.Instantplay(SoundName.CloseGate, transform.position);   
+        }
+        else
+        {
+            GameManager.Instance.AudioManager.Instantplay(SoundName.CloseDoor, transform.position);   
+        }
         _doorAnimator.SetBool(IsDoorOpen, false);
     }
 
@@ -91,11 +105,25 @@ public class DoorController : MonoBehaviour, IDoorController
         bool currentState = IsOpen();
         if (currentState)
         {
-            GameManager.Instance.AudioManager.Instantplay(SoundName.CloseDoor, transform.position);
+            if (id == 4 || id == 6)
+            {
+                GameManager.Instance.AudioManager.Instantplay(SoundName.CloseGate, transform.position);   
+            }
+            else
+            {
+                GameManager.Instance.AudioManager.Instantplay(SoundName.CloseDoor, transform.position);   
+            }
         }
         else
         {
-            GameManager.Instance.AudioManager.Instantplay(SoundName.OpenDoor, transform.position);
+            if (id == 4 || id == 6)
+            {
+                GameManager.Instance.AudioManager.Instantplay(SoundName.OpenGate, transform.position);   
+            }
+            else
+            {
+                GameManager.Instance.AudioManager.Instantplay(SoundName.OpenDoor, transform.position);   
+            }
         }
         _doorAnimator.SetBool(IsDoorOpen, !currentState);
     }
