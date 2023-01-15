@@ -206,7 +206,8 @@ public class MayaStone : MonoBehaviour
         PlayerPrefsManager.SetIntList(PlayerPrefsKeys.MayaStoneRingsIndex, _initialDegreesIndex.ToList());
         if (IsSolved())
         {
-            GameManager.Instance.LoadScene("Outro");
+            // GameManager.Instance.LoadScene("Outro");
+            _gameController.UIController.EndingAnimationObject.SetActive(true);
         }
     }
 

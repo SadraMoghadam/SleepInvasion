@@ -138,15 +138,14 @@ public class SendToGoogle : MonoBehaviour {
         
     }
     
-    public static IEnumerator PostStarted()
+    public static IEnumerator PostFinishedGame()
     {
-        yield break;
         string URL =
             "https://docs.google.com/forms/d/e/1FAIpQLSeFwyAYVYJfyQE5NovsRw7VlhvCxZksuT1Gf-m_MGqPjy43-w/formResponse";
         
         WWWForm form = new WWWForm(); 
         
-        form.AddField("entry.1587231683", "Started");
+        form.AddField("entry.1587231683", "GameFinished");
 
         UnityWebRequest www = UnityWebRequest.Post(URL, form);
 

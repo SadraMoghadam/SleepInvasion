@@ -78,7 +78,7 @@ public class GameController : MonoBehaviour
         if (!isGameStarted)
         {
             PlayerPrefsManager.SetBool(PlayerPrefsKeys.GameStarted, true);
-            StartCoroutine(SendToGoogle.PostStarted());
+            // StartCoroutine(SendToGoogle.PostStarted());
         }
         _gameManager.AudioManager.play(SoundName.Game);
         // DialogueController.Show(1);

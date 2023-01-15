@@ -24,6 +24,7 @@ public class UIController : MonoBehaviour
     public GameObject placeIcon;
     public GameObject SundialIcon;
     public GameObject MayaStoneIcon;
+    public GameObject EndingAnimationObject;
 
         [NonSerialized] public bool IsInPauseMenu;
 

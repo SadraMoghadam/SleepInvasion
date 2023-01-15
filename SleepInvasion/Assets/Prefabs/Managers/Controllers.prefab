@@ -87,6 +87,10 @@ MonoBehaviour:
   qIcon: {fileID: 0}
   escIcon: {fileID: 0}
   mIcon: {fileID: 0}
+  placeIcon: {fileID: 0}
+  SundialIcon: {fileID: 0}
+  MayaStoneIcon: {fileID: 0}
+  EndingAnimationObject: {fileID: 0}
 --- !u!114 &6917092360357706116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,6 +127,8 @@ MonoBehaviour:
   inspectLayer:
     serializedVersion: 2
     m_Bits: 128
+  needle: {fileID: 0}
+  cylinder: {fileID: 0}
 --- !u!114 &471663664227224404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,11 +148,11 @@ MonoBehaviour:
   - hintItem: {fileID: 0}
     timeToShow: 120
   - hintItem: {fileID: 0}
-    timeToShow: 120
+    timeToShow: 180
   - hintItem: {fileID: 0}
-    timeToShow: 120
+    timeToShow: 320
   - hintItem: {fileID: 0}
-    timeToShow: 120
+    timeToShow: 240
 --- !u!114 &6917092360357706118
 MonoBehaviour:
   m_ObjectHideFlags: 0
