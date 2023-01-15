@@ -93,7 +93,7 @@ QualitySettings:
     skinWeights: 2
     textureQuality: 0
     anisotropicTextures: 1
-    antiAliasing: 0
+    antiAliasing: 2
     softParticles: 0
     softVegetation: 1
     realtimeReflectionProbes: 1
@@ -129,7 +129,7 @@ QualitySettings:
     skinWeights: 255
     textureQuality: 0
     anisotropicTextures: 2
-    antiAliasing: 2
+    antiAliasing: 4
     softParticles: 1
     softVegetation: 1
     realtimeReflectionProbes: 1
@@ -160,9 +160,9 @@ QualitySettings:
     Nintendo Switch: 3
     PS4: 3
     PS5: 3
-    Server: 3
+    Server: 1
     Stadia: 3
-    Standalone: 3
+    Standalone: 1
     WebGL: 2
     Windows Store Apps: 3
     XboxOne: 3
