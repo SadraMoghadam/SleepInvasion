@@ -22,13 +22,20 @@ public class PlayerMovement : MonoBehaviour
 
     private GameController _gameController;
     private Vector3 _lastPos = Vector3.zero;
+    private float _muteTimer = 1;
+    private float _timer = 0;
+
+
+    private void Awake()
+    {
+    }
 
     private void Start()
     {
         _gameController = GameController.Instance;
         _walkAudioSource = GetComponent<AudioSource>();
-        GameManager.Instance.AudioManager.play(SoundName.WalkStone);
         _walkAudioSource.enabled = false;
+        GameManager.Instance.AudioManager.play(SoundName.WalkStone);
     }
 
     void Update()
@@ -48,7 +55,11 @@ public class PlayerMovement : MonoBehaviour
         float movementDirectionY = moveDirection.y;
         moveDirection = (forward * vertical) + (right * horizontal);
 
-        if (Vector3.Distance(transform.position, _lastPos) > .01f && controller.isGrounded)
+        if (_timer < _muteTimer)
+        {
+            _timer += Time.deltaTime;
+        }
+        if (Vector3.Distance(transform.position, _lastPos) > .01f && controller.isGrounded && _timer >= _muteTimer)
         {
             _walkAudioSource.enabled = true;   
         }
