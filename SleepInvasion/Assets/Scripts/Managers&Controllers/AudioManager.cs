@@ -76,7 +76,7 @@ public class AudioManager : MonoBehaviour
         }
     }
     
-    public void Instantplay(SoundName name, Vector3 position)
+    public void Instantplay(SoundName name, Vector3 position, float spatialBlend = .9f)
     {
         Sound sound = Array.Find(sounds, sound => sound.name == name);
         if (sound == null)
@@ -87,7 +87,7 @@ public class AudioManager : MonoBehaviour
 
         try
         {
-            PlayClipAtPoint(sound.clip, position, sound.volume, sound.pitch);
+            PlayClipAtPoint(sound.clip, position, sound.volume, sound.pitch, spatialBlend);
         }
         catch (Exception e)
         {
@@ -95,13 +95,13 @@ public class AudioManager : MonoBehaviour
         }
     }
     
-    public static void PlayClipAtPoint(AudioClip clip, Vector3 position, float volume, float pitch)
+    public static void PlayClipAtPoint(AudioClip clip, Vector3 position, float volume, float pitch, float spatialBlend)
     {
         GameObject gameObject = new GameObject("One shot audio");
         gameObject.transform.position = position;
         AudioSource audioSource = (AudioSource) gameObject.AddComponent(typeof (AudioSource));
         audioSource.clip = clip;
-        audioSource.spatialBlend = .9f;
+        audioSource.spatialBlend = spatialBlend;
         audioSource.volume = volume;
         audioSource.pitch = pitch;
         audioSource.Play();

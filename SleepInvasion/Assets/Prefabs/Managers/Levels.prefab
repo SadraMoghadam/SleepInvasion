@@ -113,7 +113,7 @@ MonoBehaviour:
   level1Data:
     levelGO: {fileID: 5528483431955739036}
     spawnTransform: {fileID: 5528483431742939549}
-    startHintTimer: 2
+    startHintTimer: 10
     doubleDoorController: {fileID: 0}
   level2Data:
     levelGO: {fileID: 5528483430668485729}
