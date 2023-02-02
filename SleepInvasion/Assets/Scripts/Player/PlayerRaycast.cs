@@ -196,6 +196,13 @@ public class PlayerRaycast : MonoBehaviour
                         }
                         sundial.ChangeView(true);
                     }
+                    else
+                    {
+                        if (hit.collider.GetComponent<Magnifiable>() != null)
+                        {
+                            _gameController.HintController.ShowHint(25, 3);
+                        }
+                    }
                 }
                 catch (Exception e)
                 {

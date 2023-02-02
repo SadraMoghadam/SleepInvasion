@@ -14,7 +14,8 @@ public class Level1 : Level
     private float _gameTimer;
     private float _lockTimer;
     private float _magnifierTimer;
-    private float _shaderTimer;
+    private float _tempTimer;
+    private bool _isDialogueShown = false;
     private InteractableItemType _firstFoundItemType = InteractableItemType.None; //between Diary and Watch (Pocket Clock)
 
     private void Awake()
@@ -24,7 +25,6 @@ public class Level1 : Level
         // _gameTimer = PlayerPrefsManager.GetFloat(PlayerPrefsKeys.GameTimer, 0);
         _lockTimer = PlayerPrefsManager.GetFloat(PlayerPrefsKeys.LockTimer, 0);
         _magnifierTimer = PlayerPrefsManager.GetFloat(PlayerPrefsKeys.MagnifierTimer, 0);
-        _shaderTimer = PlayerPrefsManager.GetFloat(PlayerPrefsKeys.ShaderTimer, 0);
         _timer = 0;
         _processNumber = PlayerPrefsManager.GetInt(PlayerPrefsKeys.Level1Process, 1);
         _level1Data = _gameController.LevelsController.levelsDataContainer.level1Data;
@@ -183,6 +183,12 @@ public class Level1 : Level
     
     private void SixthProcess()
     {
+        _tempTimer += Time.deltaTime;
+        if (_tempTimer > 10 && !_isDialogueShown)
+        {
+            _tempTimer = 0;
+            _gameController.DialogueController.Show(30);
+        }
         if (_gameController.InventoryController.IsItemInInventory(InteractableItemType.Needle))
         {
             // _gameController.HintController.ShowHint(5);

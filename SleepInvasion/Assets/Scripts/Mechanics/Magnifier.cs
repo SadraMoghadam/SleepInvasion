@@ -44,7 +44,7 @@ public class Magnifier : MonoBehaviour, IItemUsage
     {
         if(PlayerPrefsManager.GetBool(PlayerPrefsKeys.FirstMagnifier, true))
         {
-            GameController.Instance.HintController.ShowHint(8);
+            GameController.Instance.HintController.ShowHint(8, 7);
             PlayerPrefsManager.SetBool(PlayerPrefsKeys.FirstMagnifier, false);
         }
         GameManager.Instance.AudioManager.play(SoundName.Magnifier);
