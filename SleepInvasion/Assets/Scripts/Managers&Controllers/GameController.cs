@@ -29,6 +29,7 @@ public class GameController : MonoBehaviour
     [NonSerialized] public bool IsInDiaryView = false;
     [NonSerialized] public Transform PlayerTransform;
     [NonSerialized] public Sundial Sundial;
+    [NonSerialized] public float GameTimer;
     
     [HideInInspector] public bool lookDisabled;
     [HideInInspector] public bool keysDisabled;
@@ -70,6 +71,7 @@ public class GameController : MonoBehaviour
         SavedData savedData = PlayerPrefsManager.LoadGame();
         PlayerController.transform.position = savedData.PlayerTransform.position;
         PlayerController.transform.rotation = savedData.PlayerTransform.rotation;
+        GameTimer = PlayerPrefsManager.GetFloat(PlayerPrefsKeys.GameTimer, 0);
     }
 
     private void Start()
@@ -82,6 +84,7 @@ public class GameController : MonoBehaviour
         }
         _gameManager.AudioManager.play(SoundName.Game);
         // DialogueController.Show(1);
+        
     }
 
     public Transform GetPlayerTransform()

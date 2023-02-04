@@ -11,7 +11,6 @@ public class Level1 : Level
     private float _timer;
     private Level1Data _level1Data;
     private int _processNumber;
-    private float _gameTimer;
     private float _lockTimer;
     private float _magnifierTimer;
     private float _tempTimer;
@@ -22,7 +21,6 @@ public class Level1 : Level
     {
         _gameController = GameController.Instance;
         _gameManager = GameManager.Instance;
-        // _gameTimer = PlayerPrefsManager.GetFloat(PlayerPrefsKeys.GameTimer, 0);
         _lockTimer = PlayerPrefsManager.GetFloat(PlayerPrefsKeys.LockTimer, 0);
         _magnifierTimer = PlayerPrefsManager.GetFloat(PlayerPrefsKeys.MagnifierTimer, 0);
         _timer = 0;
@@ -48,8 +46,6 @@ public class Level1 : Level
 
     public override void Process()
     {
-        if(_processNumber < 8)
-            _gameTimer += Time.deltaTime;
         switch (_processNumber)
         {
             case 1:

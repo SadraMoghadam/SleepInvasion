@@ -47,11 +47,13 @@ public class PausePanel : MonoBehaviour
     
     private void OnCheckpointClick()
     {
+        PlayerPrefsManager.SetFloat(PlayerPrefsKeys.GameTimer, _gameController.GameTimer);
         _gameManager.LoadScene("MainGame");
     }
     
     private void OnQuitClick()
     {
+        PlayerPrefsManager.SetFloat(PlayerPrefsKeys.GameTimer, _gameController.GameTimer);
         _gameManager.LoadScene("MainMenu");
     }
 }

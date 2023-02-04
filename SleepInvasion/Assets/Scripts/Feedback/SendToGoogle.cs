@@ -109,7 +109,6 @@ public class SendToGoogle : MonoBehaviour {
     
     public static IEnumerator PostTimer(PlayerPrefsKeys key)
     {
-        yield break;
         float timer = PlayerPrefsManager.GetFloat(key, 0);
         string name = key.ToString();
         string URL =

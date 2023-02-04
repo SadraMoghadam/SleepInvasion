@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     {
         // if(_gameController.keysDisabled)
         //     return;
+        _gameController.GameTimer += Time.deltaTime;
         CheckPlayerInput();
         CheckRespawn();
     }
