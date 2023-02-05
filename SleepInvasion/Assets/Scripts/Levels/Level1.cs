@@ -39,8 +39,8 @@ public class Level1 : Level
         _gameController.PlayerController.transform.position = _level1Data.spawnTransform.position;
         _gameController.PlayerController.transform.rotation = _level1Data.spawnTransform.rotation;
         PlayerPrefsManager.SaveGame(1);
-        if(_processNumber == 1)
-            _gameController.HintController.ShowHint(0, _level1Data.startHintTimer - 2);
+        // if(_processNumber == 1)
+        //     _gameController.HintController.ShowHint(0, _level1Data.startHintTimer - 2);
         // _gameController.DialogueController.Show(1);
     }
 
@@ -82,15 +82,18 @@ public class Level1 : Level
 
     private void firstProcess()
     {
-        _timer += Time.deltaTime;
-        _gameController.DisableAllKeys();
-        _gameController.DisableLook();
-        if (_timer > _level1Data.startHintTimer)
+        // _timer += Time.deltaTime;
+        // _gameController.DisableAllKeys();
+        // _gameController.DisableLook();
+        if(!_gameController.DialogueController.IsPanelActive())
+            _gameController.DialogueController.Show(32);
+        // if (_timer > _level1Data.startHintTimer) 
+        if (PlayerPrefsManager.GetIntList(PlayerPrefsKeys.ShownDialogues).Contains(32))
         {
             _gameController.HintController.ShowHint(1);
-            _gameController.EnableAllKeys();
-            _gameController.EnableLook();
-            _timer = 0;
+            // _gameController.EnableAllKeys();
+            // _gameController.EnableLook();
+            // _timer = 0;
             SaveCompletedProcess(2);
         }
     }
@@ -160,9 +163,7 @@ public class Level1 : Level
         if (_gameController.IsInLockView && PlayerPrefsManager.GetBool(PlayerPrefsKeys.FirstLockView, true))
         {
             PlayerPrefsManager.SetFloat(PlayerPrefsKeys.LockTimer, _lockTimer);
-            _gameController.HintController.ShowHint(4);
             _gameController.DialogueController.Show(3);
-            PlayerPrefsManager.SetBool(PlayerPrefsKeys.FirstLockView, false);
             SaveCompletedProcess(5);
         }
     }
@@ -180,7 +181,7 @@ public class Level1 : Level
     private void SixthProcess()
     {
         _tempTimer += Time.deltaTime;
-        if (_tempTimer > 10 && !_isDialogueShown)
+        if (_tempTimer > 90 && !_isDialogueShown)
         {
             _tempTimer = 0;
             _gameController.DialogueController.Show(30);

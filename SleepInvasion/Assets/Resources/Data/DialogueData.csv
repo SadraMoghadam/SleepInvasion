@@ -5,8 +5,8 @@ id,Dialogue,NextDialogueID,Triggers
 4,Wow! A magnifier and ... a needle?,5,chest opens
 5,"There must be something special about this magnifier, it doesn't seem regular ...",6,
 6,This needle is too small to fit in my inventory. Is there any other way to use it?,0,
-7,"Wow, this needle gets enlarged in real life too! This is truly magic!",0,after using magnifier and needle gets enlarged 
-8,A stone board with strange symbols.,26,seeing empty sundial
+7,"Wow, this needle gets enlarged in real life too! This is truly magic!",37,after using magnifier and needle gets enlarged 
+8,This sundial should give me a clue.,26,seeing empty sundial
 9,Is that a circular concave in the center?,10,seing the floating table
 10,Looks like something can be placed in the center …,0,
 11,Is there something I could do with the candles?,0,seeing 2 laser lights pointing to 2 candles
@@ -22,9 +22,9 @@ id,Dialogue,NextDialogueID,Triggers
 21,There seems to be a pattern in these lights!,0,When seeing the laser light in the room
 22,Are the laser lights somehow connected to the candles?,0,First time blowing off candle and laser light changes 
 23,"Wow, there's something here!",0,When getting close the the top statue
-24,You've found the missing piece for the center of maya stone ,0,After picking up the final piece from the mouth
-25,"The maya stone has now been completed. Congrats, you've escaped from your dream and come back to real world.",0,Putting in the final piece
-26,Looks like there is something missing in the center?,0,
+24,You've found the missing piece for the center of Maya stone ,0,After picking up the final piece from the mouth
+25,"The Maya stone has now been completed. Congrats, you've escaped from your dream and come back to the real world.",0,Putting in the final piece
+26,But there is something missing in the center. I must find it.,0,
 27,Maybe I can Pick it up and see if it comes in handy.,0,
 28,Something is missing in this sundial again.,29,
 29,Maybe I can pick up the needle from the previous sundial and use it here.,0,
@@ -32,3 +32,7 @@ id,Dialogue,NextDialogueID,Triggers
 31,Wait a minute. I saw a small needle in the chest. Maybe I can put it on the sundial.,0,
 32,What happened? Where am I?,33,
 33,This Looks Like a dream. I should find a way to escape from here.,0,
+34,This Maya stone again!!! I have seen this in my last dreams.,35,
+35,The first time it was hard to find out how it works. But now I know what to do.,36,
+36,I must find the correct combination of symbols.,0,
+37,This may fit in the center of the sundial.,0,

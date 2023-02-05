@@ -130,10 +130,9 @@ public class MayaStone : MonoBehaviour
         _gameController.UIController.MayaStoneIcon.SetActive(stoneView);
         if (stoneView)
         {
-            if(PlayerPrefsManager.GetBool(PlayerPrefsKeys.FirstMayaStone, true))
+            if(!PlayerPrefsManager.GetIntList(PlayerPrefsKeys.ShownDialogues).Contains(34))
             {
-                _gameController.HintController.ShowHint(16);
-                PlayerPrefsManager.SetBool(PlayerPrefsKeys.FirstMayaStone, false);
+                _gameController.DialogueController.Show(34);
             }
             _gameController.ShowCursor();
             _gameController.DisableAllKeys();

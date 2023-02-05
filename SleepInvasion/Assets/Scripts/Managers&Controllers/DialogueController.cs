@@ -67,6 +67,9 @@ public class DialogueController : MonoBehaviour
         shownDialogueIds.Add(_dialogueStartId);
         PlayerPrefsManager.SetIntList(PlayerPrefsKeys.ShownDialogues, shownDialogueIds);
         // dialoguePanel.gameObject.SetActive(false);
+        MayaStoneHintCondition();
+        SundialHintCondition();
+        ChestHintCondition();
         StartCoroutine(DisableDialoguePanel(.5f));
         FadeDialoguePanelInAndOut(false, .5f);
     }
@@ -95,7 +98,7 @@ public class DialogueController : MonoBehaviour
     {
         yield return new WaitForSeconds(duration);
         dialoguePanel.gameObject.SetActive(false);
-        if (!_gameController.IsInLockView)
+        if (!_gameController.IsInLockView && !_gameController.IsInSundialView && !_gameController.IsInMayaStoneView)
         {
             _gameController.EnableLook();
             _gameController.EnableAllKeys();
@@ -106,5 +109,32 @@ public class DialogueController : MonoBehaviour
     public bool IsPanelActive()
     {
         return dialoguePanel.gameObject.activeSelf;
+    }
+
+    private void MayaStoneHintCondition()
+    {
+        if(PlayerPrefsManager.GetBool(PlayerPrefsKeys.FirstMayaStone, true) && PlayerPrefsManager.GetIntList(PlayerPrefsKeys.ShownDialogues).Contains(34))
+        {
+            _gameController.HintController.ShowHint(16, 6);
+            PlayerPrefsManager.SetBool(PlayerPrefsKeys.FirstMayaStone, false);
+        }
+    }
+
+    private void SundialHintCondition()
+    {
+        if (PlayerPrefsManager.GetBool(PlayerPrefsKeys.FirstSundial, true) && PlayerPrefsManager.GetIntList(PlayerPrefsKeys.ShownDialogues).Contains(8))
+        {
+            _gameController.HintController.ShowHint(26, 6);
+            PlayerPrefsManager.SetBool(PlayerPrefsKeys.FirstSundial, false);
+        }
+    }
+    
+    private void ChestHintCondition()
+    {
+        if (PlayerPrefsManager.GetBool(PlayerPrefsKeys.FirstLockView, true) && PlayerPrefsManager.GetIntList(PlayerPrefsKeys.ShownDialogues).Contains(3))
+        {
+            _gameController.HintController.ShowHint(4);
+            PlayerPrefsManager.SetBool(PlayerPrefsKeys.FirstLockView, false);
+        }
     }
 }

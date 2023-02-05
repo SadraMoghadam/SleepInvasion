@@ -37,6 +37,11 @@ public class Sundial : MonoBehaviour
             {
                 _gameController.DialogueController.Show(8);
             }
+
+            if (!lightStartsOn)
+            {
+                _gameController.HintController.ShowHint(27);
+            }
             // _gameController.ShowCursor();
             _gameController.DisableAllKeys();
             _gameController.DisableLook();

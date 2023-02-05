@@ -37,6 +37,7 @@ public enum PlayerPrefsKeys
     FirstInventory,
     FirstInspect,
     FirstMayaStone,
+    FirstSundial,
     FirstMagnifier,
     FirstShader,
     FirstDiary,

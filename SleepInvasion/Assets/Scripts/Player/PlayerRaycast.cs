@@ -80,7 +80,7 @@ public class PlayerRaycast : MonoBehaviour
             {
                 _firstRaycast = false;
                 PlayerPrefsManager.SetBool(PlayerPrefsKeys.FirstRaycast, false);
-                _gameController.HintController.ShowHint(3);
+                _gameController.HintController.ShowHint(3, 5);
             }
             if(PlayerPrefsManager.GetBool(PlayerPrefsKeys.FirstNeedleMissed, true) && !_gameController.InventoryController.IsItemInInventory(InteractableItemType.Needle))
             {
@@ -200,7 +200,11 @@ public class PlayerRaycast : MonoBehaviour
                     {
                         if (hit.collider.GetComponent<Magnifiable>() != null)
                         {
-                            _gameController.HintController.ShowHint(25, 3);
+                            Item item = hit.collider.GetComponent<Item>();
+                            if(item.itemInfo.ItemScriptableObject.type == InteractableItemType.Needle)
+                                _gameController.HintController.ShowHint(25, 3);
+                            else if(item.itemInfo.ItemScriptableObject.type == InteractableItemType.Shader)
+                                _gameController.HintController.ShowHint(28, 3);
                         }
                     }
                 }
