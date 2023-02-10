@@ -1363,6 +1363,10 @@ PrefabInstance:
       propertyPath: sounds.Array.data[0].source
       value: 
       objectReference: {fileID: 1318081874}
+    - target: {fileID: 8339801078960816216, guid: 27c061a097d8ada429c4b65159494bb8, type: 3}
+      propertyPath: crosshair
+      value: 
+      objectReference: {fileID: 2800000, guid: d2650d21fe76fd94191cf7d5e2320eba, type: 3}
     - target: {fileID: 8895788489742150237, guid: 27c061a097d8ada429c4b65159494bb8, type: 3}
       propertyPath: m_Name
       value: GameManager
