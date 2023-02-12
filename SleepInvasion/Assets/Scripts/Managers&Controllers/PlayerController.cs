@@ -26,6 +26,10 @@ public class PlayerController : MonoBehaviour
         // if(_gameController.keysDisabled)
         //     return;
         _gameController.GameTimer += Time.deltaTime;
+        if (Mathf.Round(_gameController.GameTimer % 10) == 0)
+        {
+            PlayerPrefsManager.SetFloat(PlayerPrefsKeys.GameTimer, _gameController.GameTimer);
+        }
         CheckPlayerInput();
         CheckRespawn();
     }

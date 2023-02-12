@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
@@ -137,14 +138,40 @@ public class SendToGoogle : MonoBehaviour {
         
     }
     
-    public static IEnumerator PostFinishedGame()
+    public static IEnumerator PostFinishedGameLevel(int level)
     {
         string URL =
             "https://docs.google.com/forms/d/e/1FAIpQLSeFwyAYVYJfyQE5NovsRw7VlhvCxZksuT1Gf-m_MGqPjy43-w/formResponse";
         
         WWWForm form = new WWWForm(); 
         
-        form.AddField("entry.1587231683", "GameFinished");
+        form.AddField("entry.1587231683", "Level" + level + " Finished");
+
+        UnityWebRequest www = UnityWebRequest.Post(URL, form);
+
+        yield return www.SendWebRequest();
+
+        print(www.error);
+        
+        if (www.isNetworkError)
+        {
+            Debug.Log(www.error);
+        }
+        else
+        {
+            Debug.Log("Form upload complete!");
+        }
+        
+    }
+    
+    public static IEnumerator PostStartedGame()
+    {
+        string URL =
+            "https://docs.google.com/forms/d/e/1FAIpQLSeFwyAYVYJfyQE5NovsRw7VlhvCxZksuT1Gf-m_MGqPjy43-w/formResponse";
+        
+        WWWForm form = new WWWForm(); 
+        
+        form.AddField("entry.2072885783", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
 
         UnityWebRequest www = UnityWebRequest.Post(URL, form);
 

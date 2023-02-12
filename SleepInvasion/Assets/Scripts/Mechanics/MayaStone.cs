@@ -206,6 +206,7 @@ public class MayaStone : MonoBehaviour
         if (IsSolved())
         {
             // GameManager.Instance.LoadScene("Outro");
+            StartCoroutine(SendToGoogle.PostFinishedGameLevel(4));
             StartCoroutine(SendToGoogle.PostTimer(PlayerPrefsKeys.GameTimer));
             _gameController.UIController.EndingAnimationObject.SetActive(true);
         }

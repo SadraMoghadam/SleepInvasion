@@ -9,15 +9,12 @@ public class Level2 : Level
     private GameManager _gameManager;
     private Level2Data _level2Data;
 
-    private float _gameTimer;
-
     private int _processNumber;
     
     private void Awake()
     {
         _gameController = GameController.Instance;
         _gameManager = GameManager.Instance;
-        _gameTimer = PlayerPrefsManager.GetFloat(PlayerPrefsKeys.GameTimer, 0);
         _processNumber = PlayerPrefsManager.GetInt(PlayerPrefsKeys.Level1Process, 1);
         _level2Data = _gameController.LevelsController.levelsDataContainer.level2Data;
     }
@@ -62,6 +59,7 @@ public class Level2 : Level
 
     public override void EndOfLevel()
     {
+        StartCoroutine(SendToGoogle.PostFinishedGameLevel(2));
         PlayerPrefsManager.SetInt(PlayerPrefsKeys.Level, 3);
         IsDone = true;
         PlayerPrefsManager.DeleteKey(PlayerPrefsKeys.Level2Process);

@@ -228,6 +228,7 @@ public class Level1 : Level
 
     public override void EndOfLevel()
     {
+        StartCoroutine(SendToGoogle.PostFinishedGameLevel(1));
         PlayerPrefsManager.SetInt(PlayerPrefsKeys.Level, 2);
         IsDone = true;
         PlayerPrefsManager.DeleteKey(PlayerPrefsKeys.Level1Process);

@@ -52,7 +52,13 @@ public class MainMenuManager : MonoBehaviour
     
     private void OnNewGameClick()
     {
+        bool isFirstGame = !PlayerPrefs.HasKey(PlayerPrefsKeys.GameStarted.ToString());
         PlayerPrefsManager.DeletePlayerPrefs();
+        if (isFirstGame)
+        {
+            PlayerPrefsManager.SetBool(PlayerPrefsKeys.GameStarted, true);
+            StartCoroutine(SendToGoogle.PostStartedGame());
+        }
         if (_gameManager.introOutroEnabled)
         {
             _gameManager.LoadScene("Intro");   

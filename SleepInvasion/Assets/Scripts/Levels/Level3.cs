@@ -124,6 +124,7 @@ public class Level3 : Level
 
     public override void EndOfLevel()
     {
+        StartCoroutine(SendToGoogle.PostFinishedGameLevel(3));
         _gameController.LevelsController.levelsDataContainer.level1Data.doubleDoorController.Close();
         PlayerPrefsManager.SetBool(PlayerPrefsKeys.Door0Locked, true);
         PlayerPrefsManager.SetInt(PlayerPrefsKeys.Level, 4);
