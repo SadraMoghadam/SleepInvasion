@@ -5,6 +5,21 @@ ModelImporter:
   internalIDToNameTable: []
   externalObjects:
   - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cgaxis_models_15_20_01
+    second: {fileID: 2100000, guid: e59edb4ab24c00a40b81a6daf4aa413f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cgaxis_models_15_20_02
+    second: {fileID: 2100000, guid: a2b5c9d35fce2e44996513f04ca76ab4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cgaxis_models_15_20_03
+    second: {fileID: 2100000, guid: c10abe02cdc0d8a4f9fa2a2f3d7ff401, type: 2}
+  - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: cgaxis_models_15_20_01
