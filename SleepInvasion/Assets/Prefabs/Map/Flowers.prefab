@@ -271,6 +271,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cgaxis_models_91_37_fbx (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 651a8700fa3237448aecfc5897ee7835, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 651a8700fa3237448aecfc5897ee7835, type: 3}
 --- !u!4 &1823860793494595472 stripped
@@ -426,6 +430,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7a009316ce13ea7408ea851eb76b9395, type: 3}
       propertyPath: m_Name
       value: cgaxis_models_91_47_fbx (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7a009316ce13ea7408ea851eb76b9395, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a009316ce13ea7408ea851eb76b9395, type: 3}
@@ -661,6 +669,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cgaxis_models_91_36_fbx (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e111e6dbf6f3cf44a983557c29937eaf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e111e6dbf6f3cf44a983557c29937eaf, type: 3}
 --- !u!4 &1823860793396513269 stripped
@@ -739,6 +751,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cgaxis_models_91_37_fbx (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 651a8700fa3237448aecfc5897ee7835, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 651a8700fa3237448aecfc5897ee7835, type: 3}
 --- !u!4 &1823860793395974204 stripped
@@ -816,6 +832,18 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9ccf853b09eb4b541a143b2c57da5834, type: 3}
       propertyPath: m_Name
       value: cgaxis_models_15_20_fbx (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9ccf853b09eb4b541a143b2c57da5834, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729312808814473140, guid: 9ccf853b09eb4b541a143b2c57da5834, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5157938213810653357, guid: 9ccf853b09eb4b541a143b2c57da5834, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ccf853b09eb4b541a143b2c57da5834, type: 3}
@@ -1051,6 +1079,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cgaxis_models_91_37_fbx (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 651a8700fa3237448aecfc5897ee7835, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 651a8700fa3237448aecfc5897ee7835, type: 3}
 --- !u!4 &1823860793283035324 stripped
@@ -1285,6 +1317,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cgaxis_models_91_36_fbx (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e111e6dbf6f3cf44a983557c29937eaf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e111e6dbf6f3cf44a983557c29937eaf, type: 3}
 --- !u!4 &1823860793233878037 stripped
@@ -1362,6 +1398,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 651a8700fa3237448aecfc5897ee7835, type: 3}
       propertyPath: m_Name
       value: cgaxis_models_91_37_fbx (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 651a8700fa3237448aecfc5897ee7835, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 651a8700fa3237448aecfc5897ee7835, type: 3}
@@ -1675,6 +1715,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cgaxis_models_91_36_fbx (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e111e6dbf6f3cf44a983557c29937eaf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e111e6dbf6f3cf44a983557c29937eaf, type: 3}
 --- !u!4 &1823860793095823169 stripped
@@ -1830,6 +1874,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e111e6dbf6f3cf44a983557c29937eaf, type: 3}
       propertyPath: m_Name
       value: cgaxis_models_91_36_fbx
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e111e6dbf6f3cf44a983557c29937eaf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e111e6dbf6f3cf44a983557c29937eaf, type: 3}
@@ -2065,6 +2113,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cgaxis_models_91_37_fbx (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 651a8700fa3237448aecfc5897ee7835, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 651a8700fa3237448aecfc5897ee7835, type: 3}
 --- !u!4 &1823860793042304231 stripped
@@ -2220,6 +2272,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ad8e51ef49e80144b87a6fe11ff3c9e9, type: 3}
       propertyPath: m_Name
       value: cgaxis_models_91_39_fbx (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ad8e51ef49e80144b87a6fe11ff3c9e9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad8e51ef49e80144b87a6fe11ff3c9e9, type: 3}
@@ -2923,6 +2979,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cgaxis_models_91_37_fbx (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 651a8700fa3237448aecfc5897ee7835, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 651a8700fa3237448aecfc5897ee7835, type: 3}
 --- !u!4 &1823860792814815500 stripped
@@ -3157,6 +3217,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cgaxis_models_91_37_fbx (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 651a8700fa3237448aecfc5897ee7835, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 651a8700fa3237448aecfc5897ee7835, type: 3}
 --- !u!4 &1823860792624139794 stripped
@@ -3235,6 +3299,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cgaxis_models_91_37_fbx (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 651a8700fa3237448aecfc5897ee7835, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 651a8700fa3237448aecfc5897ee7835, type: 3}
 --- !u!4 &1823860792600603791 stripped
@@ -3312,6 +3380,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e111e6dbf6f3cf44a983557c29937eaf, type: 3}
       propertyPath: m_Name
       value: cgaxis_models_91_36_fbx (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e111e6dbf6f3cf44a983557c29937eaf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e111e6dbf6f3cf44a983557c29937eaf, type: 3}
@@ -3469,6 +3541,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cgaxis_models_91_39_fbx
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ad8e51ef49e80144b87a6fe11ff3c9e9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad8e51ef49e80144b87a6fe11ff3c9e9, type: 3}
 --- !u!4 &1823860792536998836 stripped
@@ -3546,6 +3622,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9ccf853b09eb4b541a143b2c57da5834, type: 3}
       propertyPath: m_Name
       value: cgaxis_models_15_20_fbx (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729312808814473140, guid: 9ccf853b09eb4b541a143b2c57da5834, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5157938213810653357, guid: 9ccf853b09eb4b541a143b2c57da5834, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ccf853b09eb4b541a143b2c57da5834, type: 3}
@@ -3702,6 +3786,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7a009316ce13ea7408ea851eb76b9395, type: 3}
       propertyPath: m_Name
       value: cgaxis_models_91_47_fbx
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7a009316ce13ea7408ea851eb76b9395, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a009316ce13ea7408ea851eb76b9395, type: 3}
@@ -4015,6 +4103,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cgaxis_models_91_37_fbx (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 651a8700fa3237448aecfc5897ee7835, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 651a8700fa3237448aecfc5897ee7835, type: 3}
 --- !u!4 &1823860792363946651 stripped
@@ -4203,7 +4295,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e111e6dbf6f3cf44a983557c29937eaf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -21.51272
+      value: -17.74
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e111e6dbf6f3cf44a983557c29937eaf, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4211,7 +4303,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e111e6dbf6f3cf44a983557c29937eaf, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -20.888937
+      value: -24.6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e111e6dbf6f3cf44a983557c29937eaf, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4326,6 +4418,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9ccf853b09eb4b541a143b2c57da5834, type: 3}
       propertyPath: m_Name
       value: cgaxis_models_15_20_fbx (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5157938213810653357, guid: 9ccf853b09eb4b541a143b2c57da5834, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ccf853b09eb4b541a143b2c57da5834, type: 3}
@@ -4561,6 +4657,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cgaxis_models_91_40_fbx
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8536d5ead89bed741a71e9a9d2914329, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8536d5ead89bed741a71e9a9d2914329, type: 3}
 --- !u!4 &1823860792250946357 stripped
@@ -4716,6 +4816,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7a009316ce13ea7408ea851eb76b9395, type: 3}
       propertyPath: m_Name
       value: cgaxis_models_91_47_fbx (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7a009316ce13ea7408ea851eb76b9395, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a009316ce13ea7408ea851eb76b9395, type: 3}
@@ -5029,6 +5133,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cgaxis_models_91_37_fbx (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 651a8700fa3237448aecfc5897ee7835, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 651a8700fa3237448aecfc5897ee7835, type: 3}
 --- !u!4 &1823860791998296075 stripped
@@ -5340,6 +5448,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9ccf853b09eb4b541a143b2c57da5834, type: 3}
       propertyPath: m_Name
       value: cgaxis_models_15_20_fbx (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5157938213810653357, guid: 9ccf853b09eb4b541a143b2c57da5834, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ccf853b09eb4b541a143b2c57da5834, type: 3}
@@ -5730,6 +5842,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 651a8700fa3237448aecfc5897ee7835, type: 3}
       propertyPath: m_Name
       value: cgaxis_models_91_37_fbx (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 651a8700fa3237448aecfc5897ee7835, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 651a8700fa3237448aecfc5897ee7835, type: 3}
@@ -6667,6 +6783,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cgaxis_models_15_20_fbx
       objectReference: {fileID: 0}
+    - target: {fileID: 5157938213810653357, guid: 9ccf853b09eb4b541a143b2c57da5834, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ccf853b09eb4b541a143b2c57da5834, type: 3}
 --- !u!4 &1823860791490970352 stripped
@@ -6901,6 +7021,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cgaxis_models_91_39_fbx (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ad8e51ef49e80144b87a6fe11ff3c9e9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad8e51ef49e80144b87a6fe11ff3c9e9, type: 3}
 --- !u!4 &1823860791470486077 stripped
@@ -7057,6 +7181,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cgaxis_models_91_37_fbx
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 651a8700fa3237448aecfc5897ee7835, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 651a8700fa3237448aecfc5897ee7835, type: 3}
 --- !u!4 &1823860791415755973 stripped
@@ -7134,6 +7262,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e111e6dbf6f3cf44a983557c29937eaf, type: 3}
       propertyPath: m_Name
       value: cgaxis_models_91_36_fbx (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e111e6dbf6f3cf44a983557c29937eaf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e111e6dbf6f3cf44a983557c29937eaf, type: 3}
