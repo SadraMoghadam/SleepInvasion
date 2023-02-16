@@ -16,6 +16,7 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private Button settingButton;
     [SerializeField] private GameObject feedbackPanel;
     [SerializeField] private GameObject creditsPanel;
+    [SerializeField] private GameObject settingsPanel;
     
 
     private GameManager _gameManager;
@@ -44,6 +45,7 @@ public class MainMenuManager : MonoBehaviour
         quitButton.onClick.AddListener(OnQuitClick);
         feedBackButton.onClick.AddListener(OnFeedbackClick);
         creditsButton.onClick.AddListener(OnCreditsClick);
+        settingButton.onClick.AddListener(OnSettingsClick);
         _gameManager.AudioManager.play(SoundName.MainMenu);
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
@@ -92,10 +94,16 @@ public class MainMenuManager : MonoBehaviour
         creditsPanel.SetActive(true);
     }
     
-    public void CloseCredits()
+    // public void CloseCredits()
+    // {
+    //     creditsPanel.SetActive(false);
+    //     SetMainMenuPanelActive(true);
+    // }
+    
+    private void OnSettingsClick()
     {
-        creditsPanel.SetActive(false);
-        SetMainMenuPanelActive(true);
+        SetMainMenuPanelActive(false);
+        settingsPanel.SetActive(true);
     }
 
     private void SetMainMenuPanelActive(bool setActive)
