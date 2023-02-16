@@ -12,7 +12,11 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private Button newGameButton;
     [SerializeField] private Button quitButton;
     [SerializeField] private Button feedBackButton;
+    [SerializeField] private Button creditsButton;
+    [SerializeField] private Button settingButton;
     [SerializeField] private GameObject feedbackPanel;
+    [SerializeField] private GameObject creditsPanel;
+    
 
     private GameManager _gameManager;
     
@@ -39,6 +43,7 @@ public class MainMenuManager : MonoBehaviour
         newGameButton.onClick.AddListener(OnNewGameClick);
         quitButton.onClick.AddListener(OnQuitClick);
         feedBackButton.onClick.AddListener(OnFeedbackClick);
+        creditsButton.onClick.AddListener(OnCreditsClick);
         _gameManager.AudioManager.play(SoundName.MainMenu);
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
@@ -71,12 +76,37 @@ public class MainMenuManager : MonoBehaviour
     
     private void OnFeedbackClick()
     {
-        resumeButton.gameObject.SetActive(false);
-        newGameButton.gameObject.SetActive(false);
-        quitButton.gameObject.SetActive(false);
-        feedBackButton.gameObject.SetActive(false);
-        title.gameObject.SetActive(false);
+        SetMainMenuPanelActive(false);
         feedbackPanel.SetActive(true);
+    }
+    
+    public void CloseFeedback()
+    {
+        feedbackPanel.SetActive(false);
+        SetMainMenuPanelActive(true);
+    }
+    
+    private void OnCreditsClick()
+    {
+        SetMainMenuPanelActive(false);
+        creditsPanel.SetActive(true);
+    }
+    
+    public void CloseCredits()
+    {
+        creditsPanel.SetActive(false);
+        SetMainMenuPanelActive(true);
+    }
+
+    private void SetMainMenuPanelActive(bool setActive)
+    {
+        resumeButton.gameObject.SetActive(setActive);
+        newGameButton.gameObject.SetActive(setActive);
+        quitButton.gameObject.SetActive(setActive);
+        feedBackButton.gameObject.SetActive(setActive);
+        creditsButton.gameObject.SetActive(setActive);
+        settingButton.gameObject.SetActive(setActive);
+        title.gameObject.SetActive(setActive);
     }
     
     private void OnQuitClick()
@@ -84,14 +114,5 @@ public class MainMenuManager : MonoBehaviour
         Application.Quit();
     }
 
-    public void CloseFeedback()
-    {
-        feedbackPanel.SetActive(false);
-        resumeButton.gameObject.SetActive(true);
-        newGameButton.gameObject.SetActive(true);
-        quitButton.gameObject.SetActive(true);
-        feedBackButton.gameObject.SetActive(true);
-        title.gameObject.SetActive(true);
-    }
     
 }

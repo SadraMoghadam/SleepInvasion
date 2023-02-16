@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,13 @@ public class SetCursor : MonoBehaviour
      
         //Sets the cursor to the Crosshair sprite with given offset 
         //and automatic switching to hardware default if necessary
-        Cursor.SetCursor(crosshair, cursorOffset, CursorMode.Auto);
+        try
+        {
+            Cursor.SetCursor(crosshair, cursorOffset, CursorMode.Auto);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+        }
     }
 }
