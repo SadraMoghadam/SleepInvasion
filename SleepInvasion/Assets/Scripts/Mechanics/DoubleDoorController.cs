@@ -47,6 +47,19 @@ public class DoubleDoorController : MonoBehaviour, IDoorController
     {
         PlayerPrefsManager.SetBool(Enum.Parse<PlayerPrefsKeys>(_prefsId), false);
         GameManager.Instance.AudioManager.Instantplay(SoundName.UnlockDoor, transform.position, .4f);
+        if (id == 0)
+        {
+            try
+            {
+                FindObjectOfType<Level1>().SetDone();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+            StartCoroutine(SendToGoogle.PostFinishedGameLevel(1));
+            PlayerPrefsManager.SetInt(PlayerPrefsKeys.Level, 2);   
+        }
     }
     
     public void Open()

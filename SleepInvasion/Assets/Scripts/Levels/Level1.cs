@@ -233,4 +233,9 @@ public class Level1 : Level
         IsDone = true;
         PlayerPrefsManager.DeleteKey(PlayerPrefsKeys.Level1Process);
     }
+
+    public void SetDone()
+    {
+        IsDone = true;
+    }
 }
