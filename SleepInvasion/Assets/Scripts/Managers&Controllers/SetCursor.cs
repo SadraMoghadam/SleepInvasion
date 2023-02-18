@@ -10,9 +10,6 @@ public class SetCursor : MonoBehaviour
 
     void Start()
     {
-#if UNITY_STANDALONE_OSX
-        Debug.Log("MAC OS BUILD");
-#else
         //set the cursor origin to its centre. (default is upper left corner)
         Vector2 cursorOffset = new Vector2(crosshair.width/2, crosshair.height/2);
      
@@ -20,12 +17,11 @@ public class SetCursor : MonoBehaviour
         //and automatic switching to hardware default if necessary
         try
         {
-            Cursor.SetCursor(crosshair, cursorOffset, CursorMode.Auto);
+            Cursor.SetCursor(crosshair, cursorOffset, CursorMode.ForceSoftware);
         }
         catch (Exception e)
         {
             Console.WriteLine(e);
         }
-#endif
     }
 }
