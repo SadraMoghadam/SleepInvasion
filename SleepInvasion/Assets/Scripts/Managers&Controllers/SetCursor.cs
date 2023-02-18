@@ -10,7 +10,7 @@ public class SetCursor : MonoBehaviour
 
     void Start()
     {
-#if UNITY_STANDALONE_OSX && !UNITY_EDITOR
+#if UNITY_STANDALONE_OSX
         Debug.Log("MAC OS BUILD");
 #else
         //set the cursor origin to its centre. (default is upper left corner)

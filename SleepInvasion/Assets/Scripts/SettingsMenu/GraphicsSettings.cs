@@ -13,6 +13,8 @@ public class GraphicsSettings : MonoBehaviour
 
     void Start()
     {
+        qualityDropdown.value = PlayerPrefsManager.GetInt(PlayerPrefsKeys.QualityIndex, 1);
+        fullScreenToggle.isOn = PlayerPrefsManager.GetBool(PlayerPrefsKeys.IsFullScreen, true);
         fullScreenToggle.onValueChanged.AddListener(ToggleFullScreen);
         qualityDropdown.onValueChanged.AddListener(ChangeQuality);
     }
@@ -20,6 +22,7 @@ public class GraphicsSettings : MonoBehaviour
     private void ToggleFullScreen(bool value)
     {
         Screen.fullScreen = value;
+        PlayerPrefsManager.SetBool(PlayerPrefsKeys.IsFullScreen, value);
     }
 
     private void ChangeQuality(int index)

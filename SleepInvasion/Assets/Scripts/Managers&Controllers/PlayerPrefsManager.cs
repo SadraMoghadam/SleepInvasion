@@ -59,7 +59,12 @@ public enum PlayerPrefsKeys
     ShownDialogues,
     CylinderOnTable1,
     CylinderOnTable2,
-    QualityIndex
+    QualityIndex,
+    IsFullScreen,
+    MouseSensitivity,
+    MasterVol,
+    MusicVol,
+    SfxVol
     // Sundial1Finished,
     // Sundial2Finished,
     // Sundial3Finished,

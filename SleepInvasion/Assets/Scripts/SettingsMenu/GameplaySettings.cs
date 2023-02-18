@@ -11,11 +11,14 @@ public class GameplaySettings : MonoBehaviour
     
     void Start()
     {
+        mouseSensitivitySlider.value = PlayerPrefsManager.GetFloat(PlayerPrefsKeys.MouseSensitivity, 55);
         mouseSensitivitySlider.onValueChanged.AddListener(ChangeMouseSensitivity);
     }
 
     private void ChangeMouseSensitivity(float value)
     {
-        mouseLook.ChangeMouseSensitivity(value / ((mouseSensitivitySlider.maxValue - mouseSensitivitySlider.minValue) / 2));
+        float mouseSens = value / ((mouseSensitivitySlider.maxValue - mouseSensitivitySlider.minValue) / 2);
+        mouseLook.ChangeMouseSensitivity(mouseSens);
+        PlayerPrefsManager.SetFloat(PlayerPrefsKeys.MouseSensitivity, value);
     }
 }
