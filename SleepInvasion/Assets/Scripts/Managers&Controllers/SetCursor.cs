@@ -8,8 +8,11 @@ public class SetCursor : MonoBehaviour
     // You must set the cursor in the inspector.
     public Texture2D crosshair; 
 
-    void Start(){
-    
+    void Start()
+    {
+#if UNITY_STANDALONE_OSX
+        return;
+#else
         //set the cursor origin to its centre. (default is upper left corner)
         Vector2 cursorOffset = new Vector2(crosshair.width/2, crosshair.height/2);
      
@@ -23,5 +26,6 @@ public class SetCursor : MonoBehaviour
         {
             Console.WriteLine(e);
         }
+#endif
     }
 }

@@ -5,9 +5,9 @@ public class SplashScreen : MonoBehaviour {
 
 	float secs = 2f;				// number of seconds to wait
 
-	public GameObject	splash;		// splash screen that is not shown in pro
-	public GameObject	pgc;		// polimi game collective splash
-	public GameObject	guests;		// guest collaborators splash
+	// public GameObject	splash;		// splash screen that is not shown in pro
+	// public GameObject	pgc;		// polimi game collective splash
+	public GameObject	splash;
 
 	public string next_scene = string.Empty;
 
@@ -21,16 +21,15 @@ public class SplashScreen : MonoBehaviour {
 	
 	IEnumerator ShowSplashScreens()
 	{
+		// yield return new WaitForSeconds(secs);
+		// pgc.SetActive(false);
+
 
 #if !UNITY_PRO
-		yield return new WaitForSeconds(secs);
+		splash.SetActive(true);
+		yield return new WaitForSeconds(6f);
 		splash.SetActive(false);
 #endif
-		yield return new WaitForSeconds(secs);
-		pgc.SetActive(false);
-
-		yield return new WaitForSeconds(secs);
-
 		Application.LoadLevel(next_scene);
 	}
 }
